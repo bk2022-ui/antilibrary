@@ -23,10 +23,10 @@ It is named after Samudra Manthan — the Hindu myth of churning the cosmic ocea
 
 | # | English | Hindi | What it does |
 |---|---|---|---|
-| 1 | **Collect** | **Sangrah** | Build and maintain the inventory |
-| 2 | **Classify** | **Parichay** | Dimension every book across multiple axes |
-| 3 | **Churn** | **Manthan** | Run multiple lenses across the classified inventory |
-| 4 | **Curate** | **Darshan** | Decide what the library shows the world |
+| 1 | **Collect** | **Sangrah** | Parse raw input → structured inventory → enriched with covers and metadata |
+| 2 | **Classify** | **Parichay** | Dimension every book across multiple axes; decompose into atomic ideas |
+| 3 | **Churn** | **Manthan** | Run lenses across the classified inventory; surface threads, clusters, patterns |
+| 4 | **Curate** | **Darshan** | Decide what the library shows the world — the editorial layer before visualization |
 
 **Naming convention:** every module carries its name in English and Hindi. If a third language becomes relevant for a specific library, it slots in as a third column.
 
@@ -38,29 +38,66 @@ Threads (Sutra) and Clusters (Samuha) are the two output forms that Manthan prod
 
 ---
 
-## Inputs
+## Agent architecture
 
-### Primary input: inventory
-A flat list of books. Minimum fields: title, author. The engine enriches from there.
+Each step is an agent with a defined trigger, input, and output. They run sequentially but independently — a book can be in Parichay while the next book is entering Sangrah.
 
-Accepted input formats:
-- JSON (native — `inventory.json`)
-- CSV (Goodreads export, Storygraph, custom)
-- Conversation (person describes their library verbally)
-- Photographs (shelf images — engine reads spines, builds inventory)
+| Agent | Trigger | Input | Output |
+|---|---|---|---|
+| Sangrah | New file uploaded | CSV / images / JSON / chat | `inventory.json` (raw + enriched) |
+| Parichay | Per new book in inventory | `inventory.json` entry | `inventory.json` (classified) + `ideas.json` |
+| Manthan | N new books classified (batch threshold) | Full classified inventory | `analysis.json` |
+| Darshan | Human decision | `analysis.json` + human editorial intent | Curated data structure for visualization |
 
-### Secondary input: priming
-Human signals that guide the churn. Can be:
-- A statement ("I think I have a lot of books on creativity")
-- A reaction ("that thread feels wrong")
-- A correction ("Mukherjee doesn't belong there")
-- A question ("what do I have on cities?")
+**Why Manthan runs on a threshold, not per book:** Manthan is a collection-level operation. It needs enough new material to find patterns that weren't visible before. Running it on every new book is expensive and produces noise. A threshold of 10–20 new classified books is a reasonable default.
 
-Priming is recorded in `priming_log` within `analysis.json`.
+**Darshan is the only agent that cannot run autonomously.** It requires human intent — what to show, to whom, in what order. It can be assisted by the engine (surfacing options, flagging candidates) but the decision is always human.
 
 ---
 
-## Classification schema
+## Quality gate: confidence and canonicalization
+
+Two issues that must be resolved in Sangrah before Parichay runs:
+
+### Confidence
+Some entries arrive with uncertain data — spine photographs that couldn't be read clearly, author names that couldn't be matched, years that are estimates. These are flagged with `"confidence": "low"` in inventory.json and held back from Parichay until a human confirms or corrects them. Low-confidence entries are visible in the UI as a review queue.
+
+### Canonicalization: multiple editions
+Three copies of Lucretius, two translations of Aesop, a Kindle and a physical edition of the same book — these are not duplicates. Each is a distinct entry. The rule:
+
+- Same text, different edition → sibling entries, not merged. Each carries its own `form`, `year` (of this edition), and physical/digital note.
+- Same edition, accidentally entered twice → deduplicate, keep one, log the merge.
+- Siblings are linked by a `canonical_id` field pointing to the original text's first entry.
+
+The arrangement of editions is itself data. Do not flatten it.
+
+---
+
+## Step 1 — Collect / Sangrah
+
+### Accepted input formats
+- JSON (native — `inventory.json`)
+- CSV (Goodreads export, Storygraph, custom)
+- Conversation (person describes their library verbally)
+- Photographs (shelf images — agent reads spines, builds inventory)
+
+### What Sangrah produces per book
+- `title`, `author`, `year` — parsed from input
+- `status` — read / antilibrary / to-buy / misplaced
+- `coverUrl` — fetched from Open Library Cover API or Google Books
+- `isbn`, `description` — fetched from Google Books API
+- `confidence` — high / low (low triggers review queue)
+- `canonical_id` — links sibling editions to the same source text
+
+### What Sangrah does not do
+- It does not classify. No categories, no register, no density assigned here.
+- It does not judge. Every book that can be parsed enters the inventory. Curation happens in Darshan, not Sangrah.
+
+---
+
+## Step 2 — Classify / Parichay
+
+### Classification schema
 
 Every book receives these dimensions during Parichay:
 
@@ -73,15 +110,34 @@ Every book receives these dimensions during Parichay:
 | `density` | accessible / substantive / dense | How demanding the book is to read |
 | `form` | argument / narrative / portrait / manual / meditation / reference / anthology | What kind of object it is |
 | `lineage` | founder name or null | Whose ideas this book most directly descends from |
-| `category` | primary domain string | Main subject area |
+| `category` | primary domain string | Main subject area (BISAC-aligned) |
 | `categories` | array of strings | All domains touched |
 | `topic` | precise string | Specific argument — not "science" but "Epicurean atomism and ancient natural philosophy" |
 | `subtopics` | array of strings | Secondary concerns |
-| `status` | read / antilibrary / to-buy | Ownership and reading status |
+
+### Lego blocks — atomic ideas
+
+Every book is decomposed into 3–7 atomic, transferable ideas during Parichay. These are stored in `ideas.json`.
+
+**How many:**
+- Manual / reference → 3 blocks (tools, not arguments)
+- Narrative / portrait → 4 blocks
+- Argument / meditation → 5–7 blocks (the denser the argument, the more blocks)
+
+**What a block is:**
+- A transferable unit — it can be lifted from its source book and placed next to ideas from completely different books
+- Exact mechanism, no decoration. Not "this book argues that thinking is hard" but "System 1 processes are fast, automatic, and error-prone in predictable ways under cognitive load"
+- 1–2 sentences maximum
+
+**What blocks are for:** they are the seed material for Manthan's deep probe — finding resonance between books at the idea level, not the metadata level.
+
+Blocks are stored in `ideas.json` as `{ "Book Title": [ { "title": "Short name", "gloss": "1-2 sentence mechanism" } ] }`.
 
 ---
 
-## The churn — Manthan lenses
+## Step 3 — Churn / Manthan
+
+### The seven lenses
 
 The Churn module runs multiple lenses across the classified inventory. Each lens is a different question asked of the same dataset:
 
@@ -99,29 +155,94 @@ The Churn module runs multiple lenses across the classified inventory. Each lens
 
 **Tradition mapping** — which author traditions are well-represented? Which are absent? Absence is as revealing as presence.
 
----
+### The random probe
 
-## The random probe
-
-The Manthan engine is an Adirondacks search. Systematic lenses find the obvious peaks. The random probe finds the hidden ones.
+Systematic lenses find the obvious peaks. The random probe finds the hidden ones.
 
 **Algorithm:**
 1. Select a book from the inventory — weighted toward books not yet in any thread or cluster, or books at the edge of known groups
 2. Run either:
    - **Shallow probe** — use the book's existing dimensions (register, lineage, subtopics, tradition). Find what else in the inventory shares these coordinates. Surface the candidate grouping.
-   - **Deep probe** — extract a key argument or concept from the book (using LLM knowledge). Use that as the seed. Find what else resonates with this specific idea, regardless of metadata.
+   - **Deep probe** — extract a key argument from the book's Lego blocks. Use that as the seed. Find what else resonates with this specific idea, regardless of metadata.
 3. Present the surfaced grouping as a candidate thread or cluster
 4. Invite human priming response
 
-The random element is essential. It prevents the engine from converging on the same peaks every time. Books that would never be retrieved by systematic search become seeds for new threads.
+The random element is essential. It prevents the engine from converging on the same peaks every time.
 
-**Theoretical basis:** Algorithms to Live By (Christian & Griffiths) — explore/exploit tradeoff. When the search space has unknown terrain, random exploration outperforms optimization. Scott Page (The Model Thinker, The Difference) — cognitive diversity produces better outcomes than deeper search from the same vantage point. Each probe is a different model applied to the same inventory.
+**Theoretical basis:** Algorithms to Live By (Christian & Griffiths) — explore/exploit tradeoff. Scott Page (The Model Thinker) — cognitive diversity produces better outcomes than deeper search from the same vantage point.
+
+### The priming interface
+
+Manthan without human priming produces shallow results. Priming is not optional — it is the mechanism by which the hidden collection surfaces.
+
+**Priming inputs:**
+- A statement ("I think I have a lot of books on creativity")
+- A reaction ("that thread feels wrong")
+- A correction ("Mukherjee doesn't belong there — his books argue nothing about India")
+- A question ("what do I have on cities?")
+
+Every priming signal is recorded in `priming_log` within `analysis.json` with a date and session note. The log is the audit trail of how the analysis evolved.
+
+**The priming interface is a dialogue, not a form.** The engine surfaces a candidate; the human responds; the engine adjusts and surfaces another. The loop runs until the human is satisfied or stops.
+
+---
+
+## Step 4 — Curate / Darshan
+
+Darshan is the editorial layer. Manthan produces everything that could be shown. Darshan decides what is shown, to whom, and in what order.
+
+A museum director does not hang every work in the collection. Darshan is that decision.
+
+**What Darshan does:**
+- Selects which threads and clusters to surface in the UI
+- Decides the narrative order (what the visitor sees first)
+- Flags what is private vs. public (some threads may be too personal to show)
+- Shapes the reveal — how much is visible at once vs. progressively disclosed
+
+**What Darshan does not do:**
+- It does not modify the underlying data. `inventory.json` and `analysis.json` remain unchanged.
+- It does not generate new analysis. That is Manthan's job.
+
+**Output:** a curation layer — a lightweight config or set of flags — that the visualization reads. The visualization itself is a separate rendering concern.
+
+---
+
+## Gaps / Khoj — the acquisition loop
+
+Gaps sit outside the four steps. They are the forward-looking signal that feeds back into Sangrah.
+
+**Two kinds of gaps:**
+
+**Reactive** — surfaced by Manthan:
+- A thread with a missing anchor
+- A cluster that keeps pulling toward a book not yet owned
+- A tradition entirely absent from the collection
+- A thread where all books come from the same side of the argument
+
+**Proactive** — require human intention:
+- Given these threads and clusters, what would this person inevitably have missed?
+- What is the book that would most disturb the existing structure?
+- What conversation could this library not yet have?
+
+Gaps are stored separately from `analysis.json`. They are a conversation, not a dataset. The right interface for Khoj is dialogue.
+
+Two people with identical libraries have different gaps because they are headed somewhere different.
 
 ---
 
 ## Outputs
 
-### `analysis.json` — the structured output
+### `inventory.json` — the living record
+
+One entry per book. Produced by Sangrah, enriched by Parichay. Never restructured — only extended.
+
+### `ideas.json` — the atomic layer
+
+One entry per book. Produced by Parichay. Format: `{ "Title": [ { "title": "", "gloss": "" } ] }`.
+
+### `analysis.json` — the structured analysis
+
+Produced by Manthan, shaped by priming.
 
 ```json
 {
@@ -190,51 +311,50 @@ The random element is essential. It prevents the engine from converging on the s
 
 ---
 
-## What Gaps (Khoj) is not
-
-Gaps cannot be engine-generated. The engine can surface that a thread is missing an anchor, or that a pattern has only one example. But a genuine gap requires the person's intention — where is this library going?
-
-Two people with identical libraries have different gaps because they are headed somewhere different.
-
-Gaps are stored separately, not in `analysis.json`. They are a conversation, not a dataset. The right interface for Khoj is dialogue — the engine asks, the person answers, the acquisition target is recorded.
-
----
-
 ## Relationship to other products
 
 ```
-Manthan Engine
-    ↓ produces analysis.json
-Library App         ← reads inventory.json + analysis.json → visualizes
+Raw input (CSV / images / chat)
+    ↓ Sangrah
+inventory.json (enriched)
+    ↓ Parichay
+inventory.json (classified) + ideas.json
+    ↓ Manthan
+analysis.json
+    ↓ Darshan
+Visualization layer (reads inventory + analysis + curation config)
     ↓ gaps identified
-Curator             ← reads gap + reader profile → recommends acquisitions
-    ↓ new books
-Manthan Engine      ← new inventory → re-runs analysis
+Khoj → feeds back into Sangrah (new acquisitions)
 ```
-
-The loop is complete. Manthan analyses → Library App displays → gaps identified → Curator fills → Manthan re-analyses.
-
-Manthan and the Curator are one platform (separable by design). The Library App is a client. The personal site embeds the Library App.
 
 ---
 
 ## Build sequence
 
-1. **Now done:** `inventory.json` fully dimensioned (679 books, 4 new fields: register, density, form, lineage)
-2. **Now done:** `analysis.json` populated (17 threads, 5 clusters, 23 patterns, full reveal)
-3. **Now done:** `LIBRARY-SYSTEM.md` — method documentation
-4. **Next:** Separate the engine from the library app codebase (execute in site chat)
-5. **After separation:** Build the engine as standalone — the churn module, random probe, priming interface
-6. **After engine:** Build the visualization layer — piles view, constellation improvements
-7. **After visualization:** Build the Curator integration
+| Step | Status | What |
+|---|---|---|
+| 1. `inventory.json` dimensioned | ✅ Done | 703 books, all fields populated |
+| 2. `analysis.json` populated | ✅ Done | 17 threads, 5 clusters, 23 patterns — produced manually |
+| 3. `LIBRARY-SYSTEM.md` written | ✅ Done | Method documentation |
+| 4. Antilibrary extracted as standalone | ✅ Done | Own repo, own domain |
+| 5. Repo reorganized | ✅ Done | `libraries/bk/` data layer, `docs/` spec folder |
+| 6. Build Sangrah agent | ⬅ Next | Parse → enrich → quality gate → `inventory.json` |
+| 7. Build Parichay agent | Pending | Classify → Lego blocks → `ideas.json` |
+| 8. Build Manthan agent | Pending | 7 lenses + random probe + priming interface → `analysis.json` |
+| 9. Build Darshan layer | Pending | Editorial config for visualization |
+| 10. Visualization layer | Pending | Piles view, constellation improvements |
+| 11. Khoj / Gaps interface | Pending | Dialogue-based acquisition loop |
 
 ---
 
 ## Design principles
 
 - **No acronyms.** Names are direct English + direct Hindi.
-- **Schema over code.** The analytical output is data (`analysis.json`), not logic. Any visualization layer can read it.
-- **Priming is first-class.** The engine without human priming produces shallow results. The priming interface is not optional — it is the mechanism by which the hidden collection surfaces.
+- **Schema over code.** The analytical output is data, not logic. Any visualization layer can read it.
+- **Confidence is explicit.** Low-confidence entries are never silently promoted. They surface for human review.
+- **Editions are distinct.** Multiple copies of the same text are siblings, not duplicates. The arrangement is data.
+- **Priming is first-class.** The engine without human priming produces shallow results. The priming interface is not optional.
 - **Gaps are human.** Khoj cannot be automated. Do not attempt to generate gaps from inventory analysis alone.
-- **Books are multi-node.** A book belongs to multiple threads, multiple clusters, multiple patterns simultaneously. The schema must reflect this — no forced exclusivity.
-- **The random probe is essential.** Systematic search finds obvious peaks. The Adirondacks terrain requires random jumps. Build the probe before building more lenses.
+- **Books are multi-node.** A book belongs to multiple threads, clusters, and patterns simultaneously. No forced exclusivity.
+- **The random probe is essential.** Systematic search finds obvious peaks. The Adirondacks terrain requires random jumps.
+- **Darshan is editorial, not generative.** It shapes what Manthan produced. It does not produce new analysis.
