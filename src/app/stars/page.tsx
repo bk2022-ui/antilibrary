@@ -1,8 +1,8 @@
 "use client";
 import { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
-import inventoryData from "@/data/inventory.json";
-import analysisData from "@/data/analysis.json";
+import inventoryData from "@/libraries/bk/inventory.json";
+import analysisData from "@/libraries/bk/analysis.json";
 
 /* ── Types ─────────────────────────────────────────────────────── */
 type Book = {

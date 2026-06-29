@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import clustersData from "@/data/clusters.json";
-import inventoryData from "@/data/inventory.json";
+import clustersData from "@/libraries/bk/clusters.json";
+import inventoryData from "@/libraries/bk/inventory.json";
 
 type Book = { title: string; author: string; category: string; coverUrl?: string; status?: string };
 type CuratedCluster = { id: string; name: string; description: string; color: string; books: string[] };

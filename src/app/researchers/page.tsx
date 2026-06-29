@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import researchersData from "@/data/researchers.json";
+import researchersData from "@/libraries/bk/researchers.json";
 
 type Researcher = {
   id: string;

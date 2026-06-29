@@ -2,10 +2,10 @@
 
 import { useState, useMemo, useRef } from "react";
 import Link from "next/link";
-import inventoryData from "@/data/inventory.json";
-import analysisData from "@/data/analysis.json";
-import subjectsData from "@/data/subjects.json";
-import clustersData from "@/data/clusters.json";
+import inventoryData from "@/libraries/bk/inventory.json";
+import analysisData from "@/libraries/bk/analysis.json";
+import subjectsData from "@/libraries/bk/subjects.json";
+import clustersData from "@/libraries/bk/clusters.json";
 
 // ── Types ─────────────────────────────────────────────────────
 type Book = {

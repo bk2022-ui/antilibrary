@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manthan Library System — Project Map</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0e0b07;
+    color: #c8a87a;
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 48px 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .system-title {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #5a4a38;
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: #f0e4cc;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+    color: #6a5840;
+    font-style: italic;
+    margin-bottom: 48px;
+  }
+
+  /* Section headers */
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #3a2a18;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #1e1610;
+  }
+
+  /* Grid layouts */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+
+  section { margin-bottom: 48px; }
+
+  /* Module cards */
+  .module {
+    background: #120e09;
+    border: 1px solid #1e1610;
+    padding: 18px;
+    position: relative;
+  }
+
+  .module-number {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: #2a1e12;
+    margin-bottom: 8px;
+  }
+
+  .module-en {
+    font-size: 1.1rem;
+    color: #f0e4cc;
+    font-weight: 400;
+    margin-bottom: 2px;
+  }
+
+  .module-hi {
+    font-size: 0.8rem;
+    color: #c8a87a;
+    font-style: italic;
+    margin-bottom: 10px;
+    opacity: 0.7;
+  }
+
+  .module-desc {
+    font-size: 0.72rem;
+    color: #5a4838;
+    line-height: 1.5;
+  }
+
+  .module.churn {
+    border-color: #c8a87a33;
+    background: #16120c;
+  }
+
+  .module.churn .module-en { color: #c8a87a; }
+
+  .module.output-a { border-left: 2px solid #4A7C59; }
+  .module.output-b { border-left: 2px solid #3A6B8A; }
+  .module.gap { border-left: 2px solid #8A5A3A; }
+
+  /* File cards */
+  .file-card {
+    background: #120e09;
+    border: 1px solid #1e1610;
+    padding: 18px;
+  }
+
+  .file-path {
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    color: #4a7a6a;
+    margin-bottom: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  .file-title {
+    font-size: 0.95rem;
+    color: #f0e4cc;
+    margin-bottom: 6px;
+  }
+
+  .file-desc {
+    font-size: 0.72rem;
+    color: #5a4838;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .file-stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    font-size: 0.65rem;
+    color: #3a2a18;
+    letter-spacing: 0.08em;
+  }
+
+  .stat span {
+    color: #c8a87a;
+    font-size: 0.85rem;
+  }
+
+  /* Page cards */
+  .page-card {
+    background: #120e09;
+    border: 1px solid #1e1610;
+    padding: 18px;
+  }
+
+  .page-url {
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    color: #6a5040;
+    margin-bottom: 8px;
+  }
+
+  .page-title {
+    font-size: 0.95rem;
+    color: #f0e4cc;
+    margin-bottom: 6px;
+  }
+
+  .page-desc {
+    font-size: 0.72rem;
+    color: #5a4838;
+    line-height: 1.5;
+  }
+
+  /* Thread pills */
+  .thread-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .thread-pill {
+    padding: 8px 12px;
+    border: 1px solid;
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+
+  /* Pattern list */
+  .pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .pattern-item {
+    background: #120e09;
+    border: 1px solid #1e1610;
+    padding: 10px 12px;
+    font-size: 0.65rem;
+    color: #6a5840;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  /* Reveal box */
+  .reveal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .reveal-item {
+    background: #120e09;
+    border: 1px solid #1e1610;
+    padding: 18px;
+  }
+
+  .reveal-label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #3a2a18;
+    margin-bottom: 8px;
+  }
+
+  .reveal-content {
+    font-size: 0.78rem;
+    color: #7a6850;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .reveal-list {
+    list-style: none;
+    font-size: 0.75rem;
+    color: #7a6850;
+  }
+
+  .reveal-list li {
+    padding: 3px 0;
+    border-bottom: 1px solid #1a1208;
+  }
+
+  .reveal-list li:last-child { border-bottom: none; }
+
+  /* Product box */
+  .product-box {
+    background: #120e09;
+    border: 1px solid #c8a87a22;
+    padding: 28px;
+  }
+
+  .product-deliverable {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #1e1610;
+  }
+
+  .product-deliverable:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .deliverable-label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #c8a87a;
+    margin-bottom: 6px;
+    opacity: 0.5;
+  }
+
+  .deliverable-title {
+    font-size: 1rem;
+    color: #f0e4cc;
+    margin-bottom: 6px;
+  }
+
+  .deliverable-desc {
+    font-size: 0.75rem;
+    color: #5a4838;
+    line-height: 1.6;
+  }
+
+  /* Next steps */
+  .next-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  .next-item {
+    background: #120e09;
+    border: 1px solid #1e1610;
+    padding: 18px;
+  }
+
+  .next-priority {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #3a2a18;
+    margin-bottom: 8px;
+  }
+
+  .next-title {
+    font-size: 0.9rem;
+    color: #f0e4cc;
+    margin-bottom: 6px;
+  }
+
+  .next-desc {
+    font-size: 0.7rem;
+    color: #5a4838;
+    line-height: 1.5;
+  }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid #1a1208;
+    margin: 40px 0;
+  }
+
+  /* Footer */
+  .footer {
+    font-size: 0.65rem;
+    color: #2a1e12;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-top: 64px;
+  }
+</style>
+</head>
+<body>
+
+<div class="system-title">Project Map</div>
+<h1>Manthan Library System</h1>
+<p class="tagline">A method for reading a collection as a mind — Adirondacks search, not Mount Fuji climb</p>
+
+<!-- THE METHOD -->
+<section>
+  <div class="section-label">The Method — Six Modules</div>
+  <div class="grid-6">
+    <div class="module">
+      <div class="module-number">01</div>
+      <div class="module-en">Collect</div>
+      <div class="module-hi">Sangrah</div>
+      <div class="module-desc">Living inventory. Every book owned, read, or intended. Never finished.</div>
+    </div>
+    <div class="module">
+      <div class="module-number">02</div>
+      <div class="module-en">Classify</div>
+      <div class="module-hi">Parichay</div>
+      <div class="module-desc">Dimension every book before filing it. Multiple coordinates simultaneously.</div>
+    </div>
+    <div class="module churn">
+      <div class="module-number">03</div>
+      <div class="module-en">Churn</div>
+      <div class="module-hi">Manthan</div>
+      <div class="module-desc">Run many lenses. Generative middle. Adirondacks search across the collection.</div>
+    </div>
+    <div class="module output-a">
+      <div class="module-number">04a</div>
+      <div class="module-en">Threads</div>
+      <div class="module-hi">Sutra</div>
+      <div class="module-desc">Questions that multiple books answer across time and domain. Internal tension required.</div>
+    </div>
+    <div class="module output-b">
+      <div class="module-number">04b</div>
+      <div class="module-en">Clusters</div>
+      <div class="module-hi">Samuha</div>
+      <div class="module-desc">Books with gravitational pull toward each other. No spine yet — legitimate final form.</div>
+    </div>
+    <div class="module gap">
+      <div class="module-number">05</div>
+      <div class="module-en">Gaps</div>
+      <div class="module-hi">Khoj</div>
+      <div class="module-desc">Not analytical — intentional. Defined by where the library wants to go, not where it has been.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA LAYER -->
+<section>
+  <div class="section-label">Data Layer</div>
+  <div class="grid-2">
+    <div class="file-card">
+      <div class="file-path">src/data/inventory.json</div>
+      <div class="file-title">The Inventory — Sangrah</div>
+      <div class="file-desc">Every book fully dimensioned. The canonical source of truth. Never reorganised — only enriched.</div>
+      <div class="file-stats">
+        <div class="stat"><span>679</span> books</div>
+        <div class="stat"><span>12</span> fields per book</div>
+        <div class="stat">year · author · origin · tradition · category · categories · topic · subtopics · register · density · form · lineage · status</div>
+      </div>
+    </div>
+    <div class="file-card">
+      <div class="file-path">src/data/analysis.json</div>
+      <div class="file-title">The Analysis — Manthan Output</div>
+      <div class="file-desc">What the inventory reveals about itself when churned. Threads, clusters, patterns, the reveal. Generated through Manthan, confirmed through priming.</div>
+      <div class="file-stats">
+        <div class="stat"><span>17</span> threads</div>
+        <div class="stat"><span>5</span> clusters</div>
+        <div class="stat"><span>23</span> patterns</div>
+        <div class="stat"><span>6</span> tension pairs</div>
+        <div class="stat"><span>5</span> founding figures</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK DIMENSIONS -->
+<section>
+  <div class="section-label">Book Dimensions — Parichay Fields</div>
+  <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;">
+    <div class="pattern-item"><strong style="color:#c8a87a">year</strong><br>When written</div>
+    <div class="pattern-item"><strong style="color:#c8a87a">author_origin</strong><br>Where from</div>
+    <div class="pattern-item"><strong style="color:#c8a87a">author_tradition</strong><br>Intellectual lineage</div>
+    <div class="pattern-item"><strong style="color:#c8a87a">register</strong><br>empirical · systems · humanist · philosophical · contemplative</div>
+    <div class="pattern-item"><strong style="color:#c8a87a">density</strong><br>accessible · substantive · dense</div>
+    <div class="pattern-item"><strong style="color:#c8a87a">form</strong><br>argument · narrative · portrait · manual · meditation · reference · anthology</div>
+    <div class="pattern-item"><strong style="color:#c8a87a">lineage</strong><br>Founding figure whose ideas this descends from</div>
+    <div class="pattern-item"><strong style="color:#c8a87a">status</strong><br>read · antilibrary · to-buy</div>
+    <div class="pattern-item"><strong style="color:#c8a87a">category</strong><br>Primary domain</div>
+    <div class="pattern-item"><strong style="color:#c8a87a">categories</strong><br>All domains touched</div>
+    <div class="pattern-item"><strong style="color:#c8a87a">topic</strong><br>Specific argument</div>
+    <div class="pattern-item"><strong style="color:#c8a87a">subtopics</strong><br>Secondary concerns</div>
+  </div>
+</section>
+
+<!-- THREADS -->
+<section>
+  <div class="section-label">17 Threads — Sutra</div>
+  <div class="thread-grid">
+    <div class="thread-pill" style="border-color:#4A7C5944; color:#4A7C59">Darwin's Long Shadow<br><span style="color:#3a2a18;font-size:0.6rem">How far does natural selection reach?</span></div>
+    <div class="thread-pill" style="border-color:#6B4E8A44; color:#6B4E8A">The Judgment Machine<br><span style="color:#3a2a18;font-size:0.6rem">How do minds decide, and when do they fail?</span></div>
+    <div class="thread-pill" style="border-color:#C45C3A44; color:#C45C3A">The Fat-Tail Cosmos<br><span style="color:#3a2a18;font-size:0.6rem">What do we do when probability breaks?</span></div>
+    <div class="thread-pill" style="border-color:#3A6B8A44; color:#3A6B8A">How Organizations Breathe<br><span style="color:#3a2a18;font-size:0.6rem">What makes institutions live or calcify?</span></div>
+    <div class="thread-pill" style="border-color:#8A7A3A44; color:#8A7A3A">The Stoic Wager<br><span style="color:#3a2a18;font-size:0.6rem">How do you act wisely without control?</span></div>
+    <div class="thread-pill" style="border-color:#2E7D6B44; color:#2E7D6B">Contagion and Control<br><span style="color:#3a2a18;font-size:0.6rem">How does disease spread through society?</span></div>
+    <div class="thread-pill" style="border-color:#B5682B44; color:#B5682B">India and the Long View<br><span style="color:#3a2a18;font-size:0.6rem">How does a civilization persist across rupture?</span></div>
+    <div class="thread-pill" style="border-color:#5A7A6A44; color:#5A7A6A">The Civilizational Sweep<br><span style="color:#3a2a18;font-size:0.6rem">What is the arc of human history?</span></div>
+    <div class="thread-pill" style="border-color:#7A9A5A44; color:#7A9A5A">The Ridley Thesis<br><span style="color:#3a2a18;font-size:0.6rem">Does progress emerge bottom-up, needing no designer?</span></div>
+    <div class="thread-pill" style="border-color:#7A4A8A44; color:#7A4A8A">Genius and Its Conditions<br><span style="color:#3a2a18;font-size:0.6rem">Is creativity personal or ecological?</span></div>
+    <div class="thread-pill" style="border-color:#A0406044; color:#A04060">The Power of the Frame<br><span style="color:#3a2a18;font-size:0.6rem">How does presentation change meaning?</span></div>
+    <div class="thread-pill" style="border-color:#3A7A8A44; color:#3A7A8A">Disruption's Anatomy<br><span style="color:#3a2a18;font-size:0.6rem">How do new things displace old ones?</span></div>
+    <div class="thread-pill" style="border-color:#4A6B3A44; color:#4A6B3A">The Mind Before Language<br><span style="color:#3a2a18;font-size:0.6rem">What is the mind before culture shaped it?</span></div>
+    <div class="thread-pill" style="border-color:#5A8A7044; color:#5A8A70">The Body as Practice<br><span style="color:#3a2a18;font-size:0.6rem">What does the body know the mind can't?</span></div>
+    <div class="thread-pill" style="border-color:#4A7A6A44; color:#4A7A6A">The Zen Current<br><span style="color:#3a2a18;font-size:0.6rem">What does direct experience actually teach?</span></div>
+    <div class="thread-pill" style="border-color:#8A5A3A44; color:#8A5A3A">The Vedantic Root<br><span style="color:#3a2a18;font-size:0.6rem">What is the self, stripped of all additions?</span></div>
+    <div class="thread-pill" style="border-color:#6B3A3A44; color:#6B3A3A">Strategy as Statecraft<br><span style="color:#3a2a18;font-size:0.6rem">How do leaders navigate irreversible decisions?</span></div>
+  </div>
+</section>
+
+<!-- CLUSTERS -->
+<section>
+  <div class="section-label">5 Clusters — Samuha</div>
+  <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;">
+    <div class="pattern-item">
+      <div style="color:#c8a87a;margin-bottom:4px">The City as Living System</div>
+      Cities as organisms, not plans. May become a thread.
+    </div>
+    <div class="pattern-item">
+      <div style="color:#c8a87a;margin-bottom:4px">The Aesop Collection</div>
+      3 editions, 60 years of illustration history. Permanent cluster.
+    </div>
+    <div class="pattern-item">
+      <div style="color:#c8a87a;margin-bottom:4px">The Lucretius Editions</div>
+      3 translations of the same argument. Permanent cluster.
+    </div>
+    <div class="pattern-item">
+      <div style="color:#c8a87a;margin-bottom:4px">Conditions of Creativity</div>
+      Romantic vs systems tradition. Unresolved. May become thread.
+    </div>
+    <div class="pattern-item">
+      <div style="color:#c8a87a;margin-bottom:4px">Model Thinking</div>
+      Multiple models simultaneously. Foundation of Manthan itself.
+    </div>
+  </div>
+</section>
+
+<!-- PATTERNS -->
+<section>
+  <div class="section-label">23 Patterns — Beej (Atomic Primitives)</div>
+  <div class="pattern-grid">
+    <div class="pattern-item">Skin in the Game</div>
+    <div class="pattern-item">Principal-Agent Gap</div>
+    <div class="pattern-item">Coevolutionary Arms Race</div>
+    <div class="pattern-item">Illegibility / Hidden Order</div>
+    <div class="pattern-item">Threshold / Phase Transition</div>
+    <div class="pattern-item">Replicator Dynamics</div>
+    <div class="pattern-item">Wu Wei / Negative Space</div>
+    <div class="pattern-item">Survivorship Bias</div>
+    <div class="pattern-item">Carrying Capacity</div>
+    <div class="pattern-item">Ritual as Technology</div>
+    <div class="pattern-item">Mismatched Time Horizons</div>
+    <div class="pattern-item">Costly Signal</div>
+    <div class="pattern-item">Tacit Knowledge</div>
+    <div class="pattern-item">Metric Colonization</div>
+    <div class="pattern-item">Error Correction as Progress</div>
+    <div class="pattern-item">Distributed Local Knowledge</div>
+    <div class="pattern-item">Tight / Loose Coupling</div>
+    <div class="pattern-item">Attention as Scarce Resource</div>
+    <div class="pattern-item">Impermanence / Non-Attachment</div>
+    <div class="pattern-item">Self-Deception as Adaptive</div>
+    <div class="pattern-item">Boundary / Membrane Dynamics</div>
+    <div class="pattern-item">Ecological Fit / Niche Construction</div>
+    <div class="pattern-item">Compression / Signal Distillation</div>
+  </div>
+</section>
+
+<!-- THE REVEAL -->
+<section>
+  <div class="section-label">The Reveal — What This Library Says</div>
+  <div class="reveal-grid">
+    <div class="reveal-item">
+      <div class="reveal-label">Core Tension</div>
+      <div class="reveal-content">The rational empiricist library and the contemplative library ask the same question from opposite directions: how do you see clearly when the instrument of seeing is itself compromised? Kahneman and Patanjali are working on the same problem.</div>
+    </div>
+    <div class="reveal-item">
+      <div class="reveal-label">Hidden Collection</div>
+      <div class="reveal-content">A serious Yoga and Vedanta library sitting inside what appeared to be a rationalist collection. Patanjali, Iyengar, Desikachar, Easwaran, Nisargadatta, Osho. Neither cancels the other. Both held seriously.</div>
+    </div>
+    <div class="reveal-item">
+      <div class="reveal-label">Founding Figures</div>
+      <ul class="reveal-list">
+        <li>Darwin — dominant intellectual ancestor</li>
+        <li>Kahneman — judgment thread orbits his work</li>
+        <li>Taleb — fat tails frame across risk and philosophy</li>
+        <li>Hayek — distributed knowledge, unnamed</li>
+        <li>Patanjali — unexpected; as deep as any other</li>
+      </ul>
+    </div>
+    <div class="reveal-item">
+      <div class="reveal-label">Collection Shape</div>
+      <ul class="reveal-list">
+        <li>Register: 447 humanist · 113 empirical · 63 philosophical · 34 contemplative · 22 systems</li>
+        <li>Density: 496 accessible · 144 substantive · 39 dense</li>
+        <li>Era: concentrated 1990–2015</li>
+        <li>Form: argument dominates (312)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- APP PAGES -->
+<section>
+  <div class="section-label">The App — bk-library (Next.js 15)</div>
+  <div class="grid-3">
+    <div class="page-card">
+      <div class="page-url">/my-library</div>
+      <div class="page-title">The (Anti)Library</div>
+      <div class="page-desc">List view. Full catalog. Search and filter across all 679 books. Handles retrieval — find a specific book. Stats: subjects, deepest tradition, countries.</div>
+    </div>
+    <div class="page-card">
+      <div class="page-url">/my-library/constellation</div>
+      <div class="page-title">The Constellation</div>
+      <div class="page-desc">SVG visualization. Time (x) × register (y). 679 book dots, color by category. 17 thread arcs toggle on/off. Non-linear time axis — 3 zones. Pan + zoom. Handles discovery.</div>
+    </div>
+    <div class="page-card" style="border-color:#c8a87a22; opacity:0.5;">
+      <div class="page-url">/manthan — not yet built</div>
+      <div class="page-title">The Manthan Interface</div>
+      <div class="page-desc">The conversation layer. Ingest → Analyse → Converse. Random book probe. Human priming. The product — not a tool, a service.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section>
+  <div class="section-label">Documents</div>
+  <div class="grid-3">
+    <div class="file-card">
+      <div class="file-path">LIBRARY-SYSTEM.md</div>
+      <div class="file-title">Manthan Library System</div>
+      <div class="file-desc">The full method. Six modules detailed. Example: this library as the worked case showing what each module produced.</div>
+    </div>
+    <div class="file-card">
+      <div class="file-path">MANTHAN-PRODUCT.md</div>
+      <div class="file-title">Product Definition</div>
+      <div class="file-desc">What Manthan is as a service. Who it's for. The two deliverables. Service structure. What makes it original.</div>
+    </div>
+    <div class="file-card">
+      <div class="file-path">MANTHAN-MAP.html</div>
+      <div class="file-title">This Document</div>
+      <div class="file-desc">Project map. All files, their roles, the full analytical output. For navigation across parallel sessions.</div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PRODUCT -->
+<section>
+  <div class="section-label">The Product — What Someone Receives</div>
+  <div class="product-box">
+    <div class="product-deliverable">
+      <div class="deliverable-label">For what exists</div>
+      <div class="deliverable-title">Hidden Threads</div>
+      <div class="deliverable-desc">The map of what's already there — threads they were building without knowing it. Clusters with gravity they hadn't named. The founding figures their thinking orbits. The core tension they've been holding in two hands.</div>
+    </div>
+    <div class="product-deliverable">
+      <div class="deliverable-label">For what comes next</div>
+      <div class="deliverable-title">A Path</div>
+      <div class="deliverable-desc">Not a reading list. A path — with direction and intention. Gaps named. Next books chosen because they extend a real thread, break open a cluster, or introduce the adversary a one-sided thread is missing.</div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section>
+  <div class="section-label">What's Next</div>
+  <div class="next-grid">
+    <div class="next-item">
+      <div class="next-priority">Now — Data</div>
+      <div class="next-title">Wire analysis.json into constellation</div>
+      <div class="next-desc">Move threads out of hardcoded page.tsx into data file. Single source of truth. Adding a thread in data automatically appears in visualization.</div>
+    </div>
+    <div class="next-item">
+      <div class="next-priority">Soon — Visualization</div>
+      <div class="next-title">New view: Clusters + Threads</div>
+      <div class="next-desc">Piles / clusters view — 30–40 coherent groupings instead of 679 dots. Topology not just geography. User's visualization ideas not yet shared.</div>
+    </div>
+    <div class="next-item">
+      <div class="next-priority">The Hard Part — Interface</div>
+      <div class="next-title">Build the Manthan conversation</div>
+      <div class="next-desc">Ingest → Analyse → Converse. Random book probe. Human priming loop. The Adirondacks search made interactive. This is the product, not the visualization.</div>
+    </div>
+  </div>
+</section>
+
+<!-- GAPS TO FILL -->
+<section>
+  <div class="section-label">Known Gaps — Khoj</div>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+    <div class="pattern-item"><strong style="color:#8A5A3A">Jane Jacobs</strong><br>Death and Life of Great American Cities — missing anchor of Cities cluster</div>
+    <div class="pattern-item"><strong style="color:#8A5A3A">Jonathan Haidt</strong><br>The Righteous Mind — moral psychology missing from Judgment Machine</div>
+    <div class="pattern-item"><strong style="color:#8A5A3A">James Scott</strong><br>Seeing Like a State — primary text for Illegibility pattern</div>
+    <div class="pattern-item"><strong style="color:#8A5A3A">Iain McGilchrist</strong><br>The Master and His Emissary — divided mind argument incomplete</div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="footer">
+  MANTHAN LIBRARY SYSTEM &nbsp;·&nbsp; AN ADIRONDACKS SEARCH, NOT A MOUNT FUJI CLIMB &nbsp;·&nbsp; 679 BOOKS · 17 THREADS · 5 CLUSTERS · 23 PATTERNS
+</div>
+
+</body>
+</html>

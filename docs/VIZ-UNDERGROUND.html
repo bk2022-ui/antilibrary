@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Library Underground</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #080604;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #C8C0B0;
+    user-select: none;
+  }
+  #map-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+  }
+  #map-container.dragging { cursor: grabbing; }
+  #map-inner {
+    position: absolute;
+    transform-origin: 0 0;
+    transition: none;
+  }
+  #title-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 24px;
+    pointer-events: none;
+    z-index: 10;
+  }
+  #title-bar h1 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #F5F0E8;
+    text-transform: uppercase;
+  }
+  #title-bar p {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: #7A7060;
+    margin-top: 2px;
+    text-transform: uppercase;
+  }
+  #legend {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    background: rgba(8,6,4,0.88);
+    border: 1px solid #2A2520;
+    padding: 14px 16px;
+    max-height: 380px;
+    overflow-y: auto;
+    min-width: 240px;
+  }
+  #legend h3 {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #7A7060;
+    margin-bottom: 10px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 2px;
+    transition: background 0.15s;
+  }
+  .legend-item:hover { background: rgba(255,255,255,0.05); }
+  .legend-line {
+    width: 28px;
+    height: 4px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .legend-label {
+    font-size: 10px;
+    color: #A09880;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+  #info-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    background: rgba(10,8,6,0.96);
+    border-left: 1px solid #2A2520;
+    z-index: 20;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    overflow-y: auto;
+    padding: 60px 24px 24px;
+  }
+  #info-panel.open { transform: translateX(0); }
+  #info-panel h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #F5F0E8;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  #info-panel .panel-question {
+    font-size: 11px;
+    color: #7A7060;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #2A2520;
+  }
+  #info-panel .panel-threads {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  #info-panel .panel-thread-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 10px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 3px;
+  }
+  #info-panel .thread-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  #info-panel .thread-info .thread-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #D0C8B8;
+    margin-bottom: 3px;
+  }
+  #info-panel .thread-info .thread-q {
+    font-size: 10px;
+    color: #6A6050;
+    line-height: 1.4;
+  }
+  #info-panel .close-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: 1px solid #3A3028;
+    color: #7A7060;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 2px;
+  }
+  #info-panel .close-btn:hover { color: #F5F0E8; border-color: #6A6050; }
+  #tooltip {
+    position: fixed;
+    background: rgba(8,6,4,0.95);
+    border: 1px solid #3A3028;
+    padding: 8px 12px;
+    pointer-events: none;
+    z-index: 30;
+    display: none;
+    max-width: 260px;
+  }
+  #tooltip .tt-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #F5F0E8;
+    margin-bottom: 6px;
+  }
+  #tooltip .tt-threads {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  #tooltip .tt-thread {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: #A09880;
+  }
+  #tooltip .tt-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  #zoom-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .zoom-btn {
+    width: 32px;
+    height: 32px;
+    background: rgba(10,8,6,0.88);
+    border: 1px solid #2A2520;
+    color: #A09880;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+  }
+  .zoom-btn:hover { color: #F5F0E8; background: rgba(30,25,20,0.95); }
+</style>
+</head>
+<body>
+
+<div id="title-bar">
+  <h1>The Library Underground</h1>
+  <p>17 intellectual threads · 150+ books</p>
+</div>
+
+<div id="map-container">
+  <div id="map-inner">
+    <svg id="map-svg" width="2000" height="1200" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+</div>
+
+<div id="legend">
+  <h3>Lines</h3>
+  <div id="legend-items"></div>
+</div>
+
+<div id="info-panel">
+  <button class="close-btn" id="panel-close">✕</button>
+  <h2 id="panel-title"></h2>
+  <div class="panel-question" id="panel-question"></div>
+  <div class="panel-threads" id="panel-threads"></div>
+</div>
+
+<div id="tooltip">
+  <div class="tt-title" id="tt-title"></div>
+  <div class="tt-threads" id="tt-threads"></div>
+</div>
+
+<div id="zoom-controls">
+  <button class="zoom-btn" id="zoom-in">+</button>
+  <button class="zoom-btn" id="zoom-out">−</button>
+  <button class="zoom-btn" id="zoom-reset" style="font-size:10px;">⌂</button>
+</div>
+
+<script>
+// ─── DATA ───────────────────────────────────────────────────────────────────
+
+const THREADS = {
+  darwin_s_long_shadow: {
+    id: 'darwin_s_long_shadow',
+    name: "Darwin's Long Shadow",
+    color: '#4A7C59',
+    question: 'How far does natural selection reach beyond biology?',
+    stations: ['selfish_gene','extended_phenotype','river_out_of_eden','climbing_mount_improbable','natural_selection_social_theory','folly_of_fools','darwins_dangerous_idea','red_queen','origins_of_virtue','evolution_of_everything','culture_evolutionary_process','on_the_origin_of_species','behave']
+  },
+  the_judgment_machine: {
+    id: 'the_judgment_machine',
+    name: "The Judgment Machine",
+    color: '#6B4E8A',
+    question: 'How do minds decide, and when do they fail?',
+    stations: ['thinking_fast_slow','choices_values_frames','judgment_under_uncertainty','noise','sources_of_power','intuition_at_work','streetlights_shadows','simple_heuristics','decision_traps','winning_decisions','thinking_and_deciding','algorithms_to_live_by','signal_and_noise']
+  },
+  the_fat_tail_cosmos: {
+    id: 'the_fat_tail_cosmos',
+    name: "The Fat-Tail Cosmos",
+    color: '#C45C3A',
+    question: 'What do we do when probability cannot model the most important events?',
+    stations: ['black_swan','antifragile','fooled_by_randomness','skin_in_the_game','dynamic_hedging','statistical_consequences','random_walk','when_genius_failed','do_dice_play_god','what_i_learned_losing','signal_and_noise']
+  },
+  how_organizations_breathe: {
+    id: 'how_organizations_breathe',
+    name: "How Organizations Breathe",
+    color: '#3A6B8A',
+    question: 'What makes institutions live, adapt, or calcify?',
+    stations: ['humble_inquiry','humble_leadership','humble_consulting','helping','process_consultation','organizational_culture','dec_is_dead','fearless_organization','fifth_discipline','toyota_production','ambiguities_of_experience','no_rules_rules','brave_new_work']
+  },
+  the_stoic_wager: {
+    id: 'the_stoic_wager',
+    name: "The Stoic Wager",
+    color: '#8A7A3A',
+    question: 'How do you act wisely when outcomes are not in your control?',
+    stations: ['meditations','letters_from_stoic','discourses_selected','guide_to_good_life','stoic_challenge','on_desire','slap_in_face','daily_stoic','ego_is_enemy','dying_every_day','tao_te_ching','the_analects']
+  },
+  contagion_and_control: {
+    id: 'contagion_and_control',
+    name: "Contagion and Control",
+    color: '#2E7D6B',
+    question: 'How does disease spread through society, and how does society respond?',
+    stations: ['inside_outbreaks','apollos_arrow','ghost_map','smallpox_death','viral_storm','mountains_beyond_mountains','polio_american_story','social_transformation_medicine','change_how_behavior','diffusion_of_innovations']
+  },
+  india_and_the_long_view: {
+    id: 'india_and_the_long_view',
+    name: "India and the Long View",
+    color: '#B5682B',
+    question: 'How does a civilization persist, fracture, and reinvent itself across millennia?',
+    stations: ['glass_palace','nutmegs_curse','empress','the_anarchy','end_of_sorrow','bhagavad_gita','the_upanishads','inner_engineering','karma','light_on_yoga','light_on_life']
+  },
+  civilizational_sweep: {
+    id: 'civilizational_sweep',
+    name: "The Civilizational Sweep",
+    color: '#5A7A6A',
+    question: 'What is the arc of human history, and where is it going?',
+    stations: ['ascent_of_man','prehistory_of_mind','guns_germs_steel','homo_deus','21_lessons','rational_optimist','evolution_of_everything','grand_transitions','consilience','demon_haunted_world']
+  },
+  ridley_thesis: {
+    id: 'ridley_thesis',
+    name: "The Ridley Thesis",
+    color: '#7A9A5A',
+    question: 'Does progress emerge bottom-up from exchange and evolution, requiring no designer?',
+    stations: ['red_queen','origins_of_virtue','genome','rational_optimist','evolution_of_everything','how_innovation_works','darwins_dangerous_idea','selfish_gene','extended_phenotype']
+  },
+  genius_and_its_conditions: {
+    id: 'genius_and_its_conditions',
+    name: "Genius and Its Conditions",
+    color: '#7A4A8A',
+    question: 'Is creativity a personal trait or an ecological one?',
+    stations: ['creativity','flow','good_business','geography_of_genius','leonardo_da_vinci','genius','creativity_inc','medici_effect','rise_fall_medici','daily_rituals','creative_act','where_good_ideas','out_of_our_minds']
+  },
+  the_power_of_the_frame: {
+    id: 'the_power_of_the_frame',
+    name: "The Power of the Frame",
+    color: '#A04060',
+    question: 'How does the way something is presented change what it means?',
+    stations: ['influence','laws_48','art_of_seduction','laws_of_human_nature','never_split','getting_to_yes','political_mind','resonate','slideology','pyramid_principle','alchemy','amusing_ourselves']
+  },
+  disruptions_anatomy: {
+    id: 'disruptions_anatomy',
+    name: "Disruption's Anatomy",
+    color: '#3A7A8A',
+    question: 'How do new things displace old things, and why do incumbents always lose?',
+    stations: ['innovators_dilemma','innovators_solution','competing_against_luck','how_innovation_works','invention_and_innovation','diffusion_of_innovations','lean_startup','escaping_build_trap','zero_to_one','only_paranoid','how_we_got_to_now']
+  },
+  the_mind_before_language: {
+    id: 'the_mind_before_language',
+    name: "The Mind Before Language",
+    color: '#4A6B3A',
+    question: 'What is the mind before culture, language, and society shaped it?',
+    stations: ['prehistory_of_mind','other_minds','darwins_dangerous_idea','beginning_of_infinity','fabric_of_reality','consilience','frames_of_mind','weirdest_people','mind_in_motion','the_difference']
+  },
+  body_as_practice: {
+    id: 'body_as_practice',
+    name: "The Body as Practice",
+    color: '#5A8A70',
+    question: 'What does the body know that the mind cannot articulate?',
+    stations: ['patanjali_yoga_sutras','patanjali_yoga','light_on_yoga','light_on_pranayama','light_on_life','yoga_body_breath_mind','heart_of_yoga','yoga_sutras_patanjali','born_to_run','starting_strength','exercised','tb_method','outlive','super_agers']
+  },
+  zen_current: {
+    id: 'zen_current',
+    name: "The Zen Current",
+    color: '#4A7A6A',
+    question: 'What does direct experience stripped of doctrine actually teach?',
+    stations: ['intro_zen_buddhism','zen_koan','how_to_walk','truckload_of_dung','if_you_meet_buddha','tao_te_ching','the_analects','trying_not_to_try','catching_big_fish','destructive_emotions']
+  },
+  vedantic_root: {
+    id: 'vedantic_root',
+    name: "The Vedantic Root",
+    color: '#8A5A3A',
+    question: 'What is the self, stripped of all additions?',
+    stations: ['bhagavad_gita','end_of_sorrow','the_upanishads','i_am_that','patanjali_yoga_sutras','yoga_sutras_patanjali','light_on_yoga','light_on_life','heart_of_yoga','yoga_body_breath_mind','satipatthana_sutta','inner_engineering','karma','tantra','great_challenge','i_am_the_gate']
+  },
+  strategy_as_statecraft: {
+    id: 'strategy_as_statecraft',
+    name: "Strategy as Statecraft",
+    color: '#6B3A3A',
+    question: 'How do states, armies, and leaders navigate irreversible decisions under uncertainty?',
+    stations: ['art_of_war','the_prince','on_grand_strategy','on_china','boyd','from_third_world_first','rise_and_kill_first','the_machiavellians','seven_powers','revolt_of_public','preventing_surprise_attacks']
+  }
+};
+
+// ─── STATIONS ────────────────────────────────────────────────────────────────
+// Zone layout:
+// Left (x:80-450):   darwin_s_long_shadow, ridley_thesis, civilizational_sweep
+// Upper (x:450-850, y:50-280): judgment_machine, fat_tail, mind_before_language
+// Center (x:600-1100, y:300-600): strategy, organizations, disruptions
+// Lower (x:350-900, y:650-1050): stoic, power_of_frame, genius
+// Right (x:1100-1900): india, vedantic, zen, body
+// contagion: horizontal line center-left ~y=500
+
+const STATIONS = {
+  // ── darwin_s_long_shadow (green #4A7C59) — left zone, y 120–400, runs diagonally then horizontal
+  selfish_gene:               { id:'selfish_gene',               title:'The Selfish Gene',                     x: 120, y: 180, threads:['darwin_s_long_shadow','ridley_thesis'] },
+  extended_phenotype:         { id:'extended_phenotype',         title:'The Extended Phenotype',               x: 160, y: 220, threads:['darwin_s_long_shadow','ridley_thesis'] },
+  river_out_of_eden:          { id:'river_out_of_eden',          title:'River Out of Eden',                    x: 200, y: 220, threads:['darwin_s_long_shadow'] },
+  climbing_mount_improbable:  { id:'climbing_mount_improbable',  title:'Climbing Mount Improbable',            x: 240, y: 220, threads:['darwin_s_long_shadow'] },
+  natural_selection_social_theory:{ id:'natural_selection_social_theory', title:'Natural Selection and Social Theory', x: 280, y: 220, threads:['darwin_s_long_shadow'] },
+  folly_of_fools:             { id:'folly_of_fools',             title:'The Folly of Fools',                   x: 310, y: 220, threads:['darwin_s_long_shadow'] },
+  darwins_dangerous_idea:     { id:'darwins_dangerous_idea',     title:"Darwin's Dangerous Idea",              x: 330, y: 200, threads:['darwin_s_long_shadow','ridley_thesis','the_mind_before_language'] },
+  red_queen:                  { id:'red_queen',                  title:'The Red Queen',                        x: 200, y: 160, threads:['darwin_s_long_shadow','ridley_thesis'] },
+  origins_of_virtue:          { id:'origins_of_virtue',          title:'The Origins of Virtue',                x: 240, y: 160, threads:['darwin_s_long_shadow','ridley_thesis'] },
+  evolution_of_everything:    { id:'evolution_of_everything',    title:'The Evolution of Everything',          x: 280, y: 300, threads:['darwin_s_long_shadow','ridley_thesis','civilizational_sweep'] },
+  culture_evolutionary_process:{ id:'culture_evolutionary_process', title:'Culture and the Evolutionary Process', x: 310, y: 260, threads:['darwin_s_long_shadow'] },
+  on_the_origin_of_species:   { id:'on_the_origin_of_species',   title:'On the Origin of Species',            x: 120, y: 220, threads:['darwin_s_long_shadow'] },
+  behave:                     { id:'behave',                     title:'Behave',                               x: 380, y: 220, threads:['darwin_s_long_shadow'] },
+
+  // ── ridley_thesis (#7A9A5A) — weaves through left zone, shares selfish_gene / extended / red_queen / origins / darwins / evolution
+  genome:                     { id:'genome',                     title:'Genome',                               x: 160, y: 140, threads:['ridley_thesis'] },
+  how_innovation_works:       { id:'how_innovation_works',       title:'How Innovation Works',                 x: 370, y: 340, threads:['ridley_thesis','disruptions_anatomy'] },
+  rational_optimist:          { id:'rational_optimist',          title:'The Rational Optimist',               x: 280, y: 340, threads:['ridley_thesis','civilizational_sweep'] },
+
+  // ── civilizational_sweep (#5A7A6A) — left/center, y ~290-380
+  ascent_of_man:              { id:'ascent_of_man',              title:'The Ascent of Man',                   x:  90, y: 340, threads:['civilizational_sweep'] },
+  prehistory_of_mind:         { id:'prehistory_of_mind',         title:'The Prehistory of the Mind',         x: 130, y: 340, threads:['civilizational_sweep','the_mind_before_language'] },
+  guns_germs_steel:           { id:'guns_germs_steel',           title:'Guns, Germs and Steel',              x: 170, y: 340, threads:['civilizational_sweep'] },
+  homo_deus:                  { id:'homo_deus',                  title:'Homo Deus',                           x: 210, y: 340, threads:['civilizational_sweep'] },
+  '21_lessons':               { id:'21_lessons',                 title:'21 Lessons for the 21st Century',    x: 250, y: 340, threads:['civilizational_sweep'] },
+  grand_transitions:          { id:'grand_transitions',          title:'Grand Transitions',                   x: 330, y: 340, threads:['civilizational_sweep'] },
+  consilience:                { id:'consilience',                title:'Consilience',                         x: 370, y: 380, threads:['civilizational_sweep','the_mind_before_language'] },
+  demon_haunted_world:        { id:'demon_haunted_world',        title:'The Demon-Haunted World',            x: 420, y: 380, threads:['civilizational_sweep'] },
+
+  // ── the_judgment_machine (#6B4E8A) — upper zone, x 480-800, y ~90-160
+  thinking_fast_slow:         { id:'thinking_fast_slow',         title:'Thinking, Fast and Slow',            x: 490, y:  90, threads:['the_judgment_machine'] },
+  choices_values_frames:      { id:'choices_values_frames',      title:'Choices, Values and Frames',         x: 540, y:  90, threads:['the_judgment_machine'] },
+  judgment_under_uncertainty: { id:'judgment_under_uncertainty', title:'Judgment Under Uncertainty',         x: 590, y:  90, threads:['the_judgment_machine'] },
+  noise:                      { id:'noise',                      title:'Noise',                               x: 640, y:  90, threads:['the_judgment_machine'] },
+  sources_of_power:           { id:'sources_of_power',           title:'Sources of Power',                   x: 690, y:  90, threads:['the_judgment_machine'] },
+  intuition_at_work:          { id:'intuition_at_work',          title:'Intuition at Work',                  x: 740, y:  90, threads:['the_judgment_machine'] },
+  streetlights_shadows:       { id:'streetlights_shadows',       title:'Streetlights and Shadows',           x: 790, y:  90, threads:['the_judgment_machine'] },
+  simple_heuristics:          { id:'simple_heuristics',          title:'Simple Heuristics That Make Us Smart', x: 800, y: 130, threads:['the_judgment_machine'] },
+  decision_traps:             { id:'decision_traps',             title:'Decision Traps',                     x: 800, y: 170, threads:['the_judgment_machine'] },
+  winning_decisions:          { id:'winning_decisions',          title:'Winning Decisions',                  x: 760, y: 170, threads:['the_judgment_machine'] },
+  thinking_and_deciding:      { id:'thinking_and_deciding',      title:'Thinking and Deciding',              x: 720, y: 170, threads:['the_judgment_machine'] },
+  algorithms_to_live_by:      { id:'algorithms_to_live_by',      title:'Algorithms to Live By',              x: 680, y: 170, threads:['the_judgment_machine'] },
+  signal_and_noise:           { id:'signal_and_noise',           title:'The Signal and the Noise',           x: 640, y: 170, threads:['the_judgment_machine','the_fat_tail_cosmos'] },
+
+  // ── the_fat_tail_cosmos (#C45C3A) — upper zone, x 480-800, y ~230-300
+  black_swan:                 { id:'black_swan',                 title:'The Black Swan',                     x: 490, y: 260, threads:['the_fat_tail_cosmos'] },
+  antifragile:                { id:'antifragile',                title:'Antifragile',                        x: 540, y: 260, threads:['the_fat_tail_cosmos'] },
+  fooled_by_randomness:       { id:'fooled_by_randomness',       title:'Fooled by Randomness',              x: 590, y: 260, threads:['the_fat_tail_cosmos'] },
+  skin_in_the_game:           { id:'skin_in_the_game',           title:'Skin in the Game',                  x: 640, y: 260, threads:['the_fat_tail_cosmos'] },
+  dynamic_hedging:            { id:'dynamic_hedging',            title:'Dynamic Hedging',                   x: 690, y: 260, threads:['the_fat_tail_cosmos'] },
+  statistical_consequences:   { id:'statistical_consequences',   title:'Statistical Consequences of Fat Tails', x: 740, y: 260, threads:['the_fat_tail_cosmos'] },
+  random_walk:                { id:'random_walk',                title:'A Random Walk Down Wall Street',    x: 800, y: 260, threads:['the_fat_tail_cosmos'] },
+  when_genius_failed:         { id:'when_genius_failed',         title:'When Genius Failed',                x: 800, y: 220, threads:['the_fat_tail_cosmos'] },
+  do_dice_play_god:           { id:'do_dice_play_god',           title:'Do Dice Play God',                  x: 760, y: 220, threads:['the_fat_tail_cosmos'] },
+  what_i_learned_losing:      { id:'what_i_learned_losing',      title:'What I Learned Losing a Million Dollars', x: 720, y: 220, threads:['the_fat_tail_cosmos'] },
+
+  // ── the_mind_before_language (#4A6B3A) — upper zone right, x 460-800, y ~430-520
+  other_minds:                { id:'other_minds',                title:'Other Minds',                       x: 470, y: 470, threads:['the_mind_before_language'] },
+  beginning_of_infinity:      { id:'beginning_of_infinity',      title:'The Beginning of Infinity',        x: 510, y: 470, threads:['the_mind_before_language'] },
+  fabric_of_reality:          { id:'fabric_of_reality',          title:'The Fabric of Reality',            x: 550, y: 470, threads:['the_mind_before_language'] },
+  frames_of_mind:             { id:'frames_of_mind',             title:'Frames of Mind',                   x: 590, y: 470, threads:['the_mind_before_language'] },
+  weirdest_people:            { id:'weirdest_people',            title:'The Weirdest People in the World', x: 630, y: 470, threads:['the_mind_before_language'] },
+  mind_in_motion:             { id:'mind_in_motion',             title:'Mind in Motion',                   x: 670, y: 470, threads:['the_mind_before_language'] },
+  the_difference:             { id:'the_difference',             title:'The Difference',                   x: 710, y: 470, threads:['the_mind_before_language'] },
+
+  // ── strategy_as_statecraft (#6B3A3A) — center, y ~490-580
+  art_of_war:                 { id:'art_of_war',                 title:'The Art of War',                   x: 620, y: 540, threads:['strategy_as_statecraft'] },
+  the_prince:                 { id:'the_prince',                 title:'The Prince',                       x: 660, y: 540, threads:['strategy_as_statecraft'] },
+  on_grand_strategy:          { id:'on_grand_strategy',          title:'On Grand Strategy',                x: 700, y: 540, threads:['strategy_as_statecraft'] },
+  on_china:                   { id:'on_china',                   title:'On China',                         x: 740, y: 540, threads:['strategy_as_statecraft'] },
+  boyd:                       { id:'boyd',                       title:'Boyd',                              x: 780, y: 540, threads:['strategy_as_statecraft'] },
+  from_third_world_first:     { id:'from_third_world_first',     title:'From Third World to First',        x: 820, y: 540, threads:['strategy_as_statecraft'] },
+  rise_and_kill_first:        { id:'rise_and_kill_first',        title:'Rise and Kill First',              x: 860, y: 540, threads:['strategy_as_statecraft'] },
+  the_machiavellians:         { id:'the_machiavellians',         title:'The Machiavellians',               x: 900, y: 540, threads:['strategy_as_statecraft'] },
+  seven_powers:               { id:'seven_powers',               title:'7 Powers',                         x: 940, y: 540, threads:['strategy_as_statecraft'] },
+  revolt_of_public:           { id:'revolt_of_public',           title:'The Revolt of the Public',         x: 980, y: 540, threads:['strategy_as_statecraft'] },
+  preventing_surprise_attacks: { id:'preventing_surprise_attacks', title:'Preventing Surprise Attacks',     x: 1020, y: 540, threads:['strategy_as_statecraft'] },
+
+  // ── how_organizations_breathe (#3A6B8A) — center, y ~420-460
+  humble_inquiry:             { id:'humble_inquiry',             title:'Humble Inquiry',                   x: 620, y: 430, threads:['how_organizations_breathe'] },
+  humble_leadership:          { id:'humble_leadership',          title:'Humble Leadership',                x: 660, y: 430, threads:['how_organizations_breathe'] },
+  humble_consulting:          { id:'humble_consulting',          title:'Humble Consulting',                x: 700, y: 430, threads:['how_organizations_breathe'] },
+  helping:                    { id:'helping',                    title:'Helping',                          x: 740, y: 430, threads:['how_organizations_breathe'] },
+  process_consultation:       { id:'process_consultation',       title:'Process Consultation',             x: 780, y: 430, threads:['how_organizations_breathe'] },
+  organizational_culture:     { id:'organizational_culture',     title:'Organizational Culture and Leadership', x: 820, y: 430, threads:['how_organizations_breathe'] },
+  dec_is_dead:                { id:'dec_is_dead',                title:'DEC Is Dead, Long Live DEC',       x: 860, y: 430, threads:['how_organizations_breathe'] },
+  fearless_organization:      { id:'fearless_organization',      title:'The Fearless Organization',        x: 900, y: 430, threads:['how_organizations_breathe'] },
+  fifth_discipline:           { id:'fifth_discipline',           title:'The Fifth Discipline',             x: 940, y: 430, threads:['how_organizations_breathe'] },
+  toyota_production:          { id:'toyota_production',          title:'Toyota Production System',         x: 980, y: 430, threads:['how_organizations_breathe'] },
+  ambiguities_of_experience:  { id:'ambiguities_of_experience',  title:'The Ambiguities of Experience',   x: 1020, y: 430, threads:['how_organizations_breathe'] },
+  no_rules_rules:             { id:'no_rules_rules',             title:'No Rules Rules',                   x: 1060, y: 430, threads:['how_organizations_breathe'] },
+  brave_new_work:             { id:'brave_new_work',             title:'Brave New Work',                   x: 1100, y: 430, threads:['how_organizations_breathe'] },
+
+  // ── disruptions_anatomy (#3A7A8A) — center, y ~370
+  innovators_dilemma:         { id:'innovators_dilemma',         title:"The Innovator's Dilemma",          x: 620, y: 370, threads:['disruptions_anatomy'] },
+  innovators_solution:        { id:'innovators_solution',        title:"The Innovator's Solution",         x: 660, y: 370, threads:['disruptions_anatomy'] },
+  competing_against_luck:     { id:'competing_against_luck',     title:'Competing Against Luck',           x: 700, y: 370, threads:['disruptions_anatomy'] },
+  invention_and_innovation:   { id:'invention_and_innovation',   title:'Invention and Innovation',         x: 760, y: 370, threads:['disruptions_anatomy'] },
+  lean_startup:               { id:'lean_startup',               title:'The Lean Startup',                 x: 820, y: 370, threads:['disruptions_anatomy'] },
+  escaping_build_trap:        { id:'escaping_build_trap',        title:'Escaping the Build Trap',          x: 860, y: 370, threads:['disruptions_anatomy'] },
+  zero_to_one:                { id:'zero_to_one',                title:'Zero to One',                      x: 900, y: 370, threads:['disruptions_anatomy'] },
+  only_paranoid:              { id:'only_paranoid',              title:'Only the Paranoid Survive',        x: 940, y: 370, threads:['disruptions_anatomy'] },
+  how_we_got_to_now:          { id:'how_we_got_to_now',          title:'How We Got to Now',                x: 980, y: 370, threads:['disruptions_anatomy'] },
+  diffusion_of_innovations:   { id:'diffusion_of_innovations',   title:'Diffusion of Innovations',        x: 730, y: 370, threads:['disruptions_anatomy','contagion_and_control'] },
+
+  // ── contagion_and_control (#2E7D6B) — horizontal crossing center-left, y ~500
+  inside_outbreaks:           { id:'inside_outbreaks',           title:'Inside the Outbreaks',             x: 460, y: 500, threads:['contagion_and_control'] },
+  apollos_arrow:              { id:'apollos_arrow',              title:"Apollo's Arrow",                   x: 500, y: 500, threads:['contagion_and_control'] },
+  ghost_map:                  { id:'ghost_map',                  title:'The Ghost Map',                    x: 540, y: 500, threads:['contagion_and_control'] },
+  smallpox_death:             { id:'smallpox_death',             title:'Smallpox: The Death of a Disease', x: 580, y: 500, threads:['contagion_and_control'] },
+  viral_storm:                { id:'viral_storm',                title:'The Viral Storm',                  x: 620, y: 500, threads:['contagion_and_control'] },
+  mountains_beyond_mountains: { id:'mountains_beyond_mountains', title:'Mountains Beyond Mountains',       x: 660, y: 500, threads:['contagion_and_control'] },
+  polio_american_story:       { id:'polio_american_story',       title:'Polio: An American Story',         x: 700, y: 500, threads:['contagion_and_control'] },
+  social_transformation_medicine:{ id:'social_transformation_medicine', title:'The Social Transformation of American Medicine', x: 740, y: 500, threads:['contagion_and_control'] },
+  change_how_behavior:        { id:'change_how_behavior',        title:'Change: How Behavior Spreads',     x: 780, y: 500, threads:['contagion_and_control'] },
+
+  // ── the_stoic_wager (#8A7A3A) — lower-left, y ~700-780
+  meditations:                { id:'meditations',                title:'Meditations',                      x: 360, y: 720, threads:['the_stoic_wager'] },
+  letters_from_stoic:         { id:'letters_from_stoic',         title:'Letters from a Stoic',            x: 400, y: 720, threads:['the_stoic_wager'] },
+  discourses_selected:        { id:'discourses_selected',        title:'Discourses and Selected Writings', x: 440, y: 720, threads:['the_stoic_wager'] },
+  guide_to_good_life:         { id:'guide_to_good_life',         title:'A Guide to the Good Life',        x: 480, y: 720, threads:['the_stoic_wager'] },
+  stoic_challenge:            { id:'stoic_challenge',            title:'The Stoic Challenge',              x: 520, y: 720, threads:['the_stoic_wager'] },
+  on_desire:                  { id:'on_desire',                  title:'On Desire',                        x: 560, y: 720, threads:['the_stoic_wager'] },
+  slap_in_face:               { id:'slap_in_face',               title:'A Slap in the Face',              x: 600, y: 720, threads:['the_stoic_wager'] },
+  daily_stoic:                { id:'daily_stoic',                title:'The Daily Stoic',                 x: 640, y: 720, threads:['the_stoic_wager'] },
+  ego_is_enemy:               { id:'ego_is_enemy',               title:'Ego Is the Enemy',                x: 680, y: 720, threads:['the_stoic_wager'] },
+  dying_every_day:            { id:'dying_every_day',            title:'Dying Every Day',                 x: 720, y: 720, threads:['the_stoic_wager'] },
+  tao_te_ching:               { id:'tao_te_ching',               title:'Tao Te Ching',                    x: 760, y: 720, threads:['the_stoic_wager','zen_current'] },
+  the_analects:               { id:'the_analects',               title:'The Analects',                    x: 800, y: 720, threads:['the_stoic_wager','zen_current'] },
+
+  // ── the_power_of_the_frame (#A04060) — lower, y ~820-900
+  influence:                  { id:'influence',                  title:'Influence',                        x: 370, y: 850, threads:['the_power_of_the_frame'] },
+  laws_48:                    { id:'laws_48',                    title:'The 48 Laws of Power',            x: 410, y: 850, threads:['the_power_of_the_frame'] },
+  art_of_seduction:           { id:'art_of_seduction',           title:'The Art of Seduction',            x: 450, y: 850, threads:['the_power_of_the_frame'] },
+  laws_of_human_nature:       { id:'laws_of_human_nature',       title:'The Laws of Human Nature',        x: 490, y: 850, threads:['the_power_of_the_frame'] },
+  never_split:                { id:'never_split',                title:'Never Split the Difference',       x: 530, y: 850, threads:['the_power_of_the_frame'] },
+  getting_to_yes:             { id:'getting_to_yes',             title:'Getting to Yes',                  x: 570, y: 850, threads:['the_power_of_the_frame'] },
+  political_mind:             { id:'political_mind',             title:'The Political Mind',               x: 610, y: 850, threads:['the_power_of_the_frame'] },
+  resonate:                   { id:'resonate',                   title:'Resonate',                         x: 650, y: 850, threads:['the_power_of_the_frame'] },
+  slideology:                 { id:'slideology',                 title:'Slideology',                       x: 690, y: 850, threads:['the_power_of_the_frame'] },
+  pyramid_principle:          { id:'pyramid_principle',          title:'The Pyramid Principle',            x: 730, y: 850, threads:['the_power_of_the_frame'] },
+  alchemy:                    { id:'alchemy',                    title:'Alchemy',                          x: 770, y: 850, threads:['the_power_of_the_frame'] },
+  amusing_ourselves:          { id:'amusing_ourselves',          title:'Amusing Ourselves to Death',       x: 810, y: 850, threads:['the_power_of_the_frame'] },
+
+  // ── genius_and_its_conditions (#7A4A8A) — lower, y ~960-1040
+  creativity:                 { id:'creativity',                 title:'Creativity',                       x: 370, y: 970, threads:['genius_and_its_conditions'] },
+  flow:                       { id:'flow',                       title:'Flow',                             x: 410, y: 970, threads:['genius_and_its_conditions'] },
+  good_business:              { id:'good_business',              title:'Good Business',                    x: 450, y: 970, threads:['genius_and_its_conditions'] },
+  geography_of_genius:        { id:'geography_of_genius',        title:'The Geography of Genius',         x: 490, y: 970, threads:['genius_and_its_conditions'] },
+  leonardo_da_vinci:          { id:'leonardo_da_vinci',          title:'Leonardo da Vinci',               x: 530, y: 970, threads:['genius_and_its_conditions'] },
+  genius:                     { id:'genius',                     title:'Genius',                           x: 570, y: 970, threads:['genius_and_its_conditions'] },
+  creativity_inc:             { id:'creativity_inc',             title:'Creativity Inc',                  x: 610, y: 970, threads:['genius_and_its_conditions'] },
+  medici_effect:              { id:'medici_effect',              title:'The Medici Effect',               x: 650, y: 970, threads:['genius_and_its_conditions'] },
+  rise_fall_medici:           { id:'rise_fall_medici',           title:'The Rise and Fall of the House of Medici', x: 690, y: 970, threads:['genius_and_its_conditions'] },
+  daily_rituals:              { id:'daily_rituals',              title:'Daily Rituals',                   x: 730, y: 970, threads:['genius_and_its_conditions'] },
+  creative_act:               { id:'creative_act',               title:'The Creative Act',                x: 770, y: 970, threads:['genius_and_its_conditions'] },
+  where_good_ideas:           { id:'where_good_ideas',           title:'Where Good Ideas Come From',      x: 810, y: 970, threads:['genius_and_its_conditions'] },
+  out_of_our_minds:           { id:'out_of_our_minds',           title:'Out of Our Minds',                x: 850, y: 970, threads:['genius_and_its_conditions'] },
+
+  // ── india_and_the_long_view (#B5682B) — right zone, y ~350-700
+  glass_palace:               { id:'glass_palace',               title:'The Glass Palace',                x: 1150, y: 400, threads:['india_and_the_long_view'] },
+  nutmegs_curse:              { id:'nutmegs_curse',              title:"The Nutmeg's Curse",              x: 1190, y: 400, threads:['india_and_the_long_view'] },
+  empress:                    { id:'empress',                    title:'Empress',                          x: 1230, y: 400, threads:['india_and_the_long_view'] },
+  the_anarchy:                { id:'the_anarchy',                title:'The Anarchy',                     x: 1270, y: 400, threads:['india_and_the_long_view'] },
+  end_of_sorrow:              { id:'end_of_sorrow',              title:'The End of Sorrow',               x: 1310, y: 440, threads:['india_and_the_long_view','vedantic_root'] },
+  bhagavad_gita:              { id:'bhagavad_gita',              title:'The Bhagavad Gita',               x: 1350, y: 440, threads:['india_and_the_long_view','vedantic_root'] },
+  the_upanishads:             { id:'the_upanishads',             title:'The Upanishads',                  x: 1390, y: 440, threads:['india_and_the_long_view','vedantic_root'] },
+  inner_engineering:          { id:'inner_engineering',          title:'Inner Engineering',               x: 1430, y: 440, threads:['india_and_the_long_view','vedantic_root'] },
+  karma:                      { id:'karma',                      title:'Karma',                            x: 1470, y: 440, threads:['india_and_the_long_view','vedantic_root'] },
+  light_on_yoga:              { id:'light_on_yoga',              title:'Light on Yoga',                   x: 1480, y: 550, threads:['india_and_the_long_view','body_as_practice','vedantic_root'] },
+  light_on_life:              { id:'light_on_life',              title:'Light on Life',                   x: 1520, y: 600, threads:['india_and_the_long_view','body_as_practice','vedantic_root'] },
+
+  // ── vedantic_root (#8A5A3A) — right, y ~620-900
+  i_am_that:                  { id:'i_am_that',                  title:'I Am That',                       x: 1560, y: 640, threads:['vedantic_root'] },
+  patanjali_yoga_sutras:      { id:'patanjali_yoga_sutras',      title:"Patanjali's Yoga Sutras",         x: 1600, y: 640, threads:['vedantic_root','body_as_practice'] },
+  yoga_sutras_patanjali:      { id:'yoga_sutras_patanjali',      title:'The Yoga Sutras of Patanjali',    x: 1640, y: 640, threads:['vedantic_root','body_as_practice'] },
+  heart_of_yoga:              { id:'heart_of_yoga',              title:'The Heart of Yoga',               x: 1680, y: 640, threads:['vedantic_root','body_as_practice'] },
+  yoga_body_breath_mind:      { id:'yoga_body_breath_mind',      title:'Yoga for Body, Breath and Mind',  x: 1720, y: 640, threads:['vedantic_root','body_as_practice'] },
+  satipatthana_sutta:         { id:'satipatthana_sutta',         title:'Satipatthana Sutta Discourses',   x: 1760, y: 640, threads:['vedantic_root'] },
+  tantra:                     { id:'tantra',                     title:'Tantra',                           x: 1800, y: 640, threads:['vedantic_root'] },
+  great_challenge:            { id:'great_challenge',            title:'The Great Challenge',             x: 1840, y: 640, threads:['vedantic_root'] },
+  i_am_the_gate:              { id:'i_am_the_gate',              title:'I Am the Gate',                   x: 1880, y: 640, threads:['vedantic_root'] },
+
+  // ── body_as_practice (#5A8A70) — right, y ~720-820
+  patanjali_yoga:             { id:'patanjali_yoga',             title:'Patanjali Yoga',                  x: 1560, y: 750, threads:['body_as_practice'] },
+  light_on_pranayama:         { id:'light_on_pranayama',         title:'Light on Pranayama',              x: 1600, y: 750, threads:['body_as_practice'] },
+  born_to_run:                { id:'born_to_run',                title:'Born to Run',                     x: 1640, y: 750, threads:['body_as_practice'] },
+  starting_strength:          { id:'starting_strength',          title:'Starting Strength',               x: 1680, y: 750, threads:['body_as_practice'] },
+  exercised:                  { id:'exercised',                  title:'Exercised',                       x: 1720, y: 750, threads:['body_as_practice'] },
+  tb_method:                  { id:'tb_method',                  title:'TB Method',                       x: 1760, y: 750, threads:['body_as_practice'] },
+  outlive:                    { id:'outlive',                    title:'Outlive',                          x: 1800, y: 750, threads:['body_as_practice'] },
+  super_agers:                { id:'super_agers',                title:'Super Agers',                     x: 1840, y: 750, threads:['body_as_practice'] },
+
+  // ── zen_current (#4A7A6A) — right, y ~840-940
+  intro_zen_buddhism:         { id:'intro_zen_buddhism',         title:'An Introduction to Zen Buddhism', x: 1150, y: 870, threads:['zen_current'] },
+  zen_koan:                   { id:'zen_koan',                   title:'The Zen Koan',                    x: 1200, y: 870, threads:['zen_current'] },
+  how_to_walk:                { id:'how_to_walk',                title:'How to Walk',                     x: 1250, y: 870, threads:['zen_current'] },
+  truckload_of_dung:          { id:'truckload_of_dung',          title:'Who Ordered This Truckload of Dung', x: 1300, y: 870, threads:['zen_current'] },
+  if_you_meet_buddha:         { id:'if_you_meet_buddha',         title:'If You Meet the Buddha on the Road, Kill Him', x: 1360, y: 870, threads:['zen_current'] },
+  trying_not_to_try:          { id:'trying_not_to_try',          title:'Trying Not to Try',               x: 1560, y: 870, threads:['zen_current'] },
+  catching_big_fish:          { id:'catching_big_fish',          title:'Catching the Big Fish',           x: 1620, y: 870, threads:['zen_current'] },
+  destructive_emotions:       { id:'destructive_emotions',       title:'Destructive Emotions',            x: 1680, y: 870, threads:['zen_current'] },
+};
+
+// ─── WAYPOINTS ────────────────────────────────────────────────────────────────
+// Each thread's path is a sequence of [x,y] waypoints connecting stations
+// Beck's rule: only H/V/45° angles. We connect station coords via intermediate points.
+
+function stationPt(id) {
+  const s = STATIONS[id];
+  return [s.x, s.y];
+}
+
+// Build a polyline path from a list of station ids, inserting routing waypoints as needed
+function buildPath(stationIds, routeOverrides) {
+  // routeOverrides: map from "id1->id2" to array of intermediate [x,y] points
+  const pts = [];
+  for (let i = 0; i < stationIds.length; i++) {
+    const id = stationIds[i];
+    if (!STATIONS[id]) { console.warn('Missing station:', id); continue; }
+    if (i > 0) {
+      const prevId = stationIds[i-1];
+      const key = prevId + '->' + id;
+      if (routeOverrides && routeOverrides[key]) {
+        for (const wp of routeOverrides[key]) pts.push(wp);
+      }
+    }
+    pts.push(stationPt(id));
+  }
+  return pts;
+}
+
+// ─── THREAD PATHS (waypoints) ─────────────────────────────────────────────────
+// For each thread, define the polyline as an array of [x,y] points
+// Stations not yet connected are wired up in order with direct lines where coords allow
+// Route overrides add intermediate Beck-compliant waypoints
+
+const THREAD_PATHS = {};
+
+// darwin_s_long_shadow — snakes through left zone
+THREAD_PATHS.darwin_s_long_shadow = [
+  [120,180], // selfish_gene
+  [120,220], // on_the_origin_of_species (detour down)
+  [120,180], // back up
+  [160,180], // to red_queen level (waypoint)
+  [160,220], // extended_phenotype
+  [200,220], // river_out_of_eden
+  [200,160], // red_queen
+  [240,160], // origins_of_virtue
+  [240,220], // back down to climbing_mount_improbable
+  [280,220], // natural_selection_social_theory (also 280,220)
+  [310,220], // folly_of_fools
+  [310,200], // step up to darwins_dangerous_idea level
+  [330,200], // darwins_dangerous_idea
+  [330,260], // step to culture_evolutionary_process level
+  [310,260], // culture_evolutionary_process
+  [380,220], // behave — route: go right at 220
+  [380,220],
+  // evolution_of_everything is at 280,300 — route down
+  [280,300], // evolution_of_everything
+];
+
+// ridley_thesis — weaves through same left zone, different level
+THREAD_PATHS.ridley_thesis = [
+  [120,180], // selfish_gene
+  [120,140], // step up
+  [160,140], // genome
+  [160,180], // extended_phenotype (waypoint)
+  [160,220], // extended_phenotype station
+  [200,160], // red_queen
+  [240,160], // origins_of_virtue
+  [330,200], // darwins_dangerous_idea (via waypoints at same y)
+  [280,300], // evolution_of_everything (down)
+  [280,340], // rational_optimist
+  [370,340], // how_innovation_works (right along y=340)
+];
+
+// civilizational_sweep — left zone, y=340 horizontal
+THREAD_PATHS.civilizational_sweep = [
+  [ 90,340], // ascent_of_man
+  [130,340], // prehistory_of_mind
+  [170,340], // guns_germs_steel
+  [210,340], // homo_deus
+  [250,340], // 21_lessons
+  [280,340], // rational_optimist
+  [280,300], // evolution_of_everything (up)
+  [330,340], // grand_transitions (back down)
+  [370,380], // consilience (diagonal step)
+  [420,380], // demon_haunted_world
+];
+
+// the_judgment_machine — upper zone, U-shape
+THREAD_PATHS.the_judgment_machine = [
+  [490, 90], [540, 90], [590, 90], [640, 90], [690, 90], [740, 90], [790, 90],
+  [800, 90], [800,130], [800,170], // simple_heuristics, decision_traps
+  [760,170], [720,170], [680,170], [640,170], // winning_decisions, thinking_and_deciding, algorithms, signal_and_noise
+];
+
+// the_fat_tail_cosmos — upper zone, U-shape lower
+THREAD_PATHS.the_fat_tail_cosmos = [
+  [490,260], [540,260], [590,260], [640,260], [690,260], [740,260], [800,260],
+  [800,220], [760,220], [720,220], // when_genius_failed, do_dice_play_god, what_i_learned
+  [640,170], // signal_and_noise (up and left — via waypoints)
+];
+
+// the_mind_before_language — routes from left interchanges into upper-right
+THREAD_PATHS.the_mind_before_language = [
+  [130,340], // prehistory_of_mind
+  [370,380], // consilience (right along different path)
+  [470,470], // other_minds — route via waypoints
+  [510,470], [550,470], [590,470], [630,470], [670,470], [710,470],
+  [330,200], // darwins_dangerous_idea — connect back via waypoint
+];
+
+// strategy_as_statecraft — horizontal line center y=540
+THREAD_PATHS.strategy_as_statecraft = [
+  [620,540],[660,540],[700,540],[740,540],[780,540],[820,540],[860,540],[900,540],[940,540],[980,540],[1020,540]
+];
+
+// how_organizations_breathe — horizontal y=430
+THREAD_PATHS.how_organizations_breathe = [
+  [620,430],[660,430],[700,430],[740,430],[780,430],[820,430],[860,430],[900,430],[940,430],[980,430],[1020,430],[1060,430],[1100,430]
+];
+
+// disruptions_anatomy — horizontal y=370
+THREAD_PATHS.disruptions_anatomy = [
+  [620,370],[660,370],[700,370],[730,370],[760,370],[820,370],[860,370],[900,370],[940,370],[980,370],
+  [370,340], // how_innovation_works routes back
+];
+
+// contagion_and_control — horizontal crossing center-left y=500
+THREAD_PATHS.contagion_and_control = [
+  [460,500],[500,500],[540,500],[580,500],[620,500],[660,500],[700,500],[740,500],[780,500],
+  [730,370], // diffusion_of_innovations — up via waypoint
+];
+
+// the_stoic_wager — horizontal lower y=720
+THREAD_PATHS.the_stoic_wager = [
+  [360,720],[400,720],[440,720],[480,720],[520,720],[560,720],[600,720],[640,720],[680,720],[720,720],[760,720],[800,720]
+];
+
+// the_power_of_the_frame — horizontal y=850
+THREAD_PATHS.the_power_of_the_frame = [
+  [370,850],[410,850],[450,850],[490,850],[530,850],[570,850],[610,850],[650,850],[690,850],[730,850],[770,850],[810,850]
+];
+
+// genius_and_its_conditions — horizontal y=970
+THREAD_PATHS.genius_and_its_conditions = [
+  [370,970],[410,970],[450,970],[490,970],[530,970],[570,970],[610,970],[650,970],[690,970],[730,970],[770,970],[810,970],[850,970]
+];
+
+// india_and_the_long_view — right zone, horizontal then diagonal
+THREAD_PATHS.india_and_the_long_view = [
+  [1150,400],[1190,400],[1230,400],[1270,400],
+  [1310,440],[1350,440],[1390,440],[1430,440],[1470,440],
+  [1480,550],[1520,600], // light_on_yoga, light_on_life
+];
+
+// vedantic_root — right zone, y=640 horizontal after interchanges
+THREAD_PATHS.vedantic_root = [
+  [1350,440], // bhagavad_gita
+  [1310,440], // end_of_sorrow
+  [1390,440], // upanishads
+  [1430,440], // inner_engineering
+  [1470,440], // karma
+  [1480,550], // light_on_yoga (down via 45°)
+  [1520,600], // light_on_life
+  [1560,640], // i_am_that (continue diagonal to horizontal)
+  [1600,640],[1640,640],[1680,640],[1720,640],[1760,640],[1800,640],[1840,640],[1880,640]
+];
+
+// body_as_practice — right zone y=750 horizontal + interchanges at top
+THREAD_PATHS.body_as_practice = [
+  [1480,550], // light_on_yoga
+  [1520,600], // light_on_life
+  [1560,640], // patanjali_yoga_sutras (via vedantic join)
+  [1600,640],[1640,640],[1680,640],[1720,640], // heart_of_yoga, yoga_body_breath_mind
+  [1560,750], // patanjali_yoga (down)
+  [1600,750],[1640,750],[1680,750],[1720,750],[1760,750],[1800,750],[1840,750]
+];
+
+// zen_current — right zone lower
+THREAD_PATHS.zen_current = [
+  [1150,870],[1200,870],[1250,870],[1300,870],[1360,870],
+  [800,720], // tao_te_ching — route left across via long horizontal
+  [760,720], // analects
+  [1360,870], // back right (we'll draw two segments)
+  [1560,870],[1620,870],[1680,870]
+];
+
+// ─── SVG RENDERING ────────────────────────────────────────────────────────────
+
+const svg = document.getElementById('map-svg');
+const NS = 'http://www.w3.org/2000/svg';
+
+function el(tag, attrs = {}) {
+  const e = document.createElementNS(NS, tag);
+  for (const [k,v] of Object.entries(attrs)) e.setAttribute(k, v);
+  return e;
+}
+
+function ptsToD(pts) {
+  return pts.map((p,i) => (i===0?'M':'L') + p[0]+','+p[1]).join(' ');
+}
+
+// Background
+svg.appendChild(el('rect', { width:2000, height:1200, fill:'#080604' }));
+
+// Grid faint lines (optional subtle reference)
+// (omitted for clean look)
+
+// ── Draw lines ──────────────────────────────────────────────────────────────
+const lineGroup = el('g', { id:'lines' });
+svg.appendChild(lineGroup);
+
+// Draw each thread as a series of polylines between consecutive stations
+// We use actual ordered station coordinates for a clean layout
+function drawThreadLine(thread) {
+  const ids = thread.stations;
+  const pts = ids.map(id => {
+    const s = STATIONS[id];
+    if (!s) return null;
+    return [s.x, s.y];
+  }).filter(Boolean);
+
+  if (pts.length < 2) return;
+
+  // Snap to Beck's rule: only H/V/45°
+  // We connect points with intermediate waypoints
+  for (let i = 0; i < pts.length - 1; i++) {
+    const [x1,y1] = pts[i];
+    const [x2,y2] = pts[i+1];
+    const segments = beckPath(x1,y1,x2,y2);
+    const path = el('path', {
+      d: segments,
+      stroke: thread.color,
+      'stroke-width': 5,
+      fill: 'none',
+      'stroke-linecap': 'round',
+      'stroke-linejoin': 'round',
+      'data-thread': thread.id,
+      class: 'thread-line'
+    });
+    lineGroup.appendChild(path);
+  }
+}
+
+// Beck path: connect two points with H/V/45° only
+// Strategy: prefer 45° diagonal then straight
+function beckPath(x1,y1,x2,y2) {
+  const dx = x2-x1, dy = y2-y1;
+  if (dx === 0 || dy === 0) {
+    return `M ${x1},${y1} L ${x2},${y2}`;
+  }
+  const adx = Math.abs(dx), ady = Math.abs(dy);
+  if (adx === ady) {
+    return `M ${x1},${y1} L ${x2},${y2}`;
+  }
+  // If more horizontal: go 45° then horizontal
+  if (adx > ady) {
+    const sx = dx > 0 ? 1 : -1;
+    const sy = dy > 0 ? 1 : -1;
+    const mx = x1 + sx * ady;
+    return `M ${x1},${y1} L ${mx},${y2} L ${x2},${y2}`;
+  } else {
+    // More vertical: go 45° then vertical
+    const sx = dx > 0 ? 1 : -1;
+    const sy = dy > 0 ? 1 : -1;
+    const my = y1 + sy * adx;
+    return `M ${x1},${y1} L ${x2},${my} L ${x2},${y2}`;
+  }
+}
+
+for (const thread of Object.values(THREADS)) {
+  drawThreadLine(thread);
+}
+
+// ── Draw stations ────────────────────────────────────────────────────────────
+const stationGroup = el('g', { id:'stations' });
+svg.appendChild(stationGroup);
+
+const labelGroup = el('g', { id:'labels' });
+svg.appendChild(labelGroup);
+
+function getInterchangeRadius(numThreads) {
+  if (numThreads >= 3) return 14;
+  if (numThreads === 2) return 10;
+  return 6;
+}
+
+function drawInterchangeArcs(cx, cy, r, colors) {
+  const n = colors.length;
+  const paths = [];
+  for (let i = 0; i < n; i++) {
+    const startAngle = (i / n) * 2 * Math.PI - Math.PI/2;
+    const endAngle = ((i+1) / n) * 2 * Math.PI - Math.PI/2;
+    const x1 = cx + r * Math.cos(startAngle);
+    const y1 = cy + r * Math.sin(startAngle);
+    const x2 = cx + r * Math.cos(endAngle);
+    const y2 = cy + r * Math.sin(endAngle);
+    const largeArc = (endAngle - startAngle) > Math.PI ? 1 : 0;
+    paths.push(`<path d="M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${largeArc} 1 ${x2} ${y2} Z" fill="${colors[i]}"/>`);
+  }
+  return paths.join('');
+}
+
+// Label placement: alternate above/below, offset by 45°
+// Returns [dx, dy, anchor]
+function getLabelOffset(station, idx) {
+  const n = station.threads.length;
+  // Prefer placing labels away from the map center (1000,600)
+  const cx = station.x < 1000 ? 1 : -1; // left side: push right; right side: push left
+  const cy = station.y < 600 ? 1 : -1;  // top half: push down; bottom: push up
+
+  // Simple alternating above/below
+  if (station.y < 300) return [8, 14, 'start'];  // near top: label below
+  if (station.y > 900) return [8, -10, 'start']; // near bottom: label above
+  if (station.x < 200) return [10, -8, 'start']; // left edge: label right
+  if (station.x > 1700) return [-10, -8, 'end']; // right edge: label left
+
+  // Default: alternate
+  if (idx % 2 === 0) return [8, -8, 'start'];
+  return [8, 14, 'start'];
+}
+
+let stationIdx = 0;
+for (const [id, station] of Object.entries(STATIONS)) {
+  const numThreads = station.threads.length;
+  const r = getInterchangeRadius(numThreads);
+  const g = el('g', {
+    'data-station': id,
+    class: 'station-group',
+    style: 'cursor:pointer'
+  });
+
+  // Interchange station
+  if (numThreads >= 2) {
+    const colors = station.threads.map(tid => THREADS[tid]?.color || '#888');
+
+    // White background circle
+    g.appendChild(el('circle', { cx: station.x, cy: station.y, r: r+2, fill:'#F5F0E8' }));
+
+    // Draw arc segments using innerHTML trick via foreignObject...
+    // Actually use a temp group approach
+    const arcG = el('g', { class:'interchange-arcs' });
+    const n = colors.length;
+    for (let i = 0; i < n; i++) {
+      const startAngle = (i / n) * 2 * Math.PI - Math.PI/2;
+      const endAngle = ((i+1) / n) * 2 * Math.PI - Math.PI/2;
+      const x1 = station.x + r * Math.cos(startAngle);
+      const y1 = station.y + r * Math.sin(startAngle);
+      const x2 = station.x + r * Math.cos(endAngle);
+      const y2 = station.y + r * Math.sin(endAngle);
+      const largeArc = ((endAngle - startAngle) > Math.PI) ? 1 : 0;
+      const p = el('path', {
+        d: `M ${station.x} ${station.y} L ${x1} ${y1} A ${r} ${r} 0 ${largeArc} 1 ${x2} ${y2} Z`,
+        fill: colors[i]
+      });
+      arcG.appendChild(p);
+    }
+    g.appendChild(arcG);
+
+    // White center dot
+    g.appendChild(el('circle', { cx: station.x, cy: station.y, r: 3, fill:'#F5F0E8', stroke:'#888', 'stroke-width':0.5 }));
+
+  } else {
+    // Single thread station
+    const color = THREADS[station.threads[0]]?.color || '#888';
+    g.appendChild(el('circle', {
+      cx: station.x, cy: station.y, r: 6,
+      fill: color, stroke: '#080604', 'stroke-width': 1.5
+    }));
+    g.appendChild(el('circle', {
+      cx: station.x, cy: station.y, r: 2,
+      fill: '#F5F0E8'
+    }));
+  }
+
+  // Invisible hit area
+  g.appendChild(el('circle', {
+    cx: station.x, cy: station.y, r: Math.max(r, 8) + 4,
+    fill: 'transparent', class:'station-hit'
+  }));
+
+  stationGroup.appendChild(g);
+
+  // Label
+  const [dx, dy, anchor] = getLabelOffset(station, stationIdx);
+  const label = el('text', {
+    x: station.x + dx,
+    y: station.y + dy,
+    'font-size': 10,
+    'font-family': 'system-ui, -apple-system, sans-serif',
+    fill: '#C8C0B0',
+    'text-anchor': anchor,
+    'data-station-label': id,
+    'pointer-events': 'none'
+  });
+  label.textContent = station.title;
+  labelGroup.appendChild(label);
+
+  stationIdx++;
+}
+
+// ── Thread terminus labels ───────────────────────────────────────────────────
+const terminusGroup = el('g', { id:'terminus-labels' });
+svg.appendChild(terminusGroup);
+
+// Draw terminus labels at the first station of each thread
+function drawTerminus(thread) {
+  if (!thread.stations || !thread.stations[0]) return;
+  const firstId = thread.stations[0];
+  const lastId = thread.stations[thread.stations.length - 1];
+  const s = STATIONS[firstId];
+  const e = STATIONS[lastId];
+  if (!s) return;
+
+  const label = el('text', {
+    x: s.x - 10,
+    y: s.y,
+    'font-size': 12,
+    'font-weight': 'bold',
+    'font-family': 'system-ui, -apple-system, sans-serif',
+    fill: thread.color,
+    'text-anchor': 'end',
+    'data-thread-label': thread.id,
+    class: 'terminus-label',
+    style: 'cursor:pointer'
+  });
+  label.textContent = thread.name;
+  terminusGroup.appendChild(label);
+}
+
+for (const thread of Object.values(THREADS)) {
+  drawTerminus(thread);
+}
+
+// ─── LEGEND ──────────────────────────────────────────────────────────────────
+const legendEl = document.getElementById('legend-items');
+for (const thread of Object.values(THREADS)) {
+  const item = document.createElement('div');
+  item.className = 'legend-item';
+  item.dataset.threadId = thread.id;
+  item.innerHTML = `
+    <div class="legend-line" style="background:${thread.color}"></div>
+    <div class="legend-label">${thread.name}</div>
+  `;
+  item.addEventListener('click', () => selectThread(thread.id));
+  legendEl.appendChild(item);
+}
+
+// ─── INTERACTIONS ─────────────────────────────────────────────────────────────
+let activeThread = null;
+let activeStation = null;
+
+function getThreadColor(tid) {
+  return THREADS[tid]?.color || '#888';
+}
+
+function setAllLinesOpacity(op) {
+  document.querySelectorAll('.thread-line').forEach(l => {
+    l.style.opacity = op;
+  });
+}
+
+function highlightThread(tid) {
+  document.querySelectorAll('.thread-line').forEach(l => {
+    l.style.opacity = l.dataset.thread === tid ? 1 : 0.1;
+    l.style.strokeWidth = l.dataset.thread === tid ? 7 : 5;
+  });
+  document.querySelectorAll('.station-group').forEach(g => {
+    const sid = g.dataset.station;
+    const s = STATIONS[sid];
+    if (!s) return;
+    g.style.opacity = s.threads.includes(tid) ? 1 : 0.15;
+  });
+  document.querySelectorAll('[data-station-label]').forEach(l => {
+    const sid = l.dataset.stationLabel;
+    const s = STATIONS[sid];
+    l.style.opacity = s && s.threads.includes(tid) ? 1 : 0.1;
+  });
+  document.querySelectorAll('.terminus-label').forEach(l => {
+    l.style.opacity = l.dataset.threadLabel === tid ? 1 : 0.1;
+  });
+}
+
+function highlightStation(sid) {
+  const s = STATIONS[sid];
+  if (!s) return;
+  const tids = new Set(s.threads);
+  document.querySelectorAll('.thread-line').forEach(l => {
+    l.style.opacity = tids.has(l.dataset.thread) ? 1 : 0.1;
+    l.style.strokeWidth = tids.has(l.dataset.thread) ? 7 : 5;
+  });
+  document.querySelectorAll('.station-group').forEach(g => {
+    const st = STATIONS[g.dataset.station];
+    const shared = st && st.threads.some(t => tids.has(t));
+    g.style.opacity = shared ? 1 : 0.15;
+  });
+  document.querySelectorAll('[data-station-label]').forEach(l => {
+    const st = STATIONS[l.dataset.stationLabel];
+    const shared = st && st.threads.some(t => tids.has(t));
+    l.style.opacity = shared ? 1 : 0.1;
+  });
+}
+
+function clearHighlights() {
+  document.querySelectorAll('.thread-line').forEach(l => {
+    l.style.opacity = 1;
+    l.style.strokeWidth = 5;
+  });
+  document.querySelectorAll('.station-group, [data-station-label], .terminus-label').forEach(e => {
+    e.style.opacity = 1;
+  });
+}
+
+// Panel
+const panel = document.getElementById('info-panel');
+const panelTitle = document.getElementById('panel-title');
+const panelQ = document.getElementById('panel-question');
+const panelThreads = document.getElementById('panel-threads');
+
+function openPanel(title, question, threads) {
+  panelTitle.textContent = title;
+  panelQ.textContent = question || '';
+  panelThreads.innerHTML = '';
+  for (const tid of threads) {
+    const t = THREADS[tid];
+    if (!t) continue;
+    const div = document.createElement('div');
+    div.className = 'panel-thread-item';
+    div.innerHTML = `
+      <div class="thread-dot" style="background:${t.color}"></div>
+      <div class="thread-info">
+        <div class="thread-name">${t.name}</div>
+        <div class="thread-q">${t.question}</div>
+      </div>
+    `;
+    panelThreads.appendChild(div);
+  }
+  panel.classList.add('open');
+}
+
+function closePanel() {
+  panel.classList.remove('open');
+  clearHighlights();
+  activeThread = null;
+  activeStation = null;
+}
+
+document.getElementById('panel-close').addEventListener('click', closePanel);
+
+// Tooltip
+const tooltip = document.getElementById('tooltip');
+const ttTitle = document.getElementById('tt-title');
+const ttThreads = document.getElementById('tt-threads');
+
+function showTooltip(e, station) {
+  ttTitle.textContent = station.title;
+  ttThreads.innerHTML = '';
+  for (const tid of station.threads) {
+    const t = THREADS[tid];
+    if (!t) continue;
+    const div = document.createElement('div');
+    div.className = 'tt-thread';
+    div.innerHTML = `<div class="tt-dot" style="background:${t.color}"></div><span>${t.name}</span>`;
+    ttThreads.appendChild(div);
+  }
+  tooltip.style.display = 'block';
+  moveTooltip(e);
+}
+
+function moveTooltip(e) {
+  const x = e.clientX + 16;
+  const y = e.clientY - 10;
+  const tw = tooltip.offsetWidth;
+  const th = tooltip.offsetHeight;
+  tooltip.style.left = (x + tw > window.innerWidth ? x - tw - 24 : x) + 'px';
+  tooltip.style.top = (y + th > window.innerHeight ? y - th : y) + 'px';
+}
+
+function hideTooltip() {
+  tooltip.style.display = 'none';
+}
+
+// Station interaction
+stationGroup.addEventListener('mouseover', e => {
+  const g = e.target.closest('.station-group');
+  if (!g) return;
+  const sid = g.dataset.station;
+  const station = STATIONS[sid];
+  if (!station) return;
+  showTooltip(e, station);
+  if (!activeThread && !activeStation) highlightStation(sid);
+});
+
+stationGroup.addEventListener('mousemove', e => {
+  if (tooltip.style.display === 'block') moveTooltip(e);
+});
+
+stationGroup.addEventListener('mouseout', e => {
+  const g = e.target.closest('.station-group');
+  if (!g) return;
+  hideTooltip();
+  if (!activeThread && !activeStation) clearHighlights();
+});
+
+stationGroup.addEventListener('click', e => {
+  const g = e.target.closest('.station-group');
+  if (!g) return;
+  const sid = g.dataset.station;
+  const station = STATIONS[sid];
+  if (!station) return;
+  activeStation = sid;
+  activeThread = null;
+  highlightStation(sid);
+  openPanel(station.title, '', station.threads);
+  e.stopPropagation();
+});
+
+// Thread terminus labels interaction
+terminusGroup.addEventListener('mouseover', e => {
+  const l = e.target;
+  const tid = l.dataset.threadLabel;
+  if (!tid) return;
+  if (!activeThread && !activeStation) highlightThread(tid);
+});
+
+terminusGroup.addEventListener('mouseout', e => {
+  const l = e.target;
+  const tid = l.dataset.threadLabel;
+  if (!tid) return;
+  if (!activeThread && !activeStation) clearHighlights();
+});
+
+terminusGroup.addEventListener('click', e => {
+  const l = e.target;
+  const tid = l.dataset.threadLabel;
+  if (!tid) return;
+  const thread = THREADS[tid];
+  if (!thread) return;
+  activeThread = tid;
+  activeStation = null;
+  highlightThread(tid);
+  openPanel(thread.name, thread.question, [tid]);
+  e.stopPropagation();
+});
+
+// Legend interaction
+// (handled via item.addEventListener above)
+
+function selectThread(tid) {
+  const thread = THREADS[tid];
+  if (!thread) return;
+  activeThread = tid;
+  activeStation = null;
+  highlightThread(tid);
+  openPanel(thread.name, thread.question, [tid]);
+}
+
+// Close on background click
+document.getElementById('map-container').addEventListener('click', e => {
+  if (e.target === document.getElementById('map-svg') || e.target === document.getElementById('map-container') || e.target.tagName === 'rect') {
+    closePanel();
+  }
+});
+
+// ESC
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closePanel();
+});
+
+// ─── PAN / ZOOM ───────────────────────────────────────────────────────────────
+const container = document.getElementById('map-container');
+const inner = document.getElementById('map-inner');
+
+let transform = { x: 0, y: 0, scale: 0.7 };
+// Start zoomed out to see the whole map
+transform.x = (window.innerWidth - 2000 * transform.scale) / 2;
+transform.y = (window.innerHeight - 1200 * transform.scale) / 2;
+
+function applyTransform() {
+  inner.style.transform = `translate(${transform.x}px, ${transform.y}px) scale(${transform.scale})`;
+}
+applyTransform();
+
+let dragging = false;
+let dragStart = { x: 0, y: 0 };
+let transformStart = { x: 0, y: 0 };
+
+container.addEventListener('mousedown', e => {
+  if (e.button !== 0) return;
+  dragging = true;
+  dragStart = { x: e.clientX, y: e.clientY };
+  transformStart = { x: transform.x, y: transform.y };
+  container.classList.add('dragging');
+});
+
+window.addEventListener('mousemove', e => {
+  if (!dragging) return;
+  transform.x = transformStart.x + (e.clientX - dragStart.x);
+  transform.y = transformStart.y + (e.clientY - dragStart.y);
+  applyTransform();
+});
+
+window.addEventListener('mouseup', () => {
+  dragging = false;
+  container.classList.remove('dragging');
+});
+
+container.addEventListener('wheel', e => {
+  e.preventDefault();
+  const factor = e.deltaY < 0 ? 1.1 : 0.9;
+  const newScale = Math.min(3, Math.max(0.3, transform.scale * factor));
+  // Zoom towards mouse position
+  const rect = container.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  transform.x = mx - (mx - transform.x) * (newScale / transform.scale);
+  transform.y = my - (my - transform.y) * (newScale / transform.scale);
+  transform.scale = newScale;
+  applyTransform();
+}, { passive: false });
+
+document.getElementById('zoom-in').addEventListener('click', () => {
+  const newScale = Math.min(3, transform.scale * 1.2);
+  const cx = window.innerWidth / 2;
+  const cy = window.innerHeight / 2;
+  transform.x = cx - (cx - transform.x) * (newScale / transform.scale);
+  transform.y = cy - (cy - transform.y) * (newScale / transform.scale);
+  transform.scale = newScale;
+  applyTransform();
+});
+
+document.getElementById('zoom-out').addEventListener('click', () => {
+  const newScale = Math.max(0.3, transform.scale / 1.2);
+  const cx = window.innerWidth / 2;
+  const cy = window.innerHeight / 2;
+  transform.x = cx - (cx - transform.x) * (newScale / transform.scale);
+  transform.y = cy - (cy - transform.y) * (newScale / transform.scale);
+  transform.scale = newScale;
+  applyTransform();
+});
+
+document.getElementById('zoom-reset').addEventListener('click', () => {
+  transform.scale = 0.7;
+  transform.x = (window.innerWidth - 2000 * transform.scale) / 2;
+  transform.y = (window.innerHeight - 1200 * transform.scale) / 2;
+  applyTransform();
+});
+
+// Touch support
+let lastTouchDist = 0;
+let lastTouchCenter = { x:0, y:0 };
+
+container.addEventListener('touchstart', e => {
+  if (e.touches.length === 1) {
+    dragging = true;
+    dragStart = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    transformStart = { x: transform.x, y: transform.y };
+  } else if (e.touches.length === 2) {
+    dragging = false;
+    const dx = e.touches[1].clientX - e.touches[0].clientX;
+    const dy = e.touches[1].clientY - e.touches[0].clientY;
+    lastTouchDist = Math.sqrt(dx*dx+dy*dy);
+    lastTouchCenter = {
+      x: (e.touches[0].clientX + e.touches[1].clientX)/2,
+      y: (e.touches[0].clientY + e.touches[1].clientY)/2
+    };
+  }
+  e.preventDefault();
+}, { passive:false });
+
+container.addEventListener('touchmove', e => {
+  if (e.touches.length === 1 && dragging) {
+    transform.x = transformStart.x + (e.touches[0].clientX - dragStart.x);
+    transform.y = transformStart.y + (e.touches[0].clientY - dragStart.y);
+    applyTransform();
+  } else if (e.touches.length === 2) {
+    const dx = e.touches[1].clientX - e.touches[0].clientX;
+    const dy = e.touches[1].clientY - e.touches[0].clientY;
+    const dist = Math.sqrt(dx*dx+dy*dy);
+    const factor = dist / lastTouchDist;
+    const newScale = Math.min(3, Math.max(0.3, transform.scale * factor));
+    const cx = lastTouchCenter.x;
+    const cy = lastTouchCenter.y;
+    transform.x = cx - (cx - transform.x) * (newScale / transform.scale);
+    transform.y = cy - (cy - transform.y) * (newScale / transform.scale);
+    transform.scale = newScale;
+    lastTouchDist = dist;
+    applyTransform();
+  }
+  e.preventDefault();
+}, { passive:false });
+
+container.addEventListener('touchend', () => { dragging = false; });
+
+</script>
+</body>
+</html>

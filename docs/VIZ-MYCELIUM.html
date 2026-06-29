@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mycelium — Personal Library Network</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #080604;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    color: #aaa;
+  }
+
+  #canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+  }
+
+  #title-block {
+    position: fixed;
+    top: 28px;
+    left: 32px;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  #title-block .title {
+    font-variant: small-caps;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    color: #2A2A2A;
+    text-transform: lowercase;
+  }
+
+  #title-block .subtitle {
+    font-size: 10px;
+    color: #1e1e1e;
+    letter-spacing: 0.15em;
+    margin-top: 4px;
+  }
+
+  #tooltip {
+    position: fixed;
+    pointer-events: none;
+    z-index: 100;
+    background: rgba(8, 6, 4, 0.92);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    padding: 10px 14px;
+    max-width: 260px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  #tooltip .book-title {
+    font-size: 11px;
+    color: #ccc;
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    margin-bottom: 7px;
+    line-height: 1.4;
+  }
+
+  #tooltip .thread-tag {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    margin: 2px 0;
+    opacity: 0.85;
+  }
+
+  #info-panel {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background: rgba(8, 6, 4, 0.94);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 5px;
+    padding: 14px 20px;
+    max-width: 520px;
+    width: calc(100vw - 80px);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  #info-panel.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #info-panel .panel-title {
+    font-size: 12px;
+    color: #ddd;
+    font-variant: small-caps;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+
+  #info-panel .anchor-badge {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    background: rgba(255,255,255,0.05);
+    border-radius: 2px;
+    padding: 2px 7px;
+    margin-bottom: 10px;
+    color: #888;
+    font-variant: small-caps;
+  }
+
+  #info-panel .panel-threads {
+    margin-top: 6px;
+  }
+
+  #info-panel .panel-thread {
+    margin: 5px 0;
+  }
+
+  #info-panel .panel-thread-name {
+    font-size: 10px;
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+  }
+
+  #info-panel .panel-thread-q {
+    font-size: 9px;
+    color: #555;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+    font-style: italic;
+  }
+
+  #info-panel .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    pointer-events: auto;
+    line-height: 1;
+  }
+
+  #info-panel .close-btn:hover {
+    color: #666;
+  }
+</style>
+</head>
+<body>
+
+<div id="title-block">
+  <div class="title">Mycelium</div>
+  <div class="subtitle" id="subtitle-text">17 intellectual threads · — books</div>
+</div>
+
+<svg id="canvas"></svg>
+
+<div id="tooltip"></div>
+
+<div id="info-panel">
+  <span class="close-btn" id="panel-close">×</span>
+  <div class="panel-title" id="panel-title"></div>
+  <div id="panel-anchor"></div>
+  <div class="panel-threads" id="panel-threads"></div>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+const THREADS = [
+  {
+    id: "darwin_s_long_shadow", name: "Darwin's Long Shadow", color: "#4A7C59",
+    anchor: "The Selfish Gene",
+    question: "How far does natural selection reach beyond biology?",
+    books: ["The Selfish Gene","The Extended Phenotype","River Out of Eden","Climbing Mount Improbable","Natural Selection and Social Theory","The Folly of Fools","Darwin's Dangerous Idea","The Red Queen","The Origins of Virtue","The Evolution of Everything","Culture and the Evolutionary Process","On the Origin of Species","Behave: The Biology of Humans at Our Best and Worst"]
+  },
+  {
+    id: "the_judgment_machine", name: "The Judgment Machine", color: "#6B4E8A",
+    anchor: "Thinking, Fast and Slow",
+    question: "How do minds decide, and when do they fail?",
+    books: ["Thinking, Fast and Slow","Choices, Values, and Frames","Judgment Under Uncertainty: Heuristics and Biases","Noise: A Flaw in Human Judgment","Sources of Power","Intuition at Work","Streetlights and Shadows","Simple Heuristics That Make Us Smart","Decision Traps","Winning Decisions","Thinking and Deciding","Algorithms to Live By","The Signal and the Noise"]
+  },
+  {
+    id: "the_fat_tail_cosmos", name: "The Fat-Tail Cosmos", color: "#C45C3A",
+    anchor: "The Black Swan",
+    question: "What do we do when the most important events can't be modeled?",
+    books: ["The Black Swan","Antifragile","Fooled by Randomness","Skin in the Game","Dynamic Hedging: Managing Vanilla and Exotic Options","Statistical Consequences of Fat Tails","A Random Walk Down Wall Street","When Genius Failed","Do Dice Play God?","What I Learned Losing a Million Dollars","The Signal and the Noise"]
+  },
+  {
+    id: "how_organizations_breathe", name: "How Organizations Breathe", color: "#3A6B8A",
+    anchor: "The Fifth Discipline",
+    question: "What makes institutions live, adapt, or calcify?",
+    books: ["Humble Inquiry","Humble Leadership","Humble Consulting","Helping","Process Consultation Volume II","Organizational Culture and Leadership","DEC Is Dead, Long Live DEC","The Fearless Organization","The Fifth Discipline","Toyota Production System","The Ambiguities of Experience","No Rules Rules","Brave New Work"]
+  },
+  {
+    id: "the_stoic_wager", name: "The Stoic Wager", color: "#8A7A3A",
+    anchor: "Meditations",
+    question: "How do you act wisely when outcomes are not in your control?",
+    books: ["Meditations","Letters from a Stoic","Discourses and Selected Writings","A Guide to the Good Life","The Stoic Challenge","On Desire","A Slap in the Face","The Daily Stoic","Ego Is the Enemy","Dying Every Day: Seneca at the Court of Nero","Tao Te Ching","The Analects"]
+  },
+  {
+    id: "contagion_and_control", name: "Contagion and Control", color: "#2E7D6B",
+    anchor: "The Ghost Map",
+    question: "How does disease spread through society, and how does society respond?",
+    books: ["Inside the Outbreaks","Apollo's Arrow","The Ghost Map","Smallpox: The Death of a Disease","The Viral Storm","Mountains Beyond Mountains","Polio: An American Story","The Social Transformation of American Medicine","Change: How Behavior Spreads","Diffusion of Innovations"]
+  },
+  {
+    id: "india_and_the_long_view", name: "India and the Long View", color: "#B5682B",
+    anchor: "The Anarchy",
+    question: "How does a civilization persist, fracture, and reinvent itself across millennia?",
+    books: ["The Glass Palace","The Nutmeg's Curse","Empress: The Astonishing Reign of Nur Jahan","The Anarchy","The End of Sorrow (The Bhagavad Gita for Daily Living, Vol. 1)","The Bhagavad Gita","The Upanishads","Inner Engineering","Karma","Light on Yoga","Light on Life"]
+  },
+  {
+    id: "civilizational_sweep", name: "The Civilizational Sweep", color: "#5A7A6A",
+    anchor: "Guns, Germs, and Steel",
+    question: "What is the arc of human history, and where is it going?",
+    books: ["The Ascent of Man","The Prehistory of the Mind","Guns, Germs, and Steel","Homo Deus: A Brief History of Tomorrow","21 Lessons for the 21st Century","The Rational Optimist","The Evolution of Everything","Grand Transitions","Consilience: The Unity of Knowledge","The Demon-Haunted World"]
+  },
+  {
+    id: "ridley_thesis", name: "The Ridley Thesis", color: "#7A9A5A",
+    anchor: "The Rational Optimist",
+    question: "Does progress emerge bottom-up from exchange and evolution?",
+    books: ["The Red Queen","The Origins of Virtue","Genome","The Rational Optimist","The Evolution of Everything","How Innovation Works","Darwin's Dangerous Idea","The Selfish Gene","The Extended Phenotype"]
+  },
+  {
+    id: "genius_and_its_conditions", name: "Genius and Its Conditions", color: "#7A4A8A",
+    anchor: "Creativity",
+    question: "Is creativity a personal trait or an ecological one?",
+    books: ["Creativity","Flow","Good Business","The Geography of Genius","Leonardo da Vinci","Genius","Creativity, Inc.","The Medici Effect","The Rise and Fall of the House of Medici","Daily Rituals","The Creative Act","Where Good Ideas Come From","Out of Our Minds"]
+  },
+  {
+    id: "the_power_of_the_frame", name: "The Power of the Frame", color: "#A04060",
+    anchor: "Influence: Science and Practice",
+    question: "How does presentation change meaning and action?",
+    books: ["Influence: Science and Practice","The 48 Laws of Power","The Art of Seduction","The Laws of Human Nature","Never Split the Difference","Getting to Yes","The Political Mind","Resonate","slide:ology","The Pyramid Principle","Alchemy","Amusing Ourselves to Death"]
+  },
+  {
+    id: "disruptions_anatomy", name: "Disruption's Anatomy", color: "#3A7A8A",
+    anchor: "The Innovator's Dilemma",
+    question: "How do new things displace old things, and why do incumbents always lose?",
+    books: ["The Innovator's Dilemma","The Innovator's Solution","Competing Against Luck","How Innovation Works","Invention and Innovation","Diffusion of Innovations","The Lean Startup","Escaping the Build Trap","Zero to One","Only the Paranoid Survive","How We Got to Now"]
+  },
+  {
+    id: "the_mind_before_language", name: "The Mind Before Language", color: "#4A6B3A",
+    anchor: "The Prehistory of the Mind",
+    question: "What is the mind before culture and language shaped it?",
+    books: ["The Prehistory of the Mind","Other Minds","Darwin's Dangerous Idea","The Beginning of Infinity","The Fabric of Reality","Consilience: The Unity of Knowledge","Frames of Mind","The Weirdest People in the World","Mind in Motion","The Difference"]
+  },
+  {
+    id: "body_as_practice", name: "The Body as Practice", color: "#5A8A70",
+    anchor: "Light on Yoga",
+    question: "What does the body know that the mind cannot articulate?",
+    books: ["Patanjali's Yoga Sutras","Patanjali Yoga","Light on Yoga","Light on Pranayama","Light on Life","Yoga for Body, Breath, and Mind","The Heart of Yoga","The Yoga Sutras of Patanjali","Born to Run","Starting Strength: Basic Barbell Training","Exercised","TB Method","Outlive","Super Agers"]
+  },
+  {
+    id: "zen_current", name: "The Zen Current", color: "#4A7A6A",
+    anchor: "An Introduction to Zen Buddhism",
+    question: "What does direct experience — stripped of doctrine — actually teach?",
+    books: ["An Introduction to Zen Buddhism","The Zen Koan as a Means of Attaining Enlightenment","How to Walk","Who Ordered This Truckload of Dung?","If You Meet the Buddha on the Road, Kill Him","Tao Te Ching","The Analects","Trying Not to Try","Catching the Big Fish","Destructive Emotions"]
+  },
+  {
+    id: "vedantic_root", name: "The Vedantic Root", color: "#8A5A3A",
+    anchor: "I Am That",
+    question: "What is the self, stripped of all additions?",
+    books: ["The Bhagavad Gita","The End of Sorrow (The Bhagavad Gita for Daily Living, Vol. 1)","The Upanishads","I Am That","Patanjali's Yoga Sutras","The Yoga Sutras of Patanjali","Light on Yoga","Light on Life","The Heart of Yoga","Yoga for Body, Breath, and Mind","Satipatthana Sutta Discourses","Inner Engineering","Karma","Tantra: The Art of Understanding","The Great Challenge","I Am the Gate"]
+  },
+  {
+    id: "strategy_as_statecraft", name: "Strategy as Statecraft", color: "#6B3A3A",
+    anchor: "The Art of War",
+    question: "How do states and leaders navigate irreversible decisions under uncertainty?",
+    books: ["The Art of War","The Prince","On Grand Strategy","On China","Boyd","From Third World to First","Rise and Kill First","The Machiavellians: Defenders of Freedom","7 Powers: The Foundations of Business Strategy","The Revolt of the Public","Preventing Surprise Attacks"]
+  }
+];
+
+// ── Build node / link data ──────────────────────────────────────────────────
+
+const bookMap = new Map(); // title → { title, threads: Set, primaryThread }
+
+THREADS.forEach(thread => {
+  thread.books.forEach(title => {
+    if (!bookMap.has(title)) {
+      bookMap.set(title, { id: title, title, threads: new Set(), primaryThread: thread });
+    }
+    bookMap.get(title).threads.add(thread);
+  });
+});
+
+const nodes = Array.from(bookMap.values()).map(b => ({
+  ...b,
+  threads: b.threads, // keep Set
+  isJunction: b.threads.size > 1,
+  color: b.primaryThread.color
+}));
+
+const nodeIndex = new Map(nodes.map((n, i) => [n.id, i]));
+
+const links = [];
+THREADS.forEach(thread => {
+  for (let i = 0; i < thread.books.length - 1; i++) {
+    links.push({
+      source: thread.books[i],
+      target: thread.books[i + 1],
+      thread
+    });
+  }
+});
+
+// Update subtitle
+const totalBooks = nodes.length;
+document.getElementById('subtitle-text').textContent = `17 intellectual threads · ${totalBooks} books`;
+
+// ── SVG setup ──────────────────────────────────────────────────────────────
+
+const svg = d3.select('#canvas')
+  .attr('width', '100%')
+  .attr('height', '100%');
+
+const W = () => window.innerWidth;
+const H = () => window.innerHeight;
+
+// ── Defs: filters, gradients ───────────────────────────────────────────────
+
+const defs = svg.append('defs');
+
+// Soft glow
+const glowFilter = defs.append('filter')
+  .attr('id', 'glow')
+  .attr('x', '-50%').attr('y', '-50%')
+  .attr('width', '200%').attr('height', '200%');
+glowFilter.append('feGaussianBlur')
+  .attr('in', 'SourceGraphic')
+  .attr('stdDeviation', '3')
+  .attr('result', 'blur');
+const glowMerge = glowFilter.append('feMerge');
+glowMerge.append('feMergeNode').attr('in', 'blur');
+glowMerge.append('feMergeNode').attr('in', 'SourceGraphic');
+
+// Strong glow for junctions
+const glowStrong = defs.append('filter')
+  .attr('id', 'glow-strong')
+  .attr('x', '-80%').attr('y', '-80%')
+  .attr('width', '260%').attr('height', '260%');
+glowStrong.append('feGaussianBlur')
+  .attr('in', 'SourceGraphic')
+  .attr('stdDeviation', '6')
+  .attr('result', 'blur');
+const gsm = glowStrong.append('feMerge');
+gsm.append('feMergeNode').attr('in', 'blur');
+gsm.append('feMergeNode').attr('in', 'SourceGraphic');
+
+// Vignette radial gradient
+const vignette = defs.append('radialGradient')
+  .attr('id', 'vignette')
+  .attr('cx', '50%').attr('cy', '50%')
+  .attr('r', '70%');
+vignette.append('stop').attr('offset', '0%').attr('stop-color', 'transparent');
+vignette.append('stop').attr('offset', '100%').attr('stop-color', 'rgba(8,6,4,0.75)');
+
+// ── Main group (zoomable) ──────────────────────────────────────────────────
+
+const g = svg.append('g').attr('class', 'scene');
+
+// ── Thread cluster centers (circular arrangement) ─────────────────────────
+
+function threadCenters() {
+  const cx = W() / 2, cy = H() / 2;
+  const rx = W() * 0.36, ry = H() * 0.36;
+  const centers = {};
+  THREADS.forEach((t, i) => {
+    const angle = (2 * Math.PI * i / THREADS.length) - Math.PI / 2;
+    centers[t.id] = {
+      x: cx + rx * Math.cos(angle),
+      y: cy + ry * Math.sin(angle)
+    };
+  });
+  return centers;
+}
+
+// ── Force simulation ───────────────────────────────────────────────────────
+
+const simulation = d3.forceSimulation(nodes)
+  .force('charge', d3.forceManyBody().strength(-200))
+  .force('link', d3.forceLink(links)
+    .id(d => d.id)
+    .distance(60)
+    .strength(0.3))
+  .force('collide', d3.forceCollide(d => d.isJunction ? 18 : 10))
+  .alphaDecay(0.025);
+
+function addClusterForces() {
+  const centers = threadCenters();
+  // Remove old cluster forces
+  THREADS.forEach(t => {
+    simulation.force('cx_' + t.id, null);
+    simulation.force('cy_' + t.id, null);
+  });
+  THREADS.forEach(thread => {
+    const center = centers[thread.id];
+    simulation
+      .force('cx_' + thread.id, d3.forceX(center.x).strength(n => {
+        if (n.threads.has(thread)) return 0.06 / n.threads.size;
+        return 0;
+      }))
+      .force('cy_' + thread.id, d3.forceY(center.y).strength(n => {
+        if (n.threads.has(thread)) return 0.06 / n.threads.size;
+        return 0;
+      }));
+  });
+}
+
+addClusterForces();
+window.addEventListener('resize', () => {
+  addClusterForces();
+  simulation.alpha(0.2).restart();
+});
+
+// ── Draw links ─────────────────────────────────────────────────────────────
+
+const linkSel = g.append('g').attr('class', 'links')
+  .selectAll('line')
+  .data(links)
+  .join('line')
+  .attr('stroke', d => d.thread.color)
+  .attr('stroke-opacity', 0.35)
+  .attr('stroke-width', 1.5)
+  .attr('filter', 'url(#glow)');
+
+// ── Draw nodes ─────────────────────────────────────────────────────────────
+
+const nodeG = g.append('g').attr('class', 'nodes')
+  .selectAll('g')
+  .data(nodes)
+  .join('g')
+  .attr('class', 'node-group')
+  .style('cursor', 'pointer');
+
+// Outer soft halo (behind everything)
+nodeG.append('circle')
+  .attr('class', 'halo')
+  .attr('r', d => (d.isJunction ? 9 : 5) + 8)
+  .attr('fill', d => d.color)
+  .attr('opacity', 0.12);
+
+// Junction rings (concentric, one per thread)
+nodeG.each(function(d) {
+  if (!d.isJunction) return;
+  const sel = d3.select(this);
+  const threadArr = Array.from(d.threads);
+  threadArr.forEach((t, i) => {
+    sel.append('circle')
+      .attr('r', 9 + (i + 1) * 3)
+      .attr('fill', 'none')
+      .attr('stroke', t.color)
+      .attr('stroke-width', 1.2)
+      .attr('opacity', 0.5);
+  });
+});
+
+// Main node circle
+nodeG.append('circle')
+  .attr('class', 'main-circle')
+  .attr('r', d => d.isJunction ? 9 : 5)
+  .attr('fill', d => d.color)
+  .attr('filter', d => d.isJunction ? 'url(#glow-strong)' : 'url(#glow)');
+
+// ── Thread labels ──────────────────────────────────────────────────────────
+
+const labelG = g.append('g').attr('class', 'labels');
+const threadLabels = labelG.selectAll('text')
+  .data(THREADS)
+  .join('text')
+  .attr('font-size', '10px')
+  .attr('font-family', 'Courier New, Courier, monospace')
+  .attr('font-variant', 'small-caps')
+  .attr('fill', d => d.color)
+  .attr('opacity', 0.45)
+  .attr('text-anchor', 'middle')
+  .attr('pointer-events', 'all')
+  .style('cursor', 'default')
+  .text(d => d.name);
+
+// ── Tick ───────────────────────────────────────────────────────────────────
+
+simulation.on('tick', () => {
+  linkSel
+    .attr('x1', d => d.source.x)
+    .attr('y1', d => d.source.y)
+    .attr('x2', d => d.target.x)
+    .attr('y2', d => d.target.y);
+
+  nodeG.attr('transform', d => `translate(${d.x},${d.y})`);
+
+  // Compute thread centroids for labels
+  THREADS.forEach(thread => {
+    const threadNodes = nodes.filter(n => n.threads.has(thread));
+    if (!threadNodes.length) return;
+    const cx = d3.mean(threadNodes, n => n.x);
+    const cy = d3.mean(threadNodes, n => n.y);
+    thread._cx = cx;
+    thread._cy = cy;
+  });
+
+  threadLabels
+    .attr('x', d => d._cx || 0)
+    .attr('y', d => (d._cy || 0) - 24);
+});
+
+// ── Vignette overlay (always on top) ──────────────────────────────────────
+
+svg.append('rect')
+  .attr('width', '100%')
+  .attr('height', '100%')
+  .attr('fill', 'url(#vignette)')
+  .attr('pointer-events', 'none');
+
+// ── Zoom ───────────────────────────────────────────────────────────────────
+
+const zoom = d3.zoom()
+  .scaleExtent([0.2, 8])
+  .on('zoom', (event) => {
+    g.attr('transform', event.transform);
+  });
+
+svg.call(zoom);
+
+// ── Tooltip & interaction state ────────────────────────────────────────────
+
+const tooltip = document.getElementById('tooltip');
+const infoPanel = document.getElementById('info-panel');
+const panelTitle = document.getElementById('panel-title');
+const panelAnchor = document.getElementById('panel-anchor');
+const panelThreads = document.getElementById('panel-threads');
+document.getElementById('panel-close').addEventListener('click', () => {
+  infoPanel.classList.remove('visible');
+});
+
+let activeNode = null;
+
+function showTooltip(event, d) {
+  const threadArr = Array.from(d.threads);
+  const html = `
+    <div class="book-title">${d.title}</div>
+    ${threadArr.map(t => `<div class="thread-tag" style="color:${t.color}">${t.name}</div>`).join('')}
+  `;
+  tooltip.innerHTML = html;
+  tooltip.style.opacity = '1';
+  moveTooltip(event);
+}
+
+function moveTooltip(event) {
+  let x = event.clientX + 16;
+  let y = event.clientY - 10;
+  if (x + 270 > window.innerWidth) x = event.clientX - 280;
+  if (y + 120 > window.innerHeight) y = event.clientY - 100;
+  tooltip.style.left = x + 'px';
+  tooltip.style.top = y + 'px';
+}
+
+function hideTooltip() {
+  tooltip.style.opacity = '0';
+}
+
+function dimAll() {
+  nodeG.style('opacity', 0.12);
+  linkSel.style('opacity', 0.04);
+  threadLabels.style('opacity', 0.08);
+}
+
+function restoreAll() {
+  nodeG.style('opacity', 1);
+  linkSel.attr('stroke-opacity', 0.35).style('opacity', 1);
+  threadLabels.style('opacity', 0.45);
+}
+
+// Node hover
+nodeG
+  .on('mouseover', function(event, d) {
+    showTooltip(event, d);
+    dimAll();
+    // Highlight this node
+    d3.select(this).style('opacity', 1);
+    // Highlight links that touch this node
+    linkSel.style('opacity', l =>
+      (l.source === d || l.target === d) ? 1 : 0.04
+    );
+  })
+  .on('mousemove', moveTooltip)
+  .on('mouseout', function() {
+    hideTooltip();
+    restoreAll();
+  })
+  .on('click', function(event, d) {
+    event.stopPropagation();
+    activeNode = d;
+    const threadArr = Array.from(d.threads);
+    panelTitle.textContent = d.title;
+
+    // Anchor badge
+    const anchorThread = threadArr.find(t => t.anchor === d.title);
+    if (anchorThread) {
+      panelAnchor.innerHTML = `<span class="anchor-badge" style="color:${anchorThread.color}">anchor — ${anchorThread.name}</span>`;
+    } else {
+      panelAnchor.innerHTML = '';
+    }
+
+    panelThreads.innerHTML = threadArr.map(t => `
+      <div class="panel-thread">
+        <div class="panel-thread-name" style="color:${t.color}">${t.name}</div>
+        <div class="panel-thread-q">${t.question}</div>
+      </div>
+    `).join('');
+
+    infoPanel.classList.add('visible');
+  });
+
+// Thread label hover
+threadLabels
+  .on('mouseover', function(event, thread) {
+    dimAll();
+    const threadNodes = nodes.filter(n => n.threads.has(thread));
+    const threadNodeSet = new Set(threadNodes.map(n => n.id));
+    nodeG.style('opacity', d => threadNodeSet.has(d.id) ? 1 : 0.08);
+    linkSel.style('opacity', l =>
+      l.thread === thread ? 1 : 0.03
+    );
+    d3.select(this).style('opacity', 1);
+  })
+  .on('mouseout', function() {
+    restoreAll();
+  });
+
+svg.on('click', () => {
+  infoPanel.classList.remove('visible');
+  activeNode = null;
+});
+
+// ── Breathing animation ───────────────────────────────────────────────────
+
+const glowBlur = glowFilter.select('feGaussianBlur');
+const glowStrongBlur = glowStrong.select('feGaussianBlur');
+const startTime = performance.now();
+
+function breathe(now) {
+  const elapsed = (now - startTime) / 1000;
+  const period = 4; // seconds
+  const t = (Math.sin((2 * Math.PI * elapsed) / period) + 1) / 2; // 0..1
+  const soft = 2.5 + t * 1.5;   // 2.5..4
+  const strong = soft * 2;        // 5..8
+  glowBlur.attr('stdDeviation', soft.toFixed(2));
+  glowStrongBlur.attr('stdDeviation', strong.toFixed(2));
+  requestAnimationFrame(breathe);
+}
+
+requestAnimationFrame(breathe);
+
+// ── Center view after simulation settles ──────────────────────────────────
+
+simulation.on('end', () => {
+  const xs = nodes.map(n => n.x);
+  const ys = nodes.map(n => n.y);
+  const xMin = d3.min(xs), xMax = d3.max(xs);
+  const yMin = d3.min(ys), yMax = d3.max(ys);
+  const bw = xMax - xMin, bh = yMax - yMin;
+  const scale = Math.min(W() / (bw + 120), H() / (bh + 120), 1.4) * 0.88;
+  const tx = W() / 2 - scale * (xMin + bw / 2);
+  const ty = H() / 2 - scale * (yMin + bh / 2);
+  svg.transition().duration(1200).ease(d3.easeCubicInOut)
+    .call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+});
+
+</script>
+</body>
+</html>
