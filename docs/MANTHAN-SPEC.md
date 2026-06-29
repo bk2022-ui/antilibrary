@@ -19,18 +19,22 @@ It is named after Samudra Manthan — the Hindu myth of churning the cosmic ocea
 
 ---
 
-## The six modules
+## The four steps
 
 | # | English | Hindi | What it does |
 |---|---|---|---|
 | 1 | **Collect** | **Sangrah** | Build and maintain the inventory |
 | 2 | **Classify** | **Parichay** | Dimension every book across multiple axes |
 | 3 | **Churn** | **Manthan** | Run multiple lenses across the classified inventory |
-| 4a | **Threads** | **Sutra** | Named intellectual spines with internal tension |
-| 4b | **Clusters** | **Samuha** | Groupings with gravity but no defined spine |
-| 5 | **Gaps** | **Khoj** | Forward-looking — human-driven, not engine-derived |
+| 4 | **Curate** | **Darshan** | Decide what the library shows the world |
 
-The modules are not sequential. They run concurrently and feed each other. Gaps (Khoj) is the only module that cannot be engine-generated — it requires the person's intention about where their library is going.
+**Naming convention:** every module carries its name in English and Hindi. If a third language becomes relevant for a specific library, it slots in as a third column.
+
+**Visualization** is not a step — it is the output of Darshan, rendered.
+
+**Gaps / Khoj** sits outside the four steps — the forward-looking loop that feeds back into Sangrah. Reactive gaps can be engine-surfaced; proactive gaps require human intention.
+
+Threads (Sutra) and Clusters (Samuha) are the two output forms that Manthan produces — they are not separate steps, they are what the churn crystallizes into.
 
 ---
 

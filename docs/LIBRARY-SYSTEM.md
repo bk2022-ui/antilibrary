@@ -13,20 +13,24 @@ A library is a self-portrait. The books someone owns — read and unread, collec
 
 It works on any collection, any size, any domain. It can be run on a digital inventory, a set of shelf photographs, or a conversation. The output is not an organized library — it is a legible one.
 
-The method has six modules. They are not sequential. They run concurrently and feed each other. A book entering **Collect** triggers **Classify**. Classify feeds **Churn**. Churn crystallizes into **Threads** and **Clusters**. Threads and Clusters reveal **Gaps**. Gaps drive new collecting. The system is always live.
+The method has four steps. They are not strictly sequential — they run concurrently and feed each other. A book entering **Collect / Sangrah** triggers **Classify / Parichay**. Classify feeds **Churn / Manthan**. Churn produces the material that **Curate / Darshan** shapes into what the library shows the world. Gaps (Khoj) sit outside the sequence — the forward-looking loop that feeds back into Collect.
+
+**Naming convention:** every module carries its name in English and Hindi. If a third language becomes relevant for a specific library, it slots in as a third column. English for clarity, Hindi for identity.
 
 ---
 
-## The Six Modules
+## The Four Steps
 
-| # | English | Hindi |
-|---|---|---|
-| 1 | **Collect** | **Sangrah** |
-| 2 | **Classify** | **Parichay** |
-| 3 | **Churn** | **Manthan** |
-| 4a | **Threads** | **Sutra** |
-| 4b | **Clusters** | **Samuha** |
-| 5 | **Gaps** | **Khoj** |
+| # | English | Hindi | What |
+|---|---|---|---|
+| 1 | **Collect** | **Sangrah** | Build and maintain the inventory |
+| 2 | **Classify** | **Parichay** | Dimension every book across multiple axes |
+| 3 | **Churn** | **Manthan** | Surface threads, clusters, patterns, tensions |
+| 4 | **Curate** | **Darshan** | Decide what the library shows the world |
+
+**Visualization** is not a step — it is the output of Darshan, rendered.
+
+**Gaps / Khoj** sits outside the four steps — it is the forward-looking loop. The engine can surface reactive gaps (missing anchors, thin traditions); proactive gaps require human intention about where the library is going. Khoj feeds back into Sangrah.
 
 ---
 
