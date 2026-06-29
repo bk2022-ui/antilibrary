@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antilibrary — System Overview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: #f8f6f2;
+    color: #2a2a2a;
+    padding: 48px 32px;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: normal;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 48px;
+    font-style: italic;
+  }
+
+  .section-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #aaa;
+    margin-bottom: 20px;
+  }
+
+  /* FIVE STEPS */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 56px;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 36px 200px 1fr;
+    gap: 0 24px;
+    padding: 24px 0;
+    border-top: 1px solid #e0dcd6;
+    align-items: start;
+  }
+
+  .step:last-child { border-bottom: 1px solid #e0dcd6; }
+
+  .step-num {
+    font-size: 11px;
+    color: #bbb;
+    padding-top: 4px;
+  }
+
+  .step-name {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .step-english {
+    font-size: 18px;
+    font-weight: normal;
+    color: #1a1a1a;
+  }
+
+  .step-hindi {
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+  }
+
+  .step-devanagari {
+    font-size: 13px;
+    color: #bbb;
+  }
+
+  .step-body {
+    padding-top: 2px;
+  }
+
+  .step-what {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .step-desc {
+    font-size: 13.5px;
+    color: #666;
+    line-height: 1.65;
+  }
+
+  .step-trigger {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #aaa;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2px 8px;
+    letter-spacing: 0.04em;
+  }
+
+  /* COLOR ACCENTS PER STEP */
+  .step-1 .step-english { color: #2d4a3e; }
+  .step-2 .step-english { color: #2a3d5c; }
+  .step-3 .step-english { color: #4a2d3e; }
+  .step-4 .step-english { color: #3d3a1a; }
+  .step-5 .step-english { color: #1a3a3a; }
+
+  /* OUTPUT FILES */
+  .outputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+
+  .output-card {
+    background: #fff;
+    border: 1px solid #e0dcd6;
+    border-radius: 6px;
+    padding: 18px;
+  }
+
+  .output-file {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .output-desc {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  /* PRINCIPLES */
+  .principles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 32px;
+    margin-bottom: 56px;
+  }
+
+  .principle {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.55;
+    padding-left: 14px;
+    border-left: 2px solid #e0dcd6;
+  }
+
+  .principle strong {
+    color: #2a2a2a;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* FLOW */
+  .flow {
+    background: #fff;
+    border: 1px solid #e0dcd6;
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin-bottom: 56px;
+    font-family: 'Courier New', monospace;
+    font-size: 12.5px;
+    color: #555;
+    line-height: 2;
+  }
+
+  .flow-arrow { color: #bbb; }
+  .flow-label { color: #aaa; font-size: 11px; }
+
+  /* KHOJ */
+  .khoj {
+    background: #faf9f6;
+    border: 1px dashed #d0ccc6;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-bottom: 56px;
+  }
+
+  .khoj h3 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 8px;
+    color: #555;
+  }
+
+  .khoj p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+  }
+
+  /* NAMING */
+  .naming {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.7;
+    border-top: 1px solid #e0dcd6;
+    padding-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  .footer {
+    font-size: 11px;
+    color: #ccc;
+    border-top: 1px solid #e0dcd6;
+    padding-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Antilibrary</h1>
+<div class="subtitle">System overview — updated 2026-06-29</div>
+
+<!-- WHAT IT IS -->
+<div class="section-label">What it is</div>
+<p style="font-size:15px; color:#444; line-height:1.75; margin-bottom:48px;">
+  An engine that takes any book inventory and surfaces its intellectual structure — threads, clusters, patterns, and a reveal of what the collection says about how the person thinks. Then it puts that structure in front of the world.<br><br>
+  Five steps. Five agents. Each named in English and Hindi. The Hindi names are not translations — they carry meaning rooted in Sanskrit that deepens what the English word points at.
+</p>
+
+<!-- THE FIVE STEPS -->
+<div class="section-label">The five steps</div>
+<div class="steps">
+
+  <div class="step step-1">
+    <div class="step-num">01</div>
+    <div class="step-name">
+      <div class="step-english">Collect</div>
+      <div class="step-hindi">Sangrah</div>
+      <div class="step-devanagari">संग्रह</div>
+    </div>
+    <div class="step-body">
+      <div class="step-what">Parse raw input → structured, enriched inventory</div>
+      <div class="step-desc">
+        Takes any form of input — shelf photographs, CSV export, Goodreads list, conversation — and produces a structured inventory entry per book. Enriches with cover images, ISBNs, and descriptions from Google Books and Open Library. Flags low-confidence entries for human review before classification runs. Canonicalizes multiple editions of the same text as distinct siblings, not duplicates.
+      </div>
+      <span class="step-trigger">Trigger: new file uploaded</span>
+      <span class="step-trigger">Output: inventory.json</span>
+    </div>
+  </div>
+
+  <div class="step step-2">
+    <div class="step-num">02</div>
+    <div class="step-name">
+      <div class="step-english">Classify</div>
+      <div class="step-hindi">Parichay</div>
+      <div class="step-devanagari">परिचय</div>
+    </div>
+    <div class="step-body">
+      <div class="step-what">Dimension every book; decompose into atomic ideas</div>
+      <div class="step-desc">
+        Gives every book its coordinates across multiple axes: register (empirical → contemplative), density, form, lineage, era, author tradition and origin, primary and secondary domains, precise topic and subtopics. Then decomposes each book into 3–7 atomic Lego blocks — transferable ideas that can be lifted from the source book and placed next to ideas from completely different books. These blocks seed Manthan's deep probe.
+      </div>
+      <span class="step-trigger">Trigger: per new book</span>
+      <span class="step-trigger">Output: inventory.json (classified) + ideas.json</span>
+    </div>
+  </div>
+
+  <div class="step step-3">
+    <div class="step-num">03</div>
+    <div class="step-name">
+      <div class="step-english">Churn</div>
+      <div class="step-hindi">Manthan</div>
+      <div class="step-devanagari">मंथन</div>
+    </div>
+    <div class="step-body">
+      <div class="step-what">Surface threads, clusters, patterns — the Adirondacks search</div>
+      <div class="step-desc">
+        Named after Samudra Manthan — the Hindu myth of churning the cosmic ocean until treasures rise to the surface. Runs seven lenses across the classified inventory: depth strata, tension pairs, founding figures, register distribution, era concentration, hidden collections, tradition mapping. Then runs the random probe — an Adirondacks search that selects edge books as seeds and finds groupings that systematic lenses miss. Human priming guides and corrects throughout. The churn is not analysis — it is encounter.
+      </div>
+      <span class="step-trigger">Trigger: N new books classified (batch)</span>
+      <span class="step-trigger">Output: analysis.json</span>
+    </div>
+  </div>
+
+  <div class="step step-4">
+    <div class="step-num">04</div>
+    <div class="step-name">
+      <div class="step-english">Curate</div>
+      <div class="step-hindi">Darshan</div>
+      <div class="step-devanagari">दर्शन</div>
+    </div>
+    <div class="step-body">
+      <div class="step-what">You see it — the private editorial act</div>
+      <div class="step-desc">
+        Darshan means to see — for yourself. Before anything is shown to the world, the curator first beholds everything Manthan surfaced. Out of that private seeing comes the editorial decision: what is ready, what is private, what is the right order, how much to reveal at once. Not everything Manthan found will be shown. A museum director does not hang every work in the collection. Darshan is that decision — and it can never run autonomously. The seeing is always the curator's.
+      </div>
+      <span class="step-trigger">Trigger: human decision</span>
+      <span class="step-trigger">Output: curation config for Pradarshan</span>
+    </div>
+  </div>
+
+  <div class="step step-5">
+    <div class="step-num">05</div>
+    <div class="step-name">
+      <div class="step-english">Visualize</div>
+      <div class="step-hindi">Pradarshan</div>
+      <div class="step-devanagari">प्रदर्शन</div>
+    </div>
+    <div class="step-body">
+      <div class="step-what">You show it to others — the public act</div>
+      <div class="step-desc">
+        Pradarshan means to show to others: pra (forth) + darshan (seeing). Darshan was the private beholding; Pradarshan is the public showing. The web layer — pages, views, interactions — that a visitor experiences. Reads from inventory.json, analysis.json, and the Darshan curation config. Renders what Darshan selected, in the order Darshan decided. Pradarshan is a client: it reads, never writes. Any rendering layer that reads the same data files is a valid Pradarshan implementation.
+      </div>
+      <span class="step-trigger">Trigger: deployment (always live)</span>
+      <span class="step-trigger">Output: the website</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- THE FLOW -->
+<div class="section-label">The flow</div>
+<div class="flow">
+  Raw input (CSV / shelf photos / chat)<br>
+  <span class="flow-arrow">&darr;</span> Sangrah<br>
+  inventory.json (enriched)<br>
+  <span class="flow-arrow">&darr;</span> Parichay<br>
+  inventory.json (classified) + ideas.json<br>
+  <span class="flow-arrow">&darr;</span> Manthan<br>
+  analysis.json (threads, clusters, patterns, reveal)<br>
+  <span class="flow-arrow">&darr;</span> Darshan<br>
+  curation config (what to show, in what order)<br>
+  <span class="flow-arrow">&darr;</span> Pradarshan<br>
+  antilibrary.bharatkhandelwal.com<br>
+  <span class="flow-arrow">&darr;</span> <span class="flow-label">gaps identified</span><br>
+  Khoj &rarr; feeds back into Sangrah (new acquisitions)
+</div>
+
+<!-- OUTPUT FILES -->
+<div class="section-label">Output files</div>
+<div class="outputs">
+  <div class="output-card">
+    <div class="output-file">inventory.json</div>
+    <div class="output-desc">The living record. One entry per book. Produced by Sangrah, enriched by Parichay. Never restructured — only extended. Currently 703 books.</div>
+  </div>
+  <div class="output-card">
+    <div class="output-file">ideas.json</div>
+    <div class="output-desc">The atomic layer. 3–7 Lego blocks per book — transferable ideas that seed Manthan's deep probe. Produced by Parichay.</div>
+  </div>
+  <div class="output-card">
+    <div class="output-file">analysis.json</div>
+    <div class="output-desc">The structured analysis. Threads (Sutra), clusters (Samuha), patterns, tension pairs, founding figures, the reveal. Produced by Manthan, shaped by priming.</div>
+  </div>
+</div>
+
+<!-- KHOJ -->
+<div class="section-label">Outside the five steps</div>
+<div class="khoj">
+  <h3>Gaps / Khoj &mdash; खोज</h3>
+  <p>
+    The forward-looking loop. Sits outside the five steps and feeds back into Sangrah as acquisition targets.<br><br>
+    <strong>Reactive gaps</strong> — surfaced by Manthan: a thread missing its anchor book, a cluster pulling toward a book not yet owned, a tradition entirely absent from the collection.<br><br>
+    <strong>Proactive gaps</strong> — require human intention: where is this library going? Two people with identical libraries have different gaps because they are headed somewhere different. Khoj cannot be automated.
+  </p>
+</div>
+
+<!-- NAMING -->
+<div class="section-label">Naming convention</div>
+<div class="naming">
+  Every step carries its name in English and Hindi. The Hindi names are not translations — they carry meaning from Sanskrit that the English word only approximates. English for clarity, Hindi for identity. If a third language becomes relevant for a specific library, it slots in as a third column.<br><br>
+  <strong>Darshan / Pradarshan:</strong> Darshan (दर्शन) means to see for yourself. Pradarshan (प्रदर्शन) means to show to others — pra (forth) + darshan. You cannot show to others without first seeing for yourself. Step 4 is the private act; Step 5 is the public one.<br><br>
+  <strong>Manthan:</strong> Named after the Hindu myth of Samudra Manthan — churning the cosmic ocean until treasures rise to the surface. The Churn step is an Adirondacks search: many lenses, random probes, human priming. Many peaks of unknown height, not a single summit.
+</div>
+
+<!-- DESIGN PRINCIPLES -->
+<div class="section-label">Design principles</div>
+<div class="principles">
+  <div class="principle"><strong>No acronyms</strong>Names are direct English + direct Hindi.</div>
+  <div class="principle"><strong>Schema over code</strong>The analytical output is data, not logic. Any visualization layer can read it.</div>
+  <div class="principle"><strong>Confidence is explicit</strong>Low-confidence entries surface for human review. Never silently promoted.</div>
+  <div class="principle"><strong>Editions are distinct</strong>Multiple copies of the same text are siblings, not duplicates. The arrangement is data.</div>
+  <div class="principle"><strong>Priming is first-class</strong>The engine without human priming produces shallow results. The priming interface is not optional.</div>
+  <div class="principle"><strong>Gaps are human</strong>Khoj cannot be automated. Do not attempt to generate gaps from inventory analysis alone.</div>
+  <div class="principle"><strong>Books are multi-node</strong>A book belongs to multiple threads, clusters, and patterns simultaneously. No forced exclusivity.</div>
+  <div class="principle"><strong>The random probe is essential</strong>Systematic search finds obvious peaks. The Adirondacks terrain requires random jumps.</div>
+  <div class="principle"><strong>Darshan is private</strong>The curator sees for themselves first. Only then does Pradarshan show the world.</div>
+  <div class="principle"><strong>Pradarshan is a client</strong>It reads, never writes. Any rendering layer reading the same data files is valid.</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Antilibrary Engine &mdash; bk2022-ui/antilibrary &mdash; last updated 2026-06-29
+</div>
+
+</body>
+</html>

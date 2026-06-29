@@ -15,7 +15,7 @@ A library is a self-portrait. The books someone owns — read and unread, collec
 
 It works on any collection, any size, any domain. It can be run on a digital inventory, a set of shelf photographs, or a conversation. The output is not an organized library — it is a legible one.
 
-The method has five steps. They are not strictly sequential — they run concurrently and feed each other. A book entering **Collect / Sangrah** triggers **Classify / Parichay**. Classify feeds **Churn / Manthan**. Churn produces the material that **Curate / Saar** distills, and **Visualize / Pradarshan** puts in front of the world. Gaps (Khoj) sit outside the sequence — the forward-looking loop that feeds back into Collect.
+The method has five steps. They are not strictly sequential — they run concurrently and feed each other. A book entering **Collect / Sangrah** triggers **Classify / Parichay**. Classify feeds **Churn / Manthan**. Churn produces the material that **Curate / Darshan** distills, and **Visualize / Pradarshan** puts in front of the world. Gaps (Khoj) sit outside the sequence — the forward-looking loop that feeds back into Collect.
 
 **Naming convention:** every module carries its name in English and Hindi. If a third language becomes relevant for a specific library, it slots in as a third column. English for clarity, Hindi for identity.
 
@@ -28,7 +28,7 @@ The method has five steps. They are not strictly sequential — they run concurr
 | 1 | **Collect** | **Sangrah** | Build and maintain the inventory |
 | 2 | **Classify** | **Parichay** | Dimension every book across multiple axes |
 | 3 | **Churn** | **Manthan** | Surface threads, clusters, patterns, tensions |
-| 4 | **Curate** | **Saar** | Distill to essence — decide what matters and what to show |
+| 4 | **Curate** | **Darshan** | Distill to essence — decide what matters and what to show |
 | 5 | **Visualize** | **Pradarshan** | Put it in front of the world |
 
 
