@@ -38,7 +38,7 @@ Nothing has been built yet. The spec is complete and locked. The repo is clean a
 
 ---
 
-## The four steps
+## The five steps
 
 | # | English | Hindi | Agent trigger | Output |
 |---|---|---|---|---|

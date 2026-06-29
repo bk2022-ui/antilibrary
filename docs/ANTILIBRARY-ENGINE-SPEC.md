@@ -4,9 +4,9 @@
 
 ## What it is
 
-Manthan is an analytical engine that takes any book inventory and surfaces its intellectual structure — threads, clusters, patterns, and a reveal of what the collection says about how the person thinks.
+The Antilibrary Engine takes any book inventory and surfaces its intellectual structure — threads, clusters, patterns, and a reveal of what the collection says about how the person thinks. Then it puts that structure in front of the world.
 
-It is named after Samudra Manthan — the Hindu myth of churning the cosmic ocean until treasures rise to the surface. The method works the same way: multiple lenses, diverse starting points, random probes, human priming. Not a single-peak climb (Mount Fuji) but an Adirondacks search — many peaks of unknown relative height, requiring random jumps to find terrain that systematic search misses.
+Five steps. Five agents. Each named in English and Hindi. The Hindi names are not translations — they carry their own meaning, rooted in Sanskrit, that deepens what the English word points at.
 
 ---
 
@@ -19,22 +19,23 @@ It is named after Samudra Manthan — the Hindu myth of churning the cosmic ocea
 
 ---
 
-## The four steps
+## The five steps
 
 | # | English | Hindi | What it does |
 |---|---|---|---|
-| 1 | **Collect** | **Sangrah** | Parse raw input → structured inventory → enriched with covers and metadata |
-| 2 | **Classify** | **Parichay** | Dimension every book across multiple axes; decompose into atomic ideas |
-| 3 | **Churn** | **Manthan** | Run lenses across the classified inventory; surface threads, clusters, patterns |
-| 4 | **Curate** | **Darshan** | Decide what the library shows the world — the editorial layer before visualization |
+| 1 | **Collect** | **Sangrah** | Parse raw input → structured, enriched inventory |
+| 2 | **Classify** | **Parichay** | Dimension every book; decompose into atomic ideas |
+| 3 | **Churn** | **Manthan** | Run lenses across the inventory; surface threads, clusters, patterns |
+| 4 | **Curate** | **Saar** | Distill to essence — decide what matters and what to show |
+| 5 | **Visualize** | **Pradarshan** | Put it in front of the world |
 
-**Naming convention:** every module carries its name in English and Hindi. If a third language becomes relevant for a specific library, it slots in as a third column.
+**Naming convention:** every step carries its name in English and Hindi. If a third language becomes relevant for a specific library, it slots in as a third column. English for clarity, Hindi for identity.
 
-**Visualization** is not a step — it is the output of Darshan, rendered.
+**The etymology of Steps 4 and 5:** Saar (सार) means essence — the act of seeing the whole and distilling what is essential. Pradarshan (प्रदर्शन) means to display, to exhibit. You cannot show (Pradarshan) without first seeing and distilling (Saar). Darshan — to behold — lives inside Saar as the moment of editorial seeing before the showing begins.
 
-**Gaps / Khoj** sits outside the four steps — the forward-looking loop that feeds back into Sangrah. Reactive gaps can be engine-surfaced; proactive gaps require human intention.
+**Gaps / Khoj** sits outside the five steps — the forward-looking loop that feeds back into Sangrah. Reactive gaps can be engine-surfaced; proactive gaps require human intention.
 
-Threads (Sutra) and Clusters (Samuha) are the two output forms that Manthan produces — they are not separate steps, they are what the churn crystallizes into.
+**Threads / Sutra** and **Clusters / Samuha** are the two output forms that Manthan produces — they are not separate steps, they are what the churn crystallizes into.
 
 ---
 
@@ -47,11 +48,11 @@ Each step is an agent with a defined trigger, input, and output. They run sequen
 | Sangrah | New file uploaded | CSV / images / JSON / chat | `inventory.json` (raw + enriched) |
 | Parichay | Per new book in inventory | `inventory.json` entry | `inventory.json` (classified) + `ideas.json` |
 | Manthan | N new books classified (batch threshold) | Full classified inventory | `analysis.json` |
-| Darshan | Human decision | `analysis.json` + human editorial intent | Curated data structure for visualization |
+| Saar | Human decision | `analysis.json` + human editorial intent | Curation config for Pradarshan |
 
 **Why Manthan runs on a threshold, not per book:** Manthan is a collection-level operation. It needs enough new material to find patterns that weren't visible before. Running it on every new book is expensive and produces noise. A threshold of 10–20 new classified books is a reasonable default.
 
-**Darshan is the only agent that cannot run autonomously.** It requires human intent — what to show, to whom, in what order. It can be assisted by the engine (surfacing options, flagging candidates) but the decision is always human.
+**Saar is the only agent that cannot run autonomously.** It requires human intent — what to show, to whom, in what order. It can be assisted by the engine (surfacing options, flagging candidates) but the decision is always human.
 
 ---
 
@@ -91,7 +92,7 @@ The arrangement of editions is itself data. Do not flatten it.
 
 ### What Sangrah does not do
 - It does not classify. No categories, no register, no density assigned here.
-- It does not judge. Every book that can be parsed enters the inventory. Curation happens in Darshan, not Sangrah.
+- It does not judge. Every book that can be parsed enters the inventory. Curation happens in Saar, not Sangrah.
 
 ---
 
@@ -187,29 +188,58 @@ Every priming signal is recorded in `priming_log` within `analysis.json` with a 
 
 ---
 
-## Step 4 — Curate / Darshan
+## Step 4 — Curate / Saar
 
-Darshan is the editorial layer. Manthan produces everything that could be shown. Darshan decides what is shown, to whom, and in what order.
+Saar (सार) means essence. The curator has seen the whole — everything Manthan surfaced — and now distills what is essential. Not everything that could be shown will be shown. Not every thread is ready. Not every cluster is public.
 
-A museum director does not hang every work in the collection. Darshan is that decision.
+A museum director does not hang every work in the collection. Saar is that decision.
 
-**What Darshan does:**
-- Selects which threads and clusters to surface in the UI
-- Decides the narrative order (what the visitor sees first)
-- Flags what is private vs. public (some threads may be too personal to show)
+**What Saar does:**
+- Distills which threads and clusters are ready to show
+- Decides the narrative order — what the visitor encounters first
+- Flags what is private vs. public (some threads may be too personal to surface)
 - Shapes the reveal — how much is visible at once vs. progressively disclosed
+- Records the editorial reasoning — why something was included or held back
 
-**What Darshan does not do:**
+**What Saar does not do:**
 - It does not modify the underlying data. `inventory.json` and `analysis.json` remain unchanged.
 - It does not generate new analysis. That is Manthan's job.
 
-**Output:** a curation layer — a lightweight config or set of flags — that the visualization reads. The visualization itself is a separate rendering concern.
+**The Darshan within Saar:** before the curator can distill, they must first *see* — behold the whole without immediately acting. This act of seeing is Darshan. It happens inside Saar, before the editorial hand moves.
+
+**Output:** a curation config — a lightweight set of flags and ordering decisions — that Pradarshan reads and renders.
+
+**Trigger:** human decision. Saar cannot run autonomously.
+
+---
+
+## Step 5 — Visualize / Pradarshan
+
+Pradarshan (प्रदर्शन) means to display, to exhibit, to put before an audience. Saar decided what matters. Pradarshan puts it in front of the world.
+
+This is the web layer — the pages, views, and interactions that a visitor experiences. It reads from `inventory.json`, `analysis.json`, and the Saar curation config. It renders what Saar selected, in the order Saar decided, at the depth Saar chose.
+
+**What Pradarshan does:**
+- Renders the constellation view — books as stars, threads as constellations
+- Renders the piles view — books grouped by cluster, density, or register
+- Renders the reveal — founding figures, core tension, hidden collection
+- Renders the thread detail — the question, the books, the internal disagreement
+- Provides the priming interface — the dialogue surface for human feedback into Manthan
+
+**What Pradarshan does not do:**
+- It does not compute. All computation happens in steps 1–4.
+- It does not store. All data lives in the JSON files. Pradarshan reads, never writes.
+- It does not decide what to show. That is Saar's job.
+
+**Pradarshan is a client.** It reads the outputs of the four preceding steps and displays them. Any visualization layer — web, mobile, print — that reads the same data files is a valid Pradarshan implementation.
+
+**Trigger:** deployment. Pradarshan is always live; it reflects whatever Saar has most recently configured.
 
 ---
 
 ## Gaps / Khoj — the acquisition loop
 
-Gaps sit outside the four steps. They are the forward-looking signal that feeds back into Sangrah.
+Gaps sit outside the five steps. They are the forward-looking signal that feeds back into Sangrah.
 
 **Two kinds of gaps:**
 
@@ -337,13 +367,13 @@ Khoj → feeds back into Sangrah (new acquisitions)
 | 2. `analysis.json` populated | ✅ Done | 17 threads, 5 clusters, 23 patterns — produced manually |
 | 3. `LIBRARY-SYSTEM.md` written | ✅ Done | Method documentation |
 | 4. Antilibrary extracted as standalone | ✅ Done | Own repo, own domain |
-| 5. Repo reorganized | ✅ Done | `libraries/bk/` data layer, `docs/` spec folder |
+| 5. Repo reorganized + spec finalized | ✅ Done | `libraries/bk/` data layer, five steps locked, naming fixed |
 | 6. Build Sangrah agent | ⬅ Next | Parse → enrich → quality gate → `inventory.json` |
 | 7. Build Parichay agent | Pending | Classify → Lego blocks → `ideas.json` |
 | 8. Build Manthan agent | Pending | 7 lenses + random probe + priming interface → `analysis.json` |
-| 9. Build Darshan layer | Pending | Editorial config for visualization |
-| 10. Visualization layer | Pending | Piles view, constellation improvements |
-| 11. Khoj / Gaps interface | Pending | Dialogue-based acquisition loop |
+| 9. Build Saar layer | Pending | Editorial config — which threads/clusters to surface, in what order |
+| 10. Build Pradarshan (visualization) | Pending | Piles view, constellation improvements, reveal page |
+| 11. Khoj / Gaps interface | Pending | Dialogue-based acquisition loop feeding back into Sangrah |
 
 ---
 
@@ -357,4 +387,5 @@ Khoj → feeds back into Sangrah (new acquisitions)
 - **Gaps are human.** Khoj cannot be automated. Do not attempt to generate gaps from inventory analysis alone.
 - **Books are multi-node.** A book belongs to multiple threads, clusters, and patterns simultaneously. No forced exclusivity.
 - **The random probe is essential.** Systematic search finds obvious peaks. The Adirondacks terrain requires random jumps.
-- **Darshan is editorial, not generative.** It shapes what Manthan produced. It does not produce new analysis.
+- **Saar is editorial, not generative.** It distills what Manthan produced. It does not produce new analysis.
+- **Pradarshan is a client.** It reads, never writes. Any rendering layer that reads the same data files is a valid Pradarshan.
