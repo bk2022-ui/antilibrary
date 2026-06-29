@@ -1,7 +1,7 @@
 {
-  "system": "Manthan Library System",
+  "system": "Antilibrary Engine",
   "version": "1.0",
-  "description": "Analytical layer over the inventory — outputs of Manthan, an Adirondacks search across the collection. Not a single-peak climb but a multi-lens churn: many starting points, random probes, human priming. Threads, clusters, patterns, and the reveal surface from this process.",
+  "description": "Analytical layer over the inventory — output of the Churn step (Manthan), an Adirondacks search across the collection. Not a single-peak climb but a multi-lens churn: many starting points, random probes, human priming. Threads, clusters, patterns, and the reveal surface from this process.",
   "threads": [
     {
       "id": "darwin_s_long_shadow",
@@ -453,7 +453,7 @@
     {
       "id": "model_thinking",
       "name": "Model Thinking",
-      "gravity": "Using multiple models simultaneously to see what no single model reveals — the theoretical foundation of Manthan itself",
+      "gravity": "Using multiple models simultaneously to see what no single model reveals — the theoretical foundation of the Churn step (Manthan)",
       "may_become_thread": true,
       "candidate_question": "How do you think with many models at once without collapsing them into one?",
       "books": [

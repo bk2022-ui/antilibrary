@@ -1,13 +1,15 @@
-# Manthan Library System
+# Antilibrary Engine — Method Documentation
 ### A method for reading a collection as a mind
 
 ---
 
 ## What this is
 
-Manthan is an Adirondacks search — not a Mount Fuji climb. There is no single peak, no linear path to a correct answer. A library has many peaks of unknown relative height. The method works by churning across the entire landscape: multiple lenses, diverse starting points, random probes, human priming. Each pass reveals terrain the last one missed.
+The Antilibrary Engine reads a collection as a mind. It surfaces the intellectual structure already present in a library — threads, clusters, patterns — that the owner couldn't see because they were too close to it.
 
-The name comes from the Hindu myth of Samudra Manthan — the churning of the cosmic ocean. Gods and demons pull a great serpent wrapped around a mountain, churning the ocean until treasures rise to the surface. Some are gifts. Some are poison. All are real.
+The Churn step at the heart of the engine is an Adirondacks search — not a Mount Fuji climb. There is no single peak, no linear path to a correct answer. A library has many peaks of unknown relative height. The method works by churning across the entire landscape: multiple lenses, diverse starting points, random probes, human priming. Each pass reveals terrain the last one missed.
+
+The Churn step takes its name from the Hindu myth of Samudra Manthan — the churning of the cosmic ocean. Gods and demons pull a great serpent wrapped around a mountain, churning the ocean until treasures rise to the surface. Some are gifts. Some are poison. All are real.
 
 A library is a self-portrait. The books someone owns — read and unread, collected and inherited, kept and discarded — reveal how they think, what they trust, what they are drawn toward, and what they avoid. This method surfaces that portrait.
 

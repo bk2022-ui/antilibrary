@@ -1,4 +1,4 @@
-# Manthan Engine — Product Specification
+# Antilibrary Engine — Product Specification
 
 ---
 
@@ -246,7 +246,7 @@ Produced by Manthan, shaped by priming.
 
 ```json
 {
-  "system": "Manthan Library System",
+  "system": "Antilibrary Engine",
   "version": "string",
   "description": "string",
   "threads": [

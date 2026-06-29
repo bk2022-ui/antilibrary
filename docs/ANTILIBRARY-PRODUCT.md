@@ -1,10 +1,10 @@
-# Manthan — Product Definition
+# Antilibrary — Product Definition
 
 ## What it is
 
 A personal library service for discerning people who want to build a great library. Not large — well-curated, intentional, shaped by genuine intellectual threads.
 
-Manthan reads a library as a mind. It surfaces what's already there that the owner couldn't see because they were too close to it. Then it maps where the library wants to go next.
+The Antilibrary engine reads a library as a mind. It surfaces what's already there that the owner couldn't see because they were too close to it. Then it maps where the library wants to go next.
 
 ---
 
@@ -24,7 +24,7 @@ The two together are the product. Hidden threads give insight. The path gives ag
 
 People who already sense their library has a shape they can't quite see. They know they're drawn to certain ideas across domains. They know some books belong together but can't articulate why. They've been building something without knowing exactly what.
 
-Manthan names it for them.
+The Antilibrary names it for them.
 
 **Not for everyone.** For people who:
 - Already have a library worth analysing — not beginners
@@ -38,7 +38,7 @@ Manthan names it for them.
 ## The service structure
 
 **Session one — Ingest and Analyse**
-Collect the library in any form: shelf photographs, Goodreads export, Kindle list, conversation. Run Manthan — Collect, Classify, Churn, surface Threads and Clusters. Prime with the owner to catch what the algorithm missed.
+Collect the library in any form: shelf photographs, Goodreads export, Kindle list, conversation. Run the engine — Collect / Sangrah, Classify / Parichay, Churn / Manthan, Curate / Darshan. Prime with the owner to catch what the algorithm missed.
 
 **The Deliverable**
 A written document. The threads, the clusters, the reveal — written, not just diagrammed. Because the owner needs to recognise themselves in it. A diagram can be ignored. A sentence that names your hidden intellectual obsession cannot.
@@ -50,7 +50,7 @@ Given what was found: where does this library want to go? Which gaps matter? Whi
 
 ## The method underneath
 
-The Manthan Library System — an Adirondacks search, not a Mount Fuji climb. Many lenses, diverse starting points, random probes, human priming. No single peak, no linear path to a correct answer.
+The Antilibrary Engine runs an Adirondacks search — not a Mount Fuji climb. Many lenses, diverse starting points, random probes, human priming. No single peak, no linear path to a correct answer. The Churn step (Manthan) is where this search happens — named after the Hindu myth of Samudra Manthan, churning the cosmic ocean until treasures rise to the surface.
 
 Full method documented in `LIBRARY-SYSTEM.md`.
 

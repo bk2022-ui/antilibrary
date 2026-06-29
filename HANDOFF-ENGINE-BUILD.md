@@ -1,6 +1,6 @@
-# Handoff — Manthan Engine Build
+# Handoff — Antilibrary Engine Build
 
-This file captures where we are in the Manthan Engine build as of 2026-06-29. Read this to pick up exactly where we left off.
+This file captures where we are in the Antilibrary Engine build as of 2026-06-29. Read this to pick up exactly where we left off.
 
 ---
 
@@ -74,14 +74,14 @@ antilibrary/
         subjects.json
         synthesis.json
   docs/
-    MANTHAN-SPEC.md   ← Full engine specification (source of truth)
+    ANTILIBRARY-ENGINE-SPEC.md   ← Full engine specification (source of truth)
     LIBRARY-SYSTEM.md ← Method documentation
-    MANTHAN-PRODUCT.md
-    MANTHAN-MAP.html
+    ANTILIBRARY-PRODUCT.md
+    ANTILIBRARY-MAP.html
     VIZ-MYCELIUM.html
     VIZ-UNDERGROUND.html
   HANDOFF-LIBRARY-CHAT.md   ← Prior session handoff (extraction)
-  HANDOFF-MANTHAN-BUILD.md  ← This file
+  HANDOFF-ENGINE-BUILD.md  ← This file
 ```
 
 ### No Manthan engine code exists yet
@@ -104,7 +104,7 @@ The Sangrah agent takes raw input and produces a structured, enriched inventory 
 Low-confidence entries (unreadable spine, unmatched author, uncertain year) are held back from Parichay. They surface in the UI as a review queue for human confirmation.
 
 ### Files to read before building
-- `docs/MANTHAN-SPEC.md` — full spec, especially "Step 1 — Collect / Sangrah" and "Quality gate" sections
+- `docs/ANTILIBRARY-ENGINE-SPEC.md` — full spec, especially "Step 1 — Collect / Sangrah" and "Quality gate" sections
 - `src/libraries/bk/inventory.json` — the target schema (what a fully populated entry looks like)
 - `src/lib/books/googleBooks.ts` — existing Google Books client (reuse this)
 - `src/lib/books/openLibrary.ts` — existing Open Library client (reuse this)
