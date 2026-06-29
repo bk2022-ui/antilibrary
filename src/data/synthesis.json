@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "i2",
+    "concept": "i²",
+    "subtitle": "idiot index · no increment",
+    "aphorism": "Kaizen closes the gap. Physics erases it.",
+    "hook": "Most optimization is just polishing inherited stupidity.",
+    "date": "2026-06",
+    "atoms": [
+      { "idea": "Idiot Index", "person": "Elon Musk" },
+      { "idea": "Physics Floor", "person": "Jensen Huang" },
+      { "idea": "Optimization Trap", "person": "Clayton Christensen" },
+      { "idea": "Paradigm Blindness", "person": "Thomas Kuhn" }
+    ],
+    "images": [
+      "/thinking/i2/01-hook.jpg",
+      "/thinking/i2/02-idiot-index.jpg",
+      "/thinking/i2/03-physics-floor.jpg",
+      "/thinking/i2/04-optimization-trap.jpg",
+      "/thinking/i2/05-paradigm-blindness.jpg"
+    ],
+    "tags": ["first-principles", "paradigm", "innovation"]
+  }
+]

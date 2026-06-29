@@ -1,0 +1,362 @@
+[
+  {
+    "id": "western-philosophy-ethics",
+    "name": "Western Philosophy & Ethics",
+    "bisac": "PHILOSOPHY / Ethics & Moral Philosophy",
+    "count": 25
+  },
+  {
+    "id": "leadership-management",
+    "name": "Leadership & Management",
+    "bisac": "BUSINESS & ECONOMICS / Leadership",
+    "count": 23
+  },
+  {
+    "id": "organizational-culture-change",
+    "name": "Organizational Culture & Change",
+    "bisac": "BUSINESS & ECONOMICS / Organizational Development",
+    "count": 23
+  },
+  {
+    "id": "investing-financial-markets",
+    "name": "Investing & Financial Markets",
+    "bisac": "BUSINESS & ECONOMICS / Investments & Securities / General",
+    "count": 22
+  },
+  {
+    "id": "modern-literary-novels",
+    "name": "Modern Literary Novels",
+    "bisac": "FICTION / Literary",
+    "count": 20
+  },
+  {
+    "id": "politics-media-society",
+    "name": "Politics, Media & Society",
+    "bisac": "POLITICAL SCIENCE / Public Policy / General",
+    "count": 19
+  },
+  {
+    "id": "strategy-competitive-advantage",
+    "name": "Strategy & Competitive Advantage",
+    "bisac": "BUSINESS & ECONOMICS / Strategic Planning",
+    "count": 17
+  },
+  {
+    "id": "software-engineering",
+    "name": "Software & Engineering",
+    "bisac": "COMPUTERS / Software Development & Engineering / General",
+    "count": 16
+  },
+  {
+    "id": "behavioral-science-bias",
+    "name": "Behavioral Science & Bias",
+    "bisac": "PSYCHOLOGY / Cognitive Psychology & Cognition",
+    "count": 15
+  },
+  {
+    "id": "evolutionary-biology",
+    "name": "Evolutionary Biology",
+    "bisac": "SCIENCE / Life Sciences / Evolution",
+    "count": 15
+  },
+  {
+    "id": "literary-postcolonial-fiction",
+    "name": "Literary & Postcolonial Fiction",
+    "bisac": "FICTION / World Literature / General",
+    "count": 15
+  },
+  {
+    "id": "markets-capitalism",
+    "name": "Markets & Capitalism",
+    "bisac": "BUSINESS & ECONOMICS / Economics / General",
+    "count": 15
+  },
+  {
+    "id": "science-fiction-speculative",
+    "name": "Science Fiction & Speculative",
+    "bisac": "FICTION / Science Fiction / General",
+    "count": 15
+  },
+  {
+    "id": "decision-making-judgment",
+    "name": "Decision Making & Judgment",
+    "bisac": "BUSINESS & ECONOMICS / Decision-Making & Problem Solving",
+    "count": 14
+  },
+  {
+    "id": "yoga-meditation-practice",
+    "name": "Yoga & Meditation Practice",
+    "bisac": "BODY, MIND & SPIRIT / Meditation",
+    "count": 14
+  },
+  {
+    "id": "communication-conversation",
+    "name": "Communication & Conversation",
+    "bisac": "LANGUAGE ARTS & DISCIPLINES / Communication Studies",
+    "count": 13
+  },
+  {
+    "id": "innovation-disruption",
+    "name": "Innovation & Disruption",
+    "bisac": "BUSINESS & ECONOMICS / Development / Business Development",
+    "count": 13
+  },
+  {
+    "id": "marketing-branding",
+    "name": "Marketing & Branding",
+    "bisac": "BUSINESS & ECONOMICS / Marketing / General",
+    "count": 13
+  },
+  {
+    "id": "mental-models-thinking",
+    "name": "Mental Models & Thinking Tools",
+    "bisac": "SELF-HELP / Personal Growth / General",
+    "count": 13
+  },
+  {
+    "id": "sports-biography-coaching",
+    "name": "Sports Biography & Coaching",
+    "bisac": "BIOGRAPHY & AUTOBIOGRAPHY / Sports",
+    "count": 13
+  },
+  {
+    "id": "allegorical-spiritual-fiction",
+    "name": "Allegorical & Spiritual Fiction",
+    "bisac": "FICTION / Visionary & Metaphysical",
+    "count": 12
+  },
+  {
+    "id": "complexity-systems-science",
+    "name": "Complexity & Systems Science",
+    "bisac": "SCIENCE / System Theory",
+    "count": 12
+  },
+  {
+    "id": "creativity-creative-process",
+    "name": "Creativity & the Creative Process",
+    "bisac": "PSYCHOLOGY / Creative Ability",
+    "count": 12
+  },
+  {
+    "id": "economic-policy-development",
+    "name": "Economic Policy & Development",
+    "bisac": "BUSINESS & ECONOMICS / Development / Economic Development",
+    "count": 12
+  },
+  {
+    "id": "hindu-vedic-spirituality",
+    "name": "Hindu & Vedic Spirituality",
+    "bisac": "RELIGION / Hinduism / General",
+    "count": 12
+  },
+  {
+    "id": "productivity-self-improvement",
+    "name": "Productivity & Self-Improvement",
+    "bisac": "SELF-HELP / Personal Growth / Success",
+    "count": 12
+  },
+  {
+    "id": "world-history-empires",
+    "name": "World History & Empires",
+    "bisac": "HISTORY / World",
+    "count": 12
+  },
+  {
+    "id": "entrepreneurship-startups",
+    "name": "Entrepreneurship & Startups",
+    "bisac": "BUSINESS & ECONOMICS / Entrepreneurship",
+    "count": 11
+  },
+  {
+    "id": "genetics-cells-medicine",
+    "name": "Genetics, Cells & Medicine",
+    "bisac": "SCIENCE / Life Sciences / Genetics & Genomics",
+    "count": 11
+  },
+  {
+    "id": "geopolitics-statecraft",
+    "name": "Geopolitics & Statecraft",
+    "bisac": "POLITICAL SCIENCE / International Relations / General",
+    "count": 11
+  },
+  {
+    "id": "mind-brain-consciousness",
+    "name": "Mind, Brain & Consciousness",
+    "bisac": "PSYCHOLOGY / Neuropsychology",
+    "count": 11
+  },
+  {
+    "id": "biography-genius-historical",
+    "name": "Biography: Genius & Historical Figures",
+    "bisac": "BIOGRAPHY & AUTOBIOGRAPHY / Historical",
+    "count": 10
+  },
+  {
+    "id": "eastern-philosophy-taoism",
+    "name": "Eastern Philosophy & Taoism",
+    "bisac": "PHILOSOPHY / Eastern",
+    "count": 10
+  },
+  {
+    "id": "environment-ecology-resources",
+    "name": "Environment, Ecology & Resources",
+    "bisac": "NATURE / Ecology",
+    "count": 10
+  },
+  {
+    "id": "history-of-innovation-progress",
+    "name": "History of Innovation & Progress",
+    "bisac": "TECHNOLOGY & ENGINEERING / History",
+    "count": 10
+  },
+  {
+    "id": "stoic-philosophy",
+    "name": "Stoic Philosophy",
+    "bisac": "PHILOSOPHY / Movements / Stoicism",
+    "count": 10
+  },
+  {
+    "id": "young-adult-coming-of-age",
+    "name": "Young Adult & Coming of Age",
+    "bisac": "YOUNG ADULT FICTION / Coming of Age",
+    "count": 10
+  },
+  {
+    "id": "architecture-built-city",
+    "name": "Architecture & the Built City",
+    "bisac": "ARCHITECTURE / General",
+    "count": 9
+  },
+  {
+    "id": "epidemics-public-health",
+    "name": "Epidemics & Public Health",
+    "bisac": "MEDICAL / History",
+    "count": 9
+  },
+  {
+    "id": "political-philosophy",
+    "name": "Political Philosophy",
+    "bisac": "PHILOSOPHY / Political",
+    "count": 9
+  },
+  {
+    "id": "big-history-human-future",
+    "name": "Big History & the Human Future",
+    "bisac": "HISTORY / Civilization",
+    "count": 8
+  },
+  {
+    "id": "biography-science-inventors",
+    "name": "Biography: Science & Inventors",
+    "bisac": "BIOGRAPHY & AUTOBIOGRAPHY / Science & Technology",
+    "count": 8
+  },
+  {
+    "id": "career-networking-wealth",
+    "name": "Career, Networking & Wealth",
+    "bisac": "BUSINESS & ECONOMICS / Personal Success",
+    "count": 8
+  },
+  {
+    "id": "crime-thriller-detective",
+    "name": "Crime, Thriller & Detective",
+    "bisac": "FICTION / Thrillers / Crime",
+    "count": 8
+  },
+  {
+    "id": "design-visual-communication",
+    "name": "Design & Visual Communication",
+    "bisac": "DESIGN / Graphic Arts / General",
+    "count": 8
+  },
+  {
+    "id": "fashion-style",
+    "name": "Fashion & Style",
+    "bisac": "DESIGN / Fashion",
+    "count": 8
+  },
+  {
+    "id": "talent-people-development",
+    "name": "Talent & People Development",
+    "bisac": "BUSINESS & ECONOMICS / Human Resources & Personnel Management",
+    "count": 8
+  },
+  {
+    "id": "art-aesthetics-culture",
+    "name": "Art, Aesthetics & Visual Culture",
+    "bisac": "ART / General",
+    "count": 7
+  },
+  {
+    "id": "biography-tech-leaders",
+    "name": "Biography: Tech & Business Leaders",
+    "bisac": "BIOGRAPHY & AUTOBIOGRAPHY / Business",
+    "count": 7
+  },
+  {
+    "id": "genius-cultural-history",
+    "name": "Genius & Cultural History",
+    "bisac": "HISTORY / Social History",
+    "count": 7
+  },
+  {
+    "id": "influence-persuasion-power",
+    "name": "Influence, Persuasion & Power",
+    "bisac": "PSYCHOLOGY / Social Psychology",
+    "count": 7
+  },
+  {
+    "id": "operations-manufacturing",
+    "name": "Operations & Manufacturing",
+    "bisac": "BUSINESS & ECONOMICS / Production & Operations Management",
+    "count": 7
+  },
+  {
+    "id": "physics-cosmology",
+    "name": "Physics & Cosmology",
+    "bisac": "SCIENCE / Physics / General",
+    "count": 7
+  },
+  {
+    "id": "technology-ai-digital-future",
+    "name": "Technology, AI & the Digital Future",
+    "bisac": "COMPUTERS / Artificial Intelligence / General",
+    "count": 7
+  },
+  {
+    "id": "business-history-tycoons",
+    "name": "Business History & Tycoons",
+    "bisac": "BUSINESS & ECONOMICS / Corporate & Business History",
+    "count": 6
+  },
+  {
+    "id": "graphic-novels-comics",
+    "name": "Graphic Novels & Comics",
+    "bisac": "COMICS & GRAPHIC NOVELS / General",
+    "count": 6
+  },
+  {
+    "id": "crime-war-dark-history",
+    "name": "Crime, War & Dark History",
+    "bisac": "HISTORY / Military / General",
+    "count": 5
+  },
+  {
+    "id": "sales-negotiation",
+    "name": "Sales & Negotiation",
+    "bisac": "BUSINESS & ECONOMICS / Negotiating",
+    "count": 5
+  },
+  {
+    "id": "fables-wisdom-literature",
+    "name": "Classic Fables & Wisdom Literature",
+    "bisac": "LITERARY COLLECTIONS / Ancient & Classical",
+    "count": 3
+  },
+  {
+    "id": "health-longevity-nutrition",
+    "name": "Health, Longevity & Nutrition",
+    "bisac": "HEALTH & FITNESS / Longevity",
+    "count": 3
+  }
+]

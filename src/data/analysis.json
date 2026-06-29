@@ -1,0 +1,870 @@
+{
+  "system": "Manthan Library System",
+  "version": "1.0",
+  "description": "Analytical layer over the inventory — outputs of Manthan, an Adirondacks search across the collection. Not a single-peak climb but a multi-lens churn: many starting points, random probes, human priming. Threads, clusters, patterns, and the reveal surface from this process.",
+  "threads": [
+    {
+      "id": "darwin_s_long_shadow",
+      "name": "Darwin's Long Shadow",
+      "question": "How far does natural selection reach beyond biology?",
+      "color": "#4A7C59",
+      "anchor": "The Selfish Gene",
+      "tension": "Gene-level selection (Dawkins) vs group selection (Wilson) — does evolution optimize the individual or the collective?",
+      "books": [
+        "The Selfish Gene",
+        "The Extended Phenotype",
+        "River Out of Eden",
+        "Climbing Mount Improbable",
+        "Natural Selection and Social Theory",
+        "The Folly of Fools",
+        "Darwin's Dangerous Idea",
+        "The Red Queen",
+        "The Origins of Virtue",
+        "The Evolution of Everything",
+        "Culture and the Evolutionary Process",
+        "On the Origin of Species",
+        "Behave: The Biology of Humans at Our Best and Worst"
+      ]
+    },
+    {
+      "id": "the_judgment_machine",
+      "name": "The Judgment Machine",
+      "question": "How do minds — human and artificial — decide, and when do they fail?",
+      "color": "#6B4E8A",
+      "anchor": "Thinking, Fast and Slow",
+      "tension": "Kahneman (heuristics as systematic bias) vs Gigerenzer (heuristics as adaptive intelligence) — is fast thinking broken or brilliant?",
+      "books": [
+        "Thinking, Fast and Slow",
+        "Choices, Values, and Frames",
+        "Judgment Under Uncertainty: Heuristics and Biases",
+        "Noise: A Flaw in Human Judgment",
+        "Sources of Power",
+        "Intuition at Work",
+        "Streetlights and Shadows",
+        "Simple Heuristics That Make Us Smart",
+        "Decision Traps",
+        "Winning Decisions",
+        "Thinking and Deciding",
+        "Algorithms to Live By",
+        "The Signal and the Noise"
+      ]
+    },
+    {
+      "id": "the_fat_tail_cosmos",
+      "name": "The Fat-Tail Cosmos",
+      "question": "What do we do when the most important events are the ones probability cannot model?",
+      "color": "#C45C3A",
+      "anchor": "The Black Swan",
+      "tension": "Taleb (embrace antifragility, abandon prediction) vs standard risk management (model, hedge, optimize) — is robustness the goal or fragility the teacher?",
+      "books": [
+        "The Black Swan",
+        "Antifragile",
+        "Fooled by Randomness",
+        "Skin in the Game",
+        "Dynamic Hedging: Managing Vanilla and Exotic Options",
+        "Statistical Consequences of Fat Tails",
+        "A Random Walk Down Wall Street",
+        "When Genius Failed",
+        "Do Dice Play God?",
+        "What I Learned Losing a Million Dollars",
+        "The Signal and the Noise"
+      ]
+    },
+    {
+      "id": "how_organizations_breathe",
+      "name": "How Organizations Breathe",
+      "question": "What makes institutions live, adapt, or calcify?",
+      "color": "#3A6B8A",
+      "anchor": "The Fifth Discipline",
+      "tension": "Culture as emergent (Schein) vs culture as designed (Netflix, Amazon) — can you engineer an organization's soul?",
+      "books": [
+        "Humble Inquiry",
+        "Humble Leadership",
+        "Humble Consulting",
+        "Helping",
+        "Process Consultation Volume II",
+        "Organizational Culture and Leadership",
+        "DEC Is Dead, Long Live DEC",
+        "The Fearless Organization",
+        "The Fifth Discipline",
+        "Toyota Production System",
+        "The Ambiguities of Experience",
+        "No Rules Rules",
+        "Brave New Work"
+      ]
+    },
+    {
+      "id": "the_stoic_wager",
+      "name": "The Stoic Wager",
+      "question": "How do you act wisely when outcomes are not in your control?",
+      "color": "#8A7A3A",
+      "anchor": "Meditations",
+      "tension": "Stoic acceptance (Marcus, Epictetus) vs Taoist wu wei (Laozi) — is equanimity a discipline or a dissolution?",
+      "books": [
+        "Meditations",
+        "Letters from a Stoic",
+        "Discourses and Selected Writings",
+        "A Guide to the Good Life",
+        "The Stoic Challenge",
+        "On Desire",
+        "A Slap in the Face",
+        "The Daily Stoic",
+        "Ego Is the Enemy",
+        "Dying Every Day: Seneca at the Court of Nero",
+        "Tao Te Ching",
+        "The Analects"
+      ]
+    },
+    {
+      "id": "contagion_and_control",
+      "name": "Contagion and Control",
+      "question": "How does disease spread through society, and how does society respond?",
+      "color": "#2E7D6B",
+      "anchor": "The Ghost Map",
+      "tension": "Individual intervention (Mountains Beyond Mountains) vs systemic response (Diffusion of Innovations) — does change spread person by person or system by system?",
+      "books": [
+        "Inside the Outbreaks",
+        "Apollo's Arrow",
+        "The Ghost Map",
+        "Smallpox: The Death of a Disease",
+        "The Viral Storm",
+        "Mountains Beyond Mountains",
+        "Polio: An American Story",
+        "The Social Transformation of American Medicine",
+        "Change: How Behavior Spreads",
+        "Diffusion of Innovations"
+      ]
+    },
+    {
+      "id": "india_and_the_long_view",
+      "name": "India and the Long View",
+      "question": "How does a civilization persist, fracture, and reinvent itself across millennia?",
+      "color": "#B5682B",
+      "anchor": "The Anarchy",
+      "tension": "India as historical subject (Ghosh, Dalrymple) vs India as spiritual source (Gita, Upanishads) — is the long view political or metaphysical?",
+      "books": [
+        "The Glass Palace",
+        "The Nutmeg's Curse",
+        "Empress: The Astonishing Reign of Nur Jahan",
+        "The Anarchy",
+        "The End of Sorrow (The Bhagavad Gita for Daily Living, Vol. 1)",
+        "The Bhagavad Gita",
+        "The Upanishads",
+        "Inner Engineering",
+        "Karma",
+        "Light on Yoga",
+        "Light on Life"
+      ]
+    },
+    {
+      "id": "civilizational_sweep",
+      "name": "The Civilizational Sweep",
+      "question": "What is the arc of human history, and where is it going?",
+      "color": "#5A7A6A",
+      "anchor": "Guns, Germs, and Steel",
+      "tension": "Optimism (Ridley, Pinker) vs reckoning (Harari, Diamond) — is the long arc of civilization progress or a series of accidents?",
+      "books": [
+        "The Ascent of Man",
+        "The Prehistory of the Mind",
+        "Guns, Germs, and Steel",
+        "Homo Deus: A Brief History of Tomorrow",
+        "21 Lessons for the 21st Century",
+        "The Rational Optimist",
+        "The Evolution of Everything",
+        "Grand Transitions",
+        "Consilience: The Unity of Knowledge",
+        "The Demon-Haunted World"
+      ]
+    },
+    {
+      "id": "ridley_thesis",
+      "name": "The Ridley Thesis",
+      "question": "Does progress emerge bottom-up from exchange and evolution, requiring no designer?",
+      "color": "#7A9A5A",
+      "anchor": "The Rational Optimist",
+      "tension": "Ridley (spontaneous order, exchange as engine) vs intervention narratives — is optimism earned or naive?",
+      "books": [
+        "The Red Queen",
+        "The Origins of Virtue",
+        "Genome",
+        "The Rational Optimist",
+        "The Evolution of Everything",
+        "How Innovation Works",
+        "Darwin's Dangerous Idea",
+        "The Selfish Gene",
+        "The Extended Phenotype"
+      ]
+    },
+    {
+      "id": "conditions_of_genius",
+      "name": "The Conditions of Genius",
+      "question": "Is creativity a personal trait or an ecological one — and what conditions make it possible?",
+      "color": "#7A4A8A",
+      "anchor": "Creativity",
+      "tension": "Romantic tradition (Rubin, Lynch, Cameron, Csikszentmihalyi — creativity as encounter, flow, surrender) vs systems tradition (Ridley, Johnson, Rogers — creativity as network effect, recombination, diffusion). Same phenomenon, opposite explanations.",
+      "books": [
+        "Creativity",
+        "Flow",
+        "The Geography of Genius",
+        "Leonardo da Vinci",
+        "Genius",
+        "Creativity, Inc.",
+        "The Medici Effect",
+        "Daily Rituals",
+        "The Creative Act",
+        "Where Good Ideas Come From",
+        "Out of Our Minds",
+        "The Ten Faces of Innovation",
+        "How Innovation Works",
+        "Originals",
+        "Mastery",
+        "Catching the Big Fish",
+        "Hackers and Painters",
+        "Creative Selection",
+        "Invention: A Life",
+        "Think Bigger: How to Innovate",
+        "The Innovation Stack",
+        "Invention and Innovation"
+      ]
+    },
+    {
+      "id": "the_power_of_the_frame",
+      "name": "The Power of the Frame",
+      "question": "How does the way something is presented change what it means and what we do?",
+      "color": "#A04060",
+      "anchor": "Influence: Science and Practice",
+      "tension": "Persuasion as tool (Cialdini, Greene) vs persuasion as epistemology (Lakoff, Postman) — is framing a technique or the structure of thought itself?",
+      "books": [
+        "Influence: Science and Practice",
+        "The 48 Laws of Power",
+        "The Art of Seduction",
+        "The Laws of Human Nature",
+        "Never Split the Difference",
+        "Getting to Yes",
+        "The Political Mind",
+        "Resonate",
+        "slide:ology",
+        "The Pyramid Principle",
+        "Alchemy",
+        "Amusing Ourselves to Death",
+        "The Scapegoat"
+      ]
+    },
+    {
+      "id": "disruptions_anatomy",
+      "name": "Disruption's Anatomy",
+      "question": "How do new things displace old things, and why do incumbents always lose?",
+      "color": "#3A7A8A",
+      "anchor": "The Innovator's Dilemma",
+      "tension": "Disruption as structural (Christensen) vs disruption as illusion (Parker, The Illusion of Innovation) — does disruption explain history or just name it after the fact?",
+      "books": [
+        "The Innovator's Dilemma",
+        "The Innovator's Solution",
+        "Competing Against Luck",
+        "How Innovation Works",
+        "Invention and Innovation",
+        "Diffusion of Innovations",
+        "The Lean Startup",
+        "Escaping the Build Trap",
+        "Zero to One",
+        "Only the Paranoid Survive",
+        "How We Got to Now"
+      ]
+    },
+    {
+      "id": "the_mind_before_language",
+      "name": "The Mind Before Language",
+      "question": "What is the mind before culture, language, and society shaped it?",
+      "color": "#4A6B3A",
+      "anchor": "The Prehistory of the Mind",
+      "tension": "Mind as evolved module (Mithen, Pinker) vs mind as culturally constructed (Henrich, WEIRD) — how much of cognition is universal versus local?",
+      "books": [
+        "The Prehistory of the Mind",
+        "Other Minds",
+        "Darwin's Dangerous Idea",
+        "The Beginning of Infinity",
+        "The Fabric of Reality",
+        "Consilience: The Unity of Knowledge",
+        "Frames of Mind",
+        "The Weirdest People in the World",
+        "Mind in Motion",
+        "The Difference"
+      ]
+    },
+    {
+      "id": "body_as_practice",
+      "name": "The Body as Practice",
+      "question": "What does the body know that the mind cannot articulate, and how do you develop it?",
+      "color": "#5A8A70",
+      "anchor": "Light on Yoga",
+      "tension": "Body as instrument of spirit (Iyengar, Patanjali) vs body as evolved machine to optimize (Attia, McDougall) — is practice about transcendence or performance?",
+      "books": [
+        "Patanjali's Yoga Sutras",
+        "Patanjali Yoga",
+        "Light on Yoga",
+        "Light on Pranayama",
+        "Light on Life",
+        "Yoga for Body, Breath, and Mind",
+        "The Heart of Yoga",
+        "The Yoga Sutras of Patanjali",
+        "Born to Run",
+        "Starting Strength: Basic Barbell Training",
+        "Exercised",
+        "TB Method",
+        "Outlive",
+        "Super Agers"
+      ]
+    },
+    {
+      "id": "zen_current",
+      "name": "The Zen Current",
+      "question": "What does direct experience — stripped of doctrine — actually teach?",
+      "color": "#4A7A6A",
+      "anchor": "An Introduction to Zen Buddhism",
+      "tension": "Zen as practice (Suzuki, Thich Nhat Hanh — just sit, just walk) vs Zen as paradox (koans, Kopp — the teaching is the destruction of the teaching)",
+      "books": [
+        "An Introduction to Zen Buddhism",
+        "The Zen Koan as a Means of Attaining Enlightenment",
+        "How to Walk",
+        "Who Ordered This Truckload of Dung?",
+        "If You Meet the Buddha on the Road, Kill Him",
+        "Tao Te Ching",
+        "The Analects",
+        "Trying Not to Try",
+        "Catching the Big Fish",
+        "Destructive Emotions"
+      ]
+    },
+    {
+      "id": "vedantic_root",
+      "name": "The Vedantic Root",
+      "question": "What is the self, stripped of all additions?",
+      "color": "#8A5A3A",
+      "anchor": "I Am That",
+      "tension": "Advaita non-dualism (Nisargadatta — there is only awareness) vs devotional practice (Easwaran, Iyengar — the path requires sustained effort and form)",
+      "books": [
+        "The Bhagavad Gita",
+        "The End of Sorrow (The Bhagavad Gita for Daily Living, Vol. 1)",
+        "The Upanishads",
+        "I Am That",
+        "Patanjali's Yoga Sutras",
+        "The Yoga Sutras of Patanjali",
+        "Light on Yoga",
+        "Light on Life",
+        "The Heart of Yoga",
+        "Yoga for Body, Breath, and Mind",
+        "Satipatthana Sutta Discourses",
+        "Inner Engineering",
+        "Karma",
+        "Tantra: The Art of Understanding",
+        "The Great Challenge",
+        "I Am the Gate"
+      ]
+    },
+    {
+      "id": "strategy_as_statecraft",
+      "name": "Strategy as Statecraft",
+      "question": "How do states, armies, and leaders navigate irreversible decisions under uncertainty?",
+      "color": "#6B3A3A",
+      "anchor": "The Art of War",
+      "tension": "Strategy as timeless principle (Sun Tzu, Machiavelli) vs strategy as historically contingent (Gaddis, Lee Kuan Yew) — is there a general theory of strategy or only cases?",
+      "books": [
+        "The Art of War",
+        "The Prince",
+        "On Grand Strategy",
+        "On China",
+        "Boyd",
+        "From Third World to First",
+        "Rise and Kill First",
+        "The Machiavellians: Defenders of Freedom",
+        "7 Powers: The Foundations of Business Strategy",
+        "The Revolt of the Public",
+        "Preventing Surprise Attacks"
+      ]
+    }
+  ],
+  "clusters": [
+    {
+      "id": "city_as_living_system",
+      "name": "The City as Living System",
+      "gravity": "Cities as organisms, not plans — emergence, human scale, and the intelligence embedded in streets",
+      "may_become_thread": true,
+      "candidate_question": "What makes cities work, and why do planners consistently get it wrong?",
+      "books": [
+        "The Global City",
+        "Nature's Metropolis",
+        "Scale",
+        "The Works: Anatomy of a City",
+        "Emergent Tokyo",
+        "The Ghost Map",
+        "The Timeless Way of Building",
+        "A Pattern Language",
+        "The Architecture of Trees",
+        "Off the Books: The Underground Economy of the Urban Poor",
+        "The Power of Place",
+        "The Devil in the White City",
+        "Frank Gehry: The Houses",
+        "Tom Kundig: Working Title"
+      ]
+    },
+    {
+      "id": "aesop_collection",
+      "name": "The Aesop Collection",
+      "gravity": "Three editions of the same fables across 60 years of illustration history — how the same story changes across aesthetic eras",
+      "may_become_thread": false,
+      "books": [
+        "The Baby's Own Aesop",
+        "The Fables of Aesop (Altemus)",
+        "Aesop's Fables (Kredel)"
+      ]
+    },
+    {
+      "id": "lucretius_editions",
+      "name": "The Lucretius Editions",
+      "gravity": "The same argument about atoms and mortality held in three different physical and translational traditions",
+      "may_become_thread": false,
+      "books": [
+        "De Rerum Natura (The Nature of Things)",
+        "The Nature of Things (Folio Society)",
+        "Of the Nature of Things (Everyman)"
+      ]
+    },
+    {
+      "id": "conditions_of_creativity",
+      "name": "The Conditions of Creativity",
+      "gravity": "Books that ask where creativity comes from — romantic tradition vs systems tradition — without yet resolving into a single argument",
+      "may_become_thread": true,
+      "candidate_question": "Is creative work an encounter with something beyond the self, or an emergent property of networks and recombination?",
+      "books": [
+        "The Creative Act",
+        "Catching the Big Fish",
+        "The Artist's Way",
+        "Creativity",
+        "Flow",
+        "Where Good Ideas Come From",
+        "How Innovation Works",
+        "Diffusion of Innovations",
+        "The Ten Faces of Innovation",
+        "Originals",
+        "The Geography of Genius",
+        "Daily Rituals"
+      ]
+    },
+    {
+      "id": "model_thinking",
+      "name": "Model Thinking",
+      "gravity": "Using multiple models simultaneously to see what no single model reveals — the theoretical foundation of Manthan itself",
+      "may_become_thread": true,
+      "candidate_question": "How do you think with many models at once without collapsing them into one?",
+      "books": [
+        "The Model Thinker",
+        "The Difference",
+        "The Diversity Bonus",
+        "Algorithms to Live By",
+        "Thinking and Deciding",
+        "Simple Heuristics That Make Us Smart",
+        "The Fabric of Reality"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "skin_in_the_game",
+      "name": "Skin in the Game",
+      "definition": "Asymmetric exposure to consequences — the person giving advice must bear the downside of that advice, or the advice is worthless",
+      "adversary": "principal_agent_gap",
+      "books": [
+        "Skin in the Game",
+        "Antifragile",
+        "The Black Swan",
+        "Dynamic Hedging: Managing Vanilla and Exotic Options",
+        "What I Learned Losing a Million Dollars",
+        "Meditations"
+      ]
+    },
+    {
+      "id": "principal_agent_gap",
+      "name": "Principal-Agent Gap",
+      "definition": "When the person making decisions (agent) does not bear the consequences borne by the person they represent (principal), incentives misalign systematically",
+      "adversary": "skin_in_the_game",
+      "books": [
+        "The Selfish Gene",
+        "Noise: A Flaw in Human Judgment",
+        "The Folly of Fools",
+        "No Rules Rules",
+        "Thinking and Deciding"
+      ]
+    },
+    {
+      "id": "coevolutionary_arms_race",
+      "name": "Coevolutionary Arms Race",
+      "definition": "Two systems locked in mutual adaptation — each improvement in one triggers a response in the other, producing an endless escalation with no equilibrium",
+      "adversary": null,
+      "books": [
+        "The Red Queen",
+        "The Selfish Gene",
+        "The Extended Phenotype",
+        "The Origins of Virtue",
+        "Influence: Science and Practice"
+      ]
+    },
+    {
+      "id": "illegibility_hidden_order",
+      "name": "Illegibility / Hidden Order",
+      "definition": "Complex systems contain intelligence that is invisible to outside observers and cannot be made legible without destroying what makes it valuable",
+      "adversary": "metric_colonization",
+      "books": [
+        "The Timeless Way of Building",
+        "A Pattern Language",
+        "Toyota Production System",
+        "Off the Books: The Underground Economy of the Urban Poor",
+        "Emergent Tokyo",
+        "Gut Feelings"
+      ]
+    },
+    {
+      "id": "threshold_phase_transition",
+      "name": "Threshold / Phase Transition",
+      "definition": "Small changes accumulate with no visible effect until a critical threshold is crossed, after which the system rapidly shifts to a new state",
+      "adversary": null,
+      "books": [
+        "The Tipping Point",
+        "Change: How Behavior Spreads",
+        "Diffusion of Innovations",
+        "The Black Swan",
+        "Grand Transitions",
+        "Scale"
+      ]
+    },
+    {
+      "id": "replicator_dynamics",
+      "name": "Replicator / Information Copy",
+      "definition": "Any entity that copies itself with variation and selection will evolve — applies to genes, memes, ideas, institutions, and technologies",
+      "adversary": null,
+      "books": [
+        "The Selfish Gene",
+        "Darwin's Dangerous Idea",
+        "The Evolution of Everything",
+        "How Innovation Works",
+        "Diffusion of Innovations",
+        "The Meme Machine"
+      ]
+    },
+    {
+      "id": "wu_wei_negative_space",
+      "name": "Wu Wei / Negative Space",
+      "definition": "The most effective action is often non-action — creating conditions rather than forcing outcomes, working with the grain of the system rather than against it",
+      "adversary": "metric_colonization",
+      "books": [
+        "Tao Te Ching",
+        "Trying Not to Try",
+        "Humble Inquiry",
+        "The Timeless Way of Building",
+        "Brave New Work",
+        "Catching the Big Fish"
+      ]
+    },
+    {
+      "id": "survivorship_bias",
+      "name": "Survivorship Bias",
+      "definition": "We see only what survived, not what failed — this systematically distorts our understanding of causation and our predictions for the future",
+      "adversary": null,
+      "books": [
+        "Fooled by Randomness",
+        "The Black Swan",
+        "Noise: A Flaw in Human Judgment",
+        "Sources of Power",
+        "What I Learned Losing a Million Dollars"
+      ]
+    },
+    {
+      "id": "carrying_capacity",
+      "name": "Carrying Capacity / Binding Constraint",
+      "definition": "Every system has a limiting factor — growth stops not when all resources are depleted but when the scarcest one runs out",
+      "adversary": null,
+      "books": [
+        "Grand Transitions",
+        "Scale",
+        "The Rational Optimist",
+        "Guns, Germs, and Steel",
+        "Growth: From Microorganisms to Megacities"
+      ]
+    },
+    {
+      "id": "ritual_as_technology",
+      "name": "Ritual as Technology",
+      "definition": "Repeated formal practices encode functional knowledge that cannot be made explicit — they are technologies for producing states, not mere symbols",
+      "adversary": null,
+      "books": [
+        "The Yoga Sutras of Patanjali",
+        "Light on Yoga",
+        "An Introduction to Zen Buddhism",
+        "Meditations",
+        "The Heart of Yoga",
+        "Daily Rituals"
+      ]
+    },
+    {
+      "id": "mismatched_time_horizons",
+      "name": "Mismatched Time Horizons",
+      "definition": "When decision-makers operate on short cycles but consequences play out on long ones, systematic under-investment in the future is guaranteed",
+      "adversary": null,
+      "books": [
+        "The Innovator's Dilemma",
+        "Only the Paranoid Survive",
+        "Antifragile",
+        "Grand Transitions",
+        "Homo Deus: A Brief History of Tomorrow"
+      ]
+    },
+    {
+      "id": "costly_signal",
+      "name": "Costly Signal / Honest Advertising",
+      "definition": "A signal is credible only if it is too costly to fake — cheap signals are always gamed, expensive ones carry real information",
+      "adversary": null,
+      "books": [
+        "The Red Queen",
+        "The Selfish Gene",
+        "The Origins of Virtue",
+        "Influence: Science and Practice",
+        "The Art of Seduction"
+      ]
+    },
+    {
+      "id": "tacit_knowledge",
+      "name": "Tacit Knowledge / Embodied Expertise",
+      "definition": "The most important knowledge cannot be made explicit — it lives in practice, in the body, in accumulated judgment that resists codification",
+      "adversary": "metric_colonization",
+      "books": [
+        "Sources of Power",
+        "Intuition at Work",
+        "The Heart of Yoga",
+        "Light on Yoga",
+        "Toyota Production System",
+        "Starting Strength: Basic Barbell Training",
+        "An Evolutionary Theory of Economic Change"
+      ]
+    },
+    {
+      "id": "metric_colonization",
+      "name": "Metric Colonization",
+      "definition": "When a measure becomes a target, it ceases to be a good measure — quantification destroys what it was meant to capture",
+      "adversary": "tacit_knowledge",
+      "books": [
+        "Noise: A Flaw in Human Judgment",
+        "The Tyranny of Metrics",
+        "Brave New Work",
+        "Amusing Ourselves to Death",
+        "The Social Transformation of American Medicine"
+      ]
+    },
+    {
+      "id": "error_correction_as_progress",
+      "name": "Error Correction as Progress",
+      "definition": "Progress is not the accumulation of correct ideas but the development of better mechanisms for finding and correcting errors",
+      "adversary": null,
+      "books": [
+        "The Beginning of Infinity",
+        "The Fabric of Reality",
+        "The Demon-Haunted World",
+        "Consilience: The Unity of Knowledge",
+        "The Signal and the Noise"
+      ]
+    },
+    {
+      "id": "distributed_local_knowledge",
+      "name": "Distributed / Local Knowledge",
+      "definition": "The knowledge required to coordinate complex activity is distributed across millions of actors and cannot be aggregated by any central planner",
+      "adversary": null,
+      "books": [
+        "The Model Thinker",
+        "The Difference",
+        "Simple Heuristics That Make Us Smart",
+        "The Origins of Virtue",
+        "Off the Books: The Underground Economy of the Urban Poor"
+      ]
+    },
+    {
+      "id": "tight_loose_coupling",
+      "name": "Tight / Loose Coupling",
+      "definition": "Tightly coupled systems fail catastrophically and fast; loosely coupled systems fail slowly and recoverable — the choice of coupling is the fundamental design decision",
+      "adversary": null,
+      "books": [
+        "The Fearless Organization",
+        "Normal Accidents",
+        "Antifragile",
+        "Toyota Production System",
+        "The Fifth Discipline"
+      ]
+    },
+    {
+      "id": "attention_as_scarce_resource",
+      "name": "Attention as Scarce Resource",
+      "definition": "In an information-rich world, attention becomes the binding constraint — the economy of attention replaces the economy of information",
+      "adversary": null,
+      "books": [
+        "Amusing Ourselves to Death",
+        "The Shallows",
+        "Deep Work",
+        "Resonate",
+        "Alchemy"
+      ]
+    },
+    {
+      "id": "impermanence_non_attachment",
+      "name": "Impermanence / Non-Attachment",
+      "definition": "Suffering arises from clinging to what changes — the practice is not to stop caring but to hold lightly",
+      "adversary": null,
+      "books": [
+        "Meditations",
+        "Tao Te Ching",
+        "The Bhagavad Gita",
+        "I Am That",
+        "Satipatthana Sutta Discourses",
+        "Who Ordered This Truckload of Dung?"
+      ]
+    },
+    {
+      "id": "self_deception_adaptive",
+      "name": "Self-Deception as Adaptive Strategy",
+      "definition": "Deceiving oneself before deceiving others makes the deception more convincing — self-deception is not a cognitive error but an evolved social tool",
+      "adversary": null,
+      "books": [
+        "The Folly of Fools",
+        "Behave: The Biology of Humans at Our Best and Worst",
+        "Thinking, Fast and Slow",
+        "The Art of Seduction",
+        "Influence: Science and Practice"
+      ]
+    },
+    {
+      "id": "boundary_membrane_dynamics",
+      "name": "Boundary / Membrane Dynamics",
+      "definition": "The boundary of a system is not a wall but a selective membrane — what crosses it and what does not defines the system's identity",
+      "adversary": null,
+      "books": [
+        "Organizational Culture and Leadership",
+        "The Fifth Discipline",
+        "Scale",
+        "The Global City",
+        "Nature's Metropolis"
+      ]
+    },
+    {
+      "id": "ecological_fit",
+      "name": "Ecological Fit / Niche Construction",
+      "definition": "Organisms do not merely adapt to environments — they actively construct the environments to which they then adapt, changing the selection pressures on themselves",
+      "adversary": null,
+      "books": [
+        "The Extended Phenotype",
+        "Guns, Germs, and Steel",
+        "The Origins of Virtue",
+        "Consilience: The Unity of Knowledge",
+        "Nature's Metropolis"
+      ]
+    },
+    {
+      "id": "compression_signal_distillation",
+      "name": "Compression / Signal Distillation",
+      "definition": "The most powerful ideas are maximally compressed — an aphorism, a formula, a sutra carries more than a chapter because it has been distilled to its irreducible minimum",
+      "adversary": null,
+      "books": [
+        "The Art of War",
+        "Meditations",
+        "Tao Te Ching",
+        "The Yoga Sutras of Patanjali",
+        "Letters from a Stoic",
+        "The Pyramid Principle"
+      ]
+    }
+  ],
+  "reveal": {
+    "founding_figures": [
+      {
+        "name": "Darwin",
+        "presence": "The dominant intellectual ancestor — evolution underlies biology, psychology, economics, and culture threads simultaneously"
+      },
+      {
+        "name": "Kahneman",
+        "presence": "The judgment and decision-making thread orbits his work, even the books that argue against him"
+      },
+      {
+        "name": "Taleb",
+        "presence": "Fat tails, antifragility, and skin in the game appear as a recurring frame across risk, strategy, and philosophy"
+      },
+      {
+        "name": "Hayek",
+        "presence": "Distributed knowledge and spontaneous order run through economics, organization, and city threads — often without naming him"
+      },
+      {
+        "name": "Patanjali",
+        "presence": "The unexpected founding figure — the contemplative library is as deep and structured as the rationalist one"
+      }
+    ],
+    "core_tension": "The rational empiricist library and the contemplative library ask the same question from opposite directions: how do you see clearly when the instrument of seeing is itself compromised? Kahneman and Patanjali are working on the same problem.",
+    "hidden_collection": "A serious Yoga and Vedanta library — Patanjali, Iyengar, Desikachar, Easwaran, Nisargadatta, Osho — sitting inside what appeared to be a rationalist collection. Neither cancels the other. Both are held seriously.",
+    "era_concentration": "1990–2015",
+    "register_distribution": {
+      "humanist": 447,
+      "empirical": 113,
+      "philosophical": 63,
+      "contemplative": 34,
+      "systems": 22
+    },
+    "density_distribution": {
+      "accessible": 496,
+      "substantive": 144,
+      "dense": 39
+    },
+    "tension_pairs": [
+      {
+        "book_a": "Thinking, Fast and Slow",
+        "book_b": "Simple Heuristics That Make Us Smart",
+        "tension": "Are heuristics systematic errors (Kahneman) or adaptive intelligence (Gigerenzer)?"
+      },
+      {
+        "book_a": "Antifragile",
+        "book_b": "A Random Walk Down Wall Street",
+        "tension": "Is the right response to uncertainty embrace of volatility (Taleb) or passive diversification (Malkiel)?"
+      },
+      {
+        "book_a": "The Selfish Gene",
+        "book_b": "The Social Conquest of Earth",
+        "tension": "Is the unit of selection the gene (Dawkins) or the group (Wilson)?"
+      },
+      {
+        "book_a": "The Innovator's Dilemma",
+        "book_b": "The Illusion of Innovation",
+        "tension": "Does disruption explain history or merely name outcomes after the fact?"
+      },
+      {
+        "book_a": "I Am That",
+        "book_b": "Light on Yoga",
+        "tension": "Is the path to liberation through direct recognition of awareness (Nisargadatta) or sustained embodied practice (Iyengar)?"
+      },
+      {
+        "book_a": "The Rational Optimist",
+        "book_b": "Homo Deus: A Brief History of Tomorrow",
+        "tension": "Is the trajectory of civilization progress (Ridley) or a transition into something post-human (Harari)?"
+      }
+    ],
+    "discipline_noted": "Mukherjee (The Gene, The Emperor of All Maladies, The Song of the Cell) was removed from the India thread. His books are science, not India. The connection was identity, not argument. Shallow connections rejected."
+  },
+  "priming_log": [
+    {
+      "date": "2026-06-27",
+      "session": "Initial Manthan run",
+      "note": "First full pass through inventory. Identified 17 threads and 23 patterns through multi-lens analysis. Samudra Manthan method applied: depth, tension pairs, founding figures, register distribution, hidden collections. Key finding: hidden Yoga/Vedanta library inside rationalist collection."
+    },
+    {
+      "date": "2026-06-28",
+      "session": "Thread refinement and expansion",
+      "note": "Mukherjee removed from India thread — connection was identity not argument. Eastern philosophy split into Zen Current and Vedantic Root. Body as Practice thread created combining yoga, exercise, longevity. Creativity and genius thread expanded to 22 books after human priming surfaced the full collection."
+    },
+    {
+      "date": "2026-06-28",
+      "session": "New acquisitions and clusters",
+      "note": "Added 9 new books: Frank Gehry monograph, Tom Kundig, A Pattern Language, Big Ideas Little Pictures, three Aesop editions (Crane 1887, Altemus 1899, Kredel 1947), two physical Lucretius editions. City cluster updated. Aesop and Lucretius collections formalized as clusters."
+    }
+  ]
+}
