@@ -26,12 +26,20 @@ Five steps. Five agents. Each named in English and Hindi. The Hindi names are no
 | 1 | **Collect** | **Sangrah** | Parse raw input → structured, enriched inventory |
 | 2 | **Classify** | **Parichay** | Dimension every book; decompose into atomic ideas |
 | 3 | **Churn** | **Manthan** | Run lenses across the inventory; surface threads, clusters, patterns |
-| 4 | **Curate** | **Darshan** | Distill to essence — decide what matters and what to show |
-| 5 | **Visualize** | **Pradarshan** | Put it in front of the world |
+| 4 | **Curate** | **Darpan** | The mirror — the curator knows everything (numbers + meaning), then pulls forward |
+| 5 | **Visualize** | **Pradarshan** | Show the curated pull to the world |
+
+**The engine vs. the views.** Steps 1–3 (Sangrah, Parichay, Manthan) are the **engine** — they produce data. Step 4 (Darpan) is the **mirror** — an internal-facing view where the curator sees themselves. Step 5 (Pradarshan) is the **window** — the external-facing view shown to the world.
+
+**Step 4 — Curate / Darpan (दर्पण), the mirror.** Darpan means *mirror* — you only see yourself in it. It is internal-facing: the curator's complete self-knowledge, across two layers:
+- **Lekha-Jokha (लेखा-जोखा)** — *the numbers.* Accounting / stock-taking. Non-negotiable, objective statistics: book counts, atomic units, distributions, enrichment coverage, pipeline state, trends over time. Pure derived stats.
+- **Darshan (दर्शन)** — *the meaning.* Seeing, for yourself. The interpretive layer: Manthan's findings understood — the portrait, threads, tensions, the reveal.
+
+**Curation is the pull.** Knowing everything in Darpan, the curator selects a subset and pulls it forward to Pradarshan. Curate is not a separate verb — it *is* Darpan plus the act of pulling. The curator knows all that is there, then knows what to pull.
+
+**The etymology of Steps 4 and 5:** Darpan (दर्पण) is the mirror — you see yourself; Darshan (दर्शन) within it means to *see for yourself* (the interpretive half), Lekha-Jokha (लेखा-जोखा) is the stock-taking (the statistical half). Pradarshan (प्रदर्शन) means to show to others — pra (forth) + darshan. You cannot show to others without first seeing yourself in the mirror. The progression: count yourself → understand yourself → show yourself.
 
 **Naming convention:** every step carries its name in English and Hindi. If a third language becomes relevant for a specific library, it slots in as a third column. English for clarity, Hindi for identity.
-
-**The etymology of Steps 4 and 5:** Darshan (दर्शन) means to see — for yourself. The curator beholds the whole and makes the private editorial decision: what matters, what is ready, what to show. Pradarshan (प्रदर्शन) means to show to others — pra (forth) + darshan. You cannot show to others without first seeing for yourself. Step 4 is the private act; Step 5 is the public one.
 
 **Gaps / Khoj** sits outside the five steps — the forward-looking loop that feeds back into Sangrah. Reactive gaps can be engine-surfaced; proactive gaps require human intention.
 
@@ -98,63 +106,133 @@ The arrangement of editions is itself data. Do not flatten it.
 
 ## Step 2 — Classify / Parichay
 
-### Classification schema
+Parichay does two things — classify, then decompose. Nothing else. It does not connect ideas across books, form abstractions, or identify tensions. That is Manthan's job.
 
-Every book receives these dimensions during Parichay:
+### Enrichment (before either pass)
+
+Before classifying or decomposing, Parichay fetches three sources to give Claude enough material to work with:
+
+1. **Description** — from Google Books / Open Library (passed through from Sangrah staging)
+2. **Table of contents** — from Google Books API when available (chapter titles are the book's own decomposition — richer than any blurb)
+3. **Wikipedia summary** — Wikipedia REST API, free, strong coverage for notable books
+
+All three are fed to Claude for both passes. If Wikipedia is unavailable, the entry is flagged `needsReview: true`.
+
+### Pass 1 — Classify the book
+
+Assign every taxonomy field. The book as a whole object.
+
+**Multi-taxonomy:** a book belongs to multiple categories simultaneously. `category` = primary domain, `categories` = every domain touched. No forced exclusivity. "Leading: Lessons from Alex Ferguson" is Business AND Sports — both are true.
+
+**Few-shot consistency:** each classification call selects 6 most-similar books from the existing inventory as examples, so the vocabulary (register, form, density) stays calibrated to established patterns — not generic AI patterns.
 
 | Field | Values | Notes |
 |---|---|---|
-| `year` | integer | Year of original composition |
+| `category` | primary domain string | Main subject area — e.g. "Business" |
+| `categories` | array of strings | All domains touched — e.g. ["Business", "Sports"] |
+| `topic` | precise string | What this book is specifically about — not "leadership" but "long-tenure management and institutional culture-building" |
+| `subject` | slug | e.g. "leadership-management" |
+| `subtopics` | array of strings | Secondary angles |
+| `register` | empirical / systems / humanist / philosophical / contemplative / analytical | Position on empirical–spiritual axis |
+| `density` | accessible / substantive / dense | How demanding the book is to read |
+| `form` | argument / narrative / portrait / manual / meditation / reference / anthology / journal / essays | What kind of object it is |
+| `lineage` | founder name or null | Whose ideas this book most directly descends from |
 | `author_origin` | country string | Where the author is from |
 | `author_tradition` | free string | Intellectual lineage of the author |
-| `register` | empirical / systems / humanist / philosophical / contemplative | Position on empirical–spiritual axis |
-| `density` | accessible / substantive / dense | How demanding the book is to read |
-| `form` | argument / narrative / portrait / manual / meditation / reference / anthology | What kind of object it is |
-| `lineage` | founder name or null | Whose ideas this book most directly descends from |
-| `category` | primary domain string | Main subject area (BISAC-aligned) |
-| `categories` | array of strings | All domains touched |
-| `topic` | precise string | Specific argument — not "science" but "Epicurean atomism and ancient natural philosophy" |
-| `subtopics` | array of strings | Secondary concerns |
 
-### Lego blocks — atomic ideas
+### Pass 2 — Decompose into atomic units
 
-Every book is decomposed into 3–7 atomic, transferable ideas during Parichay. These are stored in `ideas.json`.
+Break the book into 3–7 atomic, transferable units. Stored in `ideas.json`.
 
-**How many:**
-- Manual / reference → 3 blocks (tools, not arguments)
-- Narrative / portrait → 4 blocks
-- Argument / meditation → 5–7 blocks (the denser the argument, the more blocks)
+**Unit count by form:**
+- manual / reference → 3 (tools, not arguments)
+- narrative / portrait / anthology / journal → 4
+- essays → 5
+- argument / meditation → 6
 
-**What a block is:**
-- A transferable unit — it can be lifted from its source book and placed next to ideas from completely different books
-- Exact mechanism, no decoration. Not "this book argues that thinking is hard" but "System 1 processes are fast, automatic, and error-prone in predictable ways under cognitive load"
-- 1–2 sentences maximum
+**What a unit is:**
+- A transferable idea that can be lifted from the source book and placed next to ideas from completely different books
+- Stated as the exact mechanism, no decoration. Not "this book argues leadership is hard" but "culture is transmitted through visible standards, not stated values — what the leader tolerates defines the culture more than what they say"
+- 2–3 sentences maximum
+- Typed: concept / framework / story / claim / lens
+- Tagged with honest, specific labels
 
-**What blocks are for:** they are the seed material for Manthan's deep probe — finding resonance between books at the idea level, not the metadata level.
+**What a unit is not:**
+- An abstraction to a universal principle — just state what the idea is
+- A comparison to another book
+- A connection, tension, or resonance with other works — those are Manthan's output
 
-Blocks are stored in `ideas.json` as `{ "Book Title": [ { "title": "Short name", "gloss": "1-2 sentence mechanism" } ] }`.
+**Schema:**
+```typescript
+interface AtomicUnit {
+  id: string           // slug: "culture-through-visible-standards-1"
+  type: "concept" | "framework" | "story" | "claim" | "lens"
+  title: string        // 5–8 word name
+  body: string         // 2–3 sentences — exact mechanism
+  tags: string[]       // honest labels — not the book title or author name
+  sourceBook: string   // title of the book
+}
+```
+
+Units are stored in `ideas.json` as `{ "Book Title": [ AtomicUnit, ... ] }`. Parichay merges new entries with any existing `ideas.json`; it does not overwrite.
+
+### What Parichay does not do
+
+- Does not connect ideas across books — no cross-references, tensions, or resonances
+- Does not abstract to universal principles — units are stated at face value
+- Does not filter books — every entry that passes Sangrah gets classified. Curation is Darshan's job.
+- Does not modify `inventory.json` directly — writes `parichay-staging.json` for human review first
 
 ---
 
 ## Step 3 — Churn / Manthan
 
+### How to work with Manthan
+
+Manthan has two modes of use: **running it** and **talking to it**. They are different things.
+
+**Running it** means triggering the agent — it sweeps the inventory with its lenses, runs the random probe, and produces candidate groupings. You do this when enough new books have been classified (10–20 is a reasonable threshold). You do not need to run it every session.
+
+**Talking to it** means priming — reacting to what it surfaces, correcting it, directing it toward something you suspect is there. This is a conversation, not a form. Every signal you give is recorded in `priming_log` inside `analysis.json`. The log is the audit trail of how your understanding of your own library evolved over time.
+
+**Before each Manthan session**, the agent reads the existing `priming_log` and briefs you: what groupings were found last time, what you accepted, what you rejected, what you said was wrong. You start each session knowing where you left off — you do not need to remember.
+
+**To update Manthan's structure** (add a lens, change the probe algorithm, change the output schema) — that is a design decision. Update `docs/ANTILIBRARY-ENGINE-SPEC.md` and `SESSION-LOG.md`. The spec is the single source of truth for how Manthan works; the priming log is the source of truth for what it found.
+
+**The two things you never need to do:**
+- Re-explain your library to Manthan — it reads `inventory.json`, `ideas.json`, and the priming log
+- Re-run all seven lenses when you only want to update one finding — each lens is independent and can be re-run selectively
+
+### The three stages
+
+**Stage 1 — Systematic sweep**
+Run all seven lenses across the full inventory and `ideas.json`. The four distribution lenses run on metadata alone (fast). The three relational lenses run on atomic units and `seeAlso` data. Together they map the obvious peaks.
+
+**Stage 2 — Random probe**
+Select edge books — books not yet in any grouping, or books at the boundary of known groups — as seeds. Find what else in the library resonates with them at the atomic unit level. This finds the peaks the systematic lenses miss. The random element is essential: without it, Manthan converges on the same peaks every time.
+
+**Stage 3 — Human priming loop**
+Surface one candidate grouping at a time. The human reacts. The engine adjusts and surfaces the next. The loop continues until the human stops or is satisfied. Every priming signal is dated and recorded.
+
 ### The seven lenses
 
-The Churn module runs multiple lenses across the classified inventory. Each lens is a different question asked of the same dataset:
+**Distribution lenses** — run on metadata alone, no atomic units needed:
 
-**Depth lens** — what are the intellectual strata? Identify: primary texts, serious scholarship, substantive synthesis, popular nonfiction. Look for depth in unexpected areas.
+**1. Depth** — what are the intellectual strata? Identify: primary texts, serious scholarship, substantive synthesis, popular nonfiction. Look for depth in unexpected areas and surprising shallowness in expected ones.
 
-**Tension pairs** — which books argue directly against each other? These pairs are the most productive analytical nodes. Surface the disagreements the collection holds.
+**2. Register** — where on the empirical → contemplative axis does the collection concentrate? Where is it thin? The shape of the distribution is itself revealing.
 
-**Founding figures** — whose ideas does this library orbit? Look for lineage convergence: many books descending from the same ancestor reveal a center of intellectual gravity.
+**3. Era** — which decades dominate? What does that reveal about when this person's thinking was formed?
 
-**Register distribution** — where on the empirical–spiritual axis does the collection concentrate? Where is it thin? The shape of the distribution is itself revealing.
+**4. Tradition** — which author traditions are well-represented? Which are entirely absent? Absence is as revealing as presence.
 
-**Era concentration** — which decades dominate? What does that reveal about when this person's thinking was formed?
+**Relational lenses** — require atomic units and `seeAlso` from `ideas.json`:
 
-**Hidden collections** — what unexpected depth emerges in an area that didn't announce itself? The hidden collection is often the most personally significant.
+**5. Tension pairs** — which books argue directly against each other? Found by atomic unit tag overlap combined with opposing claim types. These pairs are the most productive analytical nodes — they are where the library holds a live debate.
 
-**Tradition mapping** — which author traditions are well-represented? Which are absent? Absence is as revealing as presence.
+**6. Founding figures** — whose ideas does this library orbit? Found by `lineage` field convergence across books and cross-referencing `seeAlso` links. Many books descending from the same ancestor reveal a center of intellectual gravity the owner may not have consciously assembled.
+
+**7. Hidden collections** — what unexpected depth emerges in an area that didn't announce itself? Found by clustering `seeAlso` links across books — when many books point to the same concept or figure outside the library, that's a hidden collection waiting to be named.
 
 ### The random probe
 
@@ -188,35 +266,58 @@ Every priming signal is recorded in `priming_log` within `analysis.json` with a 
 
 ---
 
-## Step 4 — Curate / Darshan
+## Step 4 — Curate / Darpan (दर्पण), the mirror
 
-Darshan (दर्शन) means to see — for yourself. Before anything is shown to the world, the curator must first behold the whole: everything Manthan surfaced, every thread, every cluster, every tension pair. This private act of seeing is Darshan.
+Darpan means *mirror*. You only see yourself in it. It is the **internal-facing** view — the curator's complete self-knowledge of the library, assembled from everything the engine (Sangrah → Parichay → Manthan) produced. Nothing here is shown to the world yet; this is the curator beholding the whole, privately.
 
-Out of that seeing comes the editorial decision: what is ready, what is private, what is the right order, how much to reveal at once. Not everything Manthan found will be shown. A museum director does not hang every work in the collection.
+Curation is not a separate act bolted onto the end. **Curate = Darpan.** The curator knows everything that is there — the numbers *and* the meaning — and from that complete knowledge knows what to pull forward. The pull is the bridge to Pradarshan.
+
+Darpan has two layers.
+
+### Layer 1 — Lekha-Jokha (लेखा-जोखा) — the numbers
+
+Lekha-Jokha means *accounting / stock-taking*. The objective, statistical layer. Non-negotiable: it is always present, always current, never interpreted. It is the operator's instrument panel.
+
+**What it shows:**
+- **Inventory** — total books; by status (read / antilibrary / to-buy / misplaced); register, form, density, category distributions
+- **Atomic units** — total, average per book, by type
+- **Enrichment coverage** — % with cover, year, Wikipedia, seeAlso (the data-quality picture)
+- **Manthan** — findings by type and lens, strength distribution, probe candidates
+- **Pipeline state** — what sits in staging awaiting review; last-run dates; estimated ingestion miss rate
+- **Trend over time** — how all of the above move run to run (the ledger)
+
+**House method:** Lekha-Jokha is a *derived view*. A stats generator reads the canonical JSON and emits `darpan-stats.json` (current snapshot) + `darpan-history.json` (the appending ledger). Authored source, derived index — never a new source of truth.
+
+### Layer 2 — Darshan (दर्शन) — the meaning
+
+Darshan means *to see — for yourself*. The interpretive layer. Where Lekha-Jokha counts, Darshan understands: it presents Manthan's findings as a coherent portrait the curator can behold and react to. This is also where **priming** happens — the curator sees a finding, responds, and the understanding sharpens.
 
 **What Darshan does:**
-- Beholds the full output of Manthan — threads, clusters, patterns, the reveal
-- Selects which threads and clusters are ready to surface publicly
-- Decides the narrative order — what the visitor encounters first
-- Flags what is private vs. public (some threads may be too personal to show)
-- Shapes the reveal — how much is visible at once vs. progressively disclosed
-- Records the editorial reasoning — why something was included or held back
+- Presents the full output of Manthan — threads, clusters, patterns, tensions, the reveal — for the curator to understand
+- Holds the portrait: the spine of the story, the founding figures, the live debates, the absences
+- Surfaces findings for priming; records signals to `priming_log`
+- Flags what is private vs. potentially public (some understanding is too personal to show)
 
-**What Darshan does not do:**
-- It does not modify the underlying data. `inventory.json` and `analysis.json` remain unchanged.
+**What Darpan does not do:**
+- It does not modify the underlying data. `inventory.json` and `manthan-analysis.json` remain unchanged.
 - It does not generate new analysis. That is Manthan's job.
+- It does not show anything to the world. That is Pradarshan.
 
-**Output:** a curation config — a lightweight set of flags and ordering decisions — that Pradarshan reads and renders.
+### The pull — Darpan → Pradarshan
 
-**Trigger:** human decision. Darshan cannot run autonomously. The seeing is always the curator's.
+Curation completes when the curator, knowing everything in the mirror, selects a subset to show. The selection is recorded as a config that Pradarshan reads and renders. This pull is the only bridge from internal to external.
+
+**Output:** `darpan-stats.json` + `darpan-history.json` (Lekha-Jokha), and a selection config (the pull) for Pradarshan.
+
+**Trigger:** Lekha-Jokha regenerates automatically after any engine run. Darshan and the pull are human — the curator's, always.
 
 ---
 
 ## Step 5 — Visualize / Pradarshan
 
-Pradarshan (प्रदर्शन) means to show to others — pra (forth) + darshan (seeing). Darshan was the private seeing; Pradarshan is the public showing. What the curator beheld and decided in Step 4 now goes in front of the world.
+Pradarshan (प्रदर्शन) means to show to others — pra (forth) + darshan (seeing). Darpan was the private mirror; Pradarshan is the public window. What the curator beheld in the mirror and chose to pull forward now goes in front of the world.
 
-This is the web layer — the pages, views, and interactions that a visitor experiences. It reads from `inventory.json`, `analysis.json`, and the Darshan curation config. It renders what Darshan selected, in the order Darshan decided, at the depth Darshan chose.
+This is the web layer — the pages, views, and interactions that a visitor experiences. It reads from `inventory.json`, `manthan-analysis.json`, and the selection config the curator pulled from Darpan. It renders what was pulled, in the order chosen, at the depth chosen.
 
 **What Pradarshan does:**
 - Renders the constellation view — books as stars, threads as constellations
@@ -344,14 +445,20 @@ Produced by Manthan, shaped by priming.
 
 ```
 Raw input (CSV / images / chat)
-    ↓ Sangrah
-inventory.json (enriched)
-    ↓ Parichay
-inventory.json (classified) + ideas.json
-    ↓ Manthan
-analysis.json
-    ↓ Darshan
-Visualization layer (reads inventory + analysis + curation config)
+    ↓ Sangrah          ─┐
+inventory.json          │
+    ↓ Parichay          │  THE ENGINE (produces data)
+inventory.json + ideas  │
+    ↓ Manthan          ─┘
+manthan-analysis.json
+    ↓
+DARPAN — the mirror (internal, for the curator)  ─┐
+  · Lekha-Jokha → darpan-stats.json + history      │  knows everything:
+  · Darshan     → portrait, priming                │  numbers + meaning
+    ↓ the pull (curator selects a subset)         ─┘
+selection config
+    ↓
+PRADARSHAN — the window (external, for the world)
     ↓ gaps identified
 Khoj → feeds back into Sangrah (new acquisitions)
 ```
@@ -367,12 +474,13 @@ Khoj → feeds back into Sangrah (new acquisitions)
 | 3. `LIBRARY-SYSTEM.md` written | ✅ Done | Method documentation |
 | 4. Antilibrary extracted as standalone | ✅ Done | Own repo, own domain |
 | 5. Repo reorganized + spec finalized | ✅ Done | `libraries/bk/` data layer, five steps locked, naming fixed |
-| 6. Build Sangrah agent | ⬅ Next | Parse → enrich → quality gate → `inventory.json` |
-| 7. Build Parichay agent | Pending | Classify → Lego blocks → `ideas.json` |
-| 8. Build Manthan agent | Pending | 7 lenses + random probe + priming interface → `analysis.json` |
-| 9. Build Darshan layer | Pending | Editorial config — which threads/clusters to surface, in what order |
-| 10. Build Pradarshan (visualization) | Pending | Piles view, constellation improvements, reveal page |
-| 11. Khoj / Gaps interface | Pending | Dialogue-based acquisition loop feeding back into Sangrah |
+| 6. Build Sangrah agent | ✅ Done | Parse photos → enrich → quality gate → `sangrah-staging.json` |
+| 7. Build Parichay agent | ✅ Done | Enrich (ToC + Wikipedia) → classify → decompose → `parichay-staging.json` + `ideas.json` |
+| 8. Build Manthan agent | ✅ Done | 7 lenses + random probe → `manthan-analysis.json`. Ran live on 732 books. Priming interface still pending. |
+| 9. Build Darpan — Lekha-Jokha | ⬅ Next | Stats generator → `darpan-stats.json` + `darpan-history.json` + internal dashboard. The non-negotiable numbers. |
+| 10. Build Darpan — Darshan | Pending | Interpretive layer — portrait + priming over Manthan findings. |
+| 11. Build the pull + Pradarshan | Pending | Selection config (curator pulls a subset) → public visualization. Piles, constellation, reveal. |
+| 12. Khoj / Gaps interface | Pending | Dialogue-based acquisition loop feeding back into Sangrah |
 
 ---
 
@@ -386,5 +494,7 @@ Khoj → feeds back into Sangrah (new acquisitions)
 - **Gaps are human.** Khoj cannot be automated. Do not attempt to generate gaps from inventory analysis alone.
 - **Books are multi-node.** A book belongs to multiple threads, clusters, and patterns simultaneously. No forced exclusivity.
 - **The random probe is essential.** Systematic search finds obvious peaks. The Adirondacks terrain requires random jumps.
-- **Darshan is editorial, not generative.** It distills what Manthan produced. It does not produce new analysis.
+- **Darpan is the mirror; Pradarshan is the window.** Darpan is internal — the curator sees themselves (Lekha-Jokha's numbers + Darshan's meaning). Pradarshan is external — a curated subset pulled forward. Mirror before window.
+- **Curate = Darpan.** Curation is not a separate step. The curator knows everything in the mirror, then pulls what they want to show. Knowing precedes pulling.
+- **Lekha-Jokha is non-negotiable and derived.** The numbers are always present, always current, never interpreted — and always a derived view of the canonical JSON, never a new source of truth.
 - **Pradarshan is a client.** It reads, never writes. Any rendering layer that reads the same data files is a valid Pradarshan.

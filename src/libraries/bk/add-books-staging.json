@@ -1,0 +1,126 @@
+[
+  {
+    "title": "The Gulistan of Sadi",
+    "author": "Sa'di",
+    "category": "Literature",
+    "categories": [
+      "Literature",
+      "Philosophy"
+    ],
+    "topic": "Classical Persian moral tales and ethical wisdom in prose and verse",
+    "subject": "persian-ethical-literature",
+    "subtopics": [
+      "Sufi Moral Instruction",
+      "Anecdotes of Kings & Dervishes"
+    ],
+    "register": "contemplative",
+    "density": "substantive",
+    "form": "anthology",
+    "lineage": "Persian Sufi tradition",
+    "author_origin": "Persia",
+    "author_tradition": "Medieval Persian Sufi literature",
+    "status": "antilibrary",
+    "coverUrl": "",
+    "confidence": "high",
+    "addedVia": "add-books (known-gap recovery)"
+  },
+  {
+    "title": "Graveyard of the Pacific",
+    "author": "Randall Sullivan",
+    "category": "History",
+    "categories": [
+      "History",
+      "Science"
+    ],
+    "topic": "Maritime Disasters and Shipwrecks of the Pacific Northwest Coast",
+    "subject": "maritime-disasters-pacific-northwest",
+    "subtopics": [
+      "Navigation & Coastal Hazards",
+      "Survival & Rescue Narratives"
+    ],
+    "register": "humanist",
+    "density": "accessible",
+    "form": "narrative",
+    "lineage": null,
+    "author_origin": "USA",
+    "author_tradition": "American literary journalism",
+    "status": "antilibrary",
+    "coverUrl": "",
+    "confidence": "high",
+    "addedVia": "add-books (known-gap recovery)"
+  },
+  {
+    "title": "The Book of Elon",
+    "author": "Eric Jorgenson",
+    "category": "Self-Help",
+    "categories": [
+      "Self-Help",
+      "Philosophy"
+    ],
+    "topic": "Elon Musk's Principles on Innovation, Risk & First-Principles Thinking",
+    "subject": "career-networking-wealth",
+    "subtopics": [
+      "Entrepreneurial Mindset",
+      "First-Principles Reasoning & Engineering Ambition"
+    ],
+    "register": "humanist",
+    "density": "accessible",
+    "form": "reference",
+    "lineage": "Elon Musk",
+    "author_origin": "USA",
+    "author_tradition": "American tech-entrepreneurial philosophy",
+    "status": "antilibrary",
+    "coverUrl": "",
+    "confidence": "high",
+    "addedVia": "add-books (known-gap recovery)"
+  },
+  {
+    "title": "Little Black Stretchy Pants",
+    "author": "Chip Wilson",
+    "category": "Economics",
+    "categories": [
+      "Economics"
+    ],
+    "topic": "Founder's Memoir of Lululemon & Athletic Apparel Entrepreneurship",
+    "subject": "entrepreneurship-business-building",
+    "subtopics": [
+      "Brand Building & Company Culture",
+      "Retail & Consumer Products"
+    ],
+    "register": "empirical",
+    "density": "accessible",
+    "form": "narrative",
+    "lineage": null,
+    "author_origin": "Canada",
+    "author_tradition": "North American entrepreneurial memoir",
+    "status": "antilibrary",
+    "coverUrl": "",
+    "confidence": "high",
+    "addedVia": "add-books (known-gap recovery)"
+  },
+  {
+    "title": "Steve Kerr",
+    "author": "Scott Howard-Cooper",
+    "category": "Biography",
+    "categories": [
+      "Biography",
+      "Sports"
+    ],
+    "topic": "Life & Career of NBA Player and Coach Steve Kerr",
+    "subject": "biography-sports-figures",
+    "subtopics": [
+      "Basketball Leadership & Coaching",
+      "Warriors Dynasty & Team Culture"
+    ],
+    "register": "humanist",
+    "density": "accessible",
+    "form": "narrative",
+    "lineage": null,
+    "author_origin": "USA",
+    "author_tradition": "American sports journalism",
+    "status": "antilibrary",
+    "coverUrl": "",
+    "confidence": "high",
+    "addedVia": "add-books (known-gap recovery)"
+  }
+]

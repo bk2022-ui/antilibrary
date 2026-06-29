@@ -6,9 +6,11 @@ This file captures where we are in the Antilibrary Engine build as of 2026-06-29
 
 ## Where we are
 
-Steps 1–5 of the build sequence are complete. We are about to start **Step 6: Build the Sangrah agent**.
+Steps 1–7 of the build sequence are complete. We are about to start **Step 8: Build the Manthan agent**.
 
-Nothing has been built yet. The spec is complete and locked. The repo is clean and organized.
+**Sangrah agent** — built and tested. CLI: `npm run sangrah -- --input /path/to/photos`. Needs `ANTHROPIC_API_KEY` in `.env.local` for first real run against bk-library photos.
+
+**Parichay agent** — built. CLI: `npm run parichay`. Reads `sangrah-staging.json`, writes `parichay-staging.json` + `ideas.json`. Needs Sangrah to run first.
 
 ---
 
@@ -22,11 +24,12 @@ Nothing has been built yet. The spec is complete and locked. The repo is clean a
 - Moved session handoffs (`HANDOFF.md`, `START-HERE.md`, `AGENTS.md`) to `antilibrary/` root
 
 ### Framework decisions made today
-1. **Four steps, not six modules** — Collect / Classify / Churn / Curate (replacing the old six-module structure)
-2. **Darshan is the fourth step** — the editorial layer between analysis and visualization. Visualization is the output of Darshan, not a step itself.
-3. **Naming convention locked** — every module carries English + Hindi. English for clarity, Hindi for identity. Third language slots in as a third column if needed.
-4. **Multi-tenancy design** — `src/libraries/bk/` is your library instance. A friend's library would be `src/libraries/friend-name/`. The engine is indifferent to whose library it processes.
-5. **Four agents, each with a cadence** — Sangrah (on file upload), Parichay (per book), Manthan (batch threshold), Darshan (human-triggered).
+1. **Five steps** — Collect / Classify / Churn / Curate / Visualize (Pradarshan added as the fifth; replaces old six-module structure)
+2. **Darshan = Curate (Step 4)** — private seeing; the editorial curation layer. Darshan is for yourself.
+3. **Pradarshan = Visualize (Step 5)** — showing to others (pra + darshan = "showing forth"). The public-facing UI output.
+4. **Naming convention locked** — every module carries English + Hindi. English for clarity, Hindi for identity.
+5. **Multi-tenancy design** — `src/libraries/bk/` is your library instance. A friend's library would be `src/libraries/friend-name/`. The engine is indifferent to whose library it processes.
+6. **Five agents, each with a cadence** — Sangrah (on file upload), Parichay (per book), Manthan (batch threshold), Darshan (human-triggered), Pradarshan (renders the site).
 
 ### What was added to the spec
 - Agent architecture table with triggers, inputs, outputs
@@ -40,12 +43,13 @@ Nothing has been built yet. The spec is complete and locked. The repo is clean a
 
 ## The five steps
 
-| # | English | Hindi | Agent trigger | Output |
-|---|---|---|---|---|
-| 1 | **Collect** | **Sangrah** | New file uploaded | `inventory.json` (raw + enriched) |
-| 2 | **Classify** | **Parichay** | Per new book | `inventory.json` (classified) + `ideas.json` |
-| 3 | **Churn** | **Manthan** | N new books classified | `analysis.json` |
-| 4 | **Curate** | **Darshan** | Human decision | Curation config for visualization |
+| # | English | Hindi | Devanagari | Agent trigger | Output |
+|---|---|---|---|---|---|
+| 1 | **Collect** | **Sangrah** | संग्रह | New file uploaded | `inventory.json` (raw + enriched) |
+| 2 | **Classify** | **Parichay** | परिचय | Per new book | `inventory.json` (classified) + `ideas.json` |
+| 3 | **Churn** | **Manthan** | मंथन | N new books classified | `analysis.json` |
+| 4 | **Curate** | **Darshan** | दर्शन | Human decision | Curation config for visualization |
+| 5 | **Visualize** | **Pradarshan** | प्रदर्शन | After Darshan | Rendered antilibrary site |
 
 ---
 

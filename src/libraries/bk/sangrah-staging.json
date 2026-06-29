@@ -1,0 +1,450 @@
+{
+  "runDate": "2026-06-29T17:08:15.700Z",
+  "inputFolder": "/private/tmp/claude-501/-Users-bharatkhandelwal-coding-library-curator-bk-library/bbbfdfee-27f9-4f46-b35d-f3cca307dd03/scratchpad/new-shelf",
+  "imagesProcessed": [
+    "IMG_2972.HEIC",
+    "IMG_2974.HEIC",
+    "IMG_2975.HEIC",
+    "IMG_2979.HEIC",
+    "IMG_2980.HEIC",
+    "IMG_2981.HEIC",
+    "IMG_2982.HEIC",
+    "IMG_2983.HEIC",
+    "IMG_2984.HEIC",
+    "IMG_2985.HEIC",
+    "IMG_2987.HEIC",
+    "IMG_2988.HEIC"
+  ],
+  "summary": {
+    "extracted": 36,
+    "existingConfirmed": 6,
+    "newHighConfidence": 12,
+    "needsReview": 18,
+    "unreadable": 0
+  },
+  "newEntries": [
+    {
+      "title": "Goodbye, things",
+      "author": "Fumio Sasaki",
+      "year": 2013,
+      "isbn13": "9780141986388",
+      "isbn10": "1470862867",
+      "coverUrl": "https://covers.openlibrary.org/b/id/10206062-M.jpg",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2974.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": false
+    },
+    {
+      "title": "Ganbatte!",
+      "author": "Albert Liebermann",
+      "year": 2021,
+      "isbn13": "9784805316542",
+      "isbn10": "4805316543",
+      "coverUrl": "https://covers.openlibrary.org/b/id/12400883-M.jpg",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2974.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": false
+    },
+    {
+      "title": "The Japanese mind",
+      "author": "Roger J. Davies",
+      "year": 2002,
+      "isbn13": "9781462900510",
+      "isbn10": "1462900518",
+      "coverUrl": "https://covers.openlibrary.org/b/id/12174881-M.jpg",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2975.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": false
+    },
+    {
+      "title": "Little Book of Ikigai",
+      "author": "Ken Mogi",
+      "year": 2017,
+      "isbn13": "9781786489036",
+      "isbn10": "1786489031",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2975.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": false
+    },
+    {
+      "title": "The Wabi Sabi Way",
+      "author": "Mike Sturm",
+      "year": 2020,
+      "isbn13": "9781641528276",
+      "isbn10": "1641528265",
+      "coverUrl": "https://covers.openlibrary.org/b/id/13131524-M.jpg",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2975.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": false
+    },
+    {
+      "title": "MCDP 2 Intelligence",
+      "author": "Department of Defense",
+      "year": 2017,
+      "isbn13": "9781546814184",
+      "isbn10": "1546814183",
+      "coverUrl": "https://covers.openlibrary.org/b/id/12606833-M.jpg",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": false
+    },
+    {
+      "title": "MCDP 1 Warfighting",
+      "author": "Department of Defense",
+      "year": 2017,
+      "isbn13": "9781546811879",
+      "isbn10": "1546811877",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": false
+    },
+    {
+      "title": "MCDP 3 Expeditionary Operations",
+      "author": "Department of Defense",
+      "year": 2017,
+      "isbn13": "9781546880196",
+      "isbn10": "1546880194",
+      "coverUrl": "https://covers.openlibrary.org/b/id/12104131-M.jpg",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": false
+    },
+    {
+      "title": "MCDP 5 Planning",
+      "author": "Department of Defense",
+      "year": 2017,
+      "isbn13": "9781546816096",
+      "isbn10": "1546816097",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": false
+    },
+    {
+      "title": "MCDP 4 Logistics",
+      "author": "Department of Department of Defense",
+      "year": 2017,
+      "isbn13": "9781546816065",
+      "isbn10": "1546816062",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": false
+    },
+    {
+      "title": "MCDP 6 Command and Control",
+      "author": "Department of Department of Defense",
+      "year": 2017,
+      "isbn13": "9781546816119",
+      "isbn10": "1546816119",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": false
+    },
+    {
+      "title": "One man's view of the world",
+      "author": "Lee Kuan Yew",
+      "year": 2013,
+      "isbn13": "9789814342568",
+      "isbn10": "9814342564",
+      "coverUrl": "https://covers.openlibrary.org/b/id/13135771-M.jpg",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2987.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": false
+    }
+  ],
+  "reviewQueue": [
+    {
+      "title": "Invitation to Courtyard Gardens of Kyoto / 京都坪庭拝見",
+      "author": "Mizuno Katsuhiko",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2974.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results"
+    },
+    {
+      "title": "Kyōto, zendera no meitei",
+      "author": "Katsuhiko Mizuno",
+      "year": 2009,
+      "isbn13": "9784838104161",
+      "isbn10": "4838104162",
+      "status": "antilibrary",
+      "confidence": "low",
+      "sourceImages": [
+        "IMG_2974.HEIC"
+      ],
+      "canonical_id": "Samadhi on Zen Gardens",
+      "enriched": true,
+      "needsReview": true,
+      "reviewReason": "Only the partial cover edge is visible on the right, text is cropped and faint.; possible sibling of existing entry — verify edition"
+    },
+    {
+      "title": "京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility",
+      "author": "MIZUNO Katsuhiko, Tom WRIGHT",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2975.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results"
+    },
+    {
+      "title": "日本の酒 / Sake: A beyond-the-basics guide to Understanding, Tasting, Selection & Enjoyment",
+      "author": "John Gauntner, Ushihara Mayumi",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2975.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results"
+    },
+    {
+      "title": "RIMOWA - Magazine B Issue No.32",
+      "author": "JOH & Company (Magazine B)",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2979.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results"
+    },
+    {
+      "title": "Magazine B - Issue No.53 MUJI",
+      "author": "Magazine B (Brand Balance)",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2981.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results"
+    },
+    {
+      "title": "Magazine B - MAISON",
+      "author": "Magazine B (Brand Balance)",
+      "status": "antilibrary",
+      "confidence": "low",
+      "sourceImages": [
+        "IMG_2981.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "Only partially visible at bottom of image with text reading 'MAISON' and 'ISSUE N' partially legible.; enrichment lookup returned no results"
+    },
+    {
+      "title": "BRAND. BALANCE. ISSUE NO.56 MICHELIN GUIDE",
+      "author": "Magazine B",
+      "status": "antilibrary",
+      "confidence": "medium",
+      "sourceImages": [
+        "IMG_2980.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "This is a magazine cover (Magazine B Issue No.56) rather than a traditional book spine; author/publisher inferred from the 'B' branding.; enrichment lookup returned no results"
+    },
+    {
+      "title": "France",
+      "author": "Michelin",
+      "year": 2006,
+      "isbn13": "9782067124202",
+      "isbn10": "206712420X",
+      "coverUrl": "https://covers.openlibrary.org/b/id/2135974-M.jpg",
+      "status": "antilibrary",
+      "confidence": "low",
+      "sourceImages": [
+        "IMG_2981.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": true,
+      "reviewReason": "Only the top edges of red and green Michelin guides are visible at the top of the image."
+    },
+    {
+      "title": "NETFLIX",
+      "author": "Magazine B",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2983.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results"
+    },
+    {
+      "title": "B Magazine Issue No.54 Maison Margiela",
+      "author": "Brand Documentary Magazine (BRAND. BALANCE.)",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2982.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results"
+    },
+    {
+      "title": "MCDP 1-1 STRATEGY",
+      "author": "Department of Defense",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results"
+    },
+    {
+      "title": "Tao te Ching",
+      "author": "老子",
+      "year": 1842,
+      "isbn13": "9781982098162",
+      "isbn10": "1406509981",
+      "coverUrl": "https://covers.openlibrary.org/b/id/662232-M.jpg",
+      "status": "antilibrary",
+      "confidence": "medium",
+      "sourceImages": [
+        "IMG_2985.HEIC"
+      ],
+      "canonical_id": "Tao Te Ching",
+      "enriched": true,
+      "needsReview": true,
+      "reviewReason": "Author not printed on cover; inferred from the canonical work.; possible sibling of existing entry — verify edition"
+    },
+    {
+      "title": "Lun yu",
+      "author": "Confucius",
+      "year": 1750,
+      "isbn13": "9787800524073",
+      "isbn10": "1434604810",
+      "coverUrl": "https://covers.openlibrary.org/b/id/727362-M.jpg",
+      "status": "antilibrary",
+      "confidence": "medium",
+      "sourceImages": [
+        "IMG_2985.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": true,
+      "reviewReason": "Author not printed on cover; inferred from the work."
+    },
+    {
+      "title": "The Great Learning",
+      "author": "Confucius/Zengzi (attributed)",
+      "status": "antilibrary",
+      "confidence": "low",
+      "sourceImages": [
+        "IMG_2985.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "Authorship traditionally attributed and disputed; not printed on cover.; enrichment lookup returned no results"
+    },
+    {
+      "title": "The Doctrine of the Mean",
+      "author": "Zisi (attributed)",
+      "status": "antilibrary",
+      "confidence": "low",
+      "sourceImages": [
+        "IMG_2985.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "Authorship traditionally attributed; not printed on cover.; enrichment lookup returned no results"
+    },
+    {
+      "title": "The works of Mencius",
+      "author": "Mencius",
+      "year": 1970,
+      "isbn13": "9780486225906",
+      "isbn10": "0486225909",
+      "coverUrl": "https://covers.openlibrary.org/b/id/4647364-M.jpg",
+      "status": "antilibrary",
+      "confidence": "medium",
+      "sourceImages": [
+        "IMG_2985.HEIC"
+      ],
+      "enriched": true,
+      "needsReview": true,
+      "reviewReason": "Author not printed on cover but clearly inferred from the title."
+    },
+    {
+      "title": "The Gulistan of Sa'di",
+      "author": "Translated by W.M. Thackston",
+      "status": "antilibrary",
+      "confidence": "high",
+      "sourceImages": [
+        "IMG_2988.HEIC"
+      ],
+      "enriched": false,
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results"
+    }
+  ],
+  "existingConfirmed": [
+    "The Fables of Aesop (Altemus)",
+    "100 Whites",
+    "White",
+    "Made in Tokyo",
+    "The Art of War",
+    "From Third World to First"
+  ],
+  "unreadable": []
+}

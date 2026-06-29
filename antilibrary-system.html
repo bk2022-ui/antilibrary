@@ -83,8 +83,8 @@
   }
 
   .step-devanagari {
-    font-size: 13px;
-    color: #bbb;
+    font-size: 18px;
+    color: #333;
   }
 
   .step-body {
@@ -232,16 +232,16 @@
 <body>
 
 <h1>Antilibrary</h1>
-<div class="subtitle">System overview — updated 2026-06-29</div>
+<div class="subtitle">System overview — updated 2026-06-29 · 732 books · incremental ingestion loop proven end-to-end</div>
 
 <!-- BUILD-STATUS: update this block each session -->
 <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:48px;">
-  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#2d4a3e; color:#fff;">✅ 1 Sangrah — data exists</span>
-  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#2a3d5c; color:#fff;">✅ 2 Parichay — data exists</span>
-  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#4a2d3e; color:#fff;">✅ 3 Manthan — manual</span>
-  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#e0dcd6; color:#888;">⬜ 4 Darshan — not built</span>
+  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#2d4a3e; color:#fff;">✅ 1 Sangrah — agent built</span>
+  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#2a3d5c; color:#fff;">✅ 2 Parichay — agent built</span>
+  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#4a2d3e; color:#fff;">✅ 3 Manthan — agent built, ran live</span>
+  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#4a3a2d; color:#fff;">◧ 4 Darpan — v1 built (Lekha-Jokha ✅ · Darshan iterating)</span>
   <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#e0dcd6; color:#888;">⬜ 5 Pradarshan — UI exists</span>
-  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#f0ece4; color:#888; border:1px solid #e0dcd6;">⬅ Next: Sangrah agent</span>
+  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#f0ece4; color:#888; border:1px solid #e0dcd6;">⬅ Now: refining Darshan with Bharat</span>
 </div>
 <!-- END BUILD-STATUS -->
 
@@ -266,10 +266,11 @@
     <div class="step-body">
       <div class="step-what">Parse raw input → structured, enriched inventory</div>
       <div class="step-desc">
-        Takes any form of input — shelf photographs, CSV export, Goodreads list, conversation — and produces a structured inventory entry per book. Enriches with cover images, ISBNs, and descriptions from Google Books and Open Library. Flags low-confidence entries for human review before classification runs. Canonicalizes multiple editions of the same text as distinct siblings, not duplicates.
+        Takes any form of input — shelf photographs, CSV export, Goodreads list, conversation — and produces a structured inventory entry per book. Enriches with cover images, ISBNs, and descriptions from Google Books and Open Library. Flags low-confidence entries for human review before classification runs. Canonicalizes multiple editions as distinct siblings, not duplicates — the arrangement of editions is itself data.<br><br>
+        <strong>Is not:</strong> classification, decomposition, or curation. Every parseable book enters. No categories, no register, no atomic units assigned here.
       </div>
       <span class="step-trigger">Trigger: new file uploaded</span>
-      <span class="step-trigger">Output: inventory.json</span>
+      <span class="step-trigger">Output: sangrah-staging.json → inventory.json</span>
     </div>
   </div>
 
@@ -281,12 +282,16 @@
       <div class="step-devanagari">परिचय</div>
     </div>
     <div class="step-body">
-      <div class="step-what">Dimension every book; decompose into atomic ideas</div>
+      <div class="step-what">Classify the book, then decompose it into atomic units</div>
       <div class="step-desc">
-        Gives every book its coordinates across multiple axes: register (empirical → contemplative), density, form, lineage, era, author tradition and origin, primary and secondary domains, precise topic and subtopics. Then decomposes each book into 3–7 atomic Lego blocks — transferable ideas that can be lifted from the source book and placed next to ideas from completely different books. These blocks seed Manthan's deep probe.
+        Two passes, in order.<br><br>
+        <strong>Pass 1 — Classify.</strong> Gives every book its full coordinates: register (empirical → contemplative), density, form, lineage, author tradition and origin, primary and secondary domains, topic and subtopics. A book belongs to multiple categories simultaneously — Business AND Sports, not one or the other. Classification is calibrated against 6 similar books already in the inventory, so vocabulary stays consistent with established patterns.<br><br>
+        <strong>Pass 2 — Decompose.</strong> Breaks the book into 3–7 typed atomic units: concept, framework, story, claim, or lens. Each unit is transferable — it can be lifted from the source book and placed next to ideas from completely different books. Units are stated at face value (exact mechanism, 2–3 sentences). No abstractions, no connections to other books, no tensions. That is Manthan's job.<br><br>
+        Before either pass, Parichay enriches with three sources: description (from Sangrah), table of contents from Google Books, and a Wikipedia summary. Chapter titles are the book's own decomposition — richer than any blurb.<br><br>
+        <strong>Is not:</strong> connection-forming, abstraction, or curation. All books that pass Sangrah get classified. Filtering is Darshan's job.
       </div>
-      <span class="step-trigger">Trigger: per new book</span>
-      <span class="step-trigger">Output: inventory.json (classified) + ideas.json</span>
+      <span class="step-trigger">Trigger: per new book in staging</span>
+      <span class="step-trigger">Output: parichay-staging.json → inventory.json + ideas.json</span>
     </div>
   </div>
 
@@ -311,16 +316,17 @@
     <div class="step-num">04</div>
     <div class="step-name">
       <div class="step-english">Curate</div>
-      <div class="step-hindi">Darshan</div>
-      <div class="step-devanagari">दर्शन</div>
+      <div class="step-hindi">Darpan</div>
+      <div class="step-devanagari">दर्पण</div>
     </div>
     <div class="step-body">
-      <div class="step-what">You see it — the private editorial act</div>
+      <div class="step-what">The mirror — you see yourself; then you pull what to show</div>
       <div class="step-desc">
-        Darshan means to see — for yourself. Before anything is shown to the world, the curator first beholds everything Manthan surfaced. Out of that private seeing comes the editorial decision: what is ready, what is private, what is the right order, how much to reveal at once. Not everything Manthan found will be shown. A museum director does not hang every work in the collection. Darshan is that decision — and it can never run autonomously. The seeing is always the curator's.
+        Darpan means mirror — you only see yourself in it. Internal-facing: the curator's complete self-knowledge, in two layers. <strong>Lekha-Jokha (लेखा-जोखा)</strong> — the numbers: book counts, atomic units, distributions, enrichment coverage, pipeline state, trends. Non-negotiable, objective, always current — a derived view of the canonical JSON. <strong>Darshan (दर्शन)</strong> — the meaning: Manthan's findings understood as a portrait, where priming happens. Curate = Darpan: knowing everything that is there, the curator pulls a subset forward to Pradarshan. Knowing precedes pulling.
       </div>
-      <span class="step-trigger">Trigger: human decision</span>
-      <span class="step-trigger">Output: curation config for Pradarshan</span>
+      <span class="step-trigger">Lekha-Jokha: auto-regenerates per run</span>
+      <span class="step-trigger">Darshan + pull: human</span>
+      <span class="step-trigger">Output: darpan-stats.json + selection config</span>
     </div>
   </div>
 
@@ -334,7 +340,7 @@
     <div class="step-body">
       <div class="step-what">You show it to others — the public act</div>
       <div class="step-desc">
-        Pradarshan means to show to others: pra (forth) + darshan (seeing). Darshan was the private beholding; Pradarshan is the public showing. The web layer — pages, views, interactions — that a visitor experiences. Reads from inventory.json, analysis.json, and the Darshan curation config. Renders what Darshan selected, in the order Darshan decided. Pradarshan is a client: it reads, never writes. Any rendering layer that reads the same data files is a valid Pradarshan implementation.
+        Pradarshan means to show to others: pra (forth) + darshan (seeing). Darpan was the private mirror; Pradarshan is the public window. The web layer — pages, views, interactions — that a visitor experiences. Reads from inventory.json, manthan-analysis.json, and the selection config the curator pulled from Darpan. Renders what was pulled, in the order chosen. Pradarshan is a client: it reads, never writes. Any rendering layer that reads the same data files is a valid Pradarshan implementation.
       </div>
       <span class="step-trigger">Trigger: deployment (always live)</span>
       <span class="step-trigger">Output: the website</span>
@@ -347,15 +353,20 @@
 <div class="section-label">The flow</div>
 <div class="flow">
   Raw input (CSV / shelf photos / chat)<br>
-  <span class="flow-arrow">&darr;</span> Sangrah<br>
+  <span class="flow-arrow">&darr;</span> Sangrah &nbsp;<span class="flow-label">— engine —</span><br>
   inventory.json (enriched)<br>
   <span class="flow-arrow">&darr;</span> Parichay<br>
   inventory.json (classified) + ideas.json<br>
   <span class="flow-arrow">&darr;</span> Manthan<br>
-  analysis.json (threads, clusters, patterns, reveal)<br>
-  <span class="flow-arrow">&darr;</span> Darshan<br>
-  curation config (what to show, in what order)<br>
-  <span class="flow-arrow">&darr;</span> Pradarshan<br>
+  manthan-analysis.json (threads, clusters, patterns, reveal)<br>
+  <span class="flow-arrow">&darr;</span><br>
+  <strong>Darpan — the mirror</strong> <span class="flow-label">(internal, for the curator)</span><br>
+  &nbsp;&nbsp;· Lekha-Jokha &rarr; darpan-stats.json + history &nbsp;<span class="flow-label">the numbers</span><br>
+  &nbsp;&nbsp;· Darshan &rarr; portrait + priming &nbsp;<span class="flow-label">the meaning</span><br>
+  <span class="flow-arrow">&darr;</span> <span class="flow-label">the pull — curator selects a subset</span><br>
+  selection config<br>
+  <span class="flow-arrow">&darr;</span><br>
+  <strong>Pradarshan — the window</strong> <span class="flow-label">(external, for the world)</span><br>
   antilibrary.bharatkhandelwal.com<br>
   <span class="flow-arrow">&darr;</span> <span class="flow-label">gaps identified</span><br>
   Khoj &rarr; feeds back into Sangrah (new acquisitions)
@@ -393,7 +404,7 @@
 <div class="section-label">Naming convention</div>
 <div class="naming">
   Every step carries its name in English and Hindi. The Hindi names are not translations — they carry meaning from Sanskrit that the English word only approximates. English for clarity, Hindi for identity. If a third language becomes relevant for a specific library, it slots in as a third column.<br><br>
-  <strong>Darshan / Pradarshan:</strong> Darshan (दर्शन) means to see for yourself. Pradarshan (प्रदर्शन) means to show to others — pra (forth) + darshan. You cannot show to others without first seeing for yourself. Step 4 is the private act; Step 5 is the public one.<br><br>
+  <strong>Darpan / Darshan / Pradarshan — the mirror, the seeing, the showing:</strong> Darpan (दर्पण) is the mirror — you only see yourself in it (Step 4, internal). Within it, <strong>Lekha-Jokha</strong> (लेखा-जोखा) is the stock-taking — the numbers — and <strong>Darshan</strong> (दर्शन) is seeing for yourself — the meaning. Pradarshan (प्रदर्शन) means to show to others — pra (forth) + darshan (Step 5, external). The curator knows everything in the mirror, then pulls a subset to the window. Count yourself → understand yourself → show yourself.<br><br>
   <strong>Manthan:</strong> Named after the Hindu myth of Samudra Manthan — churning the cosmic ocean until treasures rise to the surface. The Churn step is an Adirondacks search: many lenses, random probes, human priming. Many peaks of unknown height, not a single summit.
 </div>
 
@@ -408,13 +419,64 @@
   <div class="principle"><strong>Gaps are human</strong>Khoj cannot be automated. Do not attempt to generate gaps from inventory analysis alone.</div>
   <div class="principle"><strong>Books are multi-node</strong>A book belongs to multiple threads, clusters, and patterns simultaneously. No forced exclusivity.</div>
   <div class="principle"><strong>The random probe is essential</strong>Systematic search finds obvious peaks. The Adirondacks terrain requires random jumps.</div>
-  <div class="principle"><strong>Darshan is private</strong>The curator sees for themselves first. Only then does Pradarshan show the world.</div>
+  <div class="principle"><strong>Curate = Darpan</strong>Curation is not a separate step. The curator knows everything in the mirror, then pulls what to show. Knowing precedes pulling.</div>
+  <div class="principle"><strong>Mirror before window</strong>Darpan is internal (you see yourself); Pradarshan is external (the world sees a chosen subset).</div>
+  <div class="principle"><strong>Lekha-Jokha is non-negotiable</strong>The numbers are always present, always current, never interpreted — a derived view, never a new source of truth.</div>
   <div class="principle"><strong>Pradarshan is a client</strong>It reads, never writes. Any rendering layer reading the same data files is valid.</div>
 </div>
 
+<!-- ════════════════ PRODUCT CATALOG — maintained, single source ════════════════ -->
+<!-- When anything ships or a new issue is found, update this section. Newest first. -->
+<div class="section-label" style="margin-top:8px;">Build log &mdash; what has shipped</div>
+<table style="width:100%; border-collapse:collapse; font-size:13px; margin-bottom:48px;">
+  <thead>
+    <tr style="text-align:left; color:#aaa; font-size:11px; text-transform:uppercase; letter-spacing:0.08em;">
+      <th style="padding:8px 12px 8px 0; border-bottom:1px solid #e0dcd6; width:90px;">Date</th>
+      <th style="padding:8px 12px; border-bottom:1px solid #e0dcd6; width:170px;">Feature</th>
+      <th style="padding:8px 0 8px 12px; border-bottom:1px solid #e0dcd6;">What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7; color:#999;">2026-06-29</td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#2d4a3e;">Pradarshan cover study (covergrid.html)</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Cover-grid treatment settled: square corners, uniform −7.5° tilt, light→blue hover border, Georgia-serif titles, register-keyed fallback covers for 140 missing covers, grid/list toggle. Re-runnable via build-covergrid.ts. Held — not yet ported to live page.tsx.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7; color:#999;">2026-06-29</td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#2d4a3e;">Darpan v1 (darpan.html)</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Standalone mirror page. Lekha-Jokha (live stats from JSON, re-runnable via build-darpan.ts) + Darshan (6-beat self-portrait, evidence from Manthan lenses, reaction pills). First spin — iterating.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7; color:#999;">2026-06-29</td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#2d4a3e;">Framework: Step 4 → Darpan</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Curate restructured into Darpan (the mirror) = Lekha-Jokha (numbers) + Darshan (meaning), internal-facing. Pradarshan stays external. Spec + HTML + CLAUDE.md updated.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7; color:#999;">2026-06-29</td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#2d4a3e;">Ingestion loop closed</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">New shelf photo → Sangrah → review → merge+dedup → Parichay → Manthan, proven end-to-end. Inventory 703 → 732.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7; color:#999;">2026-06-29</td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#2d4a3e;">Sangrah agent</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Reads shelf photos → spines → enrich → dedup → staging. First live run: 12 photos, 36 spines, coherent shelf clusters.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7; color:#999;">2026-06-29</td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#2a3d5c;">Parichay agent</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Two-pass classify + decompose. ToC + Wikipedia + See-also enrichment. 732 books, 3,300+ atomic units.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7; color:#999;">2026-06-29</td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#4a2d3e;">Manthan agent</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">7 lenses + random probe. Ran live on full library — tension pairs, founding figures, hidden collections, traditions.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7; color:#999;">2026-06-29</td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#555;">add-books path</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Minimum-work recovery of known-missing books: title+author → enrich → classify → decompose → append.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7; color:#999;">2026-06-29</td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#555;">Pradarshan design ref</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Captured Founders Notes grid + detail page (essence-on-top, evidence-below) as the visual reference for Step 5.</td></tr>
+  </tbody>
+</table>
+
+<div class="section-label">Backlog &mdash; known issues &amp; features to build</div>
+<table style="width:100%; border-collapse:collapse; font-size:13px; margin-bottom:48px;">
+  <thead>
+    <tr style="text-align:left; color:#aaa; font-size:11px; text-transform:uppercase; letter-spacing:0.08em;">
+      <th style="padding:8px 12px 8px 0; border-bottom:1px solid #e0dcd6; width:70px;">Pri</th>
+      <th style="padding:8px 12px; border-bottom:1px solid #e0dcd6; width:200px;">Item</th>
+      <th style="padding:8px 0 8px 12px; border-bottom:1px solid #e0dcd6;">Why / approach</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7;"><span style="background:#c97a3a; color:#fff; font-size:10px; padding:2px 7px; border-radius:3px;">HIGH</span></td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#8a4a1a;">Ingestion quality</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">~25% miss rate (audited). Two levers: (1) input guide for better photos; (2) multi-pass Sangrah + union + edge-aware crop + confidence flagging.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7;"><span style="background:#c97a3a; color:#fff; font-size:10px; padding:2px 7px; border-radius:3px;">HIGH</span></td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#8a4a1a;">Manthan delta pass</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Full re-churn doesn't scale. Update distribution lenses by recount; relational lenses run LLM only on pre-filtered new-vs-existing neighbour pairs. Full re-churn periodic only.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7;"><span style="background:#b08a3a; color:#fff; font-size:10px; padding:2px 7px; border-radius:3px;">MED</span></td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#7a5a1a;">Merge-gate dedup</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Sangrah's fuzzy matcher gives false negatives (4 this run). Strict normalized dedup belongs at the merge gate, not trusted to the matcher.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7;"><span style="background:#b08a3a; color:#fff; font-size:10px; padding:2px 7px; border-radius:3px;">MED</span></td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#7a5a1a;">Better enrichment source</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Google Books misses Magazine B, foreign-language, and classic texts → no cover/year. Need fallback sources.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7;"><span style="background:#999; color:#fff; font-size:10px; padding:2px 7px; border-radius:3px;">LOW</span></td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#666;">Backfill covers / years</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">~29 newly-added books lack covers/years; will show blank in any grid view.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7;"><span style="background:#999; color:#fff; font-size:10px; padding:2px 7px; border-radius:3px;">LOW</span></td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#666;">Confirm read/unread status</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Added books defaulted to "antilibrary" (unread) — needs human confirmation per book.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7;"><span style="background:#3a5a7a; color:#fff; font-size:10px; padding:2px 7px; border-radius:3px;">NEXT</span></td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#3a5a7a;">Darpan — Lekha-Jokha (Step 4a)</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">The mirror's numbers. Stats generator → darpan-stats.json + history + internal dashboard. Non-negotiable, derived, auto-regenerates.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7;"><span style="background:#3a5a7a; color:#fff; font-size:10px; padding:2px 7px; border-radius:3px;">NEXT</span></td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#3a5a7a;">Darpan — Darshan (Step 4b)</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">The mirror's meaning. Interpretive portrait over ~110 Manthan findings; where priming happens. Then the pull → selection config.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7;"><span style="background:#3a5a7a; color:#fff; font-size:10px; padding:2px 7px; border-radius:3px;">NEXT</span></td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#3a5a7a;">Manthan priming interface</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Dialogue surface for human priming; records signals to priming_log. Lives inside Darpan/Darshan.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7;"><span style="background:#b08a3a; color:#fff; font-size:10px; padding:2px 7px; border-radius:3px;">MED</span></td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#7a5a1a;">Port cover treatment to live page.tsx</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Settled covergrid.html treatment (square, uniform tilt, serif titles, fallback covers, grid/list toggle) into the live app grid. Currently held.</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7;"><span style="background:#3a5a7a; color:#fff; font-size:10px; padding:2px 7px; border-radius:3px;">NEXT</span></td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#3a5a7a;">The pull + Pradarshan build (Step 5)</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Selection config (curator pulls a subset) → public visualization. Grid resting state + structure as a layer. Detail page deferred (out of scope for now).</td></tr>
+    <tr><td style="padding:10px 12px 10px 0; border-bottom:1px solid #efece7;"><span style="background:#3a5a7a; color:#fff; font-size:10px; padding:2px 7px; border-radius:3px;">NEXT</span></td><td style="padding:10px 12px; border-bottom:1px solid #efece7; color:#3a5a7a;">Khoj / Gaps interface</td><td style="padding:10px 0 10px 12px; border-bottom:1px solid #efece7; color:#666;">Dialogue-based acquisition loop. Verify absence findings against ground truth before treating as real gaps.</td></tr>
+  </tbody>
+</table>
+
 <!-- FOOTER -->
 <div class="footer">
-  Antilibrary Engine &mdash; bk2022-ui/antilibrary &mdash; last updated 2026-06-29
+  Antilibrary Engine &mdash; bk2022-ui/antilibrary &mdash; last updated 2026-06-29 &mdash; 732 books &mdash; Sangrah ✅ Parichay ✅ Manthan ✅ Darpan v1 ✅ &mdash; Pradarshan cover study held &mdash; see Build log &amp; Backlog above
 </div>
 
 </body>

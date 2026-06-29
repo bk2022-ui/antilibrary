@@ -1,0 +1,2646 @@
+{
+  "runDate": "2026-06-29T17:23:27.496Z",
+  "summary": {
+    "input": 30,
+    "classified": 30,
+    "atomicUnitsExtracted": 133,
+    "needsReview": 30,
+    "failed": 0
+  },
+  "entries": [
+    {
+      "title": "Goodbye, things",
+      "author": "Fumio Sasaki",
+      "year": 2013,
+      "isbn13": "9780141986388",
+      "isbn10": "1470862867",
+      "coverUrl": "https://covers.openlibrary.org/b/id/10206062-M.jpg",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2974.HEIC"
+      ],
+      "classification": {
+        "category": "Self-Help",
+        "categories": [
+          "Self-Help",
+          "Philosophy"
+        ],
+        "topic": "Minimalism & Intentional Living",
+        "subject": "productivity-self-improvement",
+        "subtopics": [
+          "Japanese Aesthetic Philosophy",
+          "Decluttering & Simplicity"
+        ],
+        "register": "humanist",
+        "density": "accessible",
+        "form": "meditation",
+        "lineage": null,
+        "author_origin": "Japan",
+        "author_tradition": "Japanese minimalism"
+      },
+      "atomicUnits": [
+        {
+          "id": "possessions-silently-demand-your-attention-1",
+          "type": "claim",
+          "title": "Possessions silently demand your attention",
+          "body": "Every object you own emits a low-level signal that consumes mental energy — reminding you to maintain it, store it, or feel guilty about not using it. Reducing the number of things you own frees up the cognitive bandwidth those silent messages were consuming.",
+          "tags": [
+            "attention",
+            "cognitive-load",
+            "decluttering"
+          ],
+          "sourceBook": "Goodbye, things"
+        },
+        {
+          "id": "things-as-outsourced-self-worth-2",
+          "type": "concept",
+          "title": "Things as outsourced self-worth",
+          "body": "People accumulate possessions to broadcast their value to others, treating objects as proxies for the qualities they fear they lack. The accumulation reveals an internal deficit it can never actually fill, because external signals don't change how you regard yourself.",
+          "tags": [
+            "identity",
+            "status-signaling",
+            "insecurity"
+          ],
+          "sourceBook": "Goodbye, things"
+        },
+        {
+          "id": "discard-by-questioning-ownership-reasons-3",
+          "type": "framework",
+          "title": "Discard by questioning ownership reasons",
+          "body": "For each item, ask why you own it and whether you'd acquire it again today at full price; keep only what survives. Replace storage of 'might need someday' items with the willingness to re-acquire them on the rare occasion they're actually needed.",
+          "tags": [
+            "decision-rule",
+            "decluttering",
+            "reacquisition"
+          ],
+          "sourceBook": "Goodbye, things"
+        },
+        {
+          "id": "habituation-erases-the-joy-of-new-things-4",
+          "type": "concept",
+          "title": "Habituation erases the joy of new things",
+          "body": "Any acquisition delivers a spike of pleasure that fades as the object becomes background, so chasing happiness through buying creates an endless treadmill. Owning less interrupts this cycle by removing the constant supply of things to adapt to.",
+          "tags": [
+            "hedonic-adaptation",
+            "happiness",
+            "consumption"
+          ],
+          "sourceBook": "Goodbye, things"
+        },
+        {
+          "id": "saved-time-and-space-as-compound-returns-5",
+          "type": "lens",
+          "title": "Saved time and space as compound returns",
+          "body": "View each removed possession not as a one-time loss but as a recurring dividend — the cleaning, organizing, and deciding it no longer requires pays out repeatedly over time. Minimalism is less about the moment of discarding and more about the accumulated freedom afterward.",
+          "tags": [
+            "time-economy",
+            "recurring-benefit",
+            "freedom"
+          ],
+          "sourceBook": "Goodbye, things"
+        },
+        {
+          "id": "fewer-choices-increase-available-focus-6",
+          "type": "claim",
+          "title": "Fewer choices increase available focus",
+          "body": "Owning a small, fixed set of items eliminates the daily micro-decisions about what to wear, use, or keep, conserving willpower for what matters. The constraint becomes liberating because the energy spent selecting among options gets redirected toward meaningful action.",
+          "tags": [
+            "decision-fatigue",
+            "constraint",
+            "focus"
+          ],
+          "sourceBook": "Goodbye, things"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:15:29.075Z",
+      "needsReview": true,
+      "reviewReason": "no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "Ganbatte!",
+      "author": "Albert Liebermann",
+      "year": 2021,
+      "isbn13": "9784805316542",
+      "isbn10": "4805316543",
+      "coverUrl": "https://covers.openlibrary.org/b/id/12400883-M.jpg",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2974.HEIC"
+      ],
+      "classification": {
+        "category": "Philosophy",
+        "categories": [
+          "Philosophy"
+        ],
+        "topic": "Japanese Philosophy of Perseverance & Forward Motion",
+        "subject": "eastern-philosophy-zen",
+        "subtopics": [
+          "Japanese Culture",
+          "Resilience",
+          "Motivation"
+        ],
+        "register": "humanist",
+        "density": "accessible",
+        "form": "argument",
+        "lineage": null,
+        "author_origin": "USA",
+        "author_tradition": "American writing on Japanese culture"
+      },
+      "atomicUnits": [
+        {
+          "id": "ganbatte-as-effort-without-outcome-attachment-1",
+          "type": "concept",
+          "title": "Ganbatte as Effort Without Outcome Attachment",
+          "body": "Ganbatte means giving your best effort in the present moment without fixating on the result, shifting the locus of pride from winning to wholehearted participation. The reward is located in the quality of engagement itself, which makes the effort sustainable regardless of external success or failure.",
+          "tags": [
+            "effort",
+            "motivation",
+            "process-orientation"
+          ],
+          "sourceBook": "Ganbatte!"
+        },
+        {
+          "id": "kaizen-as-continuous-tiny-improvement-2",
+          "type": "concept",
+          "title": "Kaizen as Continuous Tiny Improvement",
+          "body": "Progress is achieved through small, incremental adjustments repeated consistently rather than dramatic overhauls, because tiny changes meet less internal resistance and compound over time. The mechanism works by lowering the activation threshold so action begins before motivation is fully present.",
+          "tags": [
+            "incremental-progress",
+            "habit",
+            "improvement"
+          ],
+          "sourceBook": "Ganbatte!"
+        },
+        {
+          "id": "perseverance-is-cultural-not-just-personal-3",
+          "type": "claim",
+          "title": "Perseverance Is Cultural, Not Just Personal",
+          "body": "The willingness to keep going is shaped by language and social encouragement — saying 'ganbatte' to one another embeds persistence as a shared expectation rather than a private struggle. This reframes endurance as a collective practice that members reinforce in each other instead of an isolated act of willpower.",
+          "tags": [
+            "culture",
+            "social-reinforcement",
+            "endurance"
+          ],
+          "sourceBook": "Ganbatte!"
+        },
+        {
+          "id": "forward-motion-over-stationary-reflection-4",
+          "type": "framework",
+          "title": "Forward Motion Over Stationary Reflection",
+          "body": "When facing difficulty, taking the next concrete step is prioritized over waiting for clarity or certainty, because momentum generates the information and confidence that planning alone cannot. Action itself becomes the diagnostic tool that reveals the path.",
+          "tags": [
+            "action-bias",
+            "decision-making",
+            "momentum"
+          ],
+          "sourceBook": "Ganbatte!"
+        },
+        {
+          "id": "obstacles-as-material-for-mastery-5",
+          "type": "lens",
+          "title": "Obstacles as Material for Mastery",
+          "body": "Rather than viewing hardship as an interruption to a smooth path, it is reframed as the necessary raw material through which skill and character are forged. This lens converts setbacks from evidence of failure into expected components of any worthwhile process.",
+          "tags": [
+            "resilience",
+            "reframing",
+            "adversity"
+          ],
+          "sourceBook": "Ganbatte!"
+        },
+        {
+          "id": "acceptance-as-foundation-for-striving-6",
+          "type": "concept",
+          "title": "Acceptance as Foundation for Striving",
+          "body": "Genuine perseverance begins by accepting present reality and one's limitations honestly rather than denying them, which paradoxically frees energy that denial would otherwise consume. Striving is most effective when it builds on an unflinching acknowledgment of where one actually stands.",
+          "tags": [
+            "acceptance",
+            "realism",
+            "psychological-energy"
+          ],
+          "sourceBook": "Ganbatte!"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:15:47.213Z",
+      "needsReview": true,
+      "reviewReason": "no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "The Japanese mind",
+      "author": "Roger J. Davies",
+      "year": 2002,
+      "isbn13": "9781462900510",
+      "isbn10": "1462900518",
+      "coverUrl": "https://covers.openlibrary.org/b/id/12174881-M.jpg",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2975.HEIC"
+      ],
+      "classification": {
+        "category": "History",
+        "categories": [
+          "History",
+          "Philosophy"
+        ],
+        "topic": "Japanese Culture & Social Psychology",
+        "subject": "genius-cultural-history",
+        "subtopics": [
+          "Cross-Cultural Communication",
+          "Japanese Values & Worldview"
+        ],
+        "register": "humanist",
+        "density": "accessible",
+        "form": "argument",
+        "lineage": null,
+        "author_origin": "UK",
+        "author_tradition": "British comparative cultural studies"
+      },
+      "atomicUnits": [
+        {
+          "id": "honne-and-tatemae-as-dual-truth-1",
+          "type": "concept",
+          "title": "Honne and Tatemae as Dual Truth",
+          "body": "Japanese social interaction distinguishes honne (one's true inner feelings) from tatemae (the publicly stated position required by social context). This is not seen as hypocrisy but as a necessary mechanism for preserving group harmony, where suppressing personal opinion in favor of the situationally appropriate response is a social skill rather than a moral failing.",
+          "tags": [
+            "social-masking",
+            "communication",
+            "group-harmony"
+          ],
+          "sourceBook": "The Japanese mind"
+        },
+        {
+          "id": "amae-as-indulgent-dependence-2",
+          "type": "concept",
+          "title": "Amae as Indulgent Dependence",
+          "body": "Amae is the desire to be passively loved and indulged, modeled on the mother-child bond and extended into adult relationships and hierarchies. It binds individuals through mutual reliance — a subordinate presumes upon a superior's benevolence, and the superior accepts the dependence — making interdependence rather than autonomy the basis of secure relationships.",
+          "tags": [
+            "dependence",
+            "attachment",
+            "hierarchy"
+          ],
+          "sourceBook": "The Japanese mind"
+        },
+        {
+          "id": "uchi-soto-insider-outsider-boundary-3",
+          "type": "concept",
+          "title": "Uchi-Soto Insider-Outsider Boundary",
+          "body": "Behavior is calibrated by whether someone belongs to one's uchi (inside group) or soto (outside group), and these boundaries shift with context — family, company, or nation. Politeness language, openness, and obligation all change depending on which side of the line the other person falls, making identity relational rather than fixed.",
+          "tags": [
+            "group-boundaries",
+            "context-dependence",
+            "identity"
+          ],
+          "sourceBook": "The Japanese mind"
+        },
+        {
+          "id": "harmony-maintained-through-conflict-avoidance-4",
+          "type": "claim",
+          "title": "Harmony Maintained Through Conflict Avoidance",
+          "body": "Wa (group harmony) is preserved by avoiding direct confrontation, suppressing dissent, and reaching decisions through gradual consensus-building rather than open debate. The cost of explicit disagreement is judged higher than the cost of inefficiency or unexpressed objection, so smoothness of relations takes priority over individual assertion.",
+          "tags": [
+            "consensus",
+            "conflict-avoidance",
+            "decision-making"
+          ],
+          "sourceBook": "The Japanese mind"
+        },
+        {
+          "id": "reading-silence-as-communication-5",
+          "type": "lens",
+          "title": "Reading Silence as Communication",
+          "body": "Meaning is carried heavily by what is left unsaid, by pauses, and by the listener's responsibility to intuit the speaker's intent (haragei, or 'belly talk'). Explicit verbal articulation can signal immaturity or distrust, so the skilled communicator infers context rather than demanding clear statements.",
+          "tags": [
+            "nonverbal",
+            "high-context",
+            "intuition"
+          ],
+          "sourceBook": "The Japanese mind"
+        },
+        {
+          "id": "obligation-structured-by-giri-and-ninjo-6",
+          "type": "framework",
+          "title": "Obligation Structured by Giri and Ninjo",
+          "body": "Social behavior is governed by the tension between giri (duty and obligation owed to others within a network of reciprocity) and ninjo (natural human feeling or compassion). One incurs lasting debts through favors received and must repay them appropriately, while personal emotion may pull against formal duty, creating recurring moral dilemmas.",
+          "tags": [
+            "obligation",
+            "reciprocity",
+            "moral-tension"
+          ],
+          "sourceBook": "The Japanese mind"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:16:07.577Z",
+      "needsReview": true,
+      "reviewReason": "no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "Little Book of Ikigai",
+      "author": "Ken Mogi",
+      "year": 2017,
+      "isbn13": "9781786489036",
+      "isbn10": "1786489031",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2975.HEIC"
+      ],
+      "classification": {
+        "category": "Philosophy",
+        "categories": [
+          "Philosophy"
+        ],
+        "topic": "Ikigai: Japanese Framework for Meaning & Motivation",
+        "subject": "eastern-philosophy-zen",
+        "subtopics": [
+          "Japanese Culture",
+          "Purpose",
+          "Well-being"
+        ],
+        "register": "humanist",
+        "density": "accessible",
+        "form": "argument",
+        "lineage": null,
+        "author_origin": "Japan",
+        "author_tradition": "Japanese neuroscience and popular philosophy"
+      },
+      "atomicUnits": [
+        {
+          "id": "ikigai-spans-small-joys-and-life-purpose-1",
+          "type": "concept",
+          "title": "Ikigai Spans Small Joys and Life Purpose",
+          "body": "Ikigai is not limited to grand life missions; it equally describes the small daily pleasures that make getting up worthwhile, like a morning coffee or sensory ritual. This dual scope means meaning can be cultivated through micro-satisfactions, not only through achieving a singular purpose.",
+          "tags": [
+            "meaning",
+            "daily-rituals",
+            "motivation"
+          ],
+          "sourceBook": "Little Book of Ikigai"
+        },
+        {
+          "id": "the-five-pillars-of-ikigai-2",
+          "type": "framework",
+          "title": "The Five Pillars of Ikigai",
+          "body": "Ikigai is sustained by five foundations: starting small, releasing yourself (accepting who you are), harmony and sustainability, the joy of little things, and being in the here and now. Each pillar functions independently, so a person can enter ikigai through any one without needing all simultaneously.",
+          "tags": [
+            "framework",
+            "structure",
+            "wellbeing"
+          ],
+          "sourceBook": "Little Book of Ikigai"
+        },
+        {
+          "id": "ikigai-does-not-require-income-or-recognition-3",
+          "type": "claim",
+          "title": "Ikigai Does Not Require Income or Recognition",
+          "body": "Unlike Western framings that link purpose to career or financial reward, ikigai can be fully realized in pursuits that generate no money and earn no public acclaim. The value comes from the intrinsic engagement itself, decoupling meaning from external validation or economic productivity.",
+          "tags": [
+            "intrinsic-motivation",
+            "purpose",
+            "anti-materialism"
+          ],
+          "sourceBook": "Little Book of Ikigai"
+        },
+        {
+          "id": "sushi-apprentices-decade-of-rice-4",
+          "type": "story",
+          "title": "Sushi Apprentice's Decade of Rice",
+          "body": "A trainee sushi chef may spend years doing seemingly menial tasks like preparing rice before being allowed to handle fish, finding ikigai in the incremental mastery of each stage. The pleasure lies in the disciplined process and gradual perfection, not in rushing toward the prestigious endpoint.",
+          "tags": [
+            "mastery",
+            "patience",
+            "craft"
+          ],
+          "sourceBook": "Little Book of Ikigai"
+        },
+        {
+          "id": "flow-as-the-engine-of-absorption-5",
+          "type": "lens",
+          "title": "Flow as the Engine of Absorption",
+          "body": "When attention is fully absorbed in an activity matched to one's skill, the sense of self and time dissolves, producing the psychological state of flow. Viewing pursuits through this lens reveals that ikigai often arises precisely in moments where self-consciousness disappears into the task.",
+          "tags": [
+            "flow",
+            "attention",
+            "psychology"
+          ],
+          "sourceBook": "Little Book of Ikigai"
+        },
+        {
+          "id": "releasing-yourself-to-accept-reality-6",
+          "type": "concept",
+          "title": "Releasing Yourself to Accept Reality",
+          "body": "A core move in ikigai is letting go of the ego's resistance and accepting one's actual circumstances and nature rather than fighting them. This self-acceptance frees energy that would otherwise be spent on self-judgment, allowing genuine engagement with what is in front of you.",
+          "tags": [
+            "self-acceptance",
+            "ego",
+            "presence"
+          ],
+          "sourceBook": "Little Book of Ikigai"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:16:25.807Z",
+      "needsReview": true,
+      "reviewReason": "no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "The Wabi Sabi Way",
+      "author": "Mike Sturm",
+      "year": 2020,
+      "isbn13": "9781641528276",
+      "isbn10": "1641528265",
+      "coverUrl": "https://covers.openlibrary.org/b/id/13131524-M.jpg",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2975.HEIC"
+      ],
+      "classification": {
+        "category": "Philosophy",
+        "categories": [
+          "Philosophy",
+          "Self-Help"
+        ],
+        "topic": "Wabi-Sabi: Applying Japanese Aesthetics of Imperfection to Everyday Life",
+        "subject": "eastern-philosophy-zen",
+        "subtopics": [
+          "Japanese Aesthetics",
+          "Mindfulness & Acceptance",
+          "Simplicity"
+        ],
+        "register": "contemplative",
+        "density": "accessible",
+        "form": "meditation",
+        "lineage": null,
+        "author_origin": "USA",
+        "author_tradition": "Writing on Japanese aesthetics applied to modern living"
+      },
+      "atomicUnits": [
+        {
+          "id": "wabi-sabi-as-acceptance-of-impermanence-1",
+          "type": "concept",
+          "title": "Wabi-Sabi as Acceptance of Impermanence",
+          "body": "Wabi-sabi is the aesthetic and disposition that finds beauty in things that are imperfect, incomplete, and impermanent. Rather than chasing polish and permanence, it trains attention on the natural cycle of decay, aging, and transience as the actual condition of all things.",
+          "tags": [
+            "impermanence",
+            "aesthetics",
+            "acceptance"
+          ],
+          "sourceBook": "The Wabi Sabi Way"
+        },
+        {
+          "id": "perfectionism-defers-living-indefinitely-2",
+          "type": "claim",
+          "title": "Perfectionism Defers Living Indefinitely",
+          "body": "Pursuing a flawless ideal postpones satisfaction to a finish line that never arrives, because every achievement reveals a new imperfection to fix. Accepting imperfection as the permanent baseline is what allows a person to actually inhabit their life now instead of waiting for it to begin.",
+          "tags": [
+            "perfectionism",
+            "satisfaction",
+            "presence"
+          ],
+          "sourceBook": "The Wabi Sabi Way"
+        },
+        {
+          "id": "flaws-as-markers-of-authenticity-3",
+          "type": "lens",
+          "title": "Flaws as Markers of Authenticity",
+          "body": "Viewing cracks, wear, and irregularity not as defects but as evidence of history and use changes what you value in an object or experience. The signs of age and damage become the very things that make something singular and real rather than the things that diminish it.",
+          "tags": [
+            "authenticity",
+            "imperfection",
+            "value-perception"
+          ],
+          "sourceBook": "The Wabi Sabi Way"
+        },
+        {
+          "id": "subtraction-toward-the-essential-4",
+          "type": "framework",
+          "title": "Subtraction Toward the Essential",
+          "body": "Improvement comes from removing what is excessive, ornamental, or distracting rather than adding more. By stripping a space, schedule, or possession down to only what genuinely matters, you reveal a quieter clarity that addition tends to bury.",
+          "tags": [
+            "minimalism",
+            "simplicity",
+            "subtraction"
+          ],
+          "sourceBook": "The Wabi Sabi Way"
+        },
+        {
+          "id": "beauty-in-the-modest-and-overlooked-5",
+          "type": "concept",
+          "title": "Beauty in the Modest and Overlooked",
+          "body": "Wabi-sabi locates value in the humble, the rough, and the unremarkable rather than the grand or expensive. Attending to small, ordinary, easily-ignored details retrains perception to find richness in what most people walk past without noticing.",
+          "tags": [
+            "attention",
+            "modesty",
+            "ordinary-beauty"
+          ],
+          "sourceBook": "The Wabi Sabi Way"
+        },
+        {
+          "id": "embracing-limits-reduces-suffering-6",
+          "type": "claim",
+          "title": "Embracing Limits Reduces Suffering",
+          "body": "Resisting the unchangeable realities of aging, loss, and constraint generates more distress than the realities themselves. Aligning expectations with the inherently limited and transient nature of life converts a source of anxiety into a source of peace.",
+          "tags": [
+            "acceptance",
+            "equanimity",
+            "expectations"
+          ],
+          "sourceBook": "The Wabi Sabi Way"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:16:44.384Z",
+      "needsReview": true,
+      "reviewReason": "no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "MCDP 2 Intelligence",
+      "author": "Department of Defense",
+      "year": 2017,
+      "isbn13": "9781546814184",
+      "isbn10": "1546814183",
+      "coverUrl": "https://covers.openlibrary.org/b/id/12606833-M.jpg",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "classification": {
+        "category": "Technology",
+        "categories": [
+          "Technology",
+          "Philosophy"
+        ],
+        "topic": "Military Intelligence Doctrine & Decision Support",
+        "subject": "military-intelligence-doctrine",
+        "subtopics": [
+          "Intelligence Cycle & Analysis",
+          "Command Decision-Making"
+        ],
+        "register": "systems",
+        "density": "substantive",
+        "form": "manual",
+        "lineage": "Sun Tzu",
+        "author_origin": "USA",
+        "author_tradition": "American military doctrine"
+      },
+      "atomicUnits": [
+        {
+          "id": "intelligence-cycle-as-continuous-loop-1",
+          "type": "framework",
+          "title": "Intelligence Cycle as Continuous Loop",
+          "body": "Intelligence operates as a cyclical process: planning and direction, collection, processing, production, and dissemination, with each output feeding back into new requirements. The cycle is not strictly sequential — phases overlap and run simultaneously, and feedback at any stage can redirect collection before the loop completes.",
+          "tags": [
+            "process-design",
+            "feedback-loops",
+            "information-management"
+          ],
+          "sourceBook": "MCDP 2 Intelligence"
+        },
+        {
+          "id": "estimate-versus-fact-distinction-2",
+          "type": "concept",
+          "title": "Estimate Versus Fact Distinction",
+          "body": "Intelligence is fundamentally an estimate about an adaptive adversary, not a statement of verified fact, and must explicitly carry its degree of uncertainty. Presenting probabilistic judgment as certainty corrupts decisions, so analysts must communicate confidence levels and the assumptions underlying each conclusion.",
+          "tags": [
+            "uncertainty",
+            "judgment",
+            "decision-support"
+          ],
+          "sourceBook": "MCDP 2 Intelligence"
+        },
+        {
+          "id": "intelligence-must-be-commander-driven-3",
+          "type": "claim",
+          "title": "Intelligence Must Be Commander-Driven",
+          "body": "Intelligence efforts are wasted unless tied to the specific decisions a commander must make, so the commander must personally direct priorities rather than delegate them entirely. Intelligence that answers interesting questions instead of decision-relevant ones consumes scarce collection assets while leaving the actual choice unsupported.",
+          "tags": [
+            "prioritization",
+            "leadership",
+            "relevance"
+          ],
+          "sourceBook": "MCDP 2 Intelligence"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:16:57.592Z",
+      "needsReview": true,
+      "reviewReason": "no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "MCDP 1 Warfighting",
+      "author": "Department of Defense",
+      "year": 2017,
+      "isbn13": "9781546811879",
+      "isbn10": "1546811877",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "classification": {
+        "category": "Business",
+        "categories": [
+          "Business",
+          "Philosophy"
+        ],
+        "topic": "U.S. Marine Corps Doctrine on the Theory & Conduct of War",
+        "subject": "military-strategy-doctrine",
+        "subtopics": [
+          "Maneuver Warfare Philosophy",
+          "Command & Decision-Making"
+        ],
+        "register": "systems",
+        "density": "substantive",
+        "form": "manual",
+        "lineage": "Clausewitz",
+        "author_origin": "USA",
+        "author_tradition": "American military doctrine"
+      },
+      "atomicUnits": [
+        {
+          "id": "friction-as-the-defining-feature-of-war-1",
+          "type": "concept",
+          "title": "Friction as the Defining Feature of War",
+          "body": "War is dominated by friction — the countless small factors (fatigue, fear, weather, bad information, mechanical failure) that make even simple actions difficult and degrade plans in execution. Because friction cannot be eliminated, plans should be designed to be robust and adaptable under degradation rather than dependent on everything going right.",
+          "tags": [
+            "uncertainty",
+            "execution-gap",
+            "planning"
+          ],
+          "sourceBook": "MCDP 1 Warfighting"
+        },
+        {
+          "id": "maneuver-warfare-targets-cohesion-not-attrition-2",
+          "type": "framework",
+          "title": "Maneuver Warfare Targets Cohesion, Not Attrition",
+          "body": "Rather than destroying the enemy piece by piece through superior firepower, maneuver warfare seeks to shatter the enemy's cohesion and will by attacking critical vulnerabilities faster than they can respond. The aim is to create a cascading sequence of dilemmas that paralyzes decision-making, so the system collapses before its parts are physically defeated.",
+          "tags": [
+            "strategy",
+            "tempo",
+            "systemic-collapse"
+          ],
+          "sourceBook": "MCDP 1 Warfighting"
+        },
+        {
+          "id": "commanders-intent-enables-decentralized-action-3",
+          "type": "concept",
+          "title": "Commander's Intent Enables Decentralized Action",
+          "body": "Subordinates are given the purpose and desired end state of an operation rather than detailed instructions, so they can act independently when the situation changes faster than orders can travel. This allows initiative at the lowest levels to remain aligned with overall goals even when communication breaks down or the original plan no longer fits reality.",
+          "tags": [
+            "delegation",
+            "alignment",
+            "decision-rights"
+          ],
+          "sourceBook": "MCDP 1 Warfighting"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:17:10.708Z",
+      "needsReview": true,
+      "reviewReason": "no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "MCDP 3 Expeditionary Operations",
+      "author": "Department of Defense",
+      "year": 2017,
+      "isbn13": "9781546880196",
+      "isbn10": "1546880194",
+      "coverUrl": "https://covers.openlibrary.org/b/id/12104131-M.jpg",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "classification": {
+        "category": "Military",
+        "categories": [
+          "Military"
+        ],
+        "topic": "Marine Corps Doctrine on Expeditionary Operations",
+        "subject": "military-doctrine-strategy",
+        "subtopics": [
+          "Expeditionary Warfare",
+          "Operational Planning & Command"
+        ],
+        "register": "systems",
+        "density": "substantive",
+        "form": "manual",
+        "lineage": null,
+        "author_origin": "USA",
+        "author_tradition": "American military doctrine"
+      },
+      "atomicUnits": [
+        {
+          "id": "expeditionary-mindset-over-material-readiness-1",
+          "type": "concept",
+          "title": "Expeditionary Mindset Over Material Readiness",
+          "body": "Being expeditionary is primarily a state of mind, not a function of equipment — it means a willingness to deploy rapidly into austere environments with whatever is at hand and to operate with self-sufficiency rather than waiting for ideal conditions. Forces that internalize this mentality stay light, mentally flexible, and ready to improvise, while forces that rely on accumulated infrastructure lose the capacity to move quickly.",
+          "tags": [
+            "readiness",
+            "organizational-mindset",
+            "austerity"
+          ],
+          "sourceBook": "MCDP 3 Expeditionary Operations"
+        },
+        {
+          "id": "tailoring-forces-to-the-mission-2",
+          "type": "framework",
+          "title": "Tailoring Forces to the Mission",
+          "body": "Rather than deploying fixed standing units, capabilities are assembled into task-organized packages scaled precisely to the specific mission, then disassembled and recombined as the situation changes. This modular approach trades the efficiency of permanent structures for the adaptability of building exactly the force a problem requires.",
+          "tags": [
+            "modular-design",
+            "task-organization",
+            "adaptability"
+          ],
+          "sourceBook": "MCDP 3 Expeditionary Operations"
+        },
+        {
+          "id": "crisis-response-depends-on-forward-presence-3",
+          "type": "claim",
+          "title": "Crisis Response Depends on Forward Presence",
+          "body": "The decisive factor in responding to a crisis is not total combat power but the time it takes to arrive, so positioning capable forces forward — already near likely flashpoints — converts hours into the difference between shaping an event and reacting to its aftermath. Speed of arrival with a credible force often matters more than the eventual size of the response.",
+          "tags": [
+            "response-time",
+            "positioning",
+            "deterrence"
+          ],
+          "sourceBook": "MCDP 3 Expeditionary Operations"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:17:24.481Z",
+      "needsReview": true,
+      "reviewReason": "no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "MCDP 5 Planning",
+      "author": "Department of Defense",
+      "year": 2017,
+      "isbn13": "9781546816096",
+      "isbn10": "1546816097",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "classification": {
+        "category": "Military",
+        "categories": [
+          "Military"
+        ],
+        "topic": "Marine Corps Doctrine on Planning Theory & Practice",
+        "subject": "military-planning-doctrine",
+        "subtopics": [
+          "Operational Planning",
+          "Command & Decision-Making"
+        ],
+        "register": "systems",
+        "density": "substantive",
+        "form": "manual",
+        "lineage": "Clausewitz",
+        "author_origin": "USA",
+        "author_tradition": "American military doctrine"
+      },
+      "atomicUnits": [
+        {
+          "id": "planning-is-continuous-not-a-product-1",
+          "type": "claim",
+          "title": "Planning Is Continuous, Not a Product",
+          "body": "Planning is an ongoing process of learning and adapting, not the creation of a fixed document that ends when the plan is published. A plan is a snapshot of intentions at one moment, and its value lies in the shared understanding generated during planning rather than in the artifact itself.",
+          "tags": [
+            "planning-process",
+            "adaptation",
+            "shared-understanding"
+          ],
+          "sourceBook": "MCDP 5 Planning"
+        },
+        {
+          "id": "tempo-through-decentralized-execution-2",
+          "type": "framework",
+          "title": "Tempo Through Decentralized Execution",
+          "body": "Plans should specify intent and desired end state while leaving subordinates maximum freedom to determine how to achieve it. This decentralization increases the speed of decision-making across the organization, allowing it to act faster than an opponent who waits for centralized direction.",
+          "tags": [
+            "decentralization",
+            "tempo",
+            "commanders-intent"
+          ],
+          "sourceBook": "MCDP 5 Planning"
+        },
+        {
+          "id": "plans-reduce-but-cannot-eliminate-uncertainty-3",
+          "type": "concept",
+          "title": "Plans Reduce But Cannot Eliminate Uncertainty",
+          "body": "Planning manages uncertainty by identifying what can be reasonably anticipated and building in branches and sequels for contingencies, rather than attempting to predict the future precisely. Because complex situations are inherently unpredictable, a good plan preserves flexibility instead of locking in a single rigid course of action.",
+          "tags": [
+            "uncertainty",
+            "contingency-planning",
+            "flexibility"
+          ],
+          "sourceBook": "MCDP 5 Planning"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:17:40.864Z",
+      "needsReview": true,
+      "reviewReason": "no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "MCDP 4 Logistics",
+      "author": "Department of Department of Defense",
+      "year": 2017,
+      "isbn13": "9781546816065",
+      "isbn10": "1546816062",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "classification": {
+        "category": "Military",
+        "categories": [
+          "Military"
+        ],
+        "topic": "Marine Corps Doctrine on Logistics & Sustainment",
+        "subject": "military-logistics",
+        "subtopics": [
+          "Operational Sustainment",
+          "Combat Service Support Doctrine"
+        ],
+        "register": "systems",
+        "density": "substantive",
+        "form": "manual",
+        "lineage": null,
+        "author_origin": "USA",
+        "author_tradition": "American military doctrine"
+      },
+      "atomicUnits": [
+        {
+          "id": "logistics-as-operational-reach-limiter-1",
+          "type": "concept",
+          "title": "Logistics As Operational Reach Limiter",
+          "body": "The scope and tempo of any operation is bounded by the logistics that can sustain it, meaning logistics does not merely support strategy but actively constrains what strategy is possible. Commanders who plan operations beyond their sustainment capacity create culminating points where momentum collapses regardless of tactical success.",
+          "tags": [
+            "sustainment",
+            "operational-planning",
+            "constraints"
+          ],
+          "sourceBook": "MCDP 4 Logistics"
+        },
+        {
+          "id": "pull-versus-push-distribution-logic-2",
+          "type": "framework",
+          "title": "Pull Versus Push Distribution Logic",
+          "body": "Supply systems can either push standardized packages forward on a schedule or respond to actual demand pulled by the units consuming resources. Demand-based pull reduces waste and matches real needs but requires accurate, fast information flow; anticipatory push guarantees availability but accumulates excess and stagnant stockpiles when forecasts miss.",
+          "tags": [
+            "supply-chain",
+            "decision-systems",
+            "information-flow"
+          ],
+          "sourceBook": "MCDP 4 Logistics"
+        },
+        {
+          "id": "responsiveness-beats-mass-in-sustainment-3",
+          "type": "claim",
+          "title": "Responsiveness Beats Mass In Sustainment",
+          "body": "A smaller, faster, more flexible logistics flow outperforms a large static stockpile because speed of resupply lets units carry less and move freely. Accumulating mountains of supplies creates a vulnerable, immobile target and ties forces to fixed positions, so the goal is velocity of delivery rather than volume of inventory.",
+          "tags": [
+            "agility",
+            "inventory-strategy",
+            "vulnerability"
+          ],
+          "sourceBook": "MCDP 4 Logistics"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:17:55.609Z",
+      "needsReview": true,
+      "reviewReason": "no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "MCDP 6 Command and Control",
+      "author": "Department of Department of Defense",
+      "year": 2017,
+      "isbn13": "9781546816119",
+      "isbn10": "1546816119",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "classification": {
+        "category": "Business",
+        "categories": [
+          "Business",
+          "Psychology"
+        ],
+        "topic": "Military Doctrine of Command and Control in Warfare",
+        "subject": "command-control-decision-making",
+        "subtopics": [
+          "Decision-Making Under Uncertainty",
+          "Organizational Information Flow"
+        ],
+        "register": "systems",
+        "density": "substantive",
+        "form": "manual",
+        "lineage": "Clausewitz",
+        "author_origin": "USA",
+        "author_tradition": "American military doctrine"
+      },
+      "atomicUnits": [
+        {
+          "id": "decision-speed-beats-decision-quality-1",
+          "type": "concept",
+          "title": "Decision Speed Beats Decision Quality",
+          "body": "In a conflict between two adapting systems, the side that cycles through observation, orientation, decision, and action faster forces its opponent to react to outdated situations, generating cumulative confusion. Speed of decision relative to the enemy matters more than the optimality of any single decision, because a fast stream of adequate decisions degrades the opponent's ability to keep up.",
+          "tags": [
+            "decision-tempo",
+            "adaptive-systems",
+            "competitive-advantage"
+          ],
+          "sourceBook": "MCDP 6 Command and Control"
+        },
+        {
+          "id": "mission-command-through-commanders-intent-2",
+          "type": "framework",
+          "title": "Mission Command Through Commander's Intent",
+          "body": "Subordinates are given the purpose and desired end state of an operation rather than detailed instructions on execution, allowing them to act independently when conditions change or communication breaks down. This decentralizes initiative to the lowest levels while preserving unity of effort, because everyone understands the 'why' that lets them improvise toward the same goal.",
+          "tags": [
+            "decentralization",
+            "delegated-authority",
+            "shared-purpose"
+          ],
+          "sourceBook": "MCDP 6 Command and Control"
+        },
+        {
+          "id": "command-as-managing-uncertainty-not-eliminating-it-3",
+          "type": "lens",
+          "title": "Command As Managing Uncertainty Not Eliminating It",
+          "body": "War is fundamentally characterized by friction, chance, and incomplete information, so command systems should be designed to function effectively amid uncertainty rather than to acquire perfect knowledge before acting. Attempts to gather complete information before deciding create paralysis, so the goal is to make uncertainty tolerable and act despite it.",
+          "tags": [
+            "uncertainty",
+            "friction",
+            "decision-under-ambiguity"
+          ],
+          "sourceBook": "MCDP 6 Command and Control"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:18:11.261Z",
+      "needsReview": true,
+      "reviewReason": "no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "One man's view of the world",
+      "author": "Lee Kuan Yew",
+      "year": 2013,
+      "isbn13": "9789814342568",
+      "isbn10": "9814342564",
+      "coverUrl": "https://covers.openlibrary.org/b/id/13135771-M.jpg",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2987.HEIC"
+      ],
+      "classification": {
+        "category": "Politics",
+        "categories": [
+          "Politics",
+          "Biography"
+        ],
+        "topic": "Geopolitical Analysis of Global Powers & Asia's Future",
+        "subject": "geopolitics-world-order",
+        "subtopics": [
+          "Great Power Relations",
+          "Future of Asia"
+        ],
+        "register": "humanist",
+        "density": "substantive",
+        "form": "argument",
+        "lineage": null,
+        "author_origin": "Singapore",
+        "author_tradition": "Asian pragmatic statecraft"
+      },
+      "atomicUnits": [
+        {
+          "id": "china-will-not-adopt-liberal-democracy-1",
+          "type": "claim",
+          "title": "China Will Not Adopt Liberal Democracy",
+          "body": "China's leaders see one-party rule as essential to managing a continent-sized population, and they fear the chaos that competitive politics could unleash across regions and ethnic groups. Their goal is to be a strong, modern nation governed by a meritocratic Party, not to converge toward Western political norms as outsiders expect.",
+          "tags": [
+            "china",
+            "political-systems",
+            "authoritarianism"
+          ],
+          "sourceBook": "One man's view of the world"
+        },
+        {
+          "id": "demography-as-national-destiny-2",
+          "type": "concept",
+          "title": "Demography As National Destiny",
+          "body": "A nation's long-term trajectory is constrained by its fertility and population structure: below-replacement birth rates shrink the workforce and burden the young with supporting the old, weakening economic dynamism. Immigration can offset this only if a society is culturally willing to absorb newcomers, which many ageing societies are not.",
+          "tags": [
+            "demography",
+            "economic-decline",
+            "immigration"
+          ],
+          "sourceBook": "One man's view of the world"
+        },
+        {
+          "id": "judge-nations-by-capacity-not-intentions-3",
+          "type": "lens",
+          "title": "Judge Nations By Capacity Not Intentions",
+          "body": "Strategic assessment should rest on a country's actual capabilities — its economy, military, talent pool, and institutional resilience — rather than on its current rhetoric or stated goodwill. Intentions change overnight while capabilities take decades to build, so durable analysis tracks what a state can do, not what it currently says it wants.",
+          "tags": [
+            "geopolitics",
+            "strategic-analysis",
+            "power"
+          ],
+          "sourceBook": "One man's view of the world"
+        },
+        {
+          "id": "americas-renewal-engine-is-openness-4",
+          "type": "claim",
+          "title": "America's Renewal Engine Is Openness",
+          "body": "The United States retains primacy because it attracts and absorbs the world's best talent and tolerates restless entrepreneurial failure, continuously regenerating itself. Its capacity for self-criticism and reinvention is a structural advantage that more hierarchical or homogeneous societies cannot easily replicate.",
+          "tags": [
+            "united-states",
+            "innovation",
+            "talent-migration"
+          ],
+          "sourceBook": "One man's view of the world"
+        },
+        {
+          "id": "small-state-survival-through-relevance-5",
+          "type": "framework",
+          "title": "Small State Survival Through Relevance",
+          "body": "A small nation has no inherent right to exist and must continuously make itself useful and exceptional — through superior governance, a skilled workforce, and a stable rule of law — to stay valuable to larger powers. Survival depends on being so well-run that bigger players gain more by dealing with you than by absorbing or ignoring you.",
+          "tags": [
+            "small-states",
+            "governance",
+            "geopolitics"
+          ],
+          "sourceBook": "One man's view of the world"
+        },
+        {
+          "id": "culture-constrains-economic-outcomes-6",
+          "type": "claim",
+          "title": "Culture Constrains Economic Outcomes",
+          "body": "Whether a society prizes saving, education, deferred gratification, and collective discipline shapes its economic performance more than the policies layered on top. Cultures that emphasize these traits accumulate human capital and stability, while those that don't struggle to convert resources or aid into lasting development.",
+          "tags": [
+            "culture",
+            "economic-development",
+            "human-capital"
+          ],
+          "sourceBook": "One man's view of the world"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:18:31.048Z",
+      "needsReview": true,
+      "reviewReason": "no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "Invitation to Courtyard Gardens of Kyoto / 京都坪庭拝見",
+      "author": "Mizuno Katsuhiko",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2974.HEIC"
+      ],
+      "classification": {
+        "category": "Design",
+        "categories": [
+          "Design",
+          "Art"
+        ],
+        "topic": "Photographic Survey of Kyoto's Tsuboniwa Courtyard Gardens",
+        "subject": "japanese-garden-design",
+        "subtopics": [
+          "Traditional Kyoto Machiya Architecture",
+          "Japanese Aesthetics of Enclosed Space"
+        ],
+        "register": "contemplative",
+        "density": "accessible",
+        "form": "portrait",
+        "lineage": null,
+        "author_origin": "Japan",
+        "author_tradition": "Japanese garden photography & traditional aesthetics"
+      },
+      "atomicUnits": [
+        {
+          "id": "the-tsuboniwa-as-light-and-air-well-1",
+          "type": "concept",
+          "title": "The Tsuboniwa as Light and Air Well",
+          "body": "A tsuboniwa is a tiny courtyard garden enclosed by the walls of a single building, originally created to bring light and ventilation into the deep, narrow machiya townhouses of Kyoto. Its primary function is environmental — it acts as a breathing aperture in an otherwise sealed structure — and its aesthetic role grows from solving that practical constraint.",
+          "tags": [
+            "architecture",
+            "spatial-design",
+            "ventilation"
+          ],
+          "sourceBook": "Invitation to Courtyard Gardens of Kyoto / 京都坪庭拝見"
+        },
+        {
+          "id": "smallness-intensifies-rather-than-limits-garden-experience-2",
+          "type": "claim",
+          "title": "Smallness Intensifies Rather Than Limits Garden Experience",
+          "body": "Because a courtyard garden is viewed at close range from fixed interior vantage points, every element — a single stone, a basin, a patch of moss — carries disproportionate weight and must withstand sustained scrutiny. The constraint of extreme smallness forces a concentration of meaning that a large landscape garden can dilute across distance.",
+          "tags": [
+            "aesthetics",
+            "constraint",
+            "miniaturization"
+          ],
+          "sourceBook": "Invitation to Courtyard Gardens of Kyoto / 京都坪庭拝見"
+        },
+        {
+          "id": "garden-framed-by-interior-architecture-3",
+          "type": "lens",
+          "title": "Garden Framed by Interior Architecture",
+          "body": "A courtyard garden is never seen whole or from outside; it is always composed through the rectangle of a doorway, window, or veranda, so the building's openings become the frame that dictates the picture. Reading the garden means reading the architectural aperture and seating position that determine which fragment of it the viewer ever receives.",
+          "tags": [
+            "framing",
+            "perspective",
+            "interior-exterior"
+          ],
+          "sourceBook": "Invitation to Courtyard Gardens of Kyoto / 京都坪庭拝見"
+        },
+        {
+          "id": "seasonal-marker-in-enclosed-space-4",
+          "type": "concept",
+          "title": "Seasonal Marker in Enclosed Space",
+          "body": "The courtyard garden imports the passage of seasons into a fully enclosed urban interior through a few deliberately chosen plants whose foliage, blossom, or bare branches signal the time of year. A handful of living elements substitute for an absent open sky, making weather and season perceptible to occupants who rarely step outside.",
+          "tags": [
+            "seasonality",
+            "nature-indoors",
+            "urban-living"
+          ],
+          "sourceBook": "Invitation to Courtyard Gardens of Kyoto / 京都坪庭拝見"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:18:47.813Z",
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "Kyōto, zendera no meitei",
+      "author": "Katsuhiko Mizuno",
+      "year": 2009,
+      "isbn13": "9784838104161",
+      "isbn10": "4838104162",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2974.HEIC"
+      ],
+      "canonical_id": "Samadhi on Zen Gardens",
+      "classification": {
+        "category": "Art",
+        "categories": [
+          "Art",
+          "Religion"
+        ],
+        "topic": "Photographic Survey of Famous Zen Temple Gardens in Kyoto",
+        "subject": "japanese-garden-aesthetics",
+        "subtopics": [
+          "Zen Garden Design",
+          "Kyoto Temple Architecture"
+        ],
+        "register": "contemplative",
+        "density": "accessible",
+        "form": "portrait",
+        "lineage": "Japanese Zen garden aesthetics",
+        "author_origin": "Japan",
+        "author_tradition": "Japanese photographic documentation of cultural heritage"
+      },
+      "atomicUnits": [
+        {
+          "id": "borrowed-scenery-as-garden-boundary-dissolution-1",
+          "type": "concept",
+          "title": "Borrowed Scenery as Garden Boundary Dissolution",
+          "body": "A garden can incorporate distant mountains, trees, or sky outside its walls into its composition, treating the external landscape as an intentional part of the design. This technique, shakkei, makes a bounded space feel limitless by visually annexing what cannot be owned.",
+          "tags": [
+            "spatial design",
+            "garden composition",
+            "perception"
+          ],
+          "sourceBook": "Kyōto, zendera no meitei"
+        },
+        {
+          "id": "dry-landscape-as-abstract-representation-2",
+          "type": "lens",
+          "title": "Dry Landscape as Abstract Representation",
+          "body": "Raked gravel and carefully placed stones can stand in for water, islands, and mountains without any actual water present, forcing the viewer to complete the scene through imagination. The garden becomes a meditative object precisely because it withholds literal depiction and demands interpretive participation.",
+          "tags": [
+            "abstraction",
+            "karesansui",
+            "contemplation"
+          ],
+          "sourceBook": "Kyōto, zendera no meitei"
+        },
+        {
+          "id": "seasonal-change-is-designed-into-the-garden-3",
+          "type": "claim",
+          "title": "Seasonal Change Is Designed Into the Garden",
+          "body": "Zen gardens are composed to present deliberately different faces across seasons — moss in rain, foliage in autumn, snow on stone — so that no single photograph captures the complete work. The garden is therefore a temporal artwork that exists fully only across the cycle of a year.",
+          "tags": [
+            "temporality",
+            "seasonality",
+            "impermanence"
+          ],
+          "sourceBook": "Kyōto, zendera no meitei"
+        },
+        {
+          "id": "photography-as-survey-of-designed-stillness-4",
+          "type": "framework",
+          "title": "Photography as Survey of Designed Stillness",
+          "body": "Systematically documenting many temple gardens through fixed images reveals shared structural principles — viewing axes, framed sightlines, asymmetric stone placement — that recur across independent sites. Treating individual gardens as comparable specimens exposes a grammar of design invisible when each is experienced alone.",
+          "tags": [
+            "comparative documentation",
+            "design grammar",
+            "visual survey"
+          ],
+          "sourceBook": "Kyōto, zendera no meitei"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:19:02.319Z",
+      "needsReview": true,
+      "reviewReason": "Only the partial cover edge is visible on the right, text is cropped and faint.; possible sibling of existing entry — verify edition; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility",
+      "author": "MIZUNO Katsuhiko, Tom WRIGHT",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2975.HEIC"
+      ],
+      "classification": {
+        "category": "Philosophy",
+        "categories": [
+          "Philosophy",
+          "Design"
+        ],
+        "topic": "Photographic Survey of Kyoto Zen Temple Gardens & Their Aesthetics",
+        "subject": "eastern-philosophy-zen",
+        "subtopics": [
+          "Zen Buddhism",
+          "Japanese Gardens",
+          "Sacred Space"
+        ],
+        "register": "contemplative",
+        "density": "substantive",
+        "form": "meditation",
+        "lineage": null,
+        "author_origin": "Japan",
+        "author_tradition": "Japanese garden photography and Zen aesthetics"
+      },
+      "atomicUnits": [
+        {
+          "id": "borrowed-scenery-as-spatial-extension-1",
+          "type": "concept",
+          "title": "Borrowed Scenery as Spatial Extension",
+          "body": "Shakkei (borrowed scenery) incorporates distant mountains or trees outside the garden into its composition by framing them through deliberate sightlines and foreground hedges. The garden's apparent size and depth expand far beyond its physical boundaries because the eye reads the borrowed background as part of the designed whole.",
+          "tags": [
+            "spatial design",
+            "perception",
+            "landscape composition"
+          ],
+          "sourceBook": "京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility"
+        },
+        {
+          "id": "raked-gravel-as-abstracted-water-2",
+          "type": "concept",
+          "title": "Raked Gravel as Abstracted Water",
+          "body": "In karesansui (dry landscape) gardens, raked white gravel represents flowing water, oceans, or rivers without any actual water present. The mind completes the metaphor, so a still surface of stone evokes motion and vastness, allowing dynamism and tranquility to coexist in the same static field.",
+          "tags": [
+            "abstraction",
+            "symbolism",
+            "minimalism"
+          ],
+          "sourceBook": "京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility"
+        },
+        {
+          "id": "emptiness-directs-contemplative-attention-3",
+          "type": "claim",
+          "title": "Emptiness Directs Contemplative Attention",
+          "body": "Large areas of deliberate emptiness — bare gravel, blank wall, unplanted space — are not omissions but active design elements that focus the viewer's attention on the few placed objects. The void carries as much intentional meaning as the rocks, forcing the mind toward stillness rather than distraction.",
+          "tags": [
+            "negative space",
+            "minimalism",
+            "attention"
+          ],
+          "sourceBook": "京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility"
+        },
+        {
+          "id": "garden-as-meditation-object-not-scene-4",
+          "type": "lens",
+          "title": "Garden as Meditation Object Not Scene",
+          "body": "A Zen garden is designed to be viewed from a fixed seated position rather than walked through, turning it into an aid for seated meditation rather than a place for recreation. Reading any designed environment by asking 'what mental state does this posture and vantage induce?' reveals intent invisible to the casual observer.",
+          "tags": [
+            "meditation",
+            "viewing position",
+            "design intent"
+          ],
+          "sourceBook": "京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility"
+        },
+        {
+          "id": "asymmetry-and-odd-number-grouping-5",
+          "type": "framework",
+          "title": "Asymmetry and Odd-Number Grouping",
+          "body": "Stones and plantings are arranged in odd-numbered clusters (three, five, seven) and deliberately avoid symmetry or central alignment. Asymmetric balance feels alive and unresolved, preventing the static dead-feeling of mirror symmetry while still achieving compositional unity.",
+          "tags": [
+            "composition",
+            "asymmetry",
+            "balance"
+          ],
+          "sourceBook": "京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility"
+        },
+        {
+          "id": "seasonal-impermanence-built-into-design-6",
+          "type": "concept",
+          "title": "Seasonal Impermanence Built Into Design",
+          "body": "Gardens are composed so that moss, maples, and moss-covered stone reveal change across seasons and decades, making transience itself part of the aesthetic experience. The design assumes its own aging and weathering as features rather than decay to be prevented.",
+          "tags": [
+            "impermanence",
+            "time",
+            "natural materials"
+          ],
+          "sourceBook": "京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:19:22.858Z",
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "日本の酒 / Sake: A beyond-the-basics guide to Understanding, Tasting, Selection & Enjoyment",
+      "author": "John Gauntner, Ushihara Mayumi",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2975.HEIC"
+      ],
+      "classification": {
+        "category": "Self-Help",
+        "categories": [
+          "Self-Help",
+          "Reference"
+        ],
+        "topic": "Japanese Sake Appreciation, Tasting & Selection Guide",
+        "subject": "sake-tasting-appreciation",
+        "subtopics": [
+          "Sake Brewing & Styles",
+          "Japanese Beverage Culture"
+        ],
+        "register": "humanist",
+        "density": "accessible",
+        "form": "manual",
+        "lineage": null,
+        "author_origin": "USA",
+        "author_tradition": "American sake expertise & Japanese brewing tradition"
+      },
+      "atomicUnits": [
+        {
+          "id": "seimaibuai-rice-polishing-determines-grade-1",
+          "type": "concept",
+          "title": "Seimaibuai: Rice Polishing Determines Grade",
+          "body": "The percentage of the rice grain remaining after polishing (seimaibuai) directly drives sake classification, because the outer layers contain proteins and fats that create off-flavors while the starchy core yields cleaner, more refined sake. A 50% polishing ratio (daiginjo) means half the grain was ground away to reach the pure center, demanding more rice, time, and cost than a 70% ratio.",
+          "tags": [
+            "rice-polishing",
+            "quality-grading",
+            "fermentation-craft"
+          ],
+          "sourceBook": "日本の酒 / Sake: A beyond-the-basics guide to Understanding, Tasting, Selection & Enjoyment"
+        },
+        {
+          "id": "parallel-fermentation-as-sakes-distinguishing-mechanism-2",
+          "type": "framework",
+          "title": "Parallel Fermentation as Sake's Distinguishing Mechanism",
+          "body": "Sake is produced by multiple parallel fermentation, where koji mold converts rice starch into sugar at the same time yeast converts that sugar into alcohol within a single tank. This simultaneous saccharification-and-fermentation lets sake reach alcohol levels (around 20%) higher than any other naturally brewed beverage, distinguishing it structurally from beer, where these steps occur sequentially.",
+          "tags": [
+            "brewing-science",
+            "fermentation-process",
+            "alcohol-production"
+          ],
+          "sourceBook": "日本の酒 / Sake: A beyond-the-basics guide to Understanding, Tasting, Selection & Enjoyment"
+        },
+        {
+          "id": "added-alcohol-improves-rather-than-cheapens-sake-3",
+          "type": "claim",
+          "title": "Added Alcohol Improves Rather Than Cheapens Sake",
+          "body": "Adding a small amount of distilled alcohol during brewing (honjozo-style) is not a cost-cutting adulteration but a deliberate technique that draws out aromatics and produces a lighter, crisper finish. The pejorative association with added alcohol comes from wartime-era practices of bulking volume, which differs entirely from the precise modern brewer's-alcohol additions used for flavor refinement.",
+          "tags": [
+            "added-alcohol",
+            "misconception-correction",
+            "brewing-technique"
+          ],
+          "sourceBook": "日本の酒 / Sake: A beyond-the-basics guide to Understanding, Tasting, Selection & Enjoyment"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:19:37.498Z",
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "RIMOWA - Magazine B Issue No.32",
+      "author": "JOH & Company (Magazine B)",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2979.HEIC"
+      ],
+      "classification": {
+        "category": "Business",
+        "categories": [
+          "Business",
+          "Design"
+        ],
+        "topic": "Brand Profile of RIMOWA's Heritage Luggage Craftsmanship & Identity",
+        "subject": "brand-design-strategy",
+        "subtopics": [
+          "Brand Storytelling & Identity",
+          "Product Design & Manufacturing Heritage"
+        ],
+        "register": "humanist",
+        "density": "accessible",
+        "form": "portrait",
+        "lineage": null,
+        "author_origin": "South Korea",
+        "author_tradition": "Korean brand documentary publishing"
+      },
+      "atomicUnits": [
+        {
+          "id": "the-groove-as-permanent-signature-1",
+          "type": "concept",
+          "title": "The Groove as Permanent Signature",
+          "body": "RIMOWA's parallel grooves originated as a structural solution to reinforce thin aluminum sheets against bending, but became the brand's most recognizable visual identity. A functional engineering decision, once distinctive, hardens into an ownable design language that competitors cannot replicate without imitating.",
+          "tags": [
+            "design-identity",
+            "function-becomes-form",
+            "brand-signature"
+          ],
+          "sourceBook": "RIMOWA - Magazine B Issue No.32"
+        },
+        {
+          "id": "material-choice-defines-brand-trajectory-2",
+          "type": "claim",
+          "title": "Material Choice Defines Brand Trajectory",
+          "body": "RIMOWA's pivot to aluminum after a 1937 fire destroyed its wooden inventory forced a reinvention that aligned the brand with lightweight durability and aviation-era modernity. The constraint imposed by material loss became the organizing principle for everything the company would later stand for.",
+          "tags": [
+            "constraint-driven-innovation",
+            "material-strategy",
+            "pivot"
+          ],
+          "sourceBook": "RIMOWA - Magazine B Issue No.32"
+        },
+        {
+          "id": "luggage-as-travel-companion-not-container-3",
+          "type": "lens",
+          "title": "Luggage as Travel Companion, Not Container",
+          "body": "RIMOWA frames its products through the dents and scratches accumulated over years of travel, treating wear as a record of experience rather than damage. Viewing an object as an accumulating biography rather than a depreciating asset reframes durability as emotional value, not just utility.",
+          "tags": [
+            "patina-value",
+            "object-narrative",
+            "emotional-durability"
+          ],
+          "sourceBook": "RIMOWA - Magazine B Issue No.32"
+        },
+        {
+          "id": "heritage-preserved-through-manufacturing-discipline-4",
+          "type": "framework",
+          "title": "Heritage Preserved Through Manufacturing Discipline",
+          "body": "RIMOWA maintains craftsmanship credibility by keeping aluminum case production labor-intensive and partly manual even at scale, with each case passing through dozens of hand-checked steps. Protecting a slower, more difficult process becomes the proof of authenticity that justifies premium positioning against mass-produced alternatives.",
+          "tags": [
+            "craft-at-scale",
+            "process-as-proof",
+            "premium-justification"
+          ],
+          "sourceBook": "RIMOWA - Magazine B Issue No.32"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:19:53.004Z",
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "Magazine B - Issue No.53 MUJI",
+      "author": "Magazine B (Brand Balance)",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2981.HEIC"
+      ],
+      "classification": {
+        "category": "Business",
+        "categories": [
+          "Business",
+          "Design"
+        ],
+        "topic": "Brand Documentary of MUJI's Minimalist Design Philosophy & Retail Identity",
+        "subject": "branding-brand-identity",
+        "subtopics": [
+          "Minimalist Product Design",
+          "Japanese Retail Culture"
+        ],
+        "register": "humanist",
+        "density": "accessible",
+        "form": "portrait",
+        "lineage": null,
+        "author_origin": "South Korea",
+        "author_tradition": "Korean brand journalism"
+      },
+      "atomicUnits": [
+        {
+          "id": "rationalized-pricing-through-eliminated-excess-1",
+          "type": "concept",
+          "title": "Rationalized Pricing Through Eliminated Excess",
+          "body": "MUJI's 'no-brand' positioning works by stripping away decorative packaging, brand markings, and superfluous processing steps, then passing those savings to the customer. The value proposition is not cheapness but justified pricing — every cost that remains corresponds to a function the user actually receives.",
+          "tags": [
+            "pricing",
+            "value-engineering",
+            "retail"
+          ],
+          "sourceBook": "Magazine B - Issue No.53 MUJI"
+        },
+        {
+          "id": "this-will-do-over-this-is-best-2",
+          "type": "concept",
+          "title": "This Will Do Over This Is Best",
+          "body": "MUJI deliberately aims for rational satisfaction ('this is enough') rather than desire-driven preference ('this is the best'), positioning restraint as the emotional core of the brand. By targeting contentment instead of aspiration, the product avoids the escalating dissatisfaction that comes from chasing maximalism.",
+          "tags": [
+            "consumer-psychology",
+            "minimalism",
+            "brand-positioning"
+          ],
+          "sourceBook": "Magazine B - Issue No.53 MUJI"
+        },
+        {
+          "id": "emptiness-as-a-vessel-for-meaning-3",
+          "type": "framework",
+          "title": "Emptiness As A Vessel For Meaning",
+          "body": "Designing a product or identity to be intentionally blank lets the user project their own context and use onto it, increasing rather than limiting its versatility. Absence of strong design becomes an active design choice — the void invites participation instead of dictating it.",
+          "tags": [
+            "design-philosophy",
+            "user-projection",
+            "neutrality"
+          ],
+          "sourceBook": "Magazine B - Issue No.53 MUJI"
+        },
+        {
+          "id": "process-visibility-becomes-the-aesthetic-4",
+          "type": "claim",
+          "title": "Process Visibility Becomes The Aesthetic",
+          "body": "Rather than hiding manufacturing realities, MUJI exposes them — uneven paper edges, irregular natural materials, and unbleached fibers are kept rather than corrected. The argument is that revealing the honest origin of a thing is more compelling than masking it with artificial uniformity.",
+          "tags": [
+            "material-honesty",
+            "manufacturing",
+            "aesthetics"
+          ],
+          "sourceBook": "Magazine B - Issue No.53 MUJI"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:20:09.720Z",
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "Magazine B - MAISON",
+      "author": "Magazine B (Brand Balance)",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2981.HEIC"
+      ],
+      "classification": {
+        "category": "Business",
+        "categories": [
+          "Business",
+          "Design"
+        ],
+        "topic": "Brand Documentary of MAISON Home & Lifestyle Brand",
+        "subject": "brand-design-culture",
+        "subtopics": [
+          "Brand Storytelling",
+          "Lifestyle & Home Design"
+        ],
+        "register": "humanist",
+        "density": "accessible",
+        "form": "portrait",
+        "lineage": null,
+        "author_origin": "South Korea",
+        "author_tradition": "Korean brand journalism"
+      },
+      "atomicUnits": [
+        {
+          "id": "editorial-consistency-builds-brand-authority-1",
+          "type": "claim",
+          "title": "Editorial Consistency Builds Brand Authority",
+          "body": "A brand earns trust not by maximizing product variety but by maintaining a tightly curated, coherent point of view across every object it sells. When each item visibly belongs to the same aesthetic family, the curation itself becomes the product, signaling judgment customers can outsource their own taste to.",
+          "tags": [
+            "curation",
+            "brand-coherence",
+            "retail-strategy"
+          ],
+          "sourceBook": "Magazine B - MAISON"
+        },
+        {
+          "id": "the-home-as-total-lifestyle-canvas-2",
+          "type": "concept",
+          "title": "The Home as Total Lifestyle Canvas",
+          "body": "Treating the household as a single integrated environment lets a brand expand from one category into furniture, tableware, textiles, and scent without losing identity. The unifying thread is not the product type but the daily ritual it serves, so coherence comes from the life being lived rather than the shelf the item sits on.",
+          "tags": [
+            "lifestyle-brand",
+            "category-expansion",
+            "domestic-design"
+          ],
+          "sourceBook": "Magazine B - MAISON"
+        },
+        {
+          "id": "physical-space-as-brand-storytelling-medium-3",
+          "type": "framework",
+          "title": "Physical Space as Brand Storytelling Medium",
+          "body": "A flagship store or showroom functions less as a sales floor and more as a three-dimensional editorial spread, where objects are staged in lived contexts rather than displayed by category. Customers learn the brand's worldview by walking through assembled scenes, absorbing how products combine before they ever consider buying one.",
+          "tags": [
+            "retail-design",
+            "experiential-branding",
+            "merchandising"
+          ],
+          "sourceBook": "Magazine B - MAISON"
+        },
+        {
+          "id": "timelessness-over-trend-velocity-4",
+          "type": "lens",
+          "title": "Timelessness Over Trend Velocity",
+          "body": "Evaluating products by how long they will remain relevant, rather than how well they capture the current moment, shifts design toward durability of both materials and aesthetics. This reframes pricing and slowness as features: the customer pays more upfront for objects intended to outlast seasonal cycles and accumulate meaning over time.",
+          "tags": [
+            "slow-design",
+            "longevity",
+            "value-positioning"
+          ],
+          "sourceBook": "Magazine B - MAISON"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:20:25.936Z",
+      "needsReview": true,
+      "reviewReason": "Only partially visible at bottom of image with text reading 'MAISON' and 'ISSUE N' partially legible.; enrichment lookup returned no results; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "BRAND. BALANCE. ISSUE NO.56 MICHELIN GUIDE",
+      "author": "Magazine B",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2980.HEIC"
+      ],
+      "classification": {
+        "category": "Business",
+        "categories": [
+          "Business"
+        ],
+        "topic": "Michelin Brand Identity & Hospitality Reputation Building",
+        "subject": "branding-brand-strategy",
+        "subtopics": [
+          "Brand Storytelling",
+          "Hospitality & Culinary Culture"
+        ],
+        "register": "humanist",
+        "density": "accessible",
+        "form": "portrait",
+        "lineage": null,
+        "author_origin": "South Korea",
+        "author_tradition": "Korean brand journalism"
+      },
+      "atomicUnits": [
+        {
+          "id": "authority-borrowed-from-an-unrelated-core-business-1",
+          "type": "concept",
+          "title": "Authority Borrowed From an Unrelated Core Business",
+          "body": "A tire manufacturer created a restaurant rating system to encourage driving, which would wear out tires and sell more product. The credibility came precisely because the rater had no stake in the food industry, making its judgments appear disinterested and therefore trustworthy.",
+          "tags": [
+            "credibility",
+            "incentive design",
+            "brand extension"
+          ],
+          "sourceBook": "BRAND. BALANCE. ISSUE NO.56 MICHELIN GUIDE"
+        },
+        {
+          "id": "anonymous-repeat-evaluation-as-trust-engine-2",
+          "type": "framework",
+          "title": "Anonymous Repeat Evaluation as Trust Engine",
+          "body": "Inspectors visit and pay as ordinary customers, return multiple times, and never reveal themselves, so establishments cannot perform for the judge. Reputation rests on the consistency of the everyday experience rather than a curated showcase moment.",
+          "tags": [
+            "evaluation method",
+            "consistency",
+            "anti-gaming"
+          ],
+          "sourceBook": "BRAND. BALANCE. ISSUE NO.56 MICHELIN GUIDE"
+        },
+        {
+          "id": "scarcity-of-stars-protects-the-currency-3",
+          "type": "claim",
+          "title": "Scarcity of Stars Protects the Currency",
+          "body": "By withholding the top rating from the vast majority and removing stars when standards slip, the system keeps each award rare and meaningful. The willingness to revoke recognition is what makes granting it valuable.",
+          "tags": [
+            "scarcity",
+            "rating integrity",
+            "incentive"
+          ],
+          "sourceBook": "BRAND. BALANCE. ISSUE NO.56 MICHELIN GUIDE"
+        },
+        {
+          "id": "rating-tiers-as-differentiated-promises-4",
+          "type": "lens",
+          "title": "Rating Tiers as Differentiated Promises",
+          "body": "Separating distinctions like the star tiers from the budget-friendly recommendation lets a single brand certify quality across price points without diluting its premium signal. Each tier communicates a distinct kind of value rather than a single hierarchy of better-or-worse.",
+          "tags": [
+            "segmentation",
+            "signaling",
+            "product tiers"
+          ],
+          "sourceBook": "BRAND. BALANCE. ISSUE NO.56 MICHELIN GUIDE"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:20:42.218Z",
+      "needsReview": true,
+      "reviewReason": "This is a magazine cover (Magazine B Issue No.56) rather than a traditional book spine; author/publisher inferred from the 'B' branding.; enrichment lookup returned no results; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "France",
+      "author": "Michelin",
+      "year": 2006,
+      "isbn13": "9782067124202",
+      "isbn10": "206712420X",
+      "coverUrl": "https://covers.openlibrary.org/b/id/2135974-M.jpg",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2981.HEIC"
+      ],
+      "classification": {
+        "category": "Reference",
+        "categories": [
+          "Reference",
+          "Travel"
+        ],
+        "topic": "Travel Guide to France",
+        "subject": "france-travel-guide",
+        "subtopics": [
+          "Regional Itineraries",
+          "Sightseeing & Accommodation"
+        ],
+        "register": "empirical",
+        "density": "accessible",
+        "form": "reference",
+        "lineage": null,
+        "author_origin": "France",
+        "author_tradition": "French travel guide publishing"
+      },
+      "atomicUnits": [
+        {
+          "id": "star-rating-to-ration-limited-attention-1",
+          "type": "framework",
+          "title": "Star rating to ration limited attention",
+          "body": "Rank attractions on a three-tier scale — worth a journey, worth a detour, interesting — so a traveler with finite time can allocate it by expected payoff rather than reacting to whatever is nearby. The rating compresses expert judgment into a single glyph that filters thousands of options down to a feasible itinerary.",
+          "tags": [
+            "prioritization",
+            "curation",
+            "decision-aids"
+          ],
+          "sourceBook": "France"
+        },
+        {
+          "id": "place-understood-through-accumulated-layers-2",
+          "type": "lens",
+          "title": "Place understood through accumulated layers",
+          "body": "A location is read not as a current snapshot but as sediment — Roman walls under medieval streets under modern facades — where each era left physical traces that explain why the present looks as it does. Seeing a site this way turns a static view into a sequence of decisions and disruptions still legible in the stone.",
+          "tags": [
+            "historical-stratigraphy",
+            "interpretation",
+            "geography"
+          ],
+          "sourceBook": "France"
+        },
+        {
+          "id": "terroir-as-region-bound-character-3",
+          "type": "concept",
+          "title": "Terroir as region-bound character",
+          "body": "Food, wine, and craft acquire qualities that cannot be reproduced elsewhere because they emerge from a specific combination of soil, climate, and local technique. This binds a product's identity to its place of origin, making the region itself a guarantee of distinctiveness.",
+          "tags": [
+            "regional-identity",
+            "authenticity",
+            "production"
+          ],
+          "sourceBook": "France"
+        }
+      ],
+      "wikipediaSeeAlso": [
+        "Outline of France",
+        "Religion in France"
+      ],
+      "parichayAt": "2026-06-29T17:20:55.010Z",
+      "needsReview": true,
+      "reviewReason": "Only the top edges of red and green Michelin guides are visible at the top of the image."
+    },
+    {
+      "title": "NETFLIX",
+      "author": "Magazine B",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2983.HEIC"
+      ],
+      "classification": {
+        "category": "Business",
+        "categories": [
+          "Business"
+        ],
+        "topic": "Brand Study of Netflix as a Streaming and Content Company",
+        "subject": "brand-business-strategy",
+        "subtopics": [
+          "Streaming Media Industry",
+          "Brand Identity & Culture"
+        ],
+        "register": "humanist",
+        "density": "accessible",
+        "form": "portrait",
+        "lineage": null,
+        "author_origin": "South Korea",
+        "author_tradition": "Korean brand documentary journalism"
+      },
+      "atomicUnits": [
+        {
+          "id": "freedom-and-responsibility-over-process-1",
+          "type": "framework",
+          "title": "Freedom And Responsibility Over Process",
+          "body": "Instead of controlling employees with rules and approval chains, give high-performing people maximum autonomy and hold them accountable for outcomes. As a company scales, the instinct is to add process to prevent errors, but this drives out top talent; the alternative is to increase talent density so freedom can scale alongside the company.",
+          "tags": [
+            "organizational-culture",
+            "talent-management",
+            "autonomy"
+          ],
+          "sourceBook": "NETFLIX"
+        },
+        {
+          "id": "recommendation-algorithm-as-core-product-2",
+          "type": "claim",
+          "title": "Recommendation Algorithm As Core Product",
+          "body": "The value of a streaming service is not the size of its library but its ability to surface the right title to each individual viewer at the right moment. Personalized recommendation reduces the friction of choice and becomes the primary engine of retention, making the algorithm itself a central product rather than a supporting feature.",
+          "tags": [
+            "personalization",
+            "data-driven-design",
+            "user-retention"
+          ],
+          "sourceBook": "NETFLIX"
+        },
+        {
+          "id": "vertical-integration-into-original-content-3",
+          "type": "concept",
+          "title": "Vertical Integration Into Original Content",
+          "body": "A distribution platform reduces its dependence on licensors by producing its own content, capturing both the audience relationship and the intellectual property. Original production turns a reseller of others' work into an owner of exclusive assets that cannot be pulled away by competitors or rising licensing costs.",
+          "tags": [
+            "content-strategy",
+            "vertical-integration",
+            "intellectual-property"
+          ],
+          "sourceBook": "NETFLIX"
+        },
+        {
+          "id": "releasing-entire-seasons-reshapes-consumption-4",
+          "type": "lens",
+          "title": "Releasing Entire Seasons Reshapes Consumption",
+          "body": "Dropping a full season at once rather than weekly episodes changes how stories are consumed, enabling binge-watching as a behavior and a cultural event. This shifts the unit of attention from the single episode to the whole series and aligns release strategy with viewer control rather than broadcaster scheduling.",
+          "tags": [
+            "consumer-behavior",
+            "distribution-model",
+            "media-consumption"
+          ],
+          "sourceBook": "NETFLIX"
+        }
+      ],
+      "wikipediaSeeAlso": [
+        "List of streaming media services"
+      ],
+      "parichayAt": "2026-06-29T17:21:11.335Z",
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results"
+    },
+    {
+      "title": "B Magazine Issue No.54 Maison Margiela",
+      "author": "Brand Documentary Magazine (BRAND. BALANCE.)",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2982.HEIC"
+      ],
+      "classification": {
+        "category": "Business",
+        "categories": [
+          "Business",
+          "Biography"
+        ],
+        "topic": "Profile of Maison Margiela as a Fashion Brand & Design Philosophy",
+        "subject": "fashion-brand-design",
+        "subtopics": [
+          "Fashion House Identity",
+          "Brand Documentary"
+        ],
+        "register": "humanist",
+        "density": "accessible",
+        "form": "portrait",
+        "lineage": null,
+        "author_origin": "South Korea",
+        "author_tradition": "Korean brand documentary journalism"
+      },
+      "atomicUnits": [
+        {
+          "id": "anonymity-as-brand-signature-1",
+          "type": "concept",
+          "title": "Anonymity As Brand Signature",
+          "body": "By refusing to appear in photographs, conducting interviews only by fax, and hiding designers behind a collective 'we,' the brand makes absence itself the recognizable mark. The deliberate erasure of the individual creator paradoxically becomes the most identifiable feature, shifting attention from personality to the work itself.",
+          "tags": [
+            "anonymity",
+            "branding",
+            "authorship"
+          ],
+          "sourceBook": "B Magazine Issue No.54 Maison Margiela"
+        },
+        {
+          "id": "the-blank-white-label-2",
+          "type": "concept",
+          "title": "The Blank White Label",
+          "body": "An unmarked white cotton rectangle attached with four exposed corner stitches functions as a logo precisely by carrying no name. The visible external stitching turns an internal construction element into a public identifier, so the garment announces its origin through method rather than text.",
+          "tags": [
+            "minimalism",
+            "identity-marker",
+            "construction-detail"
+          ],
+          "sourceBook": "B Magazine Issue No.54 Maison Margiela"
+        },
+        {
+          "id": "deconstruction-as-design-method-3",
+          "type": "framework",
+          "title": "Deconstruction As Design Method",
+          "body": "Garments are built by exposing what is normally concealed — showing seams, leaving hems raw, displaying linings and shoulder pads on the outside. Revealing the process of making becomes the aesthetic, treating the unfinished and the structural as the finished surface.",
+          "tags": [
+            "deconstruction",
+            "process-as-product",
+            "garment-construction"
+          ],
+          "sourceBook": "B Magazine Issue No.54 Maison Margiela"
+        },
+        {
+          "id": "recycling-discards-into-couture-4",
+          "type": "lens",
+          "title": "Recycling Discards Into Couture",
+          "body": "Existing objects — vintage clothing, broken plates, military socks, theater costumes — are reassembled into new garments rather than fabricated from raw cloth. This reframes value as residing in transformation and recontextualization, so that what was thrown away becomes the raw material of luxury.",
+          "tags": [
+            "upcycling",
+            "value-creation",
+            "material-reuse"
+          ],
+          "sourceBook": "B Magazine Issue No.54 Maison Margiela"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:21:26.133Z",
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "MCDP 1-1 STRATEGY",
+      "author": "Department of Defense",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2984.HEIC"
+      ],
+      "classification": {
+        "category": "Philosophy",
+        "categories": [
+          "Philosophy",
+          "History"
+        ],
+        "topic": "Military Doctrine on the Theory & Practice of Strategy",
+        "subject": "military-strategy-doctrine",
+        "subtopics": [
+          "Strategic Theory & Principles",
+          "War as Policy Instrument"
+        ],
+        "register": "analytical",
+        "density": "substantive",
+        "form": "manual",
+        "lineage": "Clausewitz",
+        "author_origin": "USA",
+        "author_tradition": "American military doctrine"
+      },
+      "atomicUnits": [
+        {
+          "id": "strategy-as-a-two-player-interactive-game-1",
+          "type": "claim",
+          "title": "Strategy as a Two-Player Interactive Game",
+          "body": "Strategy is fundamentally different from other problem-solving because it operates against a hostile, independent will that adapts and reacts to your moves. Success therefore depends not on executing a fixed plan but on out-thinking and out-adapting an opponent who is simultaneously trying to do the same to you.",
+          "tags": [
+            "adversarial-dynamics",
+            "interactive-systems",
+            "strategic-thinking"
+          ],
+          "sourceBook": "MCDP 1-1 STRATEGY"
+        },
+        {
+          "id": "ends-ways-and-means-alignment-2",
+          "type": "concept",
+          "title": "Ends, Ways, and Means Alignment",
+          "body": "Sound strategy requires matching political objectives (ends) with chosen methods (ways) and available resources (means), and the three must remain in balance. When objectives outstrip resources or methods cannot achieve the goals, strategy fails regardless of tactical excellence on the battlefield.",
+          "tags": [
+            "resource-allocation",
+            "goal-setting",
+            "feasibility-analysis"
+          ],
+          "sourceBook": "MCDP 1-1 STRATEGY"
+        },
+        {
+          "id": "war-as-continuation-of-policy-3",
+          "type": "lens",
+          "title": "War as Continuation of Policy",
+          "body": "Military force is not an end in itself but an instrument subordinate to political purpose, meaning every act of violence must serve a defined political aim. Viewing conflict this way reveals that purely military victory is meaningless if it does not advance the political conditions you actually want.",
+          "tags": [
+            "instrumentality",
+            "political-purpose",
+            "means-to-ends"
+          ],
+          "sourceBook": "MCDP 1-1 STRATEGY"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:21:38.745Z",
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "Tao te Ching",
+      "author": "老子",
+      "year": 1842,
+      "isbn13": "9781982098162",
+      "isbn10": "1406509981",
+      "coverUrl": "https://covers.openlibrary.org/b/id/662232-M.jpg",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2985.HEIC"
+      ],
+      "canonical_id": "Tao Te Ching",
+      "classification": {
+        "category": "Philosophy",
+        "categories": [
+          "Philosophy",
+          "Spirituality"
+        ],
+        "topic": "Taoist Philosophy & Cosmological Ethics",
+        "subject": "eastern-philosophy-taoism",
+        "subtopics": [
+          "Classical Chinese Philosophy",
+          "Wu Wei & Non-Action"
+        ],
+        "register": "contemplative",
+        "density": "accessible",
+        "form": "meditation",
+        "lineage": null,
+        "author_origin": "China",
+        "author_tradition": "Ancient Chinese Taoist thought"
+      },
+      "atomicUnits": [
+        {
+          "id": "wu-wei-action-through-non-forcing-1",
+          "type": "concept",
+          "title": "Wu Wei: Action Through Non-Forcing",
+          "body": "The most effective action is non-coercive action that aligns with the natural flow of a situation rather than imposing will against it. By not striving, interfering, or grasping, one accomplishes more than through aggressive effort — the way water carves stone by yielding.",
+          "tags": [
+            "effortless-action",
+            "alignment",
+            "non-interference"
+          ],
+          "sourceBook": "Tao te Ching"
+        },
+        {
+          "id": "the-nameable-tao-is-not-the-real-one-2",
+          "type": "claim",
+          "title": "The Nameable Tao Is Not The Real One",
+          "body": "Any reality that can be fully named, defined, or captured in concepts is not the ultimate reality itself, only a pointer to it. Language and categories carve the world into pieces, but the underlying source is continuous and indivisible, so precise definition always distorts what it describes.",
+          "tags": [
+            "ineffability",
+            "limits-of-language",
+            "metaphysics"
+          ],
+          "sourceBook": "Tao te Ching"
+        },
+        {
+          "id": "power-of-the-empty-and-useful-void-3",
+          "type": "concept",
+          "title": "Power Of The Empty And Useful Void",
+          "body": "Utility comes from emptiness, not substance: a wheel's hub, a vessel's hollow, and a room's empty space are what make them functional. What is absent or unfilled is as essential as what is present, so value often resides in negative space rather than material.",
+          "tags": [
+            "emptiness",
+            "function",
+            "negative-space"
+          ],
+          "sourceBook": "Tao te Ching"
+        },
+        {
+          "id": "leading-by-becoming-invisible-4",
+          "type": "framework",
+          "title": "Leading By Becoming Invisible",
+          "body": "The best leader is one whose presence is barely felt, so that when goals are met people say 'we did this ourselves.' Authority is strengthened by stepping back, sharing credit, and refraining from micromanagement, while controlling, self-promoting leadership breeds resistance.",
+          "tags": [
+            "leadership",
+            "self-effacement",
+            "delegation"
+          ],
+          "sourceBook": "Tao te Ching"
+        },
+        {
+          "id": "strength-through-softness-and-lowliness-5",
+          "type": "lens",
+          "title": "Strength Through Softness And Lowliness",
+          "body": "Soft, yielding, low-positioned things outlast and overcome hard, rigid, high-positioned ones — water defeats rock, the supple survive while the brittle break. Viewing situations this way reframes apparent weakness as durable advantage and apparent dominance as fragility.",
+          "tags": [
+            "yielding",
+            "resilience",
+            "paradox"
+          ],
+          "sourceBook": "Tao te Ching"
+        },
+        {
+          "id": "opposites-define-and-generate-each-other-6",
+          "type": "claim",
+          "title": "Opposites Define And Generate Each Other",
+          "body": "Concepts like beauty and ugliness, difficulty and ease, high and low exist only in mutual dependence; recognizing one creates the other. Reality is structured by complementary pairs rather than absolute categories, so pursuing one extreme inevitably summons its opposite.",
+          "tags": [
+            "complementarity",
+            "relativity",
+            "duality"
+          ],
+          "sourceBook": "Tao te Ching"
+        }
+      ],
+      "wikipediaSeeAlso": [
+        "Bogar",
+        "Ecclesiastes",
+        "Four Books and Five Classics",
+        "Huahujing",
+        "Huainanzi",
+        "Huangdi Yinfujing",
+        "Qingjing Jing",
+        "Sanhuangjing",
+        "Straw dog",
+        "Taiping Jing",
+        "Xishengjing"
+      ],
+      "parichayAt": "2026-06-29T17:21:56.359Z",
+      "needsReview": true,
+      "reviewReason": "Author not printed on cover; inferred from the canonical work.; possible sibling of existing entry — verify edition"
+    },
+    {
+      "title": "Lun yu",
+      "author": "Confucius",
+      "year": 1750,
+      "isbn13": "9787800524073",
+      "isbn10": "1434604810",
+      "coverUrl": "https://covers.openlibrary.org/b/id/727362-M.jpg",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2985.HEIC"
+      ],
+      "classification": {
+        "category": "Philosophy",
+        "categories": [
+          "Philosophy"
+        ],
+        "topic": "Confucian Ethics & Political Philosophy",
+        "subject": "eastern-philosophy-taoism",
+        "subtopics": [
+          "Virtue Ethics & Ritual",
+          "Classical Chinese Political Thought"
+        ],
+        "register": "philosophical",
+        "density": "substantive",
+        "form": "meditation",
+        "lineage": null,
+        "author_origin": "China",
+        "author_tradition": "Classical Confucian philosophy"
+      },
+      "atomicUnits": [
+        {
+          "id": "rectification-of-names-1",
+          "type": "concept",
+          "title": "Rectification of Names",
+          "body": "Social disorder begins when words no longer match reality — when a ruler is not ruling, a father not fathering. Restoring order requires first making each role-name correspond to its actual conduct, because language that drifts from truth makes coordinated action and just punishment impossible.",
+          "tags": [
+            "language",
+            "social-order",
+            "governance"
+          ],
+          "sourceBook": "Lun yu"
+        },
+        {
+          "id": "reciprocity-as-the-negative-golden-rule-2",
+          "type": "concept",
+          "title": "Reciprocity as the Negative Golden Rule",
+          "body": "The single thread that runs through ethical life is shu: do not impose on others what you would not want imposed on yourself. This restraint-based formulation governs behavior by checking action against one's own aversions rather than prescribing positive deeds.",
+          "tags": [
+            "ethics",
+            "reciprocity",
+            "moral-rule"
+          ],
+          "sourceBook": "Lun yu"
+        },
+        {
+          "id": "rule-by-virtue-over-punishment-3",
+          "type": "claim",
+          "title": "Rule by Virtue Over Punishment",
+          "body": "If you govern people by laws and keep order by punishments, they avoid wrongdoing but feel no shame. If you govern by moral force and order by ritual propriety, they develop a sense of shame and correct themselves from within.",
+          "tags": [
+            "political-philosophy",
+            "law",
+            "internal-motivation"
+          ],
+          "sourceBook": "Lun yu"
+        },
+        {
+          "id": "ritual-propriety-as-behavioral-scaffolding-4",
+          "type": "framework",
+          "title": "Ritual Propriety as Behavioral Scaffolding",
+          "body": "Li — codified ritual and etiquette — channels raw feeling into appropriate form, training character through repeated correct practice rather than abstract belief. Even virtues like courage or honesty become harmful without ritual to shape and restrain them.",
+          "tags": [
+            "ritual",
+            "habit-formation",
+            "character"
+          ],
+          "sourceBook": "Lun yu"
+        },
+        {
+          "id": "government-as-extension-of-family-5",
+          "type": "lens",
+          "title": "Government as Extension of Family",
+          "body": "Political loyalty and filial piety are not separate domains but a single continuum: one who honors parents and respects elders rarely rebels against authority. The cultivated household becomes the training ground and template for ordering the state.",
+          "tags": [
+            "family",
+            "authority",
+            "social-structure"
+          ],
+          "sourceBook": "Lun yu"
+        },
+        {
+          "id": "the-junzi-as-self-cultivating-exemplar-6",
+          "type": "concept",
+          "title": "The Junzi as Self-Cultivating Exemplar",
+          "body": "The noble person is defined not by birth but by continuous moral self-improvement, judging himself while making no demands on others. He is at ease without arrogance, seeks rightness rather than profit, and influences others by example as wind bends grass.",
+          "tags": [
+            "self-cultivation",
+            "leadership",
+            "moral-development"
+          ],
+          "sourceBook": "Lun yu"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:22:16.018Z",
+      "needsReview": true,
+      "reviewReason": "Author not printed on cover; inferred from the work.; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "The Great Learning",
+      "author": "Confucius/Zengzi (attributed)",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2985.HEIC"
+      ],
+      "classification": {
+        "category": "Philosophy",
+        "categories": [
+          "Philosophy"
+        ],
+        "topic": "Confucian Self-Cultivation & Moral Governance",
+        "subject": "confucian-philosophy",
+        "subtopics": [
+          "Investigation of Things & Rectification of Mind",
+          "Cultivation, Family, State & World Order"
+        ],
+        "register": "contemplative",
+        "density": "substantive",
+        "form": "meditation",
+        "lineage": "Confucius",
+        "author_origin": "China",
+        "author_tradition": "Classical Confucianism"
+      },
+      "atomicUnits": [
+        {
+          "id": "the-eight-connected-steps-of-cultivation-1",
+          "type": "framework",
+          "title": "The Eight Connected Steps of Cultivation",
+          "body": "Order in the world is built backward from the self: investigate things, extend knowledge, make intentions sincere, rectify the heart, cultivate the person, regulate the family, govern the state, then bring peace to the world. Each link depends on the one before it, so large-scale order is impossible without first ordering the smallest interior unit.",
+          "tags": [
+            "self-cultivation",
+            "causal-chain",
+            "governance"
+          ],
+          "sourceBook": "The Great Learning"
+        },
+        {
+          "id": "personal-cultivation-is-the-universal-root-2",
+          "type": "claim",
+          "title": "Personal Cultivation Is the Universal Root",
+          "body": "From the ruler down to the common person, self-cultivation is the single foundation on which everything else rests. When the root is in disorder, no well-ordered branches can grow — a corrupted self cannot produce a well-governed household or state.",
+          "tags": [
+            "foundations",
+            "leadership",
+            "moral-priority"
+          ],
+          "sourceBook": "The Great Learning"
+        },
+        {
+          "id": "investigation-of-things-precedes-knowledge-3",
+          "type": "concept",
+          "title": "Investigation of Things Precedes Knowledge",
+          "body": "Genuine knowledge is not given but extended by examining the actual things and affairs of the world. Only after one exhaustively investigates particulars does understanding become complete enough to act rightly.",
+          "tags": [
+            "epistemology",
+            "inquiry",
+            "knowledge-extension"
+          ],
+          "sourceBook": "The Great Learning"
+        },
+        {
+          "id": "sincerity-as-not-self-deceiving-4",
+          "type": "concept",
+          "title": "Sincerity as Not Self-Deceiving",
+          "body": "Making intentions sincere means refusing to deceive oneself, like hating a bad smell or loving a beautiful sight — the response must be automatic and unfeigned. The cultivated person is therefore watchful when alone, because integrity is measured by what one does when unobserved.",
+          "tags": [
+            "integrity",
+            "self-honesty",
+            "solitude"
+          ],
+          "sourceBook": "The Great Learning"
+        },
+        {
+          "id": "the-hearts-distortion-of-perception-5",
+          "type": "lens",
+          "title": "The Heart's Distortion of Perception",
+          "body": "When the mind is gripped by anger, fear, fondness, or anxiety, it loses its correctness and the person fails to perceive accurately — looking without seeing, eating without tasting. Rectifying the heart means clearing these emotional disturbances so that perception and judgment remain undistorted.",
+          "tags": [
+            "attention",
+            "emotional-regulation",
+            "perception"
+          ],
+          "sourceBook": "The Great Learning"
+        },
+        {
+          "id": "virtue-attracts-people-people-attract-wealth-6",
+          "type": "claim",
+          "title": "Virtue Attracts People, People Attract Wealth",
+          "body": "A ruler should treat virtue as the root and wealth as the branch; accumulating riches while neglecting character scatters the people, while accumulating virtue gathers them. Possessing the people yields territory, territory yields wealth, and wealth yields use — so moral character is the true engine of prosperity.",
+          "tags": [
+            "political-economy",
+            "virtue",
+            "incentives"
+          ],
+          "sourceBook": "The Great Learning"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:22:35.156Z",
+      "needsReview": true,
+      "reviewReason": "Authorship traditionally attributed and disputed; not printed on cover.; enrichment lookup returned no results"
+    },
+    {
+      "title": "The Doctrine of the Mean",
+      "author": "Zisi (attributed)",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2985.HEIC"
+      ],
+      "classification": {
+        "category": "Philosophy",
+        "categories": [
+          "Philosophy"
+        ],
+        "topic": "Confucian Ethics of Balance, Harmony & the Cultivation of the Superior Person",
+        "subject": "confucian-ethics-self-cultivation",
+        "subtopics": [
+          "Virtue & Moral Equilibrium",
+          "Harmony Between Heaven and Human Conduct"
+        ],
+        "register": "contemplative",
+        "density": "dense",
+        "form": "meditation",
+        "lineage": "Confucius",
+        "author_origin": "China",
+        "author_tradition": "Classical Confucian philosophy"
+      },
+      "atomicUnits": [
+        {
+          "id": "the-mean-as-constant-equilibrium-1",
+          "type": "concept",
+          "title": "The Mean as Constant Equilibrium",
+          "body": "The Mean is not a fixed midpoint but the state of holding to what is right and unchanging under shifting circumstances — adjusting action to fit the situation without swerving into excess or deficiency. It is difficult precisely because it requires continual recalibration rather than a single rule applied mechanically.",
+          "tags": [
+            "balance",
+            "ethics",
+            "situational-judgment"
+          ],
+          "sourceBook": "The Doctrine of the Mean"
+        },
+        {
+          "id": "harmony-follows-from-regulated-emotion-2",
+          "type": "claim",
+          "title": "Harmony Follows From Regulated Emotion",
+          "body": "When feelings like joy and anger have not yet arisen, the mind is in equilibrium; when they arise and all hit their proper measure, that is harmony. Achieving this internal state is what makes order in the external world possible, so self-regulation precedes social peace.",
+          "tags": [
+            "emotional-regulation",
+            "harmony",
+            "inner-outer"
+          ],
+          "sourceBook": "The Doctrine of the Mean"
+        },
+        {
+          "id": "sincerity-as-the-engine-of-development-3",
+          "type": "framework",
+          "title": "Sincerity as the Engine of Development",
+          "body": "Sincerity (cheng) is the full realization of one's nature, and through it a person can fully develop the natures of others and of all things. The sequence runs from being sincere with oneself, to influencing others, to participating in the transforming and nourishing operations of heaven and earth.",
+          "tags": [
+            "authenticity",
+            "self-cultivation",
+            "influence"
+          ],
+          "sourceBook": "The Doctrine of the Mean"
+        },
+        {
+          "id": "cultivation-begins-where-unseen-4",
+          "type": "concept",
+          "title": "Cultivation Begins Where Unseen",
+          "body": "The superior person is watchful over themselves when alone, because moral character forms in the hidden and the minute where nothing is more visible than what is concealed. Integrity is measured by conduct when no one observes, not by public performance.",
+          "tags": [
+            "integrity",
+            "self-discipline",
+            "solitude"
+          ],
+          "sourceBook": "The Doctrine of the Mean"
+        },
+        {
+          "id": "the-path-that-cannot-be-departed-from-5",
+          "type": "lens",
+          "title": "The Path That Cannot Be Departed From",
+          "body": "What heaven confers is human nature, and following that nature is the path — a path so intrinsic that if it could be abandoned it would not be the true path at all. This reframes morality not as external imposition but as the act of staying aligned with what one already is.",
+          "tags": [
+            "human-nature",
+            "moral-grounding",
+            "alignment"
+          ],
+          "sourceBook": "The Doctrine of the Mean"
+        },
+        {
+          "id": "greatness-grows-from-near-and-low-6",
+          "type": "claim",
+          "title": "Greatness Grows From Near and Low",
+          "body": "The way of the superior person works like traveling to a distant place by starting from what is near, or ascending a height by beginning from below. Far-reaching transformation is built incrementally from ordinary, immediate relationships and small consistent acts rather than grand gestures.",
+          "tags": [
+            "incrementalism",
+            "practice",
+            "growth"
+          ],
+          "sourceBook": "The Doctrine of the Mean"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:22:55.093Z",
+      "needsReview": true,
+      "reviewReason": "Authorship traditionally attributed; not printed on cover.; enrichment lookup returned no results; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "The works of Mencius",
+      "author": "Mencius",
+      "year": 1970,
+      "isbn13": "9780486225906",
+      "isbn10": "0486225909",
+      "coverUrl": "https://covers.openlibrary.org/b/id/4647364-M.jpg",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2985.HEIC"
+      ],
+      "classification": {
+        "category": "Philosophy",
+        "categories": [
+          "Philosophy"
+        ],
+        "topic": "Confucian Ethics & Moral Political Philosophy",
+        "subject": "confucian-philosophy",
+        "subtopics": [
+          "Human Nature & Innate Goodness",
+          "Benevolent Governance"
+        ],
+        "register": "philosophical",
+        "density": "substantive",
+        "form": "anthology",
+        "lineage": "Confucius",
+        "author_origin": "China",
+        "author_tradition": "Classical Chinese Confucianism"
+      },
+      "atomicUnits": [
+        {
+          "id": "human-nature-tends-toward-good-1",
+          "type": "claim",
+          "title": "Human Nature Tends Toward Good",
+          "body": "Human nature inclines toward goodness the way water flows downward — given the right conditions, compassion, shame, courtesy, and moral judgment emerge naturally. When people act badly, it is the corrupting force of circumstance, not their original nature, just as water can be splashed uphill only by external force.",
+          "tags": [
+            "human nature",
+            "moral psychology",
+            "innate goodness"
+          ],
+          "sourceBook": "The works of Mencius"
+        },
+        {
+          "id": "the-four-sprouts-of-virtue-2",
+          "type": "concept",
+          "title": "The Four Sprouts of Virtue",
+          "body": "Every person possesses four 'beginnings' or seeds: the feeling of compassion (sprout of benevolence), the feeling of shame (righteousness), the feeling of deference (propriety), and the sense of right and wrong (wisdom). These exist as undeveloped potentials that must be cultivated and expanded, like a fire starting to burn or a spring starting to flow.",
+          "tags": [
+            "virtue ethics",
+            "moral development",
+            "potential"
+          ],
+          "sourceBook": "The works of Mencius"
+        },
+        {
+          "id": "legitimacy-rests-on-the-peoples-welfare-3",
+          "type": "claim",
+          "title": "Legitimacy Rests on the People's Welfare",
+          "body": "A ruler retains the Mandate of Heaven only by securing the people's material wellbeing and winning their hearts; when a ruler becomes a tyrant who robs and oppresses, he forfeits his title and may justly be removed. Killing such a deposed tyrant is not regicide because he has already ceased to be a true sovereign and become a mere 'fellow.'",
+          "tags": [
+            "political legitimacy",
+            "right of revolution",
+            "governance"
+          ],
+          "sourceBook": "The works of Mencius"
+        },
+        {
+          "id": "the-child-about-to-fall-in-a-well-4",
+          "type": "story",
+          "title": "The Child About to Fall in a Well",
+          "body": "Anyone who suddenly sees a child about to tumble into a well feels an immediate stab of alarm and compassion — not to gain favor with the parents, win a reputation, or because they dislike the child's cry. This spontaneous reaction proves that the impulse to compassion is innate to all humans rather than learned or self-interested.",
+          "tags": [
+            "thought experiment",
+            "moral intuition",
+            "empathy"
+          ],
+          "sourceBook": "The works of Mencius"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:23:11.828Z",
+      "needsReview": true,
+      "reviewReason": "Author not printed on cover but clearly inferred from the title.; no Wikipedia entry found — decomposition based on description only"
+    },
+    {
+      "title": "The Gulistan of Sa'di",
+      "author": "Translated by W.M. Thackston",
+      "status": "antilibrary",
+      "sourceImages": [
+        "IMG_2988.HEIC"
+      ],
+      "classification": {
+        "category": "Literature",
+        "categories": [
+          "Literature",
+          "Philosophy"
+        ],
+        "topic": "Classical Persian moral tales and ethical wisdom in prose and verse",
+        "subject": "persian-ethical-literature",
+        "subtopics": [
+          "Sufi Moral Instruction",
+          "Anecdotes of Kings & Dervishes"
+        ],
+        "register": "contemplative",
+        "density": "substantive",
+        "form": "anthology",
+        "lineage": "Persian Sufi tradition",
+        "author_origin": "Persia",
+        "author_tradition": "Medieval Persian Sufi literature"
+      },
+      "atomicUnits": [
+        {
+          "id": "a-calculated-lie-beats-truthful-strife-1",
+          "type": "claim",
+          "title": "A Calculated Lie Beats Truthful Strife",
+          "body": "When telling the truth produces division, harm, or needless cruelty, a falsehood that restores peace is morally superior to an honesty that inflames conflict. The value of speech is measured by its consequences for harmony, not by literal accuracy alone.",
+          "tags": [
+            "ethics-of-speech",
+            "consequentialism",
+            "diplomacy"
+          ],
+          "sourceBook": "The Gulistan of Sa'di"
+        },
+        {
+          "id": "the-condemned-man-who-cursed-the-king-2",
+          "type": "story",
+          "title": "The Condemned Man Who Cursed the King",
+          "body": "A prisoner facing execution insults the king, who asks what he said; a kind minister falsely reports the man praised those who restrain anger and forgive others, prompting a pardon, while a rival minister insists on the truth to ensure death. The king favors the merciful lie over the destructive truth, showing that the intent behind speech determines its worth.",
+          "tags": [
+            "mercy",
+            "intent-vs-accuracy",
+            "court-politics"
+          ],
+          "sourceBook": "The Gulistan of Sa'di"
+        },
+        {
+          "id": "contentment-as-freedom-from-dependence-3",
+          "type": "concept",
+          "title": "Contentment as Freedom From Dependence",
+          "body": "Wealth is defined not by possessions but by the absence of wants, so the person who needs little is richer than the person who hoards much. Reducing desire severs the dependence that makes one vulnerable to flattery, servitude, and anxiety.",
+          "tags": [
+            "contentment",
+            "desire-reduction",
+            "autonomy"
+          ],
+          "sourceBook": "The Gulistan of Sa'di"
+        },
+        {
+          "id": "character-revealed-through-reversal-of-fortune-4",
+          "type": "lens",
+          "title": "Character Revealed Through Reversal of Fortune",
+          "body": "A person's true nature stays hidden until circumstances flip — the beggar elevated to power and the powerful man brought low expose whether virtue was genuine or merely a product of comfort. Judge people by how they behave when their station suddenly changes, not by their conduct in stable conditions.",
+          "tags": [
+            "character-testing",
+            "status-change",
+            "moral-discernment"
+          ],
+          "sourceBook": "The Gulistan of Sa'di"
+        }
+      ],
+      "parichayAt": "2026-06-29T17:23:27.496Z",
+      "needsReview": true,
+      "reviewReason": "enrichment lookup returned no results; no Wikipedia entry found — decomposition based on description only"
+    }
+  ],
+  "failed": []
+}

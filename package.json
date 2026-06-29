@@ -6,7 +6,10 @@
     "dev": "next dev -p 3004",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sangrah": "tsx scripts/sangrah.ts",
+    "parichay": "tsx scripts/parichay.ts",
+    "manthan": "tsx scripts/manthan.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.104.2",
@@ -22,6 +25,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
+    "tsx": "^4.22.4",
     "typescript": "^5"
   }
 }
