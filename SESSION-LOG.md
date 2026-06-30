@@ -4,6 +4,16 @@ Newest session first. Update this at the end of every working session before clo
 
 ---
 
+## 2026-06-30 — synopsis deck posted to the personal site; single source of truth = bk-site
+
+- **What we did:** Wired the standalone synopsis deck (formerly `engine-demo.html` in this repo) into the personal site. The **(anti)library** tile on **bharatkhandelwal.com/products** now opens it in a new tab. Live and pushed (`bk-site` repo, `origin/main`).
+- **Single copy, by decision:** Bharat wants no duplicate files. The deck is a hand-authored site asset (hardcoded stats), **not** a derived view of library data — so it has no reason to live in this repo. It now lives **only** in `bk-site/public/engine-demo.html`. The copy here was removed.
+- **How it's wired:** `bk-site/src/app/products/page.tsx` — added an optional `href` per product; tiles with `href` open it via `window.open(href, "_blank")`, others keep the modal. The (anti)library product points to `/engine-demo.html`.
+- **Sync note:** local `bk-site` was 6 commits behind `origin/main` (live shows the tile as "(anti)library", local said "Manthan"); fast-forwarded before editing so the change landed on the deployed version.
+- **Where to iterate:** edit `bk-site/public/engine-demo.html` directly and redeploy from `bk-site`. Bharat plans to keep refining it over the next ~6–7 hours. Open item he may still want: soften the two slides that imply Pradarshan is live (deck currently presents all 5 agents as operational; Darpan is v1, Pradarshan held).
+
+---
+
 ## 2026-06-30 — engine-demo.html built from scratch (per HANDOFF-ENGINE-DEMO.md)
 
 - **What we did:** Full rewrite of `engine-demo.html` from the handoff spec. Standalone HTML/CSS/SVG/JS, no build step, works offline.
