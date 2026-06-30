@@ -4,6 +4,21 @@ Newest session first. Update this at the end of every working session before clo
 
 ---
 
+## 2026-06-30 — engine-demo.html built from scratch (per HANDOFF-ENGINE-DEMO.md)
+
+- **What we did:** Full rewrite of `engine-demo.html` from the handoff spec. Standalone HTML/CSS/SVG/JS, no build step, works offline.
+- **How it was built:**
+  - Engine SVG (viewBox `0 0 1100 500`) is generated once in JS and mounted into both the scroll slide (`#engineScroll`) and the present slide (`#enginePres`) so the two copies can never drift. All gradients/markers/animation paths live in one top-level hidden `<svg>` defs block; both engine copies reference them by id (cross-SVG `url(#…)` + `mpath href`).
+  - 7 slides, identical order in scroll + present: Title → Problem+Solution → What it finds → Engine → Quality (dark navy) → Principles (4) → Appendix.
+  - Locked design constraints honored: 3 type sizes; engine palette c1–c5 reserved for agent circles only; all output-card badges monochrome (72px, Courier, #EDEEF0/#4A5568); Present button filled-blue when off / red-outlined when active.
+  - Engine details: per-agent trigger badges, "completes →" cascade annotations, H markers on Curate (782,148) + Visualize (962,148), QUALITY CHECKS bar + 5 filled QA diamonds, orbiting QA dots + data particles + animated input feeds (all from the prior working version).
+  - Devanagari corrected to the locked names: Curate = **Darpan · दर्पण** (the handoff's tooltip had दर्शन; CLAUDE.md locks दर्पण).
+- **Verification:** JS syntax-checked (`node --check`), generated SVG validated as well-formed XML, full-page headless-Chrome screenshot (all 7 scroll slides), and present-mode screenshot of the dark Quality slide (counter, nav, dots all working). Could not use the preview MCP — port 3004 is held by the running `npm run dev` and the preview guard refuses to attach; served via a throwaway static server instead.
+- **Framework state:** No change to the five steps or spec. Pure presentation-layer work.
+- **Next session starts:** engine-demo.html is complete. Open it directly (`file://…/engine-demo.html`) or via the dev server. Optional follow-ups: tune mobile breakpoints live, or wire it into the Next app under `public/` if it should deploy.
+
+---
+
 ## 2026-06-30 — engine-demo.html redesign (all decisions finalized; build pending)
 
 - **What we did:** Full design pass on `engine-demo.html` — a standalone C-suite explainer/demo page for the Antilibrary System. Went through 5+ iterations with Bharat.
