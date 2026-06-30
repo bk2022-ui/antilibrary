@@ -4,6 +4,32 @@ Newest session first. Update this at the end of every working session before clo
 
 ---
 
+## 2026-06-30 — engine-demo.html redesign (all decisions finalized; build pending)
+
+- **What we did:** Full design pass on `engine-demo.html` — a standalone C-suite explainer/demo page for the Antilibrary System. Went through 5+ iterations with Bharat.
+- **Key design decisions locked:**
+  - SVG-based pipeline diagram (inspired by AIOS HTML pages): animated data particles, orbiting QA dots, hover tooltips on each agent
+  - English names primary, Hindi in parentheses — American audience
+  - Input sources shown entering Agent 1 (shelf photo, CSV/Excel, manual list, verbal)
+  - Trigger badges per agent: NIGHTLY·ON CALL / PER BOOK·ON CALL / BATCH·ON CALL / HUMAN·ON CALL / ON RENDER·ON CALL
+  - Cascade "completes →" annotations on connector lines
+  - Human intervention markers (H circle) at Agents 4 and 5
+  - QA diamonds larger, filled with agent color at low opacity
+  - Present mode (slideshow toggle): filled blue when off, red-outlined when on
+  - Slide order finalized: Title → Problem+Solution → **What it finds** (moved before engine — wow moment first) → Engine → Quality → Principles → Appendix
+  - Pull quote on title slide: "A library that reads itself."
+  - Output card badges: ALL monochrome (neutral gray #EDEEF0 / #4A5568 / Courier New) — no competition with engine color palette
+  - Quality slide: dark navy #0F1A2E background + subline "Most AI systems are evaluated by the people who built them. This one evaluates itself."
+  - Principles trimmed to 4 (removed "Doing is learning" — too personal for C-suite)
+  - Appendix slide: "Extending the System Further" — 4-step generic pipeline (Ingest→Atomize→Realign→Show) with 6 example corpora. Main deck stays book-focused; reframe lives only in appendix
+  - Writing pass: 732 anchored once on title slide only; passive constructions removed; consulting voice applied
+- **Handoff file written:** `HANDOFF-ENGINE-DEMO.md` — full spec, slide order, copy, SVG coordinates, CSS design tokens, JS patterns, test checklist. Ready for fresh chat to execute the full build.
+- **Framework state:** No changes to the five steps or spec. This session was pure presentation/communication layer work.
+- **Decisions made:** Build in new chat (context was already long and summarized once; the spec is complete; fresh context will execute cleanly).
+- **Next session starts:** Open a new chat with `HANDOFF-ENGINE-DEMO.md` as the primary brief. Build `engine-demo.html` from scratch per the spec. File is ~900–1000 lines HTML/CSS/SVG/JS, standalone (no build step).
+
+---
+
 ## 2026-06-30 — Session close + portfolio synthesis + orientation refresh
 
 - **Engine state:** Sangrah / Parichay / Manthan all built and run on the real library (732 books, ~3,498 atomic units). Darpan v1 (`darpan.html`). Pradarshan cover study (`covergrid.html`) settled but held.
