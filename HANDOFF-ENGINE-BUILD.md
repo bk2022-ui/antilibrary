@@ -1,16 +1,32 @@
 # Handoff — Antilibrary Engine Build
 
-This file captures where we are in the Antilibrary Engine build as of 2026-06-29. Read this to pick up exactly where we left off.
+This file captures where we are in the Antilibrary Engine build as of 2026-06-30. Read this to pick up exactly where we left off. For full detail: `SESSION-LOG.md` (chronological), `docs/ANTILIBRARY-ENGINE-SPEC.md` (the spec), and the **Build log + Backlog catalog** at the bottom of `antilibrary-system.html`.
 
 ---
 
-## Where we are
+## Where we are (2026-06-30)
 
-Steps 1–7 of the build sequence are complete. We are about to start **Step 8: Build the Manthan agent**.
+**The engine is built and has run end-to-end on the real library.** Inventory: **732 books, ~3,500 atomic units.**
 
-**Sangrah agent** — built and tested. CLI: `npm run sangrah -- --input /path/to/photos`. Needs `ANTHROPIC_API_KEY` in `.env.local` for first real run against bk-library photos.
+| Step | Agent | State |
+|---|---|---|
+| 1 Collect | **Sangrah** | ✅ Built + ran live. Reads shelf photos → spines → enrich → dedup → `sangrah-staging.json`. CLI `npm run sangrah -- --input <folder>`. |
+| 2 Classify | **Parichay** | ✅ Built + ran live. Classify + decompose; ToC/Wikipedia/See-also enrichment → `parichay-staging.json` + `ideas.json`. CLI `npm run parichay`. |
+| 3 Churn | **Manthan** | ✅ Built + ran live. 7 lenses + random probe → `manthan-analysis.json` (~91 findings). CLI `npm run manthan`. |
+| 4 Curate | **Darpan** (the mirror) | ◧ v1 built — `darpan.html` (Lekha-Jokha stats + Darshan self-portrait) via `scripts/build-darpan.ts`. Interpretive layer iterating. |
+| 5 Visualize | **Pradarshan** | Cover-display study `covergrid.html` (via `scripts/build-covergrid.ts`) — treatment settled, **held**, not yet ported to live `page.tsx`. |
 
-**Parichay agent** — built. CLI: `npm run parichay`. Reads `sangrah-staging.json`, writes `parichay-staging.json` + `ideas.json`. Needs Sangrah to run first.
+**Requires `ANTHROPIC_API_KEY` in `.env.local`** (gitignored) to run any agent.
+
+### What to pick up next (any of these — see backlog for priority)
+- **Multi-agent rebuild of the engine** — Bharat's chosen next move: an agent per part (Sangrah/Parichay/Manthan/...), run sequentially → collaboratively → evaluated. This is the learning vehicle *and* an architecture upgrade.
+- **Build evaluation in** — the one missing discipline (how do we know outputs are right? ~25% ingestion miss, false absence findings). Pair it with the multi-agent rebuild.
+- **Ingestion quality** (HIGH) — input-photo guide + multi-pass Sangrah union to drive down the ~25% miss.
+- **Manthan delta-pass** (HIGH) — full re-churn doesn't scale; compute only the change.
+- **Port cover treatment** into live `page.tsx`; deepen Darpan/Darshan.
+
+### Strategic context (new this session)
+The portfolio was inventoried and a synthesis written. See `~/coding/ai-learning/` — `SYNTHESIS-the-work-and-the-journey.html`, `THE-ARC-path-traveled.html`, `LEARNING-LOG.md`. Short version: the Anti Library is one of Bharat's "engines that think" (his signature strength); it feeds his learning and two books (4S, A2A). Visualization is an interest, not the forte.
 
 ---
 

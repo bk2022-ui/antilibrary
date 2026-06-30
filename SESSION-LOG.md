@@ -4,6 +4,15 @@ Newest session first. Update this at the end of every working session before clo
 
 ---
 
+## 2026-06-30 — Session close + portfolio synthesis + orientation refresh
+
+- **Engine state:** Sangrah / Parichay / Manthan all built and run on the real library (732 books, ~3,498 atomic units). Darpan v1 (`darpan.html`). Pradarshan cover study (`covergrid.html`) settled but held.
+- **Refreshed for handoff:** `HANDOFF-ENGINE-BUILD.md` rewritten to true current state (was stale at "Step 8"); regenerated `darpan.html` + `covergrid.html` from current data; updated `antilibrary-system.html` dates + catalog. All design + decisions live in: this log, `docs/ANTILIBRARY-ENGINE-SPEC.md`, `docs/AGENT-SCOPES.md`, `docs/PRADARSHAN-DESIGN-REFERENCE.md`, and the Build-log/Backlog catalog in `antilibrary-system.html`.
+- **Strategic / learning work (new):** inventoried the whole `~/coding` portfolio; wrote a synthesis and a capability-arc into a new **AI-learning ledger** at `~/coding/ai-learning/` (`SYNTHESIS-the-work-and-the-journey.html`, `THE-ARC-path-traveled.html`, `LEARNING-LOG.md`). Bharat's framing (locked in memory `who-bharat-is`): profession = transformative-change consulting (A2A, AIOS); the library is where he learns → two books (4S, A2A); his signature strength = building "engines that think" (Lagom-Compositor, Napkin-Solo, Anti-Library/Manthan); visualization is an interest, not the forte; learning goal = AI-toolbox breadth anchored to engines; next missing tool = evaluation.
+- **Chosen next move:** rebuild the Anti Library as a 4-agent multi-agent system (sequential → collaborative → evaluated), building evaluation in from the start.
+
+---
+
 ## 2026-06-29 — Pradarshan cover-display study (covergrid.html)
 
 - Built `scripts/build-covergrid.ts` → standalone `covergrid.html` (also in `public/`). Re-runnable, read-only. A Founders-Notes-style cover grid study to settle the Pradarshan tile treatment before porting to live `page.tsx`.

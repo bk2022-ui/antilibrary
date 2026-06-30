@@ -232,16 +232,16 @@
 <body>
 
 <h1>Antilibrary</h1>
-<div class="subtitle">System overview — updated 2026-06-29 · 732 books · incremental ingestion loop proven end-to-end</div>
+<div class="subtitle">System overview — updated 2026-06-30 · 732 books · engine built &amp; run end-to-end · Darpan v1 · Pradarshan cover study held</div>
 
 <!-- BUILD-STATUS: update this block each session -->
 <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:48px;">
-  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#2d4a3e; color:#fff;">✅ 1 Sangrah — agent built</span>
-  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#2a3d5c; color:#fff;">✅ 2 Parichay — agent built</span>
-  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#4a2d3e; color:#fff;">✅ 3 Manthan — agent built, ran live</span>
-  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#4a3a2d; color:#fff;">◧ 4 Darpan — v1 built (Lekha-Jokha ✅ · Darshan iterating)</span>
-  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#e0dcd6; color:#888;">⬜ 5 Pradarshan — UI exists</span>
-  <span style="font-size:11px; padding:4px 10px; border-radius:3px; background:#f0ece4; color:#888; border:1px solid #e0dcd6;">⬅ Now: refining Darshan with Bharat</span>
+  <a href="#step-1" style="text-decoration:none; cursor:pointer; font-size:11px; padding:4px 10px; border-radius:3px; background:#2d4a3e; color:#fff;">✅ 1 Sangrah — agent built</a>
+  <a href="#step-2" style="text-decoration:none; cursor:pointer; font-size:11px; padding:4px 10px; border-radius:3px; background:#2a3d5c; color:#fff;">✅ 2 Parichay — agent built</a>
+  <a href="#step-3" style="text-decoration:none; cursor:pointer; font-size:11px; padding:4px 10px; border-radius:3px; background:#4a2d3e; color:#fff;">✅ 3 Manthan — agent built, ran live</a>
+  <a href="#step-4" style="text-decoration:none; cursor:pointer; font-size:11px; padding:4px 10px; border-radius:3px; background:#4a3a2d; color:#fff;">◧ 4 Darpan — v1 built (Lekha-Jokha ✅ · Darshan iterating)</a>
+  <a href="#step-5" style="text-decoration:none; cursor:pointer; font-size:11px; padding:4px 10px; border-radius:3px; background:#e0dcd6; color:#888;">⬜ 5 Pradarshan — UI exists</a>
+  <a href="#backlog" style="text-decoration:none; cursor:pointer; font-size:11px; padding:4px 10px; border-radius:3px; background:#f0ece4; color:#888; border:1px solid #e0dcd6;">⬅ Now: refining Darshan with Bharat</a>
 </div>
 <!-- END BUILD-STATUS -->
 
@@ -256,7 +256,7 @@
 <div class="section-label">The five steps</div>
 <div class="steps">
 
-  <div class="step step-1">
+  <div class="step step-1" id="step-1">
     <div class="step-num">01</div>
     <div class="step-name">
       <div class="step-english">Collect</div>
@@ -274,7 +274,7 @@
     </div>
   </div>
 
-  <div class="step step-2">
+  <div class="step step-2" id="step-2">
     <div class="step-num">02</div>
     <div class="step-name">
       <div class="step-english">Classify</div>
@@ -295,7 +295,7 @@
     </div>
   </div>
 
-  <div class="step step-3">
+  <div class="step step-3" id="step-3">
     <div class="step-num">03</div>
     <div class="step-name">
       <div class="step-english">Churn</div>
@@ -312,7 +312,7 @@
     </div>
   </div>
 
-  <div class="step step-4">
+  <div class="step step-4" id="step-4">
     <div class="step-num">04</div>
     <div class="step-name">
       <div class="step-english">Curate</div>
@@ -322,7 +322,10 @@
     <div class="step-body">
       <div class="step-what">The mirror — you see yourself; then you pull what to show</div>
       <div class="step-desc">
-        Darpan means mirror — you only see yourself in it. Internal-facing: the curator's complete self-knowledge, in two layers. <strong>Lekha-Jokha (लेखा-जोखा)</strong> — the numbers: book counts, atomic units, distributions, enrichment coverage, pipeline state, trends. Non-negotiable, objective, always current — a derived view of the canonical JSON. <strong>Darshan (दर्शन)</strong> — the meaning: Manthan's findings understood as a portrait, where priming happens. Curate = Darpan: knowing everything that is there, the curator pulls a subset forward to Pradarshan. Knowing precedes pulling.
+        Darpan means mirror — you only see yourself in it. Internal-facing: the curator's complete self-knowledge, in two layers.<br><br>
+        <strong>Lekha-Jokha (लेखा-जोखा)</strong> — the numbers: book counts, atomic units, distributions, enrichment coverage, pipeline state, trends. Non-negotiable, objective, always current — a derived view of the canonical JSON.<br><br>
+        <strong>Darshan (दर्शन)</strong> — the meaning: Manthan's findings understood as a portrait, where priming happens.<br><br>
+        Curate = Darpan: knowing everything that is there, the curator pulls a subset forward to Pradarshan. Knowing precedes pulling.
       </div>
       <span class="step-trigger">Lekha-Jokha: auto-regenerates per run</span>
       <span class="step-trigger">Darshan + pull: human</span>
@@ -330,7 +333,7 @@
     </div>
   </div>
 
-  <div class="step step-5">
+  <div class="step step-5" id="step-5">
     <div class="step-num">05</div>
     <div class="step-name">
       <div class="step-english">Visualize</div>
@@ -449,7 +452,7 @@
   </tbody>
 </table>
 
-<div class="section-label">Backlog &mdash; known issues &amp; features to build</div>
+<div class="section-label" id="backlog">Backlog &mdash; known issues &amp; features to build</div>
 <table style="width:100%; border-collapse:collapse; font-size:13px; margin-bottom:48px;">
   <thead>
     <tr style="text-align:left; color:#aaa; font-size:11px; text-transform:uppercase; letter-spacing:0.08em;">
@@ -476,7 +479,7 @@
 
 <!-- FOOTER -->
 <div class="footer">
-  Antilibrary Engine &mdash; bk2022-ui/antilibrary &mdash; last updated 2026-06-29 &mdash; 732 books &mdash; Sangrah ✅ Parichay ✅ Manthan ✅ Darpan v1 ✅ &mdash; Pradarshan cover study held &mdash; see Build log &amp; Backlog above
+  Antilibrary Engine &mdash; bk2022-ui/antilibrary &mdash; last updated 2026-06-30 &mdash; 732 books &mdash; Sangrah ✅ Parichay ✅ Manthan ✅ Darpan v1 ✅ &mdash; Pradarshan cover study held &mdash; see Build log &amp; Backlog above
 </div>
 
 </body>
