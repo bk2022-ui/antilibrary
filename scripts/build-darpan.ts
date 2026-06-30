@@ -194,6 +194,106 @@ const missingFindings = pick(
 );
 
 // =========================================================
+// PART 3 — MANTHAN FINDINGS BROWSER
+// =========================================================
+
+const LENS_LABELS: Record<string, { label: string; hindi: string; desc: string }> = {
+  depth:             { label: "Depth",             hindi: "गहराई",    desc: "Intellectual strata — primary texts, serious scholarship, synthesis, popular nonfiction" },
+  register:          { label: "Register",          hindi: "स्वर",     desc: "Position on the empirical–contemplative axis; the shape of the collection's register" },
+  era:               { label: "Era",               hindi: "युग",      desc: "Which decades dominate; what the era concentration reveals about intellectual formation" },
+  tradition:         { label: "Tradition",         hindi: "परंपरा",   desc: "Author traditions represented and absent; which lineages are well-represented" },
+  tension_pairs:     { label: "Tension Pairs",     hindi: "द्वंद्व",  desc: "Books that argue directly against each other — the live debates the library holds" },
+  founding_figures:  { label: "Founding Figures",  hindi: "पूर्वज",   desc: "Thinkers whose ideas the library orbits; lineage convergence revealing intellectual gravity" },
+  hidden_collections:{ label: "Hidden Collections",hindi: "छिपी गहराई","desc": "Unexpected depth in areas that didn't announce themselves — often the most personal" },
+};
+
+const TYPE_COLORS: Record<string, string> = {
+  tension_pair:      "#7a3a2a",
+  hidden_collection: "#2a4a3a",
+  founding_figure:   "#2a3a5c",
+  cluster:           "#4a3a2a",
+  pattern:           "#3a2a4a",
+  thread:            "#1a3a3a",
+  observation:       "#555",
+};
+
+const STRENGTH_DOT: Record<string, string> = {
+  strong:   "●",
+  moderate: "◉",
+  weak:     "○",
+};
+
+function findingCard(f: any): string {
+  const color = TYPE_COLORS[f.type] ?? "#555";
+  const dot = STRENGTH_DOT[f.strength ?? ""] ?? "";
+  const books = Array.isArray(f.books) && f.books.length
+    ? `<div class="mf-books">${f.books.map((b: string) => `<span class="mf-book">${esc(b)}</span>`).join("")}</div>`
+    : "";
+  const evidence = f.evidence
+    ? `<div class="mf-evidence">${esc(String(f.evidence).slice(0, 220))}${String(f.evidence).length > 220 ? "…" : ""}</div>`
+    : "";
+  return `<div class="mf-card">
+    <div class="mf-card-header">
+      <span class="mf-type" style="color:${color};">${esc(f.type)}</span>
+      ${dot ? `<span class="mf-strength" title="${esc(f.strength)}">${dot}</span>` : ""}
+      <span class="mf-name">${esc(f.name)}</span>
+    </div>
+    <div class="mf-desc">${esc(f.description ?? "")}</div>
+    ${books}
+    ${evidence}
+  </div>`;
+}
+
+function buildManthanSection(): string {
+  const lensBlocks = manthan.lensResults.map((l: any) => {
+    const meta = LENS_LABELS[l.lens] ?? { label: l.lens, hindi: "", desc: "" };
+    const cards = (l.findings as any[]).map(findingCard).join("\n");
+    const strongCount = (l.findings as any[]).filter((f: any) => f.strength === "strong").length;
+    return `
+<details class="mf-lens" open>
+  <summary class="mf-lens-summary">
+    <span class="mf-lens-name">${esc(meta.label)}</span>
+    <span class="mf-lens-hindi">${esc(meta.hindi)}</span>
+    <span class="mf-lens-count">${l.findings.length} findings · ${strongCount} strong</span>
+  </summary>
+  <div class="mf-lens-desc">${esc(meta.desc)}</div>
+  <div class="mf-cards">${cards}</div>
+</details>`;
+  }).join("\n");
+
+  const probes = Array.isArray(manthan.probeResults) ? manthan.probeResults : [];
+  const probeCards = probes.length
+    ? probes.map((p: any) => `
+<div class="mf-card mf-probe">
+  <div class="mf-card-header">
+    <span class="mf-type" style="color:#3a5a2a;">probe</span>
+    <span class="mf-name">${esc(p.seedBook ?? "?")} → ${esc(p.candidateName ?? "candidate")}</span>
+  </div>
+  <div class="mf-desc">${esc(p.description ?? p.rationale ?? "")}</div>
+  ${Array.isArray(p.books) && p.books.length ? `<div class="mf-books">${p.books.map((b: string) => `<span class="mf-book">${esc(b)}</span>`).join("")}</div>` : ""}
+</div>`).join("\n")
+    : `<p style="font-size:13px;color:#999;font-style:italic;">No probe results in this run.</p>`;
+
+  return `
+<a id="manthan"></a>
+<h2>Manthan <span class="hi">मंथन · findings</span></h2>
+<div class="part-intro">All ${totalFindings} findings from the last run (${esc(runDateShort)}) — browsable by lens. Strong findings (●) are the most confident; read all before priming.</div>
+
+${lensBlocks}
+
+<details class="mf-lens">
+  <summary class="mf-lens-summary">
+    <span class="mf-lens-name">Random Probes</span>
+    <span class="mf-lens-hindi">यादृच्छिक खोज</span>
+    <span class="mf-lens-count">${probes.length} candidates</span>
+  </summary>
+  <div class="mf-lens-desc">Edge-book seeds: books not yet anchored in any thread or cluster, probed for unexpected connections.</div>
+  <div class="mf-cards">${probeCards}</div>
+</details>
+`;
+}
+
+// =========================================================
 // RENDER
 // =========================================================
 function barRow(label: string, n: number, total: number, max: number): string {
@@ -262,11 +362,12 @@ const html = `<!DOCTYPE html>
   }
   h1 { font-size: 28px; font-weight: normal; letter-spacing: 0.02em; margin-bottom: 6px; }
   .subtitle { font-size: 14px; color: #888; margin-bottom: 36px; font-style: italic; }
-  .nav { display: flex; gap: 18px; border-top: 1px solid #e0dcd6; border-bottom: 1px solid #e0dcd6;
-    padding: 14px 0; margin-bottom: 48px; font-size: 13px; }
-  .nav a { color: #555; text-decoration: none; letter-spacing: 0.04em; }
-  .nav a:hover { color: #1a1a1a; }
-  .nav .nav-hi { color: #bbb; font-style: italic; margin-left: 4px; }
+  .nav { display: flex; gap: 10px; margin-bottom: 48px; font-size: 13px; flex-wrap: wrap; }
+  .nav a { color: #555; text-decoration: none; letter-spacing: 0.03em;
+    border: 1px solid #d8d4ce; border-radius: 4px; padding: 7px 14px;
+    background: #fff; transition: border-color 0.15s, color 0.15s; }
+  .nav a:hover { color: #1a1a1a; border-color: #aaa; background: #faf8f5; }
+  .nav .nav-hi { color: #bbb; font-style: italic; margin-left: 6px; }
   .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em;
     color: #aaa; margin-bottom: 20px; }
   h2 { font-size: 20px; font-weight: normal; color: #1a1a1a; margin-bottom: 4px; }
@@ -323,6 +424,36 @@ const html = `<!DOCTYPE html>
   .pill-note { color: #bbb; border-style: dashed; }
 
   .footer { font-size: 11px; color: #ccc; border-top: 1px solid #e0dcd6; padding-top: 20px; margin-top: 56px; }
+
+  /* manthan findings browser */
+  .mf-lens { border-top: 1px solid #e0dcd6; padding: 0; margin-bottom: 0; }
+  .mf-lens[open] { margin-bottom: 8px; }
+  .mf-lens-summary {
+    display: flex; align-items: baseline; gap: 12px;
+    padding: 18px 0 16px; cursor: pointer; list-style: none;
+    font-size: 15px; color: #1a1a1a;
+  }
+  .mf-lens-summary::-webkit-details-marker { display: none; }
+  .mf-lens-summary::before { content: "▸"; color: #bbb; font-size: 11px; margin-right: 4px; }
+  details[open] > .mf-lens-summary::before { content: "▾"; }
+  .mf-lens-name { font-weight: normal; }
+  .mf-lens-hindi { font-size: 13px; color: #bbb; font-style: italic; }
+  .mf-lens-count { margin-left: auto; font-size: 12px; color: #aaa; }
+  .mf-lens-desc { font-size: 12.5px; color: #999; font-style: italic; margin-bottom: 18px; padding-left: 18px; }
+  .mf-cards { display: flex; flex-direction: column; gap: 12px; padding-left: 18px; padding-bottom: 24px; }
+  .mf-card { background: #fff; border: 1px solid #e8e4de; border-radius: 5px; padding: 14px 16px; }
+  .mf-probe { border-left: 3px solid #a0b89a; }
+  .mf-card-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+  .mf-type { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em; font-family: 'Courier New', monospace; }
+  .mf-strength { font-size: 13px; color: #bbb; }
+  .mf-name { font-size: 14px; color: #1a1a1a; }
+  .mf-desc { font-size: 13px; color: #555; line-height: 1.65; margin-bottom: 8px; }
+  .mf-books { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .mf-book { font-size: 11.5px; color: #777; background: #f5f2ed; border: 1px solid #e8e4de;
+    border-radius: 3px; padding: 2px 8px; }
+  .mf-evidence { font-size: 11.5px; color: #bbb; font-style: italic; margin-top: 8px;
+    font-family: 'Courier New', monospace; line-height: 1.5; }
+
   @media (max-width: 640px) {
     .bignum-grid { grid-template-columns: 1fr 1fr; }
     .cols, .evidence { grid-template-columns: 1fr; }
@@ -337,6 +468,7 @@ const html = `<!DOCTYPE html>
 
 <div class="nav">
   <a href="#lekha-jokha">Lekha-Jokha<span class="nav-hi">लेखा-जोखा · the numbers</span></a>
+  <a href="#manthan">Manthan<span class="nav-hi">मंथन · ${totalFindings} findings</span></a>
   <a href="#darshan">Darshan<span class="nav-hi">दर्शन · the meaning</span></a>
 </div>
 
@@ -455,7 +587,12 @@ const html = `<!DOCTYPE html>
 
 <hr class="part-rule">
 
-<!-- ════════ PART 2 — DARSHAN ════════ -->
+<!-- ════════ PART 2 — MANTHAN FINDINGS ════════ -->
+${buildManthanSection()}
+
+<hr class="part-rule">
+
+<!-- ════════ PART 3 — DARSHAN ════════ -->
 <a id="darshan"></a>
 <h2>Darshan <span class="hi">दर्शन</span></h2>
 <div class="part-intro">The meaning. A first-spin reading of what the books reveal — not a verdict, an opening.</div>
