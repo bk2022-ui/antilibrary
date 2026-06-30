@@ -1,0 +1,57 @@
+{
+  "_note": "The pull (Step 4 → 5). Curator selects exactly what the public window shows. Pradarshan renders only what is listed here, in order. Edit this file to change what the world sees.",
+  "updated": "2026-06-30",
+  "tagline": "A library that reads itself.",
+  "intro": "A public window into one reader's library — not the books, but the spines that run across them: the tensions it holds unresolved, the figures it orbits, the collections hiding in plain sight.",
+  "selections": [
+    {
+      "lens": "tension_pairs",
+      "name": "Free Will: Eliminated vs. Presupposed"
+    },
+    {
+      "lens": "founding_figures",
+      "name": "Darwin as gravitational center"
+    },
+    {
+      "lens": "tradition",
+      "name": "The Lebanese Probability Monastery"
+    },
+    {
+      "lens": "depth",
+      "name": "A graduate seminar in cybernetics hiding in plain sight"
+    },
+    {
+      "lens": "tension_pairs",
+      "name": "Growth: Imperative vs. Impossible"
+    },
+    {
+      "lens": "founding_figures",
+      "name": "Kahneman and the decision-science axis"
+    },
+    {
+      "lens": "register",
+      "name": "Empirical Evolutionists vs. Contemplative Yogis"
+    },
+    {
+      "lens": "tension_pairs",
+      "name": "Markets: Self-Correcting vs. Requiring Stabilization"
+    },
+    {
+      "lens": "tradition",
+      "name": "Chicago Libertarian vs. Heterodox Keynesian Economics"
+    },
+    {
+      "lens": "hidden_collections",
+      "name": "The Science of Collective Error"
+    }
+  ],
+  "featuredBooks": [
+    "Antifragile",
+    "The Black Swan",
+    "Thinking, Fast and Slow",
+    "On the Origin of Species",
+    "Meditations",
+    "Gödel, Escher, Bach",
+    "The Beginning of Infinity"
+  ]
+}
