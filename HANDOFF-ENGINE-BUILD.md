@@ -13,17 +13,20 @@ This file captures where we are in the Antilibrary Engine build as of 2026-06-30
 | 1 Collect | **Sangrah** | ✅ Built + ran live. Reads shelf photos → spines → enrich → dedup → `sangrah-staging.json`. CLI `npm run sangrah -- --input <folder>`. |
 | 2 Classify | **Parichay** | ✅ Built + ran live. Classify + decompose; ToC/Wikipedia/See-also enrichment → `parichay-staging.json` + `ideas.json`. CLI `npm run parichay`. |
 | 3 Churn | **Manthan** | ✅ Built + ran live. 7 lenses + random probe → `manthan-analysis.json` (~91 findings). CLI `npm run manthan`. |
-| 4 Curate | **Darpan** (the mirror) | ◧ v1 built — `darpan.html` (Lekha-Jokha stats + Darshan self-portrait) via `scripts/build-darpan.ts`. Interpretive layer iterating. |
-| 5 Visualize | **Pradarshan** | Cover-display study `covergrid.html` (via `scripts/build-covergrid.ts`) — treatment settled, **held**, not yet ported to live `page.tsx`. |
+| 4 Curate | **Darpan** (the mirror) | ✅ Built — `darpan.html` via `scripts/build-darpan.ts`: Lekha-Jokha (numbers) + Manthan findings browser + Darshan (self-portrait). |
+| 5 Visualize | **Pradarshan** | ✅ **Shipped** — the public **`/antilibrary` tab on bharatkhandelwal.com** (bk-site repo). The pull (`pradarshan-config.json`) → `scripts/build-pradarshan.ts` (`npm run pradarshan`) → light bundle + lazy idea chunks → explorable page (clickable stats, full analysis index, drill-down panels). **Design: `docs/PRADARSHAN-DESIGN-REFERENCE.md` → "AS BUILT".** |
+
+**All five steps run end-to-end.** The vertical slice is complete.
 
 **Requires `ANTHROPIC_API_KEY` in `.env.local`** (gitignored) to run any agent.
 
-### What to pick up next (any of these — see backlog for priority)
-- **Multi-agent rebuild of the engine** — Bharat's chosen next move: an agent per part (Sangrah/Parichay/Manthan/...), run sequentially → collaboratively → evaluated. This is the learning vehicle *and* an architecture upgrade.
-- **Build evaluation in** — the one missing discipline (how do we know outputs are right? ~25% ingestion miss, false absence findings). Pair it with the multi-agent rebuild.
+### What to pick up next (all post-launch fast-follows — see backlog for priority)
+The 5-step build is done; remaining work is refinement and the bigger architecture track:
+- **Re-curate the pull** — `pradarshan-config.json`; finish spine `headline` overrides in Bharat's voice.
+- **Multi-agent rebuild + build evaluation in** — Bharat's bigger next move: an agent per part, run sequentially → collaboratively → evaluated. The one missing discipline (how do we know outputs are right? ~25% ingestion miss, false-absence findings).
 - **Ingestion quality** (HIGH) — input-photo guide + multi-pass Sangrah union to drive down the ~25% miss.
 - **Manthan delta-pass** (HIGH) — full re-churn doesn't scale; compute only the change.
-- **Port cover treatment** into live `page.tsx`; deepen Darpan/Darshan.
+- **Book detail node** in Pradarshan (Founders-Notes "essence + evidence") — see the design ref.
 
 ### Strategic context (new this session)
 The portfolio was inventoried and a synthesis written. See `~/coding/ai-learning/` — `SYNTHESIS-the-work-and-the-journey.html`, `THE-ARC-path-traveled.html`, `LEARNING-LOG.md`. Short version: the Anti Library is one of Bharat's "engines that think" (his signature strength); it feeds his learning and two books (4S, A2A). Visualization is an interest, not the forte.

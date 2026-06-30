@@ -77,3 +77,50 @@ The Founders Notes structure maps almost perfectly onto what Parichay already pr
 - **The flat grid is the calm resting state; structure is a layer you turn on.**
 - **One accent color, used only for state (selection, active thread).**
 - **Whitespace is a feature, not waste.**
+
+---
+
+## AS BUILT — the Pradarshan page (2026-06-30)
+
+This is the **canonical record of the implemented design** and the base for future work. Pradarshan shipped as the public window for Bharat's library.
+
+### Where it lives (the two-repo split — important)
+- **`antilibrary` repo = the product** (the engine + the standalone product UI). Multi-tenant in intent; today it runs on the one library, `src/libraries/bk/`.
+- **The public display of *Bharat's* library = the `/antilibrary` tab on bharatkhandelwal.com** — i.e. the **`bk-site` repo**, route `src/app/antilibrary/page.tsx`. The homepage nav links to it internally. (`antilibrary.bharatkhandelwal.com` does **not** exist — don't link there.)
+
+### Data flow (one source of truth → derived view)
+```
+engine outputs (antilibrary repo)         the pull (editorial)        derived data            the view
+inventory.json / ideas.json        →   pradarshan-config.json   →   build-pradarshan.ts  →   bk-site /antilibrary
+manthan-analysis.json / analysis.json    (curator selections +       (npm run pradarshan)     (page.tsx renders it)
+clusters.json                             optional headlines)
+```
+- **`pradarshan-config.json`** is the curator's control surface: the ordered list of findings to feature (`selections`), `featuredBooks`, `tagline`/`intro`, and an optional **`headline`** per selection that overrides Manthan's poetic finding name on the public spine (engine data untouched).
+- **`scripts/build-pradarshan.ts` (`npm run pradarshan`)** resolves the config against the engine outputs and writes:
+  - a **light main bundle** `pradarshan.json` (~62 KB gzipped) — stats (incl. idea-type counts), the curated spines, **all** 91 findings, 8 clusters, 17 threads, 23 patterns, and the 732-book catalogue. Loads with the page.
+  - **heavy per-type idea chunks** `public/antilibrary/ideas-<type>.json` (concept/claim/framework/lens/story; ~1.7 MB total) — the 3,498 atomic ideas, **lazy-loaded** only when a drill-down opens.
+- Both the main bundle (→ `bk-site/src/data/`) and the chunks (→ `bk-site/public/antilibrary/`) are synced into bk-site by the generator.
+
+### Page structure
+1. **Hero** — tagline + intro + a **cover strip** (row of real covers, visual hook).
+2. **Sticky nav** — `Statistics · Spines · Clusters · Catalogue`.
+3. **Statistics** — four **clickable** big numbers (732 books · 3,498 ideas · 91 findings · 51 strong) + the register distribution bar, then the **Analysis Index**: every unit type the engine creates, each clickable — the **5 idea types**, the **7 finding lenses**, and **threads / clusters / patterns**.
+4. **Spines** — the curated findings (the pull), shown as `headline ?? finding-name`.
+5. **Clusters** — the 8 curated collections; click one → its member books.
+6. **Catalogue** — the 732-book grid in the **settled covergrid treatment** (−7.5° uniform tilt, soft shadow, register-colored fallback covers, Georgia titles), with a **filter bar**: search (title/author) + Register / Category / Status dropdowns + Sort, and a live result count. Grid/list toggle.
+
+### Interactions
+- Clicking a **stat** or an **analysis-index row** opens a right-side **drill-down panel** (overlay, Escape closes).
+- Every panel has exactly **two controls**: a **Search…** box (matches title + body) and a **"Jump to an item…" dropdown** that lists the actual items so you can browse when you don't know what to type, and scrolls straight to the one you pick.
+- **Idea** panels lazy-fetch their per-type chunk on open. Findings/cluster/book panels read from the main bundle.
+
+### Operating loop
+`edit pradarshan-config.json` → `npm run pradarshan` → commit/push (antilibrary: config + bundle; bk-site: bundle + chunks + any page change).
+
+> **Deploy rule (learned the hard way):** bk-site is on Vercel, which runs `next build` — stricter than `npm run dev`. **Always run `npm run build` in bk-site before pushing.** A green dev server is not a deployable commit; four panel-dropdown commits silently failed to deploy because of a TypeScript `implicit any` that dev tolerated.
+
+### Future-design notes (where this goes next)
+- **Headlines in Bharat's voice** — only 3 of 10 spines have editorial `headline` overrides; finish the set.
+- **Book detail node** — the Founders-Notes "essence on top, evidence below" detail page (above) is still unbuilt: a book as a node in the graph (its threads/clusters as essence, its Parichay atomic units as evidence cards). The drill-down panel pattern is the foundation for it.
+- **Per-cluster covers, more catalogue facets (decade/form/density), search inside panel bodies** — incremental.
+- The deferred engine fast-follows (ingestion recall, Manthan delta-pass, the multi-agent + evaluation rebuild) are tracked in `antilibrary-system.html` Backlog.

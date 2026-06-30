@@ -4,6 +4,19 @@ Newest session first. Update this at the end of every working session before clo
 
 ---
 
+## 2026-06-30 — Pradarshan made explorable (the /antilibrary tab as a digestion tool)
+
+- **Reframed the page's purpose:** the `/antilibrary` tab isn't just a public display — it's where Bharat *sees and digests* all the engine's output to figure out future design. So it had to expose everything, clickable.
+- **Data architecture (light + lazy):** expanded `build-pradarshan.ts` to emit a **light main bundle** (~62 KB gz: stats incl. idea-type counts, curated spines, all 91 findings, 8 clusters, 17 threads, 23 patterns, 732-book catalogue) + **5 per-type idea chunks** (`public/antilibrary/ideas-<type>.json`, ~1.7 MB total) that the page **lazy-loads** only on drill-in. The 3,498 ideas are 10× the rest, so they never load until asked for.
+- **Page (bk-site `src/app/antilibrary/page.tsx`):** hero + **cover strip**; sticky nav `Statistics · Spines · Clusters · Catalogue`; **clickable** big numbers; an **Analysis Index** of every unit type (5 idea types · 7 finding lenses · threads/clusters/patterns), each opening a **drill-down panel**; catalogue with the settled covergrid treatment + filter bar (search + register/category/status + sort).
+- **Drill-down panels** settled, after several iterations, on **two controls**: a Search box + a "Jump to an item…" dropdown listing the actual items (browse when you don't know what to type → scroll to the pick). Dropped the attribute-facet selects.
+- **Spine headlines:** added an editorial **`headline` override** in `pradarshan-config.json` so cryptic Manthan names (e.g. "The Lebanese Probability Monastery") show a clean public title; engine data untouched. 3 of 10 done.
+- **Deploy lesson (important):** four commits silently failed Vercel's `next build` (a TypeScript `implicit any` that `npm run dev` tolerated) — prod was frozen on an old build. **Rule now: run `npm run build` in bk-site before every push.**
+- **Full as-built design recorded** in `docs/PRADARSHAN-DESIGN-REFERENCE.md` → "AS BUILT".
+- **Where next starts:** all post-launch fast-follows (finish headlines, ingestion recall, Manthan delta, the multi-agent/evaluation rebuild, the book-detail node).
+
+---
+
 ## 2026-06-30 — Path A: engine back-half FINISHED (Darpan → the pull → Pradarshan live)
 
 - **Pivoted from the demo back to engine development.** Chose **Path A** (finish the vertical slice; defer the multi-agent/evaluation rebuild and the quality backlog to post-launch fast-follows).
