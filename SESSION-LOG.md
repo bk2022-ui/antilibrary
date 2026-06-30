@@ -4,6 +4,19 @@ Newest session first. Update this at the end of every working session before clo
 
 ---
 
+## 2026-06-30 — Path A: engine back-half FINISHED (Darpan → the pull → Pradarshan live)
+
+- **Pivoted from the demo back to engine development.** Chose **Path A** (finish the vertical slice; defer the multi-agent/evaluation rebuild and the quality backlog to post-launch fast-follows).
+- **Darpan (Step 4) — done.** Committed the Manthan findings browser (Part 2): all ~91 findings browsable by the 7 lenses + probes, strength/evidence. Darpan now = Lekha-Jokha (numbers) + Manthan (read everything) + Darshan (meaning).
+- **The pull — done.** Authored + validated `src/libraries/bk/pradarshan-config.json` (10 findings + 7 featured books, all resolve against manthan/inventory). This file is the curator's editorial control surface — edit it to change what the public window shows.
+- **Pradarshan (Step 5) — SHIPPED.** Built the public **`/antilibrary` tab on bk-site** (bharatkhandelwal.com/antilibrary): Statistics + the curated "spines" + the 732-book catalogue in the settled cover treatment (−7.5° tilt, register fallbacks, grid/list). Reads `pradarshan.json`. Repointed the homepage nav from the dead `antilibrary.bharatkhandelwal.com` subdomain to the internal `/antilibrary` route.
+- **Generator — `npm run pradarshan`** (`scripts/build-pradarshan.ts`): resolves the pull config → `pradarshan.json`, syncs the copy into bk-site. Loop is one command: edit config → `npm run pradarshan` → deploy.
+- **Architecture clarified (locked):** the **antilibrary repo = the product** (multi-tenant eventually; runs on the `bk` library today). The **output for Bharat's library displays on bharatkhandelwal.com/antilibrary** (the bk-site repo). The product app's own `page.tsx` is the product running on his data, *not* the public destination.
+- **State: the 5-step engine is end-to-end** — Collect → Classify → Churn → Darpan → pull → Pradarshan, live.
+- **Next session starts:** Bharat re-curates the pull (`pradarshan-config.json`) to taste. Then the deferred fast-follows: ingestion recall (~25% miss), Manthan delta-pass, Manthan priming interface, the multi-agent/evaluation rebuild.
+
+---
+
 ## 2026-06-30 — synopsis deck posted to the personal site; single source of truth = bk-site
 
 - **What we did:** Wired the standalone synopsis deck (formerly `engine-demo.html` in this repo) into the personal site. The **(anti)library** tile on **bharatkhandelwal.com/products** now opens it in a new tab. Live and pushed (`bk-site` repo, `origin/main`).
