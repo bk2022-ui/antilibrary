@@ -1,5 +1,5 @@
 {
-  "_note": "The pull (Step 4 → 5). Curator selects exactly what the public window shows. Pradarshan renders only what is listed here, in order. Edit this file to change what the world sees.",
+  "_note": "The pull (Step 4 → 5). Curator selects what the public window shows. Add an optional 'headline' to any selection to override the engine's finding name on the public spine. Pradarshan renders only what is listed here, in order. Re-run: npm run pradarshan.",
   "updated": "2026-06-30",
   "tagline": "A library that reads itself.",
   "intro": "A public window into one reader's library — not the books, but the spines that run across them: the tensions it holds unresolved, the figures it orbits, the collections hiding in plain sight.",
@@ -14,11 +14,13 @@
     },
     {
       "lens": "tradition",
-      "name": "The Lebanese Probability Monastery"
+      "name": "The Lebanese Probability Monastery",
+      "headline": "A near-complete Taleb canon on risk & randomness"
     },
     {
       "lens": "depth",
-      "name": "A graduate seminar in cybernetics hiding in plain sight"
+      "name": "A graduate seminar in cybernetics hiding in plain sight",
+      "headline": "A foundational cybernetics & systems canon"
     },
     {
       "lens": "tension_pairs",
@@ -30,7 +32,8 @@
     },
     {
       "lens": "register",
-      "name": "Empirical Evolutionists vs. Contemplative Yogis"
+      "name": "Empirical Evolutionists vs. Contemplative Yogis",
+      "headline": "Empirical science vs. contemplative practice"
     },
     {
       "lens": "tension_pairs",

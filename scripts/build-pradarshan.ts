@@ -85,7 +85,7 @@ const curated = (config.selections as any[])
   .map((s) => {
     const f = byKey.get(`${s.lens}::${s.name}`);
     if (!f) { console.warn(`⚠ selection not found: [${s.lens}] ${s.name}`); return null; }
-    return { lens: s.lens, type: f.type, name: f.name, description: f.description, strength: f.strength, books: f.books ?? [], evidence: f.evidence };
+    return { lens: s.lens, type: f.type, name: f.name, headline: s.headline, description: f.description, strength: f.strength, books: f.books ?? [], evidence: f.evidence };
   })
   .filter(Boolean);
 
