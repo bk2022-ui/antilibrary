@@ -50,6 +50,13 @@
       "-310": 1,
       "-200": 1,
       "-60": 1
+    },
+    "ideaTypes": {
+      "concept": 1101,
+      "claim": 941,
+      "framework": 673,
+      "lens": 530,
+      "story": 253
     }
   },
   "curated": [
@@ -194,6 +201,2157 @@
     "Meditations",
     "Gödel, Escher, Bach",
     "The Beginning of Infinity"
+  ],
+  "findings": [
+    {
+      "lens": "depth",
+      "type": "hidden_collection",
+      "name": "A graduate seminar in cybernetics hiding in plain sight",
+      "description": "The owner has assembled the actual dense foundational canon of systems/cybernetics theory — not the popularizations. Cybernetics (Wiener), An Introduction to Cybernetics (Ashby), Steps to an Ecology of Mind (Bateson), and Gödel, Escher, Bach are all marked dense. This is the real primary-source spine of second-order systems thinking, yet the 'systems' register is only 33 books and the accessible systems titles (Thinking in Systems, Emergence, Systemantics) sit on top of it. The owner may not realize they own the hard core, not just the friendly summaries.",
+      "strength": "strong",
+      "books": [
+        "Cybernetics",
+        "An Introduction to Cybernetics",
+        "Steps to an Ecology of Mind",
+        "Gödel, Escher, Bach",
+        "At Home in the Universe"
+      ],
+      "evidence": "4 dense systems-theory primary texts (Wiener, Ashby, Bateson, Hofstadter) coexisting with accessible derivatives like Thinking in Systems, Emergence, Systemantics"
+    },
+    {
+      "lens": "depth",
+      "type": "hidden_collection",
+      "name": "Confucian primary canon, unannounced",
+      "description": "Beneath the accessible Eastern-wisdom layer (Tao Te Ching, The Four Agreements, Striking Thoughts) sits the complete dense Confucian Four Books in primary form: Lun yu (Analects), The Great Learning, The Doctrine of the Mean, The Works of Mencius — several marked dense/substantive meditation/anthology. This is a serious classical Chinese philosophy holding that the 'contemplative' register (41) and Buddhist/yoga emphasis would never predict. The owner reads Confucianism at the source while consuming most other traditions via popularization.",
+      "strength": "strong",
+      "books": [
+        "Lun yu",
+        "The Great Learning",
+        "The Doctrine of the Mean",
+        "The works of Mencius",
+        "The Analects"
+      ],
+      "evidence": "The full Confucian Four Books present, with The Doctrine of the Mean marked dense and others substantive — versus accessible treatment of nearly all other wisdom traditions"
+    },
+    {
+      "lens": "depth",
+      "type": "cluster",
+      "name": "Lucretius in triplicate — the Epicurean obsession",
+      "description": "The owner owns De Rerum Natura in at least three editions (Folio Society, Everyman, plus a base 'De Rerum Natura'), all marked dense, alongside The Essential Epicurus (dense) and The Swerve (the accessible narrative about Lucretius's rediscovery). Owning one dense primary text is interest; owning three physical editions of the same poem is devotion. This is the single deepest, most-duplicated primary-text commitment in the entire library — and it's to ancient materialist atomism, not to the business/self-help bulk.",
+      "strength": "strong",
+      "books": [
+        "De Rerum Natura (The Nature of Things)",
+        "The Nature of Things (Folio Society)",
+        "Of the Nature of Things (Everyman)",
+        "The Essential Epicurus",
+        "The Swerve"
+      ],
+      "evidence": "Three editions of Lucretius (all dense) + dense Essential Epicurus + the popular Swerve as the gateway narrative"
+    },
+    {
+      "lens": "depth",
+      "type": "tension_pair",
+      "name": "Stoicism read shallow, Stoicism read deep",
+      "description": "Stoicism appears twice at incompatible depths. The dense/substantive primary layer — Meditations, Letters from a Stoic, Discourses and Selected Writings (Epictetus, dense) — sits directly under a thick stack of accessible commercial repackagings: The Daily Stoic, The Little Book of Stoicism, The Stoic Challenge, The Obstacle Is the Way, A Guide to the Good Life, Ego Is the Enemy. The owner has both the springhead and the bottled water. The interesting question: is the primary layer actually read, or owned-as-aspiration beneath the Ryan-Holiday-style consumables that get reread?",
+      "strength": "strong",
+      "books": [
+        "Meditations",
+        "Discourses and Selected Writings",
+        "Letters from a Stoic",
+        "The Daily Stoic",
+        "The Obstacle Is the Way",
+        "The Little Book of Stoicism"
+      ],
+      "evidence": "Epictetus Discourses marked dense and Meditations/Letters substantive, against 6+ accessible Stoic self-help titles"
+    },
+    {
+      "lens": "depth",
+      "type": "pattern",
+      "name": "Economics: deep theory, shallow practice — the inverted pyramid",
+      "description": "Economics (51 books) is one of the few categories where the owner actually owns the dense theoretical foundations: Wealth of Nations, General Theory (Keynes), Capitalism Socialism and Democracy (Schumpeter), Economic Institutions of Capitalism (Williamson), An Evolutionary Theory of Economic Change (Nelson & Winter), The Gift (Mauss) — all dense. Unlike Business or Psychology, here the depth is at the bottom. This suggests economics is a genuine scholarly interest, not a professional-utility interest like the management shelf.",
+      "strength": "strong",
+      "books": [
+        "The Wealth of Nations",
+        "The General Theory of Employment, Interest and Money",
+        "Capitalism, Socialism, and Democracy",
+        "The Economic Institutions of Capitalism",
+        "An Evolutionary Theory of Economic Change"
+      ],
+      "evidence": "5+ dense canonical economics primary texts spanning Smith→Keynes→Schumpeter→Williamson→Nelson/Winter, versus accessible-only treatment of larger Business category"
+    },
+    {
+      "lens": "depth",
+      "type": "pattern",
+      "name": "Business (119 books) is almost entirely accessible — the largest shallow shelf",
+      "description": "The single biggest category by count is also the flattest: nearly all 119 business books are accessible manuals and arguments (Zero to One, Shoe Dog, Working Backwards, The Lean Startup, Measure What Matters). The rare substantive exceptions are organizational-theory works (Organizational Culture and Leadership, The Fifth Discipline, 7 Powers, Competing Against Time). Business is consumed as operating instructions, not studied as theory. Depth in this library is inversely correlated with category size.",
+      "strength": "strong",
+      "books": [
+        "Zero to One",
+        "Working Backwards",
+        "The Lean Startup",
+        "7 Powers: The Foundations of Business Strategy",
+        "Organizational Culture and Leadership"
+      ],
+      "evidence": "119 Business books, density skews overwhelmingly accessible; only a handful substantive, near-zero dense"
+    },
+    {
+      "lens": "depth",
+      "type": "hidden_collection",
+      "name": "Posner's jurisprudence — an accidental law library",
+      "description": "Scattered among the accessible bulk is a coherent, substantive-to-dense run of serious legal/political theory the owner may not have catalogued as 'law': A Theory of Justice (Rawls, dense), Anarchy State and Utopia (Nozick, dense), Multicultural Citizenship (Kymlicka, dense), plus a Richard Posner cluster — Law Pragmatism and Democracy, Sex and Reason, The Economic Structure of Intellectual Property Law, Catastrophe, A Failure of Capitalism. That's a near-complete Posner shelf. Jurisprudence isn't even a 'top category,' yet the depth here rivals Philosophy.",
+      "strength": "moderate",
+      "books": [
+        "A Theory of Justice",
+        "Anarchy, State, and Utopia",
+        "Law, Pragmatism, and Democracy",
+        "The Economic Structure of Intellectual Property Law",
+        "Multicultural Citizenship"
+      ],
+      "evidence": "Rawls + Nozick + Kymlicka (all dense) plus 5 Posner titles, none surfacing as a declared category"
+    },
+    {
+      "lens": "depth",
+      "type": "founding_figure",
+      "name": "Darwin as the unifying intellectual root (21 lineage books)",
+      "description": "Darwin is the largest lineage (21) and the depth profile confirms it isn't fandom — it descends from a dense primary text (On the Origin of Species) through substantive theory (The Extended Phenotype, Natural Selection and Social Theory, Culture and the Evolutionary Process — all dense/substantive) into accessible Dawkins popularizations and then outward into economics (Nelson/Winter), psychology (Behave), and culture (Henrich's Weirdest People). Darwinism is the spine that secretly connects the science, econ, and social-theory shelves.",
+      "strength": "strong",
+      "books": [
+        "On the Origin of Species",
+        "The Extended Phenotype",
+        "Natural Selection and Social Theory",
+        "Culture and the Evolutionary Process",
+        "The Weirdest People in the World"
+      ],
+      "evidence": "Origin (dense) anchoring 21-book Darwin lineage that extends into dense evolutionary social theory and accessible Dawkins"
+    },
+    {
+      "lens": "depth",
+      "type": "tension_pair",
+      "name": "Yoga: dense at the root, accessible at the leaves",
+      "description": "Patanjali is the #2 lineage (13) and uniquely owns its own depth — multiple DENSE editions of the Yoga Sutras (Patanjali's Yoga Sutras, The Yoga Sutras of Patanjali, both dense) plus dense I Am That and Satipatthana Sutta Discourses. But the surrounding practice layer is entirely accessible Iyengar manuals (Light on Yoga, Light on Life, Light on Pranayama, The Heart of Yoga). This is the rare case where the owner holds genuinely difficult primary text AND the how-to manuals — scholar and practitioner coexisting on one shelf.",
+      "strength": "strong",
+      "books": [
+        "Patanjali's Yoga Sutras",
+        "The Yoga Sutras of Patanjali",
+        "I Am That",
+        "Light on Yoga",
+        "The Heart of Yoga"
+      ],
+      "evidence": "Two dense Yoga Sutra editions + dense I Am That, beneath accessible Iyengar practice manuals; 13-book Patanjali lineage"
+    },
+    {
+      "lens": "depth",
+      "type": "observation",
+      "name": "Philosophy claimed (63), but read mostly as aphorism and meditation",
+      "description": "Philosophy is a declared top category, yet much of it arrives in its softest forms: Schopenhauer via Essays and Aphorisms and The Wisdom of Life (accessible), Nietzsche present only as Human All Too Human (dense, one volume) and aphoristic Striking Thoughts adjacencies, lots of accessible 'thinking tools' books (Intuition Pumps, The Great Mental Models). The genuinely dense analytic/continental core is thin relative to the category's claimed size — Frankfurt's The Reasons of Love and Rawls are substantive/dense outliers. Philosophy here leans wisdom-literature, not argument-grinding.",
+      "strength": "moderate",
+      "books": [
+        "Essays and Aphorisms",
+        "Human, All Too Human: A Book for Free Spirits",
+        "The Reasons of Love",
+        "Intuition Pumps and Other Tools for Thinking",
+        "The Wisdom of Life"
+      ],
+      "evidence": "63 Philosophy books but density skews accessible/meditation; only scattered dense titles (Nietzsche, Rawls) versus many aphoristic/tool-style works"
+    },
+    {
+      "lens": "depth",
+      "type": "cluster",
+      "name": "Japanese aesthetics: a substantive design philosophy stratum",
+      "description": "What looks like coffee-table décor is actually a coherent substantive layer on Japanese aesthetics and ma/wabi-sabi: Designing Design (Hara, substantive meditation), White and 100 Whites, Made in Tokyo (substantive), Samadhi on Zen Gardens (substantive meditation), Emergent Tokyo. These are design-theory texts, not picture books — the owner is reading Japanese minimalism as philosophy. It's a quietly serious aesthetic-theory holding masquerading as lifestyle reference.",
+      "strength": "moderate",
+      "books": [
+        "Designing Design",
+        "White",
+        "Made in Tokyo",
+        "Samadhi on Zen Gardens",
+        "Emergent Tokyo"
+      ],
+      "evidence": "Multiple substantive Japanese design/aesthetics titles (Hara, Tokyo urbanism) marked meditation/argument rather than accessible reference"
+    },
+    {
+      "lens": "depth",
+      "type": "pattern",
+      "name": "Science (87): narrative-popularized at the top, almost no primary research",
+      "description": "Science is read as story, not as science. The category is dominated by accessible narratives (The Gene, Emperor of All Maladies, The Ghost Map, Chaos) and accessible argument (Dawkins). The only genuinely dense science primaries are Origin of Species and the Vaclav Smil cluster (Growth, dense; Grand Transitions, Material World — substantive). Smil is the unrecognized depth-anchor of the science shelf: rigorous, quantitative, dense, and unlike everything around it.",
+      "strength": "moderate",
+      "books": [
+        "Growth: From Microorganisms to Megacities",
+        "Grand Transitions",
+        "On the Origin of Species",
+        "The Gene",
+        "Chaos: Making a New Science"
+      ],
+      "evidence": "87 Science books skew accessible-narrative; dense exceptions limited to Origin and Smil's Growth, with Smil forming a distinct quantitative cluster"
+    },
+    {
+      "lens": "depth",
+      "type": "hidden_collection",
+      "name": "USMC doctrine as a complete strategic system",
+      "description": "The full Marine Corps MCDP series (1 Warfighting, 1-1 Strategy, 2 Intelligence, 3 Expeditionary, 4 Logistics, 5 Planning, 6 Command and Control) is present — all substantive manuals. This is a complete, internally-coherent doctrinal system, far more systematic than the accessible leadership books it shares a shelf with. Combined with Boyd, On Grand Strategy, and The Art of War, the owner has a genuine military-strategy depth layer that the 'leadership' framing obscures.",
+      "strength": "strong",
+      "books": [
+        "MCDP 1 Warfighting",
+        "MCDP 1-1 STRATEGY",
+        "MCDP 5 Planning",
+        "MCDP 6 Command and Control",
+        "Boyd"
+      ],
+      "evidence": "7 substantive MCDP doctrine manuals forming a complete set, plus Boyd and On Grand Strategy; 'American military doctrine' a top tradition"
+    },
+    {
+      "lens": "depth",
+      "type": "tension_pair",
+      "name": "Decision science: this is where accessible meets dense honestly",
+      "description": "Unlike Business, the judgment/decision shelf actually carries its own theoretical weight. Kahneman (lineage #3) descends from genuinely DENSE academic anthologies — Judgment Under Uncertainty: Heuristics and Biases, Choices Values and Frames, Thinking and Deciding (Baron) — into accessible Thinking Fast and Slow and Noise. The owner owns the hard 1970s–80s journal-level source material, not just the airport version. This is the most intellectually honest depth gradient in the collection.",
+      "strength": "strong",
+      "books": [
+        "Judgment Under Uncertainty: Heuristics and Biases",
+        "Choices, Values, and Frames",
+        "Thinking and Deciding",
+        "Thinking, Fast and Slow",
+        "Sources of Power"
+      ],
+      "evidence": "Three dense decision-theory primary anthologies under the accessible Kahneman/Klein popularizations; Kahneman a top lineage"
+    },
+    {
+      "lens": "depth",
+      "type": "observation",
+      "name": "The dense layer is overwhelmingly old and foreign; the accessible layer is recent and American",
+      "description": "Almost every dense book is either a pre-1970 classic (Smith, Keynes, Lucretius, Schopenhauer, Nietzsche, Confucius, Patanjali) or a non-American scholarly work. The 2010s/2020s bulk (309 books) — the library's center of gravity — is almost entirely accessible. The owner reaches for difficulty when reaching backward or eastward, and for accessibility when reaching for the contemporary. Depth correlates with age and distance, not with topic.",
+      "strength": "moderate",
+      "books": [
+        "The Wealth of Nations",
+        "De Rerum Natura (The Nature of Things)",
+        "Human, All Too Human: A Book for Free Spirits",
+        "Same as Ever",
+        "Four Thousand Weeks: Time Management for Mortals"
+      ],
+      "evidence": "45 dense books cluster in pre-modern/classical and non-US scholarship; the 309 books from the 2010s–2020s are nearly all accessible"
+    },
+    {
+      "lens": "register",
+      "type": "pattern",
+      "name": "The Humanist Supermajority",
+      "description": "64% of the collection registers as humanist — narrative-driven, person-centered, accessible. This isn't a reader who wants frameworks or formal proofs; it's someone who learns through stories, biographies, and lived organizational experience. The register axis isn't balanced at all — it's overwhelmingly weighted toward the warm, human-scale end. Even technical domains (Technology, Business) get absorbed into humanist treatment: 'The Mythical Man-Month,' 'Peopleware,' 'Working in Public' are about people, not code.",
+      "strength": "strong",
+      "books": [
+        "The Emperor of All Maladies",
+        "Shoe Dog",
+        "Mountains Beyond Mountains",
+        "Peopleware",
+        "Trillion Dollar Coach"
+      ],
+      "evidence": "468 of 732 books (64%) are humanist; next register (empirical) is only 117 (16%)"
+    },
+    {
+      "lens": "register",
+      "type": "observation",
+      "name": "The Near-Absent Analytical Register",
+      "description": "Only 3 books register as analytical — and they're all periodicals or doctrine fragments ('Works in Progress,' 'Scientific American,' 'MCDP 1-1 Strategy'), not chosen books. This person systematically avoids formal, proof-driven, abstraction-first writing. The thinnest register reveals an active aversion: when ideas get rigorous they want them embodied (empirical, person-tested) rather than analytical (formally derived). Even the analytic-philosophy tradition (7 books) gets read as 'philosophical' not 'analytical.'",
+      "strength": "strong",
+      "books": [
+        "Works in Progress",
+        "Scientific American",
+        "MCDP 1-1 STRATEGY"
+      ],
+      "evidence": "analytical:3 vs humanist:468; all 3 analytical titles are journals/doctrine, not authored books"
+    },
+    {
+      "lens": "register",
+      "type": "tension_pair",
+      "name": "Empirical Evolutionists vs. Contemplative Yogis",
+      "description": "Two coherent register-clusters sit at opposite poles and never speak to each other. The empirical pole is dominated by Darwin/Dawkins evolutionary biology and Kahneman-style cognitive science — cold, mechanism-seeking, deflationary about human nature. The contemplative pole is dominated by Patanjali, the Gita, Zen, and yoga — warm, practice-based, transformative about human nature. The same reader holds both 'The Selfish Gene' and 'The Yoga Sutras of Patanjali' with no bridging texts that reconcile mechanism and meaning.",
+      "strength": "strong",
+      "books": [
+        "The Selfish Gene",
+        "The Extended Phenotype",
+        "Patanjali's Yoga Sutras",
+        "Inner Engineering",
+        "Light on Yoga"
+      ],
+      "evidence": "empirical:117 concentrated in Science/Psychology; contemplative:41 concentrated in Spirituality/Health; Darwin lineage:21 vs Patanjali lineage:13"
+    },
+    {
+      "lens": "register",
+      "type": "founding_figure",
+      "name": "Darwin as the Empirical Spine",
+      "description": "The empirical register isn't generic science — it's specifically Darwinian. 21 books trace to Darwin, including the full Dawkins corpus (Selfish Gene, Extended Phenotype, Blind Watchmaker, Climbing Mount Improbable, River Out of Eden) plus Ridley's evolutionary economics (Red Queen, Origins of Virtue, Rational Optimist). The empirical register here means 'explained by selection pressure.' This person trusts evolutionary mechanism as the deepest explanatory layer.",
+      "strength": "strong",
+      "books": [
+        "On the Origin of Species",
+        "The Selfish Gene",
+        "The Red Queen",
+        "The Evolution of Everything",
+        "Mean Genes"
+      ],
+      "evidence": "Darwin lineage:21 (largest); empirical register dominated by evolutionary biology titles"
+    },
+    {
+      "lens": "register",
+      "type": "cluster",
+      "name": "Systems as the Quiet Third Register",
+      "description": "The 33 systems-register books form a hidden intellectual backbone bridging the empirical and humanist poles. They cluster in two surprising places: cybernetics classics (Cybernetics, Steps to an Ecology of Mind, GEB, At Home in the Universe) and Marine Corps doctrine (the entire MCDP series). This person reaches for systems-thinking precisely where mechanism meets human organization — Scale, Thinking in Systems, The Fifth Discipline, Team-of-Teams-adjacent military planning.",
+      "strength": "moderate",
+      "books": [
+        "Thinking in Systems",
+        "Gödel, Escher, Bach",
+        "Cybernetics",
+        "MCDP 1 Warfighting",
+        "Scale"
+      ],
+      "evidence": "systems:33; clusters in Science (cybernetics) and Military/Business (MCDP doctrine)"
+    },
+    {
+      "lens": "register",
+      "type": "pattern",
+      "name": "Accessibility Over Density",
+      "description": "71% of books are 'accessible' and only 6% 'dense.' Combined with the humanist dominance, this reveals a reader who deliberately chooses the trade-book version of every domain — the popularizer, not the primary source. Even philosophy arrives via Stoic handbooks ('The Daily Stoic,' 'The Little Book of Stoicism,' 'The Obstacle Is the Way') rather than dense treatises. Knowledge is acquired to be applied and shared, not to be wrestled with in its hardest form.",
+      "strength": "strong",
+      "books": [
+        "The Daily Stoic",
+        "Thinking, Fast and Slow",
+        "Sapiens-adjacent Homo Deus",
+        "Guns, Germs, and Steel",
+        "The Little Book of Stoicism"
+      ],
+      "evidence": "accessible:520 (71%), substantive:167 (23%), dense:45 (6%)"
+    },
+    {
+      "lens": "register",
+      "type": "hidden_collection",
+      "name": "Stoicism Read as Philosophical, Spirituality Read as Contemplative",
+      "description": "A subtle register split runs through this person's wisdom-seeking. Western practical wisdom (Seneca, Marcus Aurelius, Epicurus, Lucretius) is consistently tagged 'philosophical' — argued, examined, intellectual. Eastern wisdom (Gita, Upanishads, Zen, Patanjali, Osho) is tagged 'contemplative' — experienced, practiced, non-argumentative. The register tags reveal that this reader unconsciously processes East and West through different cognitive modes: West to think with, East to be with.",
+      "strength": "moderate",
+      "books": [
+        "Meditations",
+        "Letters from a Stoic",
+        "The Bhagavad Gita",
+        "The Upanishads",
+        "An Introduction to Zen Buddhism"
+      ],
+      "evidence": "Stoic texts uniformly 'philosophical'; Hindu/Buddhist texts uniformly 'contemplative'; Patanjali lineage:13 and Buddha lineage:7 all contemplative"
+    },
+    {
+      "lens": "register",
+      "type": "thread",
+      "name": "Business Without Business-School Register",
+      "description": "Business is the single largest category (119 books) yet almost none register as analytical or dense — they're humanist (stories of founders, leaders, cultures: Shoe Dog, Creativity Inc, Trillion Dollar Coach) or empirical (Kahneman-influenced org psych: The Fearless Organization, Diffusion of Innovations). This person studies business as anthropology and biography, never as finance or formal strategy modeling. The MBA register (analytical, dense) is conspicuously absent from a heavily business-focused shelf.",
+      "strength": "strong",
+      "books": [
+        "Creativity, Inc.",
+        "The Innovator's Dilemma",
+        "Trillion Dollar Coach",
+        "The Fearless Organization",
+        "Organizational Culture and Leadership"
+      ],
+      "evidence": "Business:119 books, register split humanist/empirical; near-zero analytical or dense Business titles"
+    },
+    {
+      "lens": "register",
+      "type": "observation",
+      "name": "Philosophical Register Without Metaphysics",
+      "description": "The 70 philosophical-register books skew almost entirely toward ethics, living, and politics (Stoics, Rawls, Nozick, Machiavelli, Posner's law-pragmatism) and away from pure metaphysics or epistemology. Even when metaphysics appears (Dennett, Kuhn, Deutsch) it's in service of how-to-think rather than what-is. The philosophical register here means 'reasoned guidance for action,' confirming the whole collection's applied, action-oriented gravity.",
+      "strength": "moderate",
+      "books": [
+        "A Theory of Justice",
+        "The Prince",
+        "A Guide to the Good Life",
+        "Intuition Pumps and Other Tools for Thinking",
+        "Law, Pragmatism, and Democracy"
+      ],
+      "evidence": "philosophical:70 concentrated in Philosophy/Politics/Self-Help; dominated by ethics and political theory"
+    },
+    {
+      "lens": "register",
+      "type": "pattern",
+      "name": "The Shape: A Steep Humanist Peak With Twin Mechanistic Foothills",
+      "description": "Mapped on the empirical→contemplative axis, the distribution isn't a curve — it's a tall humanist spike (468) flanked by a substantial empirical foothill (117) on the cold side and a smaller contemplative foothill (41) on the warm side, with philosophical (70) and systems (33) filling the slopes. This reader lives in the warm narrative middle but periodically tests it against hard mechanism (evolution, cognitive bias) and against transcendence (yoga, Zen). The collection is the portrait of a humanist who keeps checking their warmth against both the lab and the meditation cushion.",
+      "strength": "strong",
+      "books": [
+        "Sapiens-adjacent Homo Deus",
+        "Thinking, Fast and Slow",
+        "The Bhagavad Gita",
+        "The Selfish Gene",
+        "Antifragile"
+      ],
+      "evidence": "Register distribution: humanist 468, empirical 117, philosophical 70, contemplative 41, systems 33, analytical 3"
+    },
+    {
+      "lens": "era",
+      "type": "pattern",
+      "name": "The 2010s Avalanche",
+      "description": "Nearly a third of the entire library (216 of 732) was published in a single decade. This isn't gradual accumulation — it's a burst of acquisition concentrated in the person's peak professional formation years. The 2010s + 2000s together (382 books) account for over half the collection, suggesting the bulk of this person's intellectual identity crystallized in the post-2000 business/science/self-improvement publishing boom.",
+      "strength": "strong",
+      "books": [
+        "Thinking, Fast and Slow",
+        "Antifragile",
+        "The Black Swan",
+        "Range",
+        "Deep Work",
+        "Mindset: The New Psychology of Success"
+      ],
+      "evidence": "Decade counts: 2010s(216), 2000s(166), 2020s(93), 1990s(74), 1980s(51) — 2010s alone is 29.5% of inventory"
+    },
+    {
+      "lens": "era",
+      "type": "cluster",
+      "name": "The Living-Present Bookshelf (2023-2026)",
+      "description": "An unusually thick layer of very recent and even future-dated acquisitions. Seven 2026-dated periodical subscriptions (Nautilus, Scientific American, Monocle, Kinfolk, Surface, Works in Progress, Metaphors) plus a dense run of 2023-2024 business/longevity titles shows this is an actively curated, still-growing library — not a settled archive. The 2026 periodicals are pre-paid subscriptions, revealing forward commitment to ideas-journalism and design culture.",
+      "strength": "strong",
+      "books": [
+        "Works in Progress",
+        "Nautilus",
+        "Scientific American",
+        "Monocle",
+        "Kinfolk",
+        "The Technological Republic",
+        "Outlive",
+        "Super Agers"
+      ],
+      "evidence": "2020s(93) includes 2025 (The Technological Republic) and six 2026-dated periodicals plus 2023-2024 cluster (Talent, Clear Thinking, Maintenance, Material World, Same as Ever)"
+    },
+    {
+      "lens": "era",
+      "type": "observation",
+      "name": "The Ancient Anchors Standing Alone",
+      "description": "A scattered but deliberate spine of pre-Common-Era classics floats far from everything else: Sun Tzu (-500), Tao Te Ching (-400), Analects (-479), the Bhagavad Gita (-200), Epicurus (-306), Lucretius (-55). These aren't era peers — each is an isolated foundational text deliberately reached back for. They reveal a reader who treats antiquity as a toolkit (Stoic/Taoist/Confucian practical wisdom) rather than as a historical period to study.",
+      "strength": "moderate",
+      "books": [
+        "The Art of War",
+        "Tao Te Ching",
+        "The Analects",
+        "The Bhagavad Gita",
+        "The Essential Epicurus",
+        "De Rerum Natura (The Nature of Things)"
+      ],
+      "evidence": "Six BCE-dated books plus Roman-era texts (Meditations 180, Discourses 108, Letters from a Stoic 65) sit alone against a collection where 78% post-dates 1990"
+    },
+    {
+      "lens": "era",
+      "type": "pattern",
+      "name": "The Missing Mid-Century",
+      "description": "For a library this large, the 1940s-1970s are conspicuously thin — represented mostly by canonical fiction (1984, Animal Farm, Fahrenheit 451, One Hundred Years of Solitude) and a few economics classics. There is almost no acquisition of contemporaneous mid-century nonfiction except where it became a permanent classic. This reveals a reader who skips the mid-20th century intellectual world entirely, jumping from ancient wisdom straight to post-1990 thinking.",
+      "strength": "moderate",
+      "books": [
+        "1984",
+        "Animal Farm",
+        "The Structure of Scientific Revolutions",
+        "Capitalism, Socialism, and Democracy",
+        "The Organization Man"
+      ],
+      "evidence": "1940s-1970s combined trail far behind; top decades list jumps from 1980s(51) directly with no 1970s/1960s in top five despite the library's 732-book size"
+    },
+    {
+      "lens": "era",
+      "type": "founding_figure",
+      "name": "Darwin as Time-Anchored Origin Point",
+      "description": "The Darwin lineage (21 books) is the largest, but its acquisition pattern is telling: it spans from On the Origin of Species (1859) through a Dawkins cluster (1976-2006) into Ridley (1993-2015). The evolutionary worldview is the one intellectual thread that reaches back to the 19th century AND forward to the 2010s — it's the temporal backbone that connects this person's deep past reading to their present, unlike business books which cluster only recently.",
+      "strength": "strong",
+      "books": [
+        "On the Origin of Species",
+        "The Selfish Gene",
+        "The Extended Phenotype",
+        "The Red Queen",
+        "The Evolution of Everything",
+        "The Blind Watchmaker"
+      ],
+      "evidence": "Darwin lineage(21) spans 1859-2015, the widest temporal range of any lineage; Dawkins titles span 1976-2013"
+    },
+    {
+      "lens": "era",
+      "type": "hidden_collection",
+      "name": "The 2017 Military Doctrine Time-Capsule",
+      "description": "Six Marine Corps doctrine publications (MCDP 1-6) all dated 2017 form a single-moment acquisition spike — an entire functional library absorbed in one go. This is the signature of a reader who, in 2017, deliberately ingested a complete formal system of strategic thinking. It explains the otherwise odd 'American military doctrine' tradition tag and reveals episodic, system-complete acquisition behavior.",
+      "strength": "strong",
+      "books": [
+        "MCDP 1 Warfighting",
+        "MCDP 2 Intelligence",
+        "MCDP 3 Expeditionary Operations",
+        "MCDP 4 Logistics",
+        "MCDP 5 Planning",
+        "MCDP 6 Command and Control"
+      ],
+      "evidence": "Six MCDP volumes all dated 2017; 'American military doctrine(7)' appears in top traditions"
+    },
+    {
+      "lens": "era",
+      "type": "tension_pair",
+      "name": "Ancient Contemplation vs. Recent Optimization",
+      "description": "The library holds a temporal tension: timeless contemplative/yoga texts (Patanjali 1896, Light on Yoga 1966, the Upanishads, Tao Te Ching) coexist with a thick 2014-2023 stratum of productivity-optimization books (Deep Work, Essentialism, Four Thousand Weeks, Effortless, Atomic-habits-adjacent titles). The same person reaches back millennia for stillness and forward to the present for efficiency — the dates show these arrived in different life phases, contemplative texts as steady classics, optimization texts as a recent surge.",
+      "strength": "moderate",
+      "books": [
+        "Patanjali's Yoga Sutras",
+        "Light on Yoga",
+        "Four Thousand Weeks: Time Management for Mortals",
+        "Effortless",
+        "Deep Work",
+        "Essentialism"
+      ],
+      "evidence": "Patanjali lineage(13) anchored in 1896-2009; optimization titles cluster 2014-2021, a distinct recent wave"
+    },
+    {
+      "lens": "era",
+      "type": "cluster",
+      "name": "The Japanese-Aesthetics Late Arrival",
+      "description": "A tight cluster of wabi-sabi/minimalism/ikigai design books almost entirely dated 2015-2022 (Goodbye Things, Ganbatte!, The New Japanese Minimalism, 100 Whites, Designing Design, Ametora). This is a recently-developed interest — there's no pre-2000 Japanese-aesthetics reading. The era concentration reveals an aesthetic sensibility that emerged in the person's later acquisition years, post-dating the core business/science reading.",
+      "strength": "moderate",
+      "books": [
+        "Goodbye, Things",
+        "The New Japanese Minimalism",
+        "100 Whites",
+        "Designing Design",
+        "Ametora: How Japan Saved American Style",
+        "Wabi-Sabi for Artists, Designers, Poets & Philosophers"
+      ],
+      "evidence": "Japanese aesthetics/design cluster concentrated 2015-2022; near-total absence of this theme before 2000 (only Light on Yoga-style exceptions)"
+    },
+    {
+      "lens": "era",
+      "type": "observation",
+      "name": "The Single Oldest Outlier Personal Library",
+      "description": "Extraordinary Popular Delusions and the Madness of Crowds (1841) and The Wealth of Nations (1776) sit as lone Enlightenment-era anchors among the financial/behavioral reading — the only 18th-19th century economics works in a sea of post-1990 finance books. They reveal that the reader's interest in market psychology traces a deliberate intellectual genealogy back to its origin texts rather than only consuming contemporary commentary.",
+      "strength": "weak",
+      "books": [
+        "Extraordinary Popular Delusions and the Madness of Crowds",
+        "The Wealth of Nations",
+        "On the Origin of Species"
+      ],
+      "evidence": "1841 and 1776 economics titles stand isolated against Economics(51) otherwise dominated by 2000s-2020s publications"
+    },
+    {
+      "lens": "tradition",
+      "type": "cluster",
+      "name": "The Lebanese Probability Monastery",
+      "description": "A complete, near-canonical Taleb shelf — every major Incerto volume plus the technical 'Dynamic Hedging' and 'Statistical Consequences of Fat Tails.' The collector didn't just read Taleb popularly; they bought the trader's options manual and the academic fat-tails text, signaling a desire to follow the lineage all the way down to its mathematical machinery, not stop at the airport bestseller.",
+      "strength": "strong",
+      "books": [
+        "The Black Swan",
+        "Antifragile",
+        "Fooled by Randomness",
+        "Skin in the Game",
+        "Dynamic Hedging: Managing Vanilla and Exotic Options",
+        "Statistical Consequences of Fat Tails"
+      ],
+      "evidence": "All six tagged 'Empirical skepticism & probability theory (Lebanon)'; lineage Taleb(6) ranks 5th overall"
+    },
+    {
+      "lens": "tradition",
+      "type": "founding_figure",
+      "name": "Darwin as Patriarch of the Rationalist Wing",
+      "description": "Darwin is the single largest lineage (21 books), but the tradition is split between British evolutionary biology (Dawkins's full corpus) and British 'libertarian evolutionary thought' (Ridley's full corpus). The collection treats natural selection less as biology and more as a master metaphor extended into economics, virtue, and innovation — 'The Evolution of Everything,' 'An Evolutionary Theory of Economic Change.'",
+      "strength": "strong",
+      "books": [
+        "The Selfish Gene",
+        "The Extended Phenotype",
+        "The Blind Watchmaker",
+        "The Evolution of Everything",
+        "The Rational Optimist",
+        "An Evolutionary Theory of Economic Change",
+        "On the Origin of Species"
+      ],
+      "evidence": "Darwin lineage(21) is #1; Dawkins (5 British evolutionary biology titles) and Ridley (5 'libertarian evolutionary thought' titles) both fully represented"
+    },
+    {
+      "lens": "tradition",
+      "type": "hidden_collection",
+      "name": "The Israeli Cognition-and-Statecraft Axis",
+      "description": "A surprisingly coherent Israeli intellectual presence spanning three distinct fields: Kahneman/Tversky's heuristics-and-biases school, Harari's secular-humanist macrohistory, Pearl's causal inference, plus Israeli security journalism and policy. The collector is sourcing the same nation's thinkers across decision science, history, AI, and intelligence — an unusual concentration for a personal library.",
+      "strength": "moderate",
+      "books": [
+        "Thinking, Fast and Slow",
+        "Noise: A Flaw in Human Judgment",
+        "Homo Deus: A Brief History of Tomorrow",
+        "The Book of Why",
+        "Rise and Kill First",
+        "The Gifts of Athena"
+      ],
+      "evidence": "Israeli-American cognitive psychology (Kahneman x4), Israeli secular humanism (Harari x2), Israeli investigative journalism, Israeli-American computer science & economic history"
+    },
+    {
+      "lens": "tradition",
+      "type": "cluster",
+      "name": "The Carnegie School Organizational Lineage",
+      "description": "An almost academic-grade collection of organizational theory traced to its roots: Edgar Schein's entire 'Humble' trilogy plus his culture and process texts, March's 'Ambiguities of Experience' and Simon's 'Models of My Life.' This isn't pop-management; it's the founding Carnegie/Simon-March behavioral-organization lineage in original form.",
+      "strength": "strong",
+      "books": [
+        "Organizational Culture and Leadership",
+        "Humble Inquiry",
+        "Process Consultation Volume II",
+        "The Ambiguities of Experience",
+        "Models of My Life",
+        "Designing Complex Organizations"
+      ],
+      "evidence": "American organizational psychology(10) is #2 tradition; Schein full corpus + March + Simon (Carnegie School) explicitly present"
+    },
+    {
+      "lens": "tradition",
+      "type": "cluster",
+      "name": "Japan Curated Through Two Lenses at Once",
+      "description": "Japan appears as both authentic source-tradition (Zen scholarship, samurai texts, garden photography in Japanese script, Toyota/Ohno lean engineering) AND as Western-mediated aesthetic consumption ('Wabi-Sabi for Artists,' 'Ganbatte!,' 'The New Japanese Minimalism' all by Americans writing about Japan). The shelf documents both the thing and the West's romance with the thing simultaneously.",
+      "strength": "strong",
+      "books": [
+        "The Book of Five Rings",
+        "Taiichi Ohno's Workplace Management",
+        "Samadhi on Zen Gardens",
+        "Wabi-Sabi for Artists, Designers, Poets & Philosophers",
+        "Ganbatte!",
+        "The New Japanese Minimalism",
+        "Goodbye, Things"
+      ],
+      "evidence": "Native Japanese traditions (Zen, samurai, lean, garden) coexist with multiple 'American interpretation of Japanese aesthetics' tags"
+    },
+    {
+      "lens": "tradition",
+      "type": "pattern",
+      "name": "Indian Wisdom-by-Western-Translator",
+      "description": "The Indian contemplative canon is heavily represented but often filtered through American/Western translators and popularizers — 'The Upanishads (via American translator),' 'The Yoga Sutras of Patanjali (American academic Indology),' Easwaran's Gita. Native devotional texts (the actual Bhagavad Gita, I Am That) sit beside their Western-academic mirror images, mirroring the Japan double-lens pattern.",
+      "strength": "moderate",
+      "books": [
+        "The Upanishads",
+        "The Yoga Sutras of Patanjali",
+        "The End of Sorrow (The Bhagavad Gita for Daily Living, Vol. 1)",
+        "The Bhagavad Gita",
+        "I Am That",
+        "The Hindus: An Alternative History"
+      ],
+      "evidence": "Patanjali lineage(13) is #2; tags repeatedly note 'via American translator' / 'American academic Indology' alongside 'Indian classical' sources"
+    },
+    {
+      "lens": "tradition",
+      "type": "tension_pair",
+      "name": "Chicago Libertarian vs. Heterodox Keynesian Economics",
+      "description": "The collection holds both poles of 20th-century economic combat without resolution: Friedman's 'Free to Choose,' Cowen's market libertarianism, the Sovereign-Individual techno-libertarians — against Stiglitz's 'Globalization and Its Discontents,' Krugman's 'Conscience of a Liberal,' Keynes's General Theory and Sachs. The collector reads the argument, not a side.",
+      "strength": "strong",
+      "books": [
+        "Free to Choose",
+        "Stubborn Attachments",
+        "The Sovereign Individual",
+        "Globalization and Its Discontents",
+        "The Conscience of a Liberal",
+        "The General Theory of Employment, Interest and Money"
+      ],
+      "evidence": "Chicago School / libertarian economics tags coexist with American heterodox economics, liberal Keynesian, and British Cambridge economics"
+    },
+    {
+      "lens": "tradition",
+      "type": "thread",
+      "name": "The American Stoic Revival Industrial Complex",
+      "description": "A complete modern Stoicism stack: Holiday's revival trilogy ('Ego,' 'Obstacle,' 'Daily Stoic'), Irvine's analytic-philosophy 'A Guide to the Good Life'/'The Stoic Challenge,' plus the Roman sources (Marcus, Seneca, Epictetus) they remix. The collection captures the entire pipeline from ancient text to contemporary self-help product.",
+      "strength": "strong",
+      "books": [
+        "Ego Is the Enemy",
+        "The Obstacle Is the Way",
+        "The Daily Stoic",
+        "A Guide to the Good Life",
+        "Meditations",
+        "Letters from a Stoic",
+        "Discourses and Selected Writings"
+      ],
+      "evidence": "American Stoic revival + American analytic philosophy (Irvine) + Roman Stoicism sources all present and cross-referencing"
+    },
+    {
+      "lens": "tradition",
+      "type": "observation",
+      "name": "The Absent Continental Theory Wing",
+      "description": "For a 732-book library this serious about philosophy (63 titles) and postcolonial fiction, the near-total absence of the Continental/critical-theory tradition is striking. No Foucault, Derrida, Heidegger, Adorno, Deleuze, Marx, Žižek, Butler. Philosophy here is overwhelmingly Anglo-analytic, Stoic, or Eastern-contemplative. The collector engages postcolonial literature but not postcolonial/critical theory.",
+      "strength": "strong",
+      "books": [
+        "A Philosophy of Walking",
+        "The Scapegoat",
+        "The Gift: Forms and Functions of Exchange in Archaic Societies"
+      ],
+      "evidence": "Only a handful of 'French continental/sociological' tags; analytic philosophy (7) and Stoicism dominate; zero Marx/Foucault/Heidegger/Frankfurt School"
+    },
+    {
+      "lens": "tradition",
+      "type": "observation",
+      "name": "Conspicuous Absence of Theology and Abrahamic Religion",
+      "description": "The contemplative shelf is vast (41 meditation-register, deep yoga/Buddhist/Stoic/Taoist holdings) yet Christianity, Judaism and Islam as living theological traditions are essentially absent — the only Islamic entry is 'Why I Am Not a Muslim' (criticism), the Catholic presence is fiction/'mimetic desire,' and no Bible, Quran, Augustine, Aquinas, or Jewish thought appears. The collector pursues Eastern mysticism and Greco-Roman ethics but avoids Western revealed religion.",
+      "strength": "strong",
+      "books": [
+        "Why I Am Not a Muslim",
+        "Wanting: The Power of Mimetic Desire in Everyday Life",
+        "The Secret of Fatima",
+        "Cleansing the Doors of Perception"
+      ],
+      "evidence": "468 humanist-register books, large contemplative section, but no scripture or systematic theology from Abrahamic traditions; only Islamic title is a polemic against Islam"
+    },
+    {
+      "lens": "tradition",
+      "type": "cluster",
+      "name": "Silicon Valley as a Native Wisdom Tradition",
+      "description": "The collection treats Silicon Valley entrepreneurship as its own coherent tradition with founding texts (Thiel's 'Zero to One,' the Amazon canon 'Working Backwards'/'Invent and Wander,' the Netflix/Google culture books, Naval's almanack). It's tagged as a 'philosophy' as much as business — 'techno-political philosophy,' 'tech-entrepreneurial philosophy' — elevating product management to a worldview.",
+      "strength": "strong",
+      "books": [
+        "Zero to One",
+        "Working Backwards: Insights, Stories, and Secrets from Inside Amazon",
+        "The Almanac of Naval Ravikant",
+        "No Rules Rules",
+        "Trillion Dollar Coach",
+        "The Technological Republic"
+      ],
+      "evidence": "Repeated 'American Silicon Valley entrepreneurship/libertarianism/philosophy' tags; Business is #1 category (119)"
+    },
+    {
+      "lens": "tradition",
+      "type": "cluster",
+      "name": "Australian Empirical Marketing Science (Ehrenberg-Bass)",
+      "description": "A quietly complete and unusual lineage: Byron Sharp's Ehrenberg-Bass school appears in near-full ('How Brands Grow' 1&2, 'Building Distinctive Brand Assets,' 'Better Brand Health,' the textbook). For a collection otherwise full of American self-help marketing, this academic Australian empirical school is a deliberate, specialist choice — the collector wants evidence-based marketing, not gurus.",
+      "strength": "strong",
+      "books": [
+        "How Brands Grow",
+        "How Brands Grow Part 2",
+        "Building Distinctive Brand Assets",
+        "Better Brand Health",
+        "Marketing: Theory, Evidence, Practice"
+      ],
+      "evidence": "Five distinct 'Australian empirical marketing science' titles — a self-contained school rarely fully collected"
+    },
+    {
+      "lens": "tradition",
+      "type": "hidden_collection",
+      "name": "Korean Brand-Documentary Publishing (Magazine B)",
+      "description": "An entire micro-tradition appears that has nothing to do with the collector's intellectual core: Korean 'Magazine B' single-brand documentary issues (Muji, Netflix, Rimowa, Michelin, Margiela). This is a periodical/object-collecting behavior — branding-as-anthropology — distinct from the book-as-argument logic dominating the rest of the library.",
+      "strength": "moderate",
+      "books": [
+        "RIMOWA - Magazine B Issue No.32",
+        "Magazine B - Issue No.53 MUJI",
+        "Magazine B - MAISON",
+        "NETFLIX",
+        "B Magazine Issue No.54 Maison Margiela"
+      ],
+      "evidence": "6+ 'Korean brand journalism/documentary publishing' entries forming a self-contained serial cluster"
+    },
+    {
+      "lens": "tradition",
+      "type": "cluster",
+      "name": "US Marine Corps Doctrine as Strategy Canon",
+      "description": "The full MCDP series (Warfighting, Strategy, Planning, Logistics, Command & Control, Intelligence, Expeditionary Operations) sits beside Boyd's biography, 'Team of Teams,' and 'On Grand Strategy.' The collector reads primary military doctrine — not commentary — as a serious strategic-thinking discipline, an unusual choice for an otherwise business/literary library.",
+      "strength": "strong",
+      "books": [
+        "MCDP 1 Warfighting",
+        "MCDP 1-1 STRATEGY",
+        "MCDP 5 Planning",
+        "MCDP 6 Command and Control",
+        "Boyd",
+        "Team of Teams"
+      ],
+      "evidence": "American military doctrine(7) is a top tradition; full MCDP set plus Boyd/McChrystal supporting texts"
+    },
+    {
+      "lens": "tradition",
+      "type": "tension_pair",
+      "name": "Systems Thinking vs. Reductionist Cognition",
+      "description": "Two competing epistemologies of 'how things work' are both heavily stocked: holistic systems/complexity (Meadows, Kauffman, GEB, cybernetics, 'Thinking in Systems') against reductionist heuristics-and-biases cognition (Kahneman, Klein, Mlodinow). The collector wants both the emergent-whole and the decomposed-mechanism accounts of intelligence.",
+      "strength": "moderate",
+      "books": [
+        "Thinking in Systems",
+        "At Home in the Universe",
+        "Gödel, Escher, Bach",
+        "An Introduction to Cybernetics",
+        "Thinking, Fast and Slow",
+        "Sources of Power"
+      ],
+      "evidence": "Systems register(33) + complexity science cluster coexist with large applied-cognitive-psychology (Klein/Kahneman) cluster"
+    },
+    {
+      "lens": "tradition",
+      "type": "observation",
+      "name": "The Missing Female Philosophical Canon",
+      "description": "Women authors appear strongly in fiction (Atwood, Roy, Mantel, Adichie, Desai) and positive psychology (Dweck), but are nearly absent from the philosophy, economics, strategy, and analytic traditions that form the collection's intellectual spine. The 'serious thinking' shelf is almost entirely male — no Nussbaum, Arendt, Anscombe, Robinson, Ostrom.",
+      "strength": "moderate",
+      "books": [
+        "Mindset: The New Psychology of Success",
+        "The Handmaid's Tale",
+        "Thinking in Systems"
+      ],
+      "evidence": "Philosophy(63), Economics(51), military and analytic traditions skew almost entirely male-authored; female authors concentrated in fiction and pop-psychology"
+    },
+    {
+      "lens": "tradition",
+      "type": "pattern",
+      "name": "Postcolonial Fiction, Not Postcolonial Politics",
+      "description": "Indian and global-South voices arrive overwhelmingly as literary fiction (Ghosh's Ibis trilogy, Roy, Desai, Adichie, Mistry-adjacent) and as wisdom traditions — but rarely as political economy or critique of empire from within. The collector loves the postcolonial *novel* and the Vedantic *guru*, yet sources empire-history and economics from British/American narrators ('The Anarchy,' 'The Golden Road').",
+      "strength": "moderate",
+      "books": [
+        "The Glass Palace",
+        "River of Smoke",
+        "The Inheritance of Loss",
+        "Purple Hibiscus",
+        "The Anarchy",
+        "The Golden Road"
+      ],
+      "evidence": "Indian postcolonial literature heavily present; but histories of India/empire authored by British writers; little South-authored political-economy"
+    },
+    {
+      "lens": "tradition",
+      "type": "cluster",
+      "name": "Czech-Canadian Quantitative Materialism (Smil)",
+      "description": "Vaclav Smil's full quantitative-systems corpus ('Growth,' 'Grand Transitions,' 'Invention and Innovation') anchors a distinct strain: distrust of techno-optimist narrative in favor of energy/materials/numbers. It sits in productive tension with the collection's own techno-optimists (Kelly's 'The Inevitable,' 'What Technology Wants').",
+      "strength": "moderate",
+      "books": [
+        "Growth: From Microorganisms to Megacities",
+        "Grand Transitions",
+        "Invention and Innovation",
+        "Material World",
+        "The Inevitable"
+      ],
+      "evidence": "Three 'Czech-Canadian systems quantitative analysis' titles forming a complete author-tradition, juxtaposed with 'American techno-optimist philosophy'"
+    },
+    {
+      "lens": "tradition",
+      "type": "observation",
+      "name": "No Russian or German Novelistic Heavyweights — Only Émigrés",
+      "description": "Despite deep literary reading, the great continental novel traditions are represented only obliquely: Nabokov appears but as 'Russian émigré modernism,' Hesse as 'German Romanticism.' There's no Tolstoy, Dostoevsky, Mann, Kafka, Proust — the collector's literary fiction is overwhelmingly Anglophone-contemporary and postcolonial, skipping the 19th–20th c. continental canon entirely.",
+      "strength": "moderate",
+      "books": [
+        "Laughter in the Dark",
+        "The Eye",
+        "Demian",
+        "Siddhartha"
+      ],
+      "evidence": "Fiction(79) skews contemporary Anglophone/postcolonial; continental canon present only via émigré Nabokov and Romantic Hesse"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Free Will: Eliminated vs. Presupposed",
+      "description": "Sapolsky argues free will is an incoherent residual category — every behavior traces to biology and prior environment the agent never chose, leaving no causal gap for an uncaused decision. Frankfurt's whole account of love and caring presupposes a will that can be wholehearted or divided, integral or self-defeating — a self that authors its own commitments. They cannot both be right about whether there is anything for a 'will' to do.",
+      "strength": "strong",
+      "books": [
+        "Behave: The Biology of Humans at Our Best and Worst",
+        "The Reasons of Love"
+      ],
+      "evidence": "Behave: 'Free Will Is an Incoherent Residual Category... no causal gap where an uncaused free decision could insert itself.' The Reasons of Love: 'Self-Love as the Purest Form of Love... the structural integrity of a will that does not work against itself.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Growth: Imperative vs. Impossible",
+      "description": "Cowen argues compounding economic growth is ethically dominant over almost everything else, dwarfing redistribution and short-term concerns. Smil argues all growth follows S-curves bounded by finite energy and material flows, and that perpetual quantitative expansion is a historical anomaly that contradicts the saturation dynamics governing every physical system. One says maximize growth above all; the other says continued material growth is physically impossible.",
+      "strength": "strong",
+      "books": [
+        "Stubborn Attachments",
+        "Growth: From Microorganisms to Megacities"
+      ],
+      "evidence": "Stubborn Attachments: 'Compounding Growth Dwarfs Other Concerns... maximizing long-run growth ethically dominant.' Growth: 'Material Growth Cannot Continue Indefinitely... the post-1800 era of continuous quantitative expansion is a historical anomaly, not a permanent state.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Innovation: Lone Frustration vs. Inevitable Recombination",
+      "description": "Dyson's biographers argue the strongest product ideas come from an individual personally irritated by a bad tool — lived frustration, not market research, points at the need. Ridley and Kelly argue invention is inevitable, simultaneous, and collective: the same discoveries are made independently by people who never met, because ideas become 'ripe' once prerequisites exist. The inventor is the channel, not the cause. This is the lone-genius vs. emergent-inevitability debate in concentrated form.",
+      "strength": "strong",
+      "books": [
+        "Invention: A Life",
+        "The Evolution of Everything"
+      ],
+      "evidence": "Invention: A Life: 'Engineers Should Solve Their Own Frustrations... that lived frustration, not market research, pointed at the unmet need.' Evolution of Everything: 'Inventions are inevitable consequences of prior inventions, which is why the same discoveries are made simultaneously by multiple people who never met.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Selection's Unit: Gene vs. Self-Organization",
+      "description": "Dawkins' lineage insists the gene is the fundamental unit selected upon and that apparent design is the product of genes maximizing propagation through blind selection. Kauffman argues much of life's order 'arises for free' through self-organization that selection merely acts upon afterward — order is a gift of physics and chemistry, not the laborious product of selective tinkering. They disagree on whether selection is the source of biological order or a secondary filter on order that already exists.",
+      "strength": "strong",
+      "books": [
+        "The Selfish Gene",
+        "At Home in the Universe"
+      ],
+      "evidence": "The Selfish Gene: 'The fundamental unit of natural selection is... the gene — the replicator.' At Home in the Universe: 'Order Arises for Free... Selection then acts on this pre-existing order... much of life's structure is a free gift of physics and chemistry rather than the laborious product of selective tinkering.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Markets: Self-Correcting vs. Requiring Stabilization",
+      "description": "Friedman argues economic freedom precedes political freedom and that government intervention concentrates power dangerously; markets disperse power and discipline themselves. Posner argues capitalism is inherently prone to bubbles and depressions and cannot self-correct in time, making active government stabilization a constitutive part of capitalism rather than an intrusion. A direct clash over whether the market self-regulates or structurally requires the state.",
+      "strength": "strong",
+      "books": [
+        "Free to Choose",
+        "A Failure of Capitalism"
+      ],
+      "evidence": "Free to Choose: 'Regulation Captured by Those Regulated... barriers to entry and protection of incumbents rather than consumers.' A Failure of Capitalism: 'Capitalism Requires Active Government Stabilization... government is a constitutive part of capitalism rather than an outside intruder.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Distributive Justice: Maximin vs. Patterns-as-Coercion",
+      "description": "Rawls argues rational parties behind a veil of ignorance choose to protect the worst-off, and that natural talents are morally arbitrary common assets society may redistribute. Nozick argues any patterned distribution (including need-based or egalitarian) requires continuous coercive interference with voluntary exchange — liberty upsets patterns. This is the canonical political-philosophy debate, held directly in the library.",
+      "strength": "strong",
+      "books": [
+        "A Theory of Justice",
+        "Anarchy, State, and Utopia"
+      ],
+      "evidence": "A Theory of Justice: 'society may treat the distribution of natural assets as a common resource.' Anarchy, State, and Utopia: 'Patterned Distributions Require Continuous Coercion... To preserve a pattern you must either forbid voluntary transactions or repeatedly confiscate and redistribute what people freely transfer.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Brand Growth: Loyalty vs. Penetration",
+      "description": "Hug Your Customers and Marketing 4.0 build their entire premise on deepening relationships with known, loyal customers and individualized recognition driving value. The Ehrenberg-Bass cluster (How Brands Grow, How Brands Grow Part 2, Better Brand Health, Marketing) argues the opposite empirically: growth comes from penetration among light and non-buyers, loyalty is a side effect not a lever, and targeting loyalists is misdirected effort. A live methodological war over the central question of marketing.",
+      "strength": "strong",
+      "books": [
+        "Hug Your Customers",
+        "How Brands Grow"
+      ],
+      "evidence": "Hug Your Customers: 'Data Enables Personal Recognition at Scale... anticipating needs and tailoring offers.' How Brands Grow: 'Growth Comes From Penetration Not Loyalty... targeting loyalty as the primary growth lever is misdirected effort.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Expert Judgment: Trust Intuition vs. Replace It With Rules",
+      "description": "Klein's body of work (Sources of Power, Streetlights and Shadows, Intuition at Work) argues intuition is compiled expertise, that experts perceive cues novices miss, and that suppressing intuition with rigid process also suppresses skilled judgment. Kahneman's Noise argues the opposite for many domains: mechanical equal-weight formulas beat holistic human judgment because they eliminate inconsistency, and experts degrade accuracy through noisy integration. The famous Kahneman–Klein disagreement, present in the stacks.",
+      "strength": "strong",
+      "books": [
+        "Sources of Power",
+        "Noise: A Flaw in Human Judgment"
+      ],
+      "evidence": "Sources of Power: 'Expertise Is Perceiving Cues Novices Miss... their advantage lives in what they notice.' Noise: 'Simple Rules Beat Expert Intuition... their inconsistent integration of those inputs degrades accuracy compared to a rule.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Suffering and Art: Anguish Fuels vs. Anguish Constricts",
+      "description": "The romantic creativity tradition holds suffering as necessary for great work. Lynch directly rejects this: an artist who is happy and clear accesses and executes ideas far more effectively than one depressed or anxious — suffering constricts creative flow. Greene's Creators and the antihero-genius framing in Difficult Men instead treat torment, neurosis, and 'difficult' temperament as bound up with output, even shielding the abuser because the work justifies it.",
+      "strength": "moderate",
+      "books": [
+        "Catching the Big Fish",
+        "Difficult Men"
+      ],
+      "evidence": "Catching the Big Fish: 'Suffering Does Not Fuel Art... suffering actually constricts creative flow and capacity to work.' Difficult Men: 'Abusive Genius as Cultural Permission... the celebrated difficult man was often shielded precisely because his output justified the damage.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Efficiency: Frictionlessness as Goal vs. Friction as Necessity",
+      "description": "Sunstein's Sludge and the Nudge program treat friction as a regressive hidden tax to be eliminated; make the good choice frictionless. The Necessity of Friction and The Friction Project (and The Illusion of Innovation, Antifragile) argue that removing friction strips out the checkpoints that catch errors and the slack that enables adaptation — smoothness is a failure signal. Direct disagreement over whether friction is overhead to remove or a load-bearing safeguard.",
+      "strength": "strong",
+      "books": [
+        "Sludge",
+        "The Necessity of Friction"
+      ],
+      "evidence": "Sludge: 'Take-Up Failure From Procedural Barriers... Eliminating sludge... can dramatically raise take-up rates.' The Necessity of Friction: 'Efficiency Optimization Erodes Judgment... rational efficiency drives keep stripping out exactly the safeguards that prevent large failures.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Disease Origins: Cellular/Genetic vs. Infectious",
+      "description": "Mukherjee's The Song of the Cell reframes most human illness as a breakdown of cellular cooperation and traces pathology to which cellular function broke. Plating Time argues that many conditions long attributed to genetics or lifestyle — cancers, heart disease, mental illness — actually have hidden infectious origins, and the apparent absence of a microbe reflects detection limits, not its true absence. Competing master-explanations for the root of chronic disease.",
+      "strength": "moderate",
+      "books": [
+        "The Song of the Cell",
+        "Plating Time"
+      ],
+      "evidence": "The Song of the Cell: 'Most human illness can be reframed as a failure of cellular cooperation... rather than treating organs or symptoms as the primary unit.' Plating Time: 'Chronic Diseases Have Infectious Origins... many conditions long attributed to genetics or lifestyle... may actually be caused by infectious agents.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Reaching Effortless Action: Carve vs. Forget",
+      "description": "Trying Not to Try names the internal debate directly: the Confucian path reaches spontaneity through long deliberate cultivation that becomes second nature, while the Daoist path reaches it by stripping away conditioning to return to a natural state. The library holds both poles as living texts — the Analects/Great Learning insisting on relentless self-cultivation and ritual, and the Tao Te Ching insisting utility lives in emptiness and the eternal is prior to all naming and effort.",
+      "strength": "moderate",
+      "books": [
+        "The Analects",
+        "Tao Te Ching"
+      ],
+      "evidence": "The Analects: 'The Junzi as Developmental Standard... a continuum of cultivation... through effort.' Tao Te Ching: 'The Nameable Is Not the Eternal... Usefulness Resides in Emptiness.' Trying Not to Try frames these as 'Confucian Carving Versus Daoist Forgetting... disagrees on whether discipline builds it or obstructs it.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Disruption Source: Incumbents Buy It vs. Incumbents Structurally Can't",
+      "description": "Christensen's Innovator's Dilemma argues good management causes incumbent failure — rational customer-focused decisions steer firms away from disruptive markets. The Ride of a Lifetime offers a counter-prescription: when you lack a capability and the gap is widening, acquire the companies that already excel (Pixar, Marvel) — incumbents can buy disruption rather than being doomed by it. The Illusion of Innovation extends Iger's view: big firms outsource invention to startups then acquire them.",
+      "strength": "moderate",
+      "books": [
+        "The Innovator's Dilemma",
+        "The Ride of a Lifetime"
+      ],
+      "evidence": "Innovator's Dilemma: 'rational, customer-focused decisions systematically steer firms away from... disruptive markets that later grow to displace them.' The Ride of a Lifetime: 'buying companies that already excel at it... is faster and lower-risk than attempting to rebuild that capability from within a struggling culture.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "The Self After Death: Indestructible vs. Dispersed Atoms",
+      "description": "The Upanishads, Bhagavad Gita, and I Am That insist consciousness/Atman is uncreated and indestructible — death destroys only the perishable vehicle. Lucretius insists the soul is itself made of atoms that disperse at death, so no perceiving self survives and fear of death rests on imagining yourself present at your own absence. A flat metaphysical contradiction the library holds in full force on both sides.",
+      "strength": "strong",
+      "books": [
+        "The Upanishads",
+        "De Rerum Natura (The Nature of Things)"
+      ],
+      "evidence": "The Upanishads: 'Death Is Not Annihilation of Consciousness... the underlying consciousness is uncreated and indestructible.' De Rerum Natura: 'the soul is itself made of atoms that disperse at death, no perceiving self survives... the state of non-existence after death is identical to the non-existence before birth.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Sustainability: Conserve the Balance vs. Habitability Is an Achievement",
+      "description": "Deutsch attacks the 'Spaceship Earth' idea as backwards — most of the cosmos is lethal, we survive by creating knowledge to build conditions we need, so survival depends on continued problem-solving, not conservation of a fragile balance. Living Within Limits and The Tragedy of the Commons argue the opposite: some problems have no technical solution, a finite biosphere imposes carrying capacity, and relying on ingenuity to escape limits is the core error.",
+      "strength": "strong",
+      "books": [
+        "The Beginning of Infinity",
+        "Living Within Limits"
+      ],
+      "evidence": "The Beginning of Infinity: 'Habitability is an achievement of knowledge, not a given of nature — so survival depends on continued problem-solving rather than conservation of a fragile balance.' Living Within Limits: 'No Technical Solution to Population... producing more food only enables more population, which restores the original crisis at a larger scale.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Wisdom: Systematizable vs. Resistant to System",
+      "description": "Page (The Model Thinker, The Difference) and the formal-modeling tradition hold that formalizing assumptions into models forces consistency and exposes flawed reasoning. Berlin's Hedgehog and the Fox argues true practical wisdom is a near-instinctive feel for the unrepeatable concrete, and systematic theories mistake abstraction for the texture they can never reproduce. Skin in the Game and Sources of Power side with Berlin; the model-thinkers side against him.",
+      "strength": "moderate",
+      "books": [
+        "The Model Thinker",
+        "The Hedgehog and the Fox"
+      ],
+      "evidence": "The Model Thinker: 'Formalizing assumptions into a model forces internal consistency and exposes when a conclusion does not actually follow.' The Hedgehog and the Fox: 'True practical wisdom is not a science of general rules but a near-instinctive feel for the specific... Systematic theories... mistake abstraction for the concrete texture they can never reproduce.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Stock Prices: Random Walk vs. Forced-Selling Mispricing",
+      "description": "Malkiel argues prices follow a random walk — all known information is reflected, charts contain no usable signal, and active managers can't reliably beat the index. Michael Burry and Richer, Wiser, Happier argue the opposite: markets systematically misprice through forced selling, redemptions, and herd mood, and the disciplined contrarian profits precisely by exploiting those non-fundamental dislocations. Efficient-markets vs. exploitable-inefficiency, held side by side.",
+      "strength": "strong",
+      "books": [
+        "A Random Walk Down Wall Street",
+        "Michael Burry (Substack)"
+      ],
+      "evidence": "A Random Walk Down Wall Street: 'all known information is already reflected in current prices... charts of past performance contain no usable signal.' Michael Burry: 'Markets Misprice Through Forced Selling... The disciplined buyer profits by supplying liquidity precisely when others are mechanically compelled to exit.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Leadership: Step Back and Cultivate vs. Master Every Detail",
+      "description": "The 'gardener/empowerment' school (Team of Teams, Eleven Rings, Trillion Dollar Coach, Quiet Leadership, Humble Leadership) holds that leaders should step back, distribute authority, and cultivate conditions rather than control. Leading (Ferguson) argues the reverse: authority is established by personally knowing and controlling the small operational details others overlook, signaling that nothing escapes the leader's attention. Direct clash over whether control comes from detail-mastery or from releasing control.",
+      "strength": "strong",
+      "books": [
+        "Team of Teams",
+        "Leading"
+      ],
+      "evidence": "Team of Teams: 'Leader As Gardener Not Chess Master... the leader cultivates the environment... so good outcomes emerge on their own.' Leading: 'Control Begins With Mastery of Detail... Sweating these particulars signals to everyone that nothing escapes the leader's attention.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Multiculturalism: Group Rights as Equality vs. Group Rights as Intolerance",
+      "description": "Kymlicka argues group-differentiated minority rights are corrections for unchosen disadvantage and restore a level playing field, since state neutrality toward cultures is impossible. The Diversity Myth argues multiculturalism inverts its stated tolerance goal — producing speech codes and orthodoxy enforcement — and that anti-racism reintroduces racial categorization as mandatory rather than incidental. A direct normative collision over whether identity-conscious policy advances or betrays equality.",
+      "strength": "strong",
+      "books": [
+        "Multicultural Citizenship",
+        "The Diversity Myth: Multiculturalism and Political Intolerance on Campus"
+      ],
+      "evidence": "Multicultural Citizenship: 'Minority Rights as Equality, Not Exception... special rights for minorities restore a level playing field.' The Diversity Myth: 'Multiculturalism Inverts Its Stated Tolerance Goal... a mechanism for excluding and silencing those who question it. Anti-Racism Reintroduces Racial Categorization.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Talent: Bundle/Diversity Wins vs. Single Ceiling Limits Diversity",
+      "description": "The Difference and The Diversity Bonus argue diverse problem-solvers beat high-ability homogeneous ones on hard problems, treating talent as a bundle of complementary tools rather than a scalar. But both also carry the explicit qualifier that this only holds on cognitively demanding tasks and can be outweighed by friction. The tension is internal-to-the-cluster but sharpened against Talent (Cowen), which prizes high-variance disagreeable individuals — a case for the outlier scalar, not the diverse average.",
+      "strength": "moderate",
+      "books": [
+        "The Difference",
+        "Talent"
+      ],
+      "evidence": "The Difference: 'a randomly selected group of diverse problem-solvers can outperform a group of the highest-ability individual solvers.' Talent: 'Disagreeableness Can Predict Creative Success... high-variance talent... Conventional hiring screens out these people.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Bureaucratic Failure: Structural and Irreducible vs. Fixable by Design",
+      "description": "Mises' Bureaucracy argues bureaucratic dysfunction is structural and cannot be reformed away or made business-like, because public tasks lack a price-based success measure. Designing Complex Organizations and Executive Leadership argue dysfunction is a design-fit problem: match structure to information-processing load and stratum, and the organization works. One says the pathology is inherent to the form; the other says it's a solvable engineering question.",
+      "strength": "moderate",
+      "books": [
+        "Bureaucracy",
+        "Designing Complex Organizations"
+      ],
+      "evidence": "Bureaucracy: 'Bureaucratic dysfunction is structural, not moral... no reform of personnel or policy can eliminate the dysfunction.' Designing Complex Organizations: 'designs are conditional bets... which design fits this level of uncertainty and these objectives' — dysfunction as mismatch, not inevitability."
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Knowledge: All Reduces to Physics vs. Levels Must Be Built Up",
+      "description": "Wilson's Consilience argues every phenomenon — thought, culture, morality — ultimately reduces to physical law and inter-disciplinary gaps are temporary artifacts. Dennett warns explicitly against 'greedy reductionism' that skips necessary intermediate levels (minds, functions, meanings), and Deutsch's Fabric of Reality insists four strands are mutually irreducible. The disagreement is over whether reduction to a single base is the goal or a category error.",
+      "strength": "moderate",
+      "books": [
+        "Consilience: The Unity of Knowledge",
+        "Darwin's Dangerous Idea"
+      ],
+      "evidence": "Consilience: 'All Knowledge Reduces to Physical Law... The apparent gaps between disciplines are temporary artifacts of incomplete science.' Darwin's Dangerous Idea: 'Greedy reductionism skips real levels... collapsing genuine explanatory layers — minds, functions, meanings — that must be built up gradually rather than waved away.'"
+    },
+    {
+      "lens": "tension_pairs",
+      "type": "tension_pair",
+      "name": "Surveillance: Public-Health Salvation vs. Incremental Tyranny",
+      "description": "The epidemiology cluster (Inside the Outbreaks, Smallpox, The Viral Storm) treats continuous systematic surveillance as the precondition for survival — detection speed beats reactive response and forecasting pandemics like weather is the goal. Permanent Record and Lapham's Spies argue surveillance infrastructure is built incrementally and invisibly, inevitably turns inward on citizens, and manufactures the disloyalty it claims to detect. Same machinery, opposite valence.",
+      "strength": "moderate",
+      "books": [
+        "Inside the Outbreaks",
+        "Permanent Record"
+      ],
+      "evidence": "Inside the Outbreaks: 'Continuous, systematic data collection... allows authorities to detect anomalies early... Building the monitoring infrastructure during calm periods is what makes rapid response possible.' Permanent Record: 'Mass surveillance is built incrementally and invisibly... every step was small enough to escape scrutiny.'"
+    },
+    {
+      "lens": "founding_figures",
+      "type": "founding_figure",
+      "name": "Darwin as gravitational center",
+      "description": "With 21 descending books — nearly double the next lineage — Darwin is the collection's strongest intellectual ancestor. The convergence is reinforced by see-also clustering around Sean B. Carroll, Stephen Jay Gould, and 'The Hedgehog, the Fox, and the Magister's Pox.' This is a library where evolutionary thinking is the dominant explanatory frame, spilling well beyond the 87 Science books into Business and Economics reasoning by analogy.",
+      "strength": "strong",
+      "books": [],
+      "evidence": "Darwin: 21 books (top lineage); seeAlso convergence on Sean B. Carroll (2), Stephen Jay Gould (2), The Hedgehog/Fox/Magister's Pox (2), Scientific Revolution (2)"
+    },
+    {
+      "lens": "founding_figures",
+      "type": "founding_figure",
+      "name": "Patanjali and the contemplative substrate",
+      "description": "13 books descend from Patanjali, anchoring the 41 contemplative-register and 38 meditation-form books. This is the second-largest lineage and points to a serious yoga/meditation practice library hiding beneath the dominant Business/Science surface.",
+      "strength": "strong",
+      "books": [],
+      "evidence": "Patanjali: 13 books; Register includes contemplative:41, Form includes meditation:38"
+    },
+    {
+      "lens": "founding_figures",
+      "type": "founding_figure",
+      "name": "Kahneman and the decision-science axis",
+      "description": "10 books trace to Kahneman, and the see-also references to 'Noise: A Flaw in Human Judgment' and 'Groupthink' confirm a behavioral-economics/judgment cluster. This is the intellectual engine behind the large Business (119) and Economics (51) holdings — the owner reads business through the lens of cognitive bias.",
+      "strength": "strong",
+      "books": [],
+      "evidence": "Kahneman: 10 books; seeAlso Noise: A Flaw in Human Judgment (2), Groupthink (2); American organizational psychology tradition (10)"
+    },
+    {
+      "lens": "founding_figures",
+      "type": "hidden_collection",
+      "name": "Taoist canon assembled unconsciously",
+      "description": "A striking cluster of see-also references — Huahujing, Huainanzi, Huangdi Yinfujing, Qingjing Jing, Bogar — points to classical Taoist and internal-alchemy texts. Despite no Lao Tzu lineage appearing in the counts, the collection orbits a Taoist/Eastern-classics center the owner may not have consciously curated, distinct from the Buddha (7) and Confucius (3) lineages.",
+      "strength": "moderate",
+      "books": [],
+      "evidence": "seeAlso: Huahujing(2), Huainanzi(2), Huangdi Yinfujing(2), Qingjing Jing(2), Bogar(2), Four Books and Five Classics(2)"
+    },
+    {
+      "lens": "founding_figures",
+      "type": "tension_pair",
+      "name": "Hayek vs. Keynes — the unargued economics",
+      "description": "The 51 Economics books rest on a surprisingly thin named foundation: only 2 books each from Hayek and Keynes, and a single Adam Smith. The economic reading is dominated instead by Kahneman and Taleb — meaning this library understands markets through psychology and uncertainty rather than through classical or macroeconomic theory.",
+      "strength": "moderate",
+      "books": [],
+      "evidence": "Hayek: 2, Keynes: 2, Adam Smith: 1 vs. Kahneman: 10, Taleb: 6; Economics is 4th-largest category (51)"
+    },
+    {
+      "lens": "founding_figures",
+      "type": "founding_figure",
+      "name": "Taleb as uncertainty doctrine",
+      "description": "6 books descend from Taleb, forming a coherent risk/uncertainty/anti-fragility strand that bridges the Kahneman judgment cluster and the empirical register (117). Combined with Kahneman, this makes 'fallible human reasoning under uncertainty' the collection's signature intellectual posture.",
+      "strength": "moderate",
+      "books": [],
+      "evidence": "Taleb: 6 books; empirical register: 117; pairs naturally with Kahneman (10)"
+    },
+    {
+      "lens": "founding_figures",
+      "type": "observation",
+      "name": "The missing literary and philosophical ancestors",
+      "description": "Given 79 Fiction books, 63 Philosophy books, and 'American literary journalism' as the top tradition (14), the lineage list is conspicuously empty of literary or core-philosophical founders — no Plato, Aristotle, Nietzsche, Montaigne, or any novelist. The humanist register dominates (468 books) yet has no named intellectual ancestor, suggesting the cataloguing captures idea-lineage but not literary descent.",
+      "strength": "moderate",
+      "books": [],
+      "evidence": "Fiction:79, Philosophy:63, humanist register:468, narrative form:176 — yet zero literary/classical-philosophy lineages named"
+    },
+    {
+      "lens": "founding_figures",
+      "type": "pattern",
+      "name": "Two libraries in one body",
+      "description": "The founding figures split cleanly into a Western empirical-rationalist axis (Darwin, Kahneman, Taleb, Clausewitz) and an Eastern contemplative axis (Patanjali, Buddha, Confucius, plus the Taoist see-also cluster). The 468 humanist + 117 empirical books serve the first; the 41 contemplative + 38 meditation books serve the second. The owner reads to optimize action and to quiet it.",
+      "strength": "strong",
+      "books": [],
+      "evidence": "Western: Darwin 21 + Kahneman 10 + Taleb 6 + Clausewitz 4; Eastern: Patanjali 13 + Buddha 7 + Confucius 3 + Taoist seeAlso cluster"
+    },
+    {
+      "lens": "founding_figures",
+      "type": "founding_figure",
+      "name": "Clausewitz and the strategy undercurrent",
+      "description": "4 books descend from Clausewitz, supported by the 'American military doctrine' tradition (7) and the systems register (33). This connects to the Business holdings — strategy-as-warfare framing — and represents a smaller third pole alongside evolution and behavioral economics.",
+      "strength": "weak",
+      "books": [],
+      "evidence": "Clausewitz: 4 books; American military doctrine tradition: 7; systems register: 33"
+    },
+    {
+      "lens": "hidden_collections",
+      "type": "hidden_collection",
+      "name": "The Science of Collective Error",
+      "description": "Beneath the surface 'Business' and 'Science' categories sits an unnamed collection about how groups and individuals systematically misjudge reality. The convergence on Groupthink, Noise, and Epidemiology reveals a coherent preoccupation with the mechanics of flawed human judgment — at both crowd scale and cognitive scale — that no single category captures.",
+      "strength": "strong",
+      "books": [
+        "The Structure of Scientific Revolutions",
+        "Extraordinary Popular Delusions and the Madness of Crowds",
+        "The Signal and the Noise",
+        "Thinking, Fast and Slow",
+        "The Ghost Map",
+        "The Tipping Point"
+      ],
+      "evidence": "Groupthink pointed to by Structure of Scientific Revolutions + Extraordinary Popular Delusions; Noise: A Flaw in Human Judgment pointed to by Signal and the Noise + Thinking Fast and Slow; Epidemiology pointed to by Ghost Map + Tipping Point. Kahneman lineage (10 books) anchors the cognitive side."
+    },
+    {
+      "lens": "hidden_collections",
+      "type": "hidden_collection",
+      "name": "Taoist Source-Text Scholarship",
+      "description": "The owner doesn't have a 'Daoism' category, but the See Also web reveals a startlingly deep scaffolding of classical Chinese canonical texts surrounding the Tao Te Ching — the Huahujing, Huainanzi, Huangdi Yinfujing, Qingjing Jing, Sanhuangjing, Taiping Jing, Xishengjing, and Four Books and Five Classics. This is the apparatus of a serious student of the Daoist canon, hidden behind a single duplicated title.",
+      "strength": "moderate",
+      "books": [
+        "Tao Te Ching",
+        "Tao te Ching"
+      ],
+      "evidence": "Two editions of Tao Te Ching collectively point to ten distinct classical Chinese/Daoist texts (Huahujing, Huainanzi, Huangdi Yinfujing, Qingjing Jing, Sanhuangjing, Taiping Jing, Xishengjing, Bogar, Four Books and Five Classics, Straw dog). Patanjali lineage (13) and Buddha (7) confirm a contemplative depth (41 contemplative books)."
+    },
+    {
+      "lens": "hidden_collections",
+      "type": "hidden_collection",
+      "name": "British Evolutionary Synthesis (the Dawkins-Carroll axis)",
+      "description": "An unannounced cluster of evo-devo and gene-centric evolution writing, signaled by shared pointers to Sean B. Carroll and the BBC. Behind the broad 'Science' category lies a specific lineage of British/American Darwinian popular science with a consistent editorial DNA.",
+      "strength": "moderate",
+      "books": [
+        "The Selfish Gene",
+        "The Blind Watchmaker",
+        "Consilience: The Unity of Knowledge",
+        "The Hedgehog and the Fox"
+      ],
+      "evidence": "Sean B. Carroll and BBC each pointed to by Selfish Gene + Blind Watchmaker; Stephen Jay Gould and The Hedgehog, the Fox, and the Magister's Pox pointed to by Consilience + Hedgehog and the Fox. Darwin is the single largest lineage (21 books)."
+    },
+    {
+      "lens": "hidden_collections",
+      "type": "hidden_collection",
+      "name": "The Empirical Pursuit of Happiness",
+      "description": "Not flagged as a category, but a quiet collection on the science of wellbeing emerges through the shared pointer to Positive psychology — pairing experimental hedonics with moral-philosophical happiness inquiry. This bridges the empirical (117) and contemplative (41) registers.",
+      "strength": "moderate",
+      "books": [
+        "Stumbling on Happiness",
+        "The Happiness Hypothesis"
+      ],
+      "evidence": "Positive psychology pointed to by Stumbling on Happiness + The Happiness Hypothesis; supported by American organizational psychology tradition (10 books) sitting outside the named top categories."
+    },
+    {
+      "lens": "hidden_collections",
+      "type": "tension_pair",
+      "name": "Two Faces of Scientific Knowledge",
+      "description": "A latent dialectic runs through the science holdings: triumphalist progress (Scientific Revolution as engine of infinite knowledge) versus the contingency and paradigm-bound limits of science. The same See Also concept anchors both optimist and skeptic.",
+      "strength": "moderate",
+      "books": [
+        "The Beginning of Infinity",
+        "The Structure of Scientific Revolutions"
+      ],
+      "evidence": "Scientific Revolution pointed to by both The Beginning of Infinity (Deutsch's optimism) and The Structure of Scientific Revolutions (Kuhn's paradigm contingency) — a hidden argument about the nature of progress."
+    },
+    {
+      "lens": "hidden_collections",
+      "type": "pattern",
+      "name": "Consilience as Organizing Ambition",
+      "description": "The library's intellectual signature is the unifier impulse — the Hedgehog/Fox split and Gould's critique recur as the owner repeatedly returns to whether all knowledge can be integrated. This explains the broad humanist register (468) spanning hard science to contemplation.",
+      "strength": "weak",
+      "books": [
+        "Consilience: The Unity of Knowledge",
+        "The Hedgehog and the Fox"
+      ],
+      "evidence": "Both books point to Stephen Jay Gould and The Hedgehog, the Fox, and the Magister's Pox — Gould's essay against forced unification of knowledge — suggesting the owner is wrestling with the limits of consilience across a deliberately cross-disciplinary collection."
+    }
+  ],
+  "clusters": [
+    {
+      "id": "systems-cybernetics",
+      "name": "Systems Thinking & Cybernetics",
+      "description": "Feedback loops, emergence, complexity, and how systems behave — from Meadows to Gleick to Ohno",
+      "color": "#2e5d8a",
+      "books": [
+        "Thinking in Systems",
+        "The Fifth Discipline",
+        "Chaos: Making a New Science",
+        "Emergence",
+        "Scale",
+        "Systemantics",
+        "The Tipping Point",
+        "Toyota Production System",
+        "The Tragedy of the Commons",
+        "An Elegant Puzzle: Systems of Engineering Management"
+      ]
+    },
+    {
+      "id": "japan",
+      "name": "Japan",
+      "description": "Japanese thought, aesthetics, craft, and urban life",
+      "color": "#c41e3a",
+      "books": [
+        "A Pale View of Hills",
+        "Ametora: How Japan Saved American Style",
+        "An Introduction to Zen Buddhism",
+        "Emergent Tokyo",
+        "Goodbye, Things",
+        "Kissa by Kissa",
+        "Taiichi Ohno's Workplace Management",
+        "The Book of Five Rings",
+        "The Japanese Mind",
+        "The Zen Koan as a Means of Attaining Enlightenment",
+        "Toyota Production System",
+        "Wabi-Sabi for Artists, Designers, Poets & Philosophers",
+        "Status and Culture",
+        "White",
+        "100 Whites",
+        "Ganbatte!",
+        "The New Japanese Minimalism",
+        "The Little Book of Ikigai",
+        "The Wabi-Sabi Way",
+        "Made in Tokyo",
+        "Samadhi on Zen Gardens",
+        "Sake",
+        "Designing Design"
+      ]
+    },
+    {
+      "id": "creativity-innovation",
+      "name": "Creativity & Innovation",
+      "description": "How ideas are generated, developed, and brought into the world",
+      "color": "#e07050",
+      "books": [
+        "The Creative Act",
+        "Creativity, Inc.",
+        "Where Good Ideas Come From",
+        "How Innovation Works",
+        "The Medici Effect",
+        "Originals",
+        "The Geography of Genius",
+        "Creativity",
+        "Flow",
+        "Daily Rituals",
+        "Out of Our Minds",
+        "The Art of Creative Thinking",
+        "Catching the Big Fish",
+        "The Artist's Way",
+        "Seeing is Forgetting the Name of the Thing One Sees",
+        "The Innovation Stack",
+        "Invention: A Life",
+        "Leonardo da Vinci",
+        "The Illusion of Innovation",
+        "Think Bigger: How to Innovate",
+        "Creative Selection"
+      ]
+    },
+    {
+      "id": "medicine-epidemiology",
+      "name": "Medicine & Epidemiology",
+      "description": "Disease, the body, public health, and how medicine actually works",
+      "color": "#3a7a8a",
+      "books": [
+        "Inside the Outbreaks",
+        "Apollo's Arrow",
+        "The Emperor of All Maladies",
+        "The Song of the Cell",
+        "The Gene",
+        "The Ghost Map",
+        "Smallpox: The Death of a Disease",
+        "The Viral Storm",
+        "Polio: An American Story",
+        "Mountains Beyond Mountains",
+        "The Social Transformation of American Medicine",
+        "Do No Harm",
+        "Outlive",
+        "The Checklist Manifesto",
+        "Drugs: From Discovery to Approval",
+        "Future Care",
+        "The Innovator's Prescription: A Disruptive Solution for Health Care"
+      ]
+    },
+    {
+      "id": "decision-judgment",
+      "name": "Decision Making & Judgment",
+      "description": "How humans decide, where they go wrong, and how to think better",
+      "color": "#6b4e8a",
+      "books": [
+        "Thinking, Fast and Slow",
+        "Judgment Under Uncertainty: Heuristics and Biases",
+        "Choices, Values, and Frames",
+        "Noise: A Flaw in Human Judgment",
+        "Sources of Power",
+        "Intuition at Work",
+        "Simple Heuristics That Make Us Smart",
+        "Decision Traps",
+        "Winning Decisions",
+        "Thinking and Deciding",
+        "Algorithms to Live By",
+        "Streetlights and Shadows",
+        "The Undoing Project",
+        "Poor Charlie's Almanack",
+        "Clear Thinking",
+        "The Model Thinker",
+        "Maxims for Thinking Analytically",
+        "The Great Mental Models",
+        "Same as Ever",
+        "The Art of Strategy"
+      ]
+    },
+    {
+      "id": "evolution-biology",
+      "name": "Evolution & Biology",
+      "description": "Darwin's long shadow — evolution as the master key to life, behaviour, and culture",
+      "color": "#4a7c59",
+      "books": [
+        "The Selfish Gene",
+        "The Extended Phenotype",
+        "River Out of Eden",
+        "Climbing Mount Improbable",
+        "The Blind Watchmaker",
+        "Darwin's Dangerous Idea",
+        "On the Origin of Species",
+        "Natural Selection and Social Theory",
+        "The Red Queen",
+        "The Origins of Virtue",
+        "The Folly of Fools",
+        "Mean Genes",
+        "Culture and the Evolutionary Process",
+        "Behave: The Biology of Humans at Our Best and Worst",
+        "The Prehistory of the Mind",
+        "The Gene",
+        "The Song of the Cell"
+      ]
+    },
+    {
+      "id": "stoicism-eastern-philosophy",
+      "name": "Stoicism & Eastern Philosophy",
+      "description": "Practical wisdom from the Stoics, Vedanta, Zen, and Tao",
+      "color": "#8a7a3a",
+      "books": [
+        "Meditations",
+        "Letters from a Stoic",
+        "Discourses and Selected Writings",
+        "A Guide to the Good Life",
+        "The Stoic Challenge",
+        "The Daily Stoic",
+        "Ego Is the Enemy",
+        "The Obstacle Is the Way",
+        "Dying Every Day: Seneca at the Court of Nero",
+        "The Bhagavad Gita",
+        "The Upanishads",
+        "Tao Te Ching",
+        "The Analects",
+        "Inner Engineering",
+        "Light on Yoga",
+        "Light on Life",
+        "The Book of Five Rings",
+        "Trying Not to Try",
+        "The Art of War"
+      ]
+    },
+    {
+      "id": "investing-markets",
+      "name": "Investing & Markets",
+      "description": "Capital allocation, financial history, and how markets actually work",
+      "color": "#2e7d6b",
+      "books": [
+        "The Black Swan",
+        "Antifragile",
+        "Fooled by Randomness",
+        "Skin in the Game",
+        "Statistical Consequences of Fat Tails",
+        "Dynamic Hedging: Managing Vanilla and Exotic Options",
+        "A Random Walk Down Wall Street",
+        "When Genius Failed",
+        "What I Learned Losing a Million Dollars",
+        "Richer, Wiser, Happier",
+        "Poor Charlie's Almanack",
+        "Damn Right! Behind the Scenes with Berkshire Hathaway Billionaire Charlie Munger",
+        "Berkshire Hathaway Annual Letters",
+        "Principles for Dealing with the Changing World Order: Why Nations Succeed and Fail",
+        "The Sovereign Individual",
+        "Engines That Move Markets",
+        "Nomad Investment Partnership Letters",
+        "Same as Ever",
+        "Picking Nuggets"
+      ]
+    }
+  ],
+  "threads": [
+    {
+      "id": "darwin_s_long_shadow",
+      "name": "Darwin's Long Shadow",
+      "question": "How far does natural selection reach beyond biology?",
+      "color": "#4A7C59",
+      "anchor": "The Selfish Gene",
+      "tension": "Gene-level selection (Dawkins) vs group selection (Wilson) — does evolution optimize the individual or the collective?",
+      "books": [
+        "The Selfish Gene",
+        "The Extended Phenotype",
+        "River Out of Eden",
+        "Climbing Mount Improbable",
+        "Natural Selection and Social Theory",
+        "The Folly of Fools",
+        "Darwin's Dangerous Idea",
+        "The Red Queen",
+        "The Origins of Virtue",
+        "The Evolution of Everything",
+        "Culture and the Evolutionary Process",
+        "On the Origin of Species",
+        "Behave: The Biology of Humans at Our Best and Worst"
+      ]
+    },
+    {
+      "id": "the_judgment_machine",
+      "name": "The Judgment Machine",
+      "question": "How do minds — human and artificial — decide, and when do they fail?",
+      "color": "#6B4E8A",
+      "anchor": "Thinking, Fast and Slow",
+      "tension": "Kahneman (heuristics as systematic bias) vs Gigerenzer (heuristics as adaptive intelligence) — is fast thinking broken or brilliant?",
+      "books": [
+        "Thinking, Fast and Slow",
+        "Choices, Values, and Frames",
+        "Judgment Under Uncertainty: Heuristics and Biases",
+        "Noise: A Flaw in Human Judgment",
+        "Sources of Power",
+        "Intuition at Work",
+        "Streetlights and Shadows",
+        "Simple Heuristics That Make Us Smart",
+        "Decision Traps",
+        "Winning Decisions",
+        "Thinking and Deciding",
+        "Algorithms to Live By",
+        "The Signal and the Noise"
+      ]
+    },
+    {
+      "id": "the_fat_tail_cosmos",
+      "name": "The Fat-Tail Cosmos",
+      "question": "What do we do when the most important events are the ones probability cannot model?",
+      "color": "#C45C3A",
+      "anchor": "The Black Swan",
+      "tension": "Taleb (embrace antifragility, abandon prediction) vs standard risk management (model, hedge, optimize) — is robustness the goal or fragility the teacher?",
+      "books": [
+        "The Black Swan",
+        "Antifragile",
+        "Fooled by Randomness",
+        "Skin in the Game",
+        "Dynamic Hedging: Managing Vanilla and Exotic Options",
+        "Statistical Consequences of Fat Tails",
+        "A Random Walk Down Wall Street",
+        "When Genius Failed",
+        "Do Dice Play God?",
+        "What I Learned Losing a Million Dollars",
+        "The Signal and the Noise"
+      ]
+    },
+    {
+      "id": "how_organizations_breathe",
+      "name": "How Organizations Breathe",
+      "question": "What makes institutions live, adapt, or calcify?",
+      "color": "#3A6B8A",
+      "anchor": "The Fifth Discipline",
+      "tension": "Culture as emergent (Schein) vs culture as designed (Netflix, Amazon) — can you engineer an organization's soul?",
+      "books": [
+        "Humble Inquiry",
+        "Humble Leadership",
+        "Humble Consulting",
+        "Helping",
+        "Process Consultation Volume II",
+        "Organizational Culture and Leadership",
+        "DEC Is Dead, Long Live DEC",
+        "The Fearless Organization",
+        "The Fifth Discipline",
+        "Toyota Production System",
+        "The Ambiguities of Experience",
+        "No Rules Rules",
+        "Brave New Work"
+      ]
+    },
+    {
+      "id": "the_stoic_wager",
+      "name": "The Stoic Wager",
+      "question": "How do you act wisely when outcomes are not in your control?",
+      "color": "#8A7A3A",
+      "anchor": "Meditations",
+      "tension": "Stoic acceptance (Marcus, Epictetus) vs Taoist wu wei (Laozi) — is equanimity a discipline or a dissolution?",
+      "books": [
+        "Meditations",
+        "Letters from a Stoic",
+        "Discourses and Selected Writings",
+        "A Guide to the Good Life",
+        "The Stoic Challenge",
+        "On Desire",
+        "A Slap in the Face",
+        "The Daily Stoic",
+        "Ego Is the Enemy",
+        "Dying Every Day: Seneca at the Court of Nero",
+        "Tao Te Ching",
+        "The Analects"
+      ]
+    },
+    {
+      "id": "contagion_and_control",
+      "name": "Contagion and Control",
+      "question": "How does disease spread through society, and how does society respond?",
+      "color": "#2E7D6B",
+      "anchor": "The Ghost Map",
+      "tension": "Individual intervention (Mountains Beyond Mountains) vs systemic response (Diffusion of Innovations) — does change spread person by person or system by system?",
+      "books": [
+        "Inside the Outbreaks",
+        "Apollo's Arrow",
+        "The Ghost Map",
+        "Smallpox: The Death of a Disease",
+        "The Viral Storm",
+        "Mountains Beyond Mountains",
+        "Polio: An American Story",
+        "The Social Transformation of American Medicine",
+        "Change: How Behavior Spreads",
+        "Diffusion of Innovations"
+      ]
+    },
+    {
+      "id": "india_and_the_long_view",
+      "name": "India and the Long View",
+      "question": "How does a civilization persist, fracture, and reinvent itself across millennia?",
+      "color": "#B5682B",
+      "anchor": "The Anarchy",
+      "tension": "India as historical subject (Ghosh, Dalrymple) vs India as spiritual source (Gita, Upanishads) — is the long view political or metaphysical?",
+      "books": [
+        "The Glass Palace",
+        "The Nutmeg's Curse",
+        "Empress: The Astonishing Reign of Nur Jahan",
+        "The Anarchy",
+        "The End of Sorrow (The Bhagavad Gita for Daily Living, Vol. 1)",
+        "The Bhagavad Gita",
+        "The Upanishads",
+        "Inner Engineering",
+        "Karma",
+        "Light on Yoga",
+        "Light on Life"
+      ]
+    },
+    {
+      "id": "civilizational_sweep",
+      "name": "The Civilizational Sweep",
+      "question": "What is the arc of human history, and where is it going?",
+      "color": "#5A7A6A",
+      "anchor": "Guns, Germs, and Steel",
+      "tension": "Optimism (Ridley, Pinker) vs reckoning (Harari, Diamond) — is the long arc of civilization progress or a series of accidents?",
+      "books": [
+        "The Ascent of Man",
+        "The Prehistory of the Mind",
+        "Guns, Germs, and Steel",
+        "Homo Deus: A Brief History of Tomorrow",
+        "21 Lessons for the 21st Century",
+        "The Rational Optimist",
+        "The Evolution of Everything",
+        "Grand Transitions",
+        "Consilience: The Unity of Knowledge",
+        "The Demon-Haunted World"
+      ]
+    },
+    {
+      "id": "ridley_thesis",
+      "name": "The Ridley Thesis",
+      "question": "Does progress emerge bottom-up from exchange and evolution, requiring no designer?",
+      "color": "#7A9A5A",
+      "anchor": "The Rational Optimist",
+      "tension": "Ridley (spontaneous order, exchange as engine) vs intervention narratives — is optimism earned or naive?",
+      "books": [
+        "The Red Queen",
+        "The Origins of Virtue",
+        "Genome",
+        "The Rational Optimist",
+        "The Evolution of Everything",
+        "How Innovation Works",
+        "Darwin's Dangerous Idea",
+        "The Selfish Gene",
+        "The Extended Phenotype"
+      ]
+    },
+    {
+      "id": "conditions_of_genius",
+      "name": "The Conditions of Genius",
+      "question": "Is creativity a personal trait or an ecological one — and what conditions make it possible?",
+      "color": "#7A4A8A",
+      "anchor": "Creativity",
+      "tension": "Romantic tradition (Rubin, Lynch, Cameron, Csikszentmihalyi — creativity as encounter, flow, surrender) vs systems tradition (Ridley, Johnson, Rogers — creativity as network effect, recombination, diffusion). Same phenomenon, opposite explanations.",
+      "books": [
+        "Creativity",
+        "Flow",
+        "The Geography of Genius",
+        "Leonardo da Vinci",
+        "Genius",
+        "Creativity, Inc.",
+        "The Medici Effect",
+        "Daily Rituals",
+        "The Creative Act",
+        "Where Good Ideas Come From",
+        "Out of Our Minds",
+        "The Ten Faces of Innovation",
+        "How Innovation Works",
+        "Originals",
+        "Mastery",
+        "Catching the Big Fish",
+        "Hackers and Painters",
+        "Creative Selection",
+        "Invention: A Life",
+        "Think Bigger: How to Innovate",
+        "The Innovation Stack",
+        "Invention and Innovation"
+      ]
+    },
+    {
+      "id": "the_power_of_the_frame",
+      "name": "The Power of the Frame",
+      "question": "How does the way something is presented change what it means and what we do?",
+      "color": "#A04060",
+      "anchor": "Influence: Science and Practice",
+      "tension": "Persuasion as tool (Cialdini, Greene) vs persuasion as epistemology (Lakoff, Postman) — is framing a technique or the structure of thought itself?",
+      "books": [
+        "Influence: Science and Practice",
+        "The 48 Laws of Power",
+        "The Art of Seduction",
+        "The Laws of Human Nature",
+        "Never Split the Difference",
+        "Getting to Yes",
+        "The Political Mind",
+        "Resonate",
+        "slide:ology",
+        "The Pyramid Principle",
+        "Alchemy",
+        "Amusing Ourselves to Death",
+        "The Scapegoat"
+      ]
+    },
+    {
+      "id": "disruptions_anatomy",
+      "name": "Disruption's Anatomy",
+      "question": "How do new things displace old things, and why do incumbents always lose?",
+      "color": "#3A7A8A",
+      "anchor": "The Innovator's Dilemma",
+      "tension": "Disruption as structural (Christensen) vs disruption as illusion (Parker, The Illusion of Innovation) — does disruption explain history or just name it after the fact?",
+      "books": [
+        "The Innovator's Dilemma",
+        "The Innovator's Solution",
+        "Competing Against Luck",
+        "How Innovation Works",
+        "Invention and Innovation",
+        "Diffusion of Innovations",
+        "The Lean Startup",
+        "Escaping the Build Trap",
+        "Zero to One",
+        "Only the Paranoid Survive",
+        "How We Got to Now"
+      ]
+    },
+    {
+      "id": "the_mind_before_language",
+      "name": "The Mind Before Language",
+      "question": "What is the mind before culture, language, and society shaped it?",
+      "color": "#4A6B3A",
+      "anchor": "The Prehistory of the Mind",
+      "tension": "Mind as evolved module (Mithen, Pinker) vs mind as culturally constructed (Henrich, WEIRD) — how much of cognition is universal versus local?",
+      "books": [
+        "The Prehistory of the Mind",
+        "Other Minds",
+        "Darwin's Dangerous Idea",
+        "The Beginning of Infinity",
+        "The Fabric of Reality",
+        "Consilience: The Unity of Knowledge",
+        "Frames of Mind",
+        "The Weirdest People in the World",
+        "Mind in Motion",
+        "The Difference"
+      ]
+    },
+    {
+      "id": "body_as_practice",
+      "name": "The Body as Practice",
+      "question": "What does the body know that the mind cannot articulate, and how do you develop it?",
+      "color": "#5A8A70",
+      "anchor": "Light on Yoga",
+      "tension": "Body as instrument of spirit (Iyengar, Patanjali) vs body as evolved machine to optimize (Attia, McDougall) — is practice about transcendence or performance?",
+      "books": [
+        "Patanjali's Yoga Sutras",
+        "Patanjali Yoga",
+        "Light on Yoga",
+        "Light on Pranayama",
+        "Light on Life",
+        "Yoga for Body, Breath, and Mind",
+        "The Heart of Yoga",
+        "The Yoga Sutras of Patanjali",
+        "Born to Run",
+        "Starting Strength: Basic Barbell Training",
+        "Exercised",
+        "TB Method",
+        "Outlive",
+        "Super Agers"
+      ]
+    },
+    {
+      "id": "zen_current",
+      "name": "The Zen Current",
+      "question": "What does direct experience — stripped of doctrine — actually teach?",
+      "color": "#4A7A6A",
+      "anchor": "An Introduction to Zen Buddhism",
+      "tension": "Zen as practice (Suzuki, Thich Nhat Hanh — just sit, just walk) vs Zen as paradox (koans, Kopp — the teaching is the destruction of the teaching)",
+      "books": [
+        "An Introduction to Zen Buddhism",
+        "The Zen Koan as a Means of Attaining Enlightenment",
+        "How to Walk",
+        "Who Ordered This Truckload of Dung?",
+        "If You Meet the Buddha on the Road, Kill Him",
+        "Tao Te Ching",
+        "The Analects",
+        "Trying Not to Try",
+        "Catching the Big Fish",
+        "Destructive Emotions"
+      ]
+    },
+    {
+      "id": "vedantic_root",
+      "name": "The Vedantic Root",
+      "question": "What is the self, stripped of all additions?",
+      "color": "#8A5A3A",
+      "anchor": "I Am That",
+      "tension": "Advaita non-dualism (Nisargadatta — there is only awareness) vs devotional practice (Easwaran, Iyengar — the path requires sustained effort and form)",
+      "books": [
+        "The Bhagavad Gita",
+        "The End of Sorrow (The Bhagavad Gita for Daily Living, Vol. 1)",
+        "The Upanishads",
+        "I Am That",
+        "Patanjali's Yoga Sutras",
+        "The Yoga Sutras of Patanjali",
+        "Light on Yoga",
+        "Light on Life",
+        "The Heart of Yoga",
+        "Yoga for Body, Breath, and Mind",
+        "Satipatthana Sutta Discourses",
+        "Inner Engineering",
+        "Karma",
+        "Tantra: The Art of Understanding",
+        "The Great Challenge",
+        "I Am the Gate"
+      ]
+    },
+    {
+      "id": "strategy_as_statecraft",
+      "name": "Strategy as Statecraft",
+      "question": "How do states, armies, and leaders navigate irreversible decisions under uncertainty?",
+      "color": "#6B3A3A",
+      "anchor": "The Art of War",
+      "tension": "Strategy as timeless principle (Sun Tzu, Machiavelli) vs strategy as historically contingent (Gaddis, Lee Kuan Yew) — is there a general theory of strategy or only cases?",
+      "books": [
+        "The Art of War",
+        "The Prince",
+        "On Grand Strategy",
+        "On China",
+        "Boyd",
+        "From Third World to First",
+        "Rise and Kill First",
+        "The Machiavellians: Defenders of Freedom",
+        "7 Powers: The Foundations of Business Strategy",
+        "The Revolt of the Public",
+        "Preventing Surprise Attacks"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "skin_in_the_game",
+      "name": "Skin in the Game",
+      "definition": "Asymmetric exposure to consequences — the person giving advice must bear the downside of that advice, or the advice is worthless",
+      "adversary": "principal_agent_gap",
+      "books": [
+        "Skin in the Game",
+        "Antifragile",
+        "The Black Swan",
+        "Dynamic Hedging: Managing Vanilla and Exotic Options",
+        "What I Learned Losing a Million Dollars",
+        "Meditations"
+      ]
+    },
+    {
+      "id": "principal_agent_gap",
+      "name": "Principal-Agent Gap",
+      "definition": "When the person making decisions (agent) does not bear the consequences borne by the person they represent (principal), incentives misalign systematically",
+      "adversary": "skin_in_the_game",
+      "books": [
+        "The Selfish Gene",
+        "Noise: A Flaw in Human Judgment",
+        "The Folly of Fools",
+        "No Rules Rules",
+        "Thinking and Deciding"
+      ]
+    },
+    {
+      "id": "coevolutionary_arms_race",
+      "name": "Coevolutionary Arms Race",
+      "definition": "Two systems locked in mutual adaptation — each improvement in one triggers a response in the other, producing an endless escalation with no equilibrium",
+      "adversary": null,
+      "books": [
+        "The Red Queen",
+        "The Selfish Gene",
+        "The Extended Phenotype",
+        "The Origins of Virtue",
+        "Influence: Science and Practice"
+      ]
+    },
+    {
+      "id": "illegibility_hidden_order",
+      "name": "Illegibility / Hidden Order",
+      "definition": "Complex systems contain intelligence that is invisible to outside observers and cannot be made legible without destroying what makes it valuable",
+      "adversary": "metric_colonization",
+      "books": [
+        "The Timeless Way of Building",
+        "A Pattern Language",
+        "Toyota Production System",
+        "Off the Books: The Underground Economy of the Urban Poor",
+        "Emergent Tokyo",
+        "Gut Feelings"
+      ]
+    },
+    {
+      "id": "threshold_phase_transition",
+      "name": "Threshold / Phase Transition",
+      "definition": "Small changes accumulate with no visible effect until a critical threshold is crossed, after which the system rapidly shifts to a new state",
+      "adversary": null,
+      "books": [
+        "The Tipping Point",
+        "Change: How Behavior Spreads",
+        "Diffusion of Innovations",
+        "The Black Swan",
+        "Grand Transitions",
+        "Scale"
+      ]
+    },
+    {
+      "id": "replicator_dynamics",
+      "name": "Replicator / Information Copy",
+      "definition": "Any entity that copies itself with variation and selection will evolve — applies to genes, memes, ideas, institutions, and technologies",
+      "adversary": null,
+      "books": [
+        "The Selfish Gene",
+        "Darwin's Dangerous Idea",
+        "The Evolution of Everything",
+        "How Innovation Works",
+        "Diffusion of Innovations",
+        "The Meme Machine"
+      ]
+    },
+    {
+      "id": "wu_wei_negative_space",
+      "name": "Wu Wei / Negative Space",
+      "definition": "The most effective action is often non-action — creating conditions rather than forcing outcomes, working with the grain of the system rather than against it",
+      "adversary": "metric_colonization",
+      "books": [
+        "Tao Te Ching",
+        "Trying Not to Try",
+        "Humble Inquiry",
+        "The Timeless Way of Building",
+        "Brave New Work",
+        "Catching the Big Fish"
+      ]
+    },
+    {
+      "id": "survivorship_bias",
+      "name": "Survivorship Bias",
+      "definition": "We see only what survived, not what failed — this systematically distorts our understanding of causation and our predictions for the future",
+      "adversary": null,
+      "books": [
+        "Fooled by Randomness",
+        "The Black Swan",
+        "Noise: A Flaw in Human Judgment",
+        "Sources of Power",
+        "What I Learned Losing a Million Dollars"
+      ]
+    },
+    {
+      "id": "carrying_capacity",
+      "name": "Carrying Capacity / Binding Constraint",
+      "definition": "Every system has a limiting factor — growth stops not when all resources are depleted but when the scarcest one runs out",
+      "adversary": null,
+      "books": [
+        "Grand Transitions",
+        "Scale",
+        "The Rational Optimist",
+        "Guns, Germs, and Steel",
+        "Growth: From Microorganisms to Megacities"
+      ]
+    },
+    {
+      "id": "ritual_as_technology",
+      "name": "Ritual as Technology",
+      "definition": "Repeated formal practices encode functional knowledge that cannot be made explicit — they are technologies for producing states, not mere symbols",
+      "adversary": null,
+      "books": [
+        "The Yoga Sutras of Patanjali",
+        "Light on Yoga",
+        "An Introduction to Zen Buddhism",
+        "Meditations",
+        "The Heart of Yoga",
+        "Daily Rituals"
+      ]
+    },
+    {
+      "id": "mismatched_time_horizons",
+      "name": "Mismatched Time Horizons",
+      "definition": "When decision-makers operate on short cycles but consequences play out on long ones, systematic under-investment in the future is guaranteed",
+      "adversary": null,
+      "books": [
+        "The Innovator's Dilemma",
+        "Only the Paranoid Survive",
+        "Antifragile",
+        "Grand Transitions",
+        "Homo Deus: A Brief History of Tomorrow"
+      ]
+    },
+    {
+      "id": "costly_signal",
+      "name": "Costly Signal / Honest Advertising",
+      "definition": "A signal is credible only if it is too costly to fake — cheap signals are always gamed, expensive ones carry real information",
+      "adversary": null,
+      "books": [
+        "The Red Queen",
+        "The Selfish Gene",
+        "The Origins of Virtue",
+        "Influence: Science and Practice",
+        "The Art of Seduction"
+      ]
+    },
+    {
+      "id": "tacit_knowledge",
+      "name": "Tacit Knowledge / Embodied Expertise",
+      "definition": "The most important knowledge cannot be made explicit — it lives in practice, in the body, in accumulated judgment that resists codification",
+      "adversary": "metric_colonization",
+      "books": [
+        "Sources of Power",
+        "Intuition at Work",
+        "The Heart of Yoga",
+        "Light on Yoga",
+        "Toyota Production System",
+        "Starting Strength: Basic Barbell Training",
+        "An Evolutionary Theory of Economic Change"
+      ]
+    },
+    {
+      "id": "metric_colonization",
+      "name": "Metric Colonization",
+      "definition": "When a measure becomes a target, it ceases to be a good measure — quantification destroys what it was meant to capture",
+      "adversary": "tacit_knowledge",
+      "books": [
+        "Noise: A Flaw in Human Judgment",
+        "The Tyranny of Metrics",
+        "Brave New Work",
+        "Amusing Ourselves to Death",
+        "The Social Transformation of American Medicine"
+      ]
+    },
+    {
+      "id": "error_correction_as_progress",
+      "name": "Error Correction as Progress",
+      "definition": "Progress is not the accumulation of correct ideas but the development of better mechanisms for finding and correcting errors",
+      "adversary": null,
+      "books": [
+        "The Beginning of Infinity",
+        "The Fabric of Reality",
+        "The Demon-Haunted World",
+        "Consilience: The Unity of Knowledge",
+        "The Signal and the Noise"
+      ]
+    },
+    {
+      "id": "distributed_local_knowledge",
+      "name": "Distributed / Local Knowledge",
+      "definition": "The knowledge required to coordinate complex activity is distributed across millions of actors and cannot be aggregated by any central planner",
+      "adversary": null,
+      "books": [
+        "The Model Thinker",
+        "The Difference",
+        "Simple Heuristics That Make Us Smart",
+        "The Origins of Virtue",
+        "Off the Books: The Underground Economy of the Urban Poor"
+      ]
+    },
+    {
+      "id": "tight_loose_coupling",
+      "name": "Tight / Loose Coupling",
+      "definition": "Tightly coupled systems fail catastrophically and fast; loosely coupled systems fail slowly and recoverable — the choice of coupling is the fundamental design decision",
+      "adversary": null,
+      "books": [
+        "The Fearless Organization",
+        "Normal Accidents",
+        "Antifragile",
+        "Toyota Production System",
+        "The Fifth Discipline"
+      ]
+    },
+    {
+      "id": "attention_as_scarce_resource",
+      "name": "Attention as Scarce Resource",
+      "definition": "In an information-rich world, attention becomes the binding constraint — the economy of attention replaces the economy of information",
+      "adversary": null,
+      "books": [
+        "Amusing Ourselves to Death",
+        "The Shallows",
+        "Deep Work",
+        "Resonate",
+        "Alchemy"
+      ]
+    },
+    {
+      "id": "impermanence_non_attachment",
+      "name": "Impermanence / Non-Attachment",
+      "definition": "Suffering arises from clinging to what changes — the practice is not to stop caring but to hold lightly",
+      "adversary": null,
+      "books": [
+        "Meditations",
+        "Tao Te Ching",
+        "The Bhagavad Gita",
+        "I Am That",
+        "Satipatthana Sutta Discourses",
+        "Who Ordered This Truckload of Dung?"
+      ]
+    },
+    {
+      "id": "self_deception_adaptive",
+      "name": "Self-Deception as Adaptive Strategy",
+      "definition": "Deceiving oneself before deceiving others makes the deception more convincing — self-deception is not a cognitive error but an evolved social tool",
+      "adversary": null,
+      "books": [
+        "The Folly of Fools",
+        "Behave: The Biology of Humans at Our Best and Worst",
+        "Thinking, Fast and Slow",
+        "The Art of Seduction",
+        "Influence: Science and Practice"
+      ]
+    },
+    {
+      "id": "boundary_membrane_dynamics",
+      "name": "Boundary / Membrane Dynamics",
+      "definition": "The boundary of a system is not a wall but a selective membrane — what crosses it and what does not defines the system's identity",
+      "adversary": null,
+      "books": [
+        "Organizational Culture and Leadership",
+        "The Fifth Discipline",
+        "Scale",
+        "The Global City",
+        "Nature's Metropolis"
+      ]
+    },
+    {
+      "id": "ecological_fit",
+      "name": "Ecological Fit / Niche Construction",
+      "definition": "Organisms do not merely adapt to environments — they actively construct the environments to which they then adapt, changing the selection pressures on themselves",
+      "adversary": null,
+      "books": [
+        "The Extended Phenotype",
+        "Guns, Germs, and Steel",
+        "The Origins of Virtue",
+        "Consilience: The Unity of Knowledge",
+        "Nature's Metropolis"
+      ]
+    },
+    {
+      "id": "compression_signal_distillation",
+      "name": "Compression / Signal Distillation",
+      "definition": "The most powerful ideas are maximally compressed — an aphorism, a formula, a sutra carries more than a chapter because it has been distilled to its irreducible minimum",
+      "adversary": null,
+      "books": [
+        "The Art of War",
+        "Meditations",
+        "Tao Te Ching",
+        "The Yoga Sutras of Patanjali",
+        "Letters from a Stoic",
+        "The Pyramid Principle"
+      ]
+    }
   ],
   "catalog": [
     {
