@@ -226,6 +226,16 @@ Units are stored in `ideas.json` as `{ "Book Title": [ AtomicUnit, ... ] }`. Par
 
 ## Step 3 — Churn / Manthan
 
+### The problem — a multimodal search
+
+Finding a library's intellectual structure is **not a single-optimum problem**. There is no one correct clustering for Manthan to converge on. It is a **multimodal optimization** over a **rugged landscape** — many peaks of different heights, not one summit (the Adirondacks, not Everest; Kauffman's rugged fitness landscape).
+
+It is multi-optimal for two distinct reasons:
+1. **There are genuinely many good answers.** Many groupings are valid and revealing. The goal is *coverage of the peaks* — especially the non-obvious ones — not the single best.
+2. **The measure of "good" is subjective and moves.** What is true about *this* mind cannot be written as a fixed objective function; it sharpens as the curator reacts.
+
+This is why a naive optimizer fails: a greedy or hill-climbing method **converges** — it climbs the nearest obvious peak and stops (*premature convergence on a local optimum*), re-surfacing the same obvious groupings every run and never reaching the hidden collections. Manthan's three stages are the countermeasure: **diverse lenses** (multiple search vantages — cognitive diversity), a **stochastic random probe** (exploration / random restarts to escape local optima), and **human priming** (a human-in-the-loop supplying the subjective objective the machine cannot). Everything below — the seven lenses, the probe, the priming loop — is these three ideas made concrete.
+
 ### How to work with Manthan
 
 Manthan has two modes of use: **running it** and **talking to it**. They are different things.
@@ -288,6 +298,15 @@ Systematic lenses find the obvious peaks. The random probe finds the hidden ones
 The random element is essential. It prevents the engine from converging on the same peaks every time.
 
 **Theoretical basis:** Algorithms to Live By (Christian & Griffiths) — explore/exploit tradeoff. Scott Page (The Model Thinker) — cognitive diversity produces better outcomes than deeper search from the same vantage point.
+
+### Bounding the search — the explore budget
+
+Exploration does not terminate on its own — there is always another random seed. So the search is **bounded by an explore budget**, with three stops used together:
+- **A hard cap** — a simple number of probes, or a time / compute limit. The backstop that guarantees termination.
+- **Diminishing returns** — stop when the last *K* probes surface nothing new. This is the real convergence signal (the foraging rule: leave the patch when the marginal return drops below the average).
+- **The human** — stops when satisfied (the priming loop already ends this way).
+
+The budget does more than stop the search — it **calibrates how much to explore versus exploit** (the horizon). And because Manthan runs repeatedly on the batch threshold, each run seeded with fresh randomness, **coverage compounds across runs**: no single pass must reach every peak, so per-run budgets stay modest.
 
 ### The priming interface
 

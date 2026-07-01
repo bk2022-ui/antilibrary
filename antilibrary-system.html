@@ -325,7 +325,7 @@
     <div class="step-body">
       <div class="step-what">Surface threads, clusters, patterns — the Adirondacks search</div>
       <div class="step-desc">
-        Named after Samudra Manthan — the Hindu myth of churning the cosmic ocean until treasures rise to the surface. Runs seven lenses across the classified inventory: depth strata, tension pairs, founding figures, register distribution, era concentration, hidden collections, tradition mapping. Then runs the random probe — an Adirondacks search that selects edge books as seeds and finds groupings that systematic lenses miss. Human priming guides and corrects throughout. The churn is not analysis — it is encounter.
+        Named after Samudra Manthan — the Hindu myth of churning the cosmic ocean until treasures rise to the surface. Runs seven lenses across the classified inventory: depth strata, tension pairs, founding figures, register distribution, era concentration, hidden collections, tradition mapping. Then runs the random probe — an Adirondacks search that selects edge books as seeds and finds groupings that systematic lenses miss. Human priming guides and corrects throughout. The churn is not analysis — it is encounter. <a href="#manthan-depth" style="color:#c25a38; text-decoration:none;">Manthan in depth &darr;</a>
       </div>
       <span class="step-trigger">Trigger: N new books classified (batch)</span>
       <span class="step-trigger">Output: analysis.json</span>
@@ -394,6 +394,53 @@
   <span class="flow-arrow">&darr;</span> <span class="flow-label">gaps identified</span><br>
   Khoj &rarr; feeds back into Sangrah (new acquisitions)
 </div>
+
+<!-- MANTHAN IN DEPTH -->
+<div class="section-label" id="manthan-depth">Manthan in depth &mdash; the churn is a search, not a sort</div>
+<p style="font-size:14px; color:#444; line-height:1.75; max-width:880px; margin:-4px 0 15px;">
+  Most of the engine is deterministic. <strong>Lekha-Jokha</strong> (the numbers, in Darpan) counts and
+  distributes &mdash; books by register, era, tradition; enrichment coverage; the stock-taking. Arithmetic:
+  one right answer, no judgment. <strong>Manthan is different in kind.</strong> Finding the intellectual
+  structure of a library is not a problem with a single best solution to converge on. It is a
+  <strong>multimodal optimization over a rugged landscape</strong> &mdash; many peaks of different heights,
+  not one summit. The Adirondacks, not Everest. (In complexity terms, a rugged fitness landscape; in
+  operations-research terms, a non-convex, multi-optimal problem.)
+</p>
+<p style="font-size:14px; color:#444; line-height:1.75; max-width:880px; margin:0 0 15px;">
+  It is multi-optimal for two distinct reasons. <strong>First, there are genuinely many good answers.</strong>
+  Many groupings are valid and revealing; the goal is <em>coverage of the peaks</em>, especially the
+  non-obvious ones, not the single best. <strong>Second, the measure of &ldquo;good&rdquo; is subjective and
+  moves.</strong> What is true about <em>this</em> mind cannot be written as a fixed objective function. It
+  sharpens as the curator reacts. So a naive optimizer fails twice over: a greedy or hill-climbing method
+  <strong>converges</strong> &mdash; it climbs the nearest obvious peak and stops
+  (<strong>premature convergence on a local optimum</strong>), re-surfacing the same obvious groupings every
+  run and never reaching the hidden collections.
+</p>
+<p style="font-size:14px; color:#444; line-height:1.75; max-width:880px; margin:0 0 8px;">
+  Manthan attacks the landscape with three moves:
+</p>
+<ul style="font-size:14px; color:#444; line-height:1.7; max-width:880px; margin:0 0 15px; padding-left:22px;">
+  <li style="margin-bottom:8px;"><strong>Diverse lenses &mdash; multiple search vantages.</strong> Seven lenses, each optimizing a different notion of structure (depth, register, era, tradition, tension pairs, founding figures, hidden collections). Different vantage points find different peaks. This is <strong>cognitive diversity</strong> (Scott Page): diverse searchers beat one deep search from a single vantage.</li>
+  <li style="margin-bottom:8px;"><strong>The random probe &mdash; stochastic exploration.</strong> Seeding the search from random and edge books throws it into unexplored regions of the landscape, so it escapes the obvious peaks and cannot converge on the same ones each run. This is the <strong>explore</strong> side of the <strong>explore/exploit trade-off</strong> (the multi-armed-bandit framing from <em>Algorithms to Live By</em>) &mdash; the same device simulated annealing and random-restart hill-climbing use to avoid getting stuck.</li>
+  <li style="margin-bottom:8px;"><strong>Human priming &mdash; human-in-the-loop.</strong> Because the objective is subjective, a human supplies the fitness signal the machine cannot: reacting, correcting, redirecting. In effect, <strong>the human is the objective function.</strong> Automation runs the sweep and generates candidates; the human only has to judge.</li>
+</ul>
+<p style="font-size:14px; color:#444; line-height:1.75; max-width:880px; margin:0 0 15px;">
+  And because exploration never terminates on its own &mdash; there is always another seed &mdash; the search
+  is <strong>bounded by an explore budget</strong>, with three stops used together: a <strong>hard cap</strong>
+  (a number of probes, or a time limit) as the backstop that guarantees termination;
+  <strong>diminishing returns</strong> &mdash; stop when the last few probes surface nothing new &mdash; as the
+  real convergence signal (the foraging rule from ecology: leave the patch when the marginal return drops below
+  the average); and <strong>the human</strong>, who stops when satisfied. The budget does more than halt the
+  search: it <strong>calibrates how much to explore versus exploit</strong> (the horizon). Per-run budgets stay
+  modest, because Manthan runs repeatedly with fresh randomness &mdash; <strong>coverage compounds across
+  runs</strong>, so no single pass has to reach every peak.
+</p>
+<p style="font-size:14px; color:#2d4a3e; line-height:1.75; max-width:880px; margin:0 0 44px; font-weight:500;">
+  In one line: we treat the library&rsquo;s structure as a <strong>bounded, multimodal search</strong> &mdash;
+  diverse lenses, stochastic probing, and a human in the loop &mdash; precisely because there are many answers
+  worth finding and the definition of a good one is human, not a formula. That is what Samudra Manthan names:
+  churn the ocean, many times, until the treasures surface.
+</p>
 
 <!-- PARAKH — QC ARCHITECTURE -->
 <div class="section-label">Parakh &mdash; the QC architecture (archetypes &times; steps)</div>
