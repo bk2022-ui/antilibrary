@@ -4,6 +4,23 @@ Newest session first. Update this at the end of every working session before clo
 
 ---
 
+## 2026-07-01 — The app feed (`cards.json`): atomic units shaped for a future learning app
+
+- **The ask:** for an outward-facing product, shape the Parichay atomic units so a future Apple app can *pull from one place* and make "a little learning opportunity" (daily card / spaced-repetition), without building the app yet.
+- **Key realization:** the units are already ~card-shaped — `body` runs 211–532 chars (median **317**), with a `title` hook, a `type`, and tags. Parichay needs no new output; the app needs a **packaging step** — a **derived view**, sibling to Pradarshan, not a new authoring surface.
+- **Built `scripts/build-cards.ts` (`npm run cards`)** → `src/libraries/bk/cards.json`: a flat array of **3,498 self-contained cards**, each `{ id, type, title, body, prompt(reserved), tags, source{bookId,book,author,category,year}, contentHash }`. All IDs unique, **3,498/3,498 authors baked**.
+- **Three one-way-door decisions resolved in the build:**
+  1. **Stable, unique IDs** — `<bookId>::<titleSlug>` (globally unique, deterministic). Killed the 15 old cross-corpus ID collisions. Caveat in the file header: truly re-churn-stable IDs need **Parichay to persist an id** when it first mints a unit; schema is ready to prefer a persisted id.
+  2. **Attribution baked in** at build time (join to inventory: exact → case-insensitive → punctuation-insensitive fallback, which recovered the last 2 variant-title misses — *The Wabi-Sabi Way*, *The Gulistan of Sadi*).
+  3. **Flat + self-contained** feed; the app never does the messy title join.
+- **`contentHash`** included so the app can detect when a card's text changed (re-surface) without losing identity.
+- **Deliberately deferred:** the **`prompt`** (recall/question) field is reserved `null` — that's a real Parichay *enrichment* pass, the thing that turns passive reading into active learning. Not built.
+- **Open forks (no action now):** JSON-fetch vs. bundled **SQLite** as the app's ultimate pull target (recommendation: keep JSON canonical, derive SQLite later); and whether Parichay should persist IDs.
+- **Did not touch** the test bed (`src/libraries/tim-boyle/`, uncommitted `src/lib/**`).
+- **Where next starts:** decide the `prompt` enrichment (and, if pursued, have Parichay persist stable IDs) whenever the app work begins.
+
+---
+
 ## 2026-06-30 — Pradarshan made explorable (the /antilibrary tab as a digestion tool)
 
 - **Reframed the page's purpose:** the `/antilibrary` tab isn't just a public display — it's where Bharat *sees and digests* all the engine's output to figure out future design. So it had to expose everything, clickable.

@@ -10,7 +10,8 @@
     "sangrah": "tsx scripts/sangrah.ts",
     "parichay": "tsx scripts/parichay.ts",
     "manthan": "tsx scripts/manthan.ts",
-    "pradarshan": "tsx scripts/build-pradarshan.ts"
+    "pradarshan": "tsx scripts/build-pradarshan.ts",
+    "cards": "tsx scripts/build-cards.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.104.2",
