@@ -4,6 +4,20 @@ Newest session first. Update this at the end of every working session before clo
 
 ---
 
+## 2026-07-01 — iPhone app → TestFlight (shipped to device, around the work MDM)
+
+- **Got the app onto the real phone via TestFlight.** Bharat's primary iPhone is a **work phone with MDM** that blocks the free personal-team "direct install → Trust developer" path (hits "Unable to Verify App / Untrusted Developer"). The clean route — same as the Dōjō app — is **TestFlight** (an App-Store app the MDM permits). Saved as memory: [[apple-developer-and-ios-testing]]. **Do not** re-attempt direct install on that phone, and **do not** ask whether he has a developer account — he does (paid, enrolled).
+- **The path, end to end:** Xcode → set Team → destination **Any iOS Device** → **Product → Archive** → Organizer → **Distribute App → Upload** → App Store Connect → **TestFlight**.
+- **Blockers hit + fixed (record for next time):**
+  1. **App icon was a placeholder** → App Store Connect rejects builds with no 1024 icon. Generated a real 1024 (no-alpha) icon headless via **CoreGraphics** (AppKit crashes without a window server) — a shelf of ink spines + one gray leaning "unread" book. `Antilibrary/Assets.xcassets/AppIcon.appiconset/`.
+  2. **Bundle ID not registered** → the archive signed against the **XC Wildcard (`*`)** profile, so `com.bharatkhandelwal.antilibrary` never became an explicit App ID; the App Store Connect "New App" Bundle ID dropdown was empty. Fix: register it explicitly in **Certificates, Identifiers & Profiles → Identifiers**.
+  3. **Encryption compliance** prompt on the build → answer **"None of the algorithms mentioned above."**
+- **State:** build **1.0 (1)** uploaded, compliance cleared, internal group **"Me"** (Bharat) attached. App record: App Store Connect app id **6786375925**, name "Antilibrary". Waiting on propagation to the TestFlight app on the phone (first-time app = one-time invite acceptance).
+- **Update loop going forward:** `npm run cards` → copy `cards.json` into `antilibrary-ios/Antilibrary/` → bump build number → Archive → Upload. New build just appears in TestFlight.
+- **Where next starts:** confirm install on the phone; then live with the daily nudge for a week before building the widget or the `prompt` enrichment.
+
+---
+
 ## 2026-07-01 — iPhone app v1 (daily nudge) — the first consumer of the feed
 
 - **Picked the frontend.** Split "the frontend" into two decisions: interaction model (platform-independent) + platform. Pradarshan already owns web/public; so the new surface is a **personal iPhone app** (just Bharat, not ship-ready). That framing collapses the cost — no backend, no App Store, no accounts. Chosen interaction: **daily nudge** (card-of-the-day + local notification), not just flip-through.
