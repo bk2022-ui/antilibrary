@@ -12,9 +12,9 @@ Newest session first. Update this at the end of every working session before clo
   1. **App icon was a placeholder** → App Store Connect rejects builds with no 1024 icon. Generated a real 1024 (no-alpha) icon headless via **CoreGraphics** (AppKit crashes without a window server) — a shelf of ink spines + one gray leaning "unread" book. `Antilibrary/Assets.xcassets/AppIcon.appiconset/`.
   2. **Bundle ID not registered** → the archive signed against the **XC Wildcard (`*`)** profile, so `com.bharatkhandelwal.antilibrary` never became an explicit App ID; the App Store Connect "New App" Bundle ID dropdown was empty. Fix: register it explicitly in **Certificates, Identifiers & Profiles → Identifiers**.
   3. **Encryption compliance** prompt on the build → answer **"None of the algorithms mentioned above."**
-- **State:** build **1.0 (1)** uploaded, compliance cleared, internal group **"Me"** (Bharat) attached. App record: App Store Connect app id **6786375925**, name "Antilibrary". Waiting on propagation to the TestFlight app on the phone (first-time app = one-time invite acceptance).
+- **State: CONFIRMED WORKING on Bharat's phone via TestFlight.** Build **1.0 (1)**, internal group **"Me"**, App Store Connect app id **6786375925**, name "Antilibrary". The card renders and the app runs on-device.
 - **Update loop going forward:** `npm run cards` → copy `cards.json` into `antilibrary-ios/Antilibrary/` → bump build number → Archive → Upload. New build just appears in TestFlight.
-- **Where next starts:** confirm install on the phone; then live with the daily nudge for a week before building the widget or the `prompt` enrichment.
+- **Where next starts:** live with the daily nudge for ~a week; then decide the **widget** (ambient glance) vs. the **`prompt` enrichment** (quiz/recall) based on whether the habit earns its place.
 
 ---
 
