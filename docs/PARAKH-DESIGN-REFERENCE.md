@@ -6,6 +6,12 @@ agents. It is the source of truth for *what Parakh is and how it is built*; the 
 spec (`ANTILIBRARY-ENGINE-SPEC.md`) carries the one-paragraph placement, and
 `AGENT-SCOPES.md` carries the is/is-not boundaries.
 
+> **For the QC architecture across all five steps** — the archetypes, the steps ×
+> archetypes matrix, every step's checkers and power-engine splits, the reusable grounding
+> assay, and the build prioritization — see **`docs/PARAKH-ARCHITECTURE.md`** (the living
+> map + decision log). *This* doc is the deep dive on the mechanics, using Sangrah as the
+> worked example.
+
 ---
 
 ## What Parakh is

@@ -111,8 +111,13 @@ or **flags** (need eyes, no safe auto-fix).
 | `parakh-sangrah-recall` | the ~25% ingestion miss (2nd vision pass) | the source photos | planned |
 | `parakh-sangrah-plausibility` | wrong-book enrichment; fix by re-lookup, never invented metadata | world-knowledge | planned |
 
-Full design, the report schema, the phased roadmap, the silent-drop/match-provenance
-dependency, and the mapping to the demo's five QA cards: **`docs/PARAKH-DESIGN-REFERENCE.md`.**
+**The full QC architecture across all five steps** — the archetypes (structure · recall ·
+fidelity · consistency · staleness · leakage), the steps × archetypes matrix, the per-step
+checkers and power-engine splits, the reusable grounding assay, and the build prioritization:
+**`docs/PARAKH-ARCHITECTURE.md`** (the living map + decision log).
+
+Mechanics for one checker — the report schema, phased roadmap, silent-drop/match-provenance
+dependency, and the mapping to the demo's QA cards: **`docs/PARAKH-DESIGN-REFERENCE.md`.**
 
 ---
 

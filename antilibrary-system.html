@@ -370,10 +370,88 @@
   selection config<br>
   <span class="flow-arrow">&darr;</span><br>
   <strong>Pradarshan — the window</strong> <span class="flow-label">(external, for the world)</span><br>
-  antilibrary.bharatkhandelwal.com<br>
+  bharatkhandelwal.com/antilibrary<br>
   <span class="flow-arrow">&darr;</span> <span class="flow-label">gaps identified</span><br>
   Khoj &rarr; feeds back into Sangrah (new acquisitions)
 </div>
+
+<!-- PARAKH — QC ARCHITECTURE -->
+<div class="section-label">Parakh &mdash; the QC architecture (archetypes &times; steps)</div>
+<p style="font-size:13px; color:#666; max-width:860px; margin:-6px 0 14px; line-height:1.6;">
+  <strong>Parakh (परख)</strong> is the assay layer &mdash; a family of checkers
+  <code>parakh-&lt;step&gt;-&lt;lens&gt;</code> on a <strong>detect &rarr; review &rarr; apply</strong> rail.
+  It is <strong>archetypes &times; steps</strong>: the same QC pattern applied where the risk lives.
+  Two laws set the weighting &mdash; risk shifts down the pipeline (data &rarr; hallucination &rarr; leakage),
+  and errors compound, so grounding is caught at birth. <strong>★ = the grounding spine</strong> (one reusable
+  &ldquo;does claim X trace to evidence Y?&rdquo; assay). Full map + decision log:
+  <code>docs/PARAKH-ARCHITECTURE.md</code>.
+</p>
+<table style="width:100%; border-collapse:collapse; font-size:12px; margin-bottom:10px;">
+  <thead>
+    <tr style="text-align:left; color:#aaa; font-size:10px; text-transform:uppercase; letter-spacing:0.07em;">
+      <th style="padding:7px 10px 7px 0; border-bottom:1px solid #e0dcd6;">Step</th>
+      <th style="padding:7px 8px; border-bottom:1px solid #e0dcd6;">Structure</th>
+      <th style="padding:7px 8px; border-bottom:1px solid #e0dcd6;">Recall / coverage</th>
+      <th style="padding:7px 8px; border-bottom:1px solid #e0dcd6;">Fidelity / grounding</th>
+      <th style="padding:7px 8px; border-bottom:1px solid #e0dcd6;">Consistency</th>
+      <th style="padding:7px 8px; border-bottom:1px solid #e0dcd6;">Staleness</th>
+      <th style="padding:7px 0 7px 8px; border-bottom:1px solid #e0dcd6;">Leakage</th>
+    </tr>
+  </thead>
+  <tbody style="color:#555;">
+    <tr>
+      <td style="padding:8px 10px 8px 0; border-bottom:1px solid #efece7; color:#1a4a4a; font-weight:600;">Sangrah</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">✅ structure</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">◐ recall</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">◐ plausibility</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7; color:#ccc;">&mdash;</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7; color:#ccc;">&mdash;</td>
+      <td style="padding:8px 0 8px 8px; border-bottom:1px solid #efece7; color:#ccc;">&mdash;</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px 8px 0; border-bottom:1px solid #efece7; color:#1a4a4a; font-weight:600;">Parichay</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">○ structure</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">○ coverage</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7; color:#8a4a1a;"><strong>★</strong> ○ fidelity</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">○ consistency</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7; color:#ccc;">&mdash;</td>
+      <td style="padding:8px 0 8px 8px; border-bottom:1px solid #efece7; color:#ccc;">&mdash;</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px 8px 0; border-bottom:1px solid #efece7; color:#1a4a4a; font-weight:600;">Manthan</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">○ structure</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">○ coverage</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7; color:#8a4a1a;"><strong>★</strong> ○ validity</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">○ novelty</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">○ staleness</td>
+      <td style="padding:8px 0 8px 8px; border-bottom:1px solid #efece7; color:#ccc;">&mdash;</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px 8px 0; border-bottom:1px solid #efece7; color:#1a4a4a; font-weight:600;">Darpan</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">○ stats + pull</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7; color:#ccc;">&mdash;</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7; color:#8a4a1a;"><strong>★</strong> ○ grounding</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7; color:#ccc;">&mdash;</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7; color:#ccc;">&mdash;</td>
+      <td style="padding:8px 0 8px 8px; border-bottom:1px solid #efece7;">○ private-flag</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px 8px 0; border-bottom:1px solid #efece7; color:#1a4a4a; font-weight:600;">Pradarshan</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">○ integrity</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7;">○ vs-pull</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7; color:#ccc;">&mdash;</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7; color:#ccc;">&mdash;</td>
+      <td style="padding:8px; border-bottom:1px solid #efece7; color:#ccc;">&mdash;</td>
+      <td style="padding:8px 0 8px 8px; border-bottom:1px solid #efece7; color:#8a4a1a;"><strong>★</strong> ○ leakage</td>
+    </tr>
+  </tbody>
+</table>
+<p style="font-size:11px; color:#999; margin:0 0 12px;">
+  ✅ built &nbsp;·&nbsp; ◐ planned &nbsp;·&nbsp; ○ designed, not scheduled &nbsp;·&nbsp; ★ critical (grounding spine) &nbsp;·&nbsp; &mdash; not needed
+  &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Build order:</strong> grounding spine (deep) + clone the deterministic <code>structure</code> checker (wide) + the leakage membrane &mdash; ~5 real things, not 16.
+  &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Power-engine splits pending:</strong> Manthan delta-pass, Parichay classify/decompose, a merge/promote engine.
+  &nbsp;&nbsp;|&nbsp;&nbsp; Cross-cutting layers: <strong>Parakh</strong> (quality) · <strong>Taal</strong> (cadence).
+</p>
 
 <!-- OUTPUT FILES -->
 <div class="section-label">Output files</div>
