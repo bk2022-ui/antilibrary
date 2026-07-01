@@ -4,6 +4,30 @@ Newest session first. Update this at the end of every working session before clo
 
 ---
 
+## 2026-07-01 — Parakh, the assay layer (Sangrah QC agent) — Phase 0–1 built + designed
+
+- **Started a quality-check layer for the engine.** It is **not a sixth step** (the five names stay locked) — it is cross-cutting infrastructure that assays each step's output, and the concrete realisation of the public demo's *"Agents Checking Agents."*
+- **Named it Parakh (परख)** — the assayer's word (to test genuineness/quality). It is a **family**: checkers named `parakh-<step>-<lens>` (dropped a `qc-` prefix — Parakh already means QC; one vocabulary). Family-of-siblings model: each checker independently runnable, but they share one `parakh-report.json` and one umbrella runner (`npm run parakh <step>`).
+- **The load-bearing architecture — the propose → review → apply rail.** Every checker is a read-only **detector** (mutates nothing); a separate **apply** step commits only human-accepted fixes. So "auto-fix later" is just flipping the approval default, not a rewrite. Findings are **proposals** (deterministic before→after) or **flags** (need eyes, no safe auto-fix). Decision this session: **human-checks-first** for Layer C until we trust it; auto-fix is a per-check graduation (Phase 6).
+- **Sangrah gets three checkers** (three distinct leaks, different ground truth): `structure` (deterministic records — built), `recall` (the ~25% vision miss — planned Phase 4), `plausibility` (wrong-book enrichment — planned Phase 5).
+- **Built Phase 0–1: `parakh-sangrah-structure`.** `src/lib/sangrah/parakh/{types,isbn,structure,report}.ts` + `scripts/parakh.ts` + `npm run parakh`. Five deterministic checks: ISBN checksums, cross-inventory duplicates, missing fields, year sanity, enrichment-failure triage. Read-only; writes `src/libraries/bk/parakh-report.json`.
+- **First run finding (important):** the on-disk `sangrah-staging.json` is **stale** — already merged into inventory — so the dup check lit up on nearly everything (verified 3 against real inventory: correct, not false positives). The checker works; the dataset is a poor test. **Proposal path is unexercised** (0 proposals — every enriched entry had valid ISBNs/years). Next step needs a **synthetic fixture** to prove proposals before building apply.
+- **Deferred with reason:** the borderline-match / silent-drop audit needs match provenance Sangrah currently discards → moved to **Phase 3** (with the `match.ts` hardening), keeping Phase 1 truly read-only.
+
+### Framework state
+- Parakh added as a documented cross-cutting layer. Five step names unchanged. New naming rule: `parakh-<step>-<lens>`.
+- Docs: **`docs/PARAKH-DESIGN-REFERENCE.md`** (new, full design) · Parakh section in `docs/ANTILIBRARY-ENGINE-SPEC.md` · Parakh scope in `docs/AGENT-SCOPES.md`.
+- Public `bk-site/public/engine-demo.html`: "Agents Checking Agents" — the single *Ingestion Recall* card broken into the three Parakh-sangrah cards (option A, with honest built/planned state), diagram diamond relabeled **Parakh · Sangrah**, dead `antilibrary.bharatkhandelwal.com` link fixed → `/antilibrary`. **Pushed** (Vercel).
+
+### Decisions
+- Parakh = family, not one agent. Slug `parakh-<step>-<lens>`, no `qc-`. Human-review-first, auto-fix as a later per-check graduation. `match.ts` silent-drop fix is evidence-first (Phase 3), not a blind behavior change now.
+- Public demo: **show the asymmetry** (Sangrah has 3 checkers, other steps 1) — the other QC agents aren't investigated yet and may also split; the thinking will evolve in view.
+
+### Where next starts
+- Build the **synthetic staging fixture** (bad-checksum ISBN, derivable isbn13, future year, fresh dup, clean entry) to exercise proposals → then **`parakh-apply`** (Phase 2). Roadmap + current state at the bottom of `docs/PARAKH-DESIGN-REFERENCE.md`.
+
+---
+
 ## 2026-07-01 — iPhone app → TestFlight (shipped to device, around the work MDM)
 
 - **Got the app onto the real phone via TestFlight.** Bharat's primary iPhone is a **work phone with MDM** that blocks the free personal-team "direct install → Trust developer" path (hits "Unable to Verify App / Untrusted Developer"). The clean route — same as the Dōjō app — is **TestFlight** (an App-Store app the MDM permits). Saved as memory: [[apple-developer-and-ios-testing]]. **Do not** re-attempt direct install on that phone, and **do not** ask whether he has a developer account — he does (paid, enrolled).

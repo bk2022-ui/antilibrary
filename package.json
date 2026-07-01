@@ -10,6 +10,7 @@
     "sangrah": "tsx scripts/sangrah.ts",
     "parichay": "tsx scripts/parichay.ts",
     "manthan": "tsx scripts/manthan.ts",
+    "parakh": "tsx scripts/parakh.ts",
     "pradarshan": "tsx scripts/build-pradarshan.ts",
     "cards": "tsx scripts/build-cards.ts"
   },

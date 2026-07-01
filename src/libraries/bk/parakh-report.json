@@ -1,0 +1,1084 @@
+{
+  "runDate": "2026-07-01T16:25:29.079Z",
+  "checker": "parakh-sangrah-structure",
+  "target": "sangrah",
+  "stagingPath": "src/libraries/bk/sangrah-staging.json",
+  "summary": {
+    "total": 69,
+    "proposals": 0,
+    "flags": 69,
+    "bySeverity": {
+      "high": 25,
+      "medium": 9,
+      "low": 35
+    },
+    "byCheck": {
+      "missing-field": 26,
+      "enrichment-triage": 13,
+      "duplicate": 30
+    }
+  },
+  "findings": [
+    {
+      "id": "duplicate:newEntries:0",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "Goodbye, things",
+        "author": "Fumio Sasaki",
+        "location": "newEntries",
+        "index": 0
+      },
+      "message": "\"Goodbye, things\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:newEntries:10",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "MCDP 6 Command and Control",
+        "author": "Department of Department of Defense",
+        "location": "newEntries",
+        "index": 10
+      },
+      "message": "\"MCDP 6 Command and Control\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:newEntries:11",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "One man's view of the world",
+        "author": "Lee Kuan Yew",
+        "location": "newEntries",
+        "index": 11
+      },
+      "message": "\"One man's view of the world\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:newEntries:3",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "Little Book of Ikigai",
+        "author": "Ken Mogi",
+        "location": "newEntries",
+        "index": 3
+      },
+      "message": "\"Little Book of Ikigai\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:newEntries:5",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "MCDP 2 Intelligence",
+        "author": "Department of Defense",
+        "location": "newEntries",
+        "index": 5
+      },
+      "message": "\"MCDP 2 Intelligence\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:newEntries:6",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "MCDP 1 Warfighting",
+        "author": "Department of Defense",
+        "location": "newEntries",
+        "index": 6
+      },
+      "message": "\"MCDP 1 Warfighting\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:newEntries:7",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "MCDP 3 Expeditionary Operations",
+        "author": "Department of Defense",
+        "location": "newEntries",
+        "index": 7
+      },
+      "message": "\"MCDP 3 Expeditionary Operations\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:newEntries:8",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "MCDP 5 Planning",
+        "author": "Department of Defense",
+        "location": "newEntries",
+        "index": 8
+      },
+      "message": "\"MCDP 5 Planning\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:newEntries:9",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "MCDP 4 Logistics",
+        "author": "Department of Department of Defense",
+        "location": "newEntries",
+        "index": 9
+      },
+      "message": "\"MCDP 4 Logistics\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:0",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "Invitation to Courtyard Gardens of Kyoto / 京都坪庭拝見",
+        "author": "Mizuno Katsuhiko",
+        "location": "reviewQueue",
+        "index": 0
+      },
+      "message": "\"Invitation to Courtyard Gardens of Kyoto / 京都坪庭拝見\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:1",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "Kyōto, zendera no meitei",
+        "author": "Katsuhiko Mizuno",
+        "location": "reviewQueue",
+        "index": 1
+      },
+      "message": "\"Kyōto, zendera no meitei\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:10",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "B Magazine Issue No.54 Maison Margiela",
+        "author": "Brand Documentary Magazine (BRAND. BALANCE.)",
+        "location": "reviewQueue",
+        "index": 10
+      },
+      "message": "\"B Magazine Issue No.54 Maison Margiela\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:11",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "MCDP 1-1 STRATEGY",
+        "author": "Department of Defense",
+        "location": "reviewQueue",
+        "index": 11
+      },
+      "message": "\"MCDP 1-1 STRATEGY\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:13",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "Lun yu",
+        "author": "Confucius",
+        "location": "reviewQueue",
+        "index": 13
+      },
+      "message": "\"Lun yu\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:14",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "The Great Learning",
+        "author": "Confucius/Zengzi (attributed)",
+        "location": "reviewQueue",
+        "index": 14
+      },
+      "message": "\"The Great Learning\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:15",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "The Doctrine of the Mean",
+        "author": "Zisi (attributed)",
+        "location": "reviewQueue",
+        "index": 15
+      },
+      "message": "\"The Doctrine of the Mean\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:16",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "The works of Mencius",
+        "author": "Mencius",
+        "location": "reviewQueue",
+        "index": 16
+      },
+      "message": "\"The works of Mencius\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:2",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility",
+        "author": "MIZUNO Katsuhiko, Tom WRIGHT",
+        "location": "reviewQueue",
+        "index": 2
+      },
+      "message": "\"京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:3",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "日本の酒 / Sake: A beyond-the-basics guide to Understanding, Tasting, Selection & Enjoyment",
+        "author": "John Gauntner, Ushihara Mayumi",
+        "location": "reviewQueue",
+        "index": 3
+      },
+      "message": "\"日本の酒 / Sake: A beyond-the-basics guide to Understanding, Tasting, Selection & Enjoyment\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:4",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "RIMOWA - Magazine B Issue No.32",
+        "author": "JOH & Company (Magazine B)",
+        "location": "reviewQueue",
+        "index": 4
+      },
+      "message": "\"RIMOWA - Magazine B Issue No.32\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:5",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "Magazine B - Issue No.53 MUJI",
+        "author": "Magazine B (Brand Balance)",
+        "location": "reviewQueue",
+        "index": 5
+      },
+      "message": "\"Magazine B - Issue No.53 MUJI\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:6",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "Magazine B - MAISON",
+        "author": "Magazine B (Brand Balance)",
+        "location": "reviewQueue",
+        "index": 6
+      },
+      "message": "\"Magazine B - MAISON\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:7",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "BRAND. BALANCE. ISSUE NO.56 MICHELIN GUIDE",
+        "author": "Magazine B",
+        "location": "reviewQueue",
+        "index": 7
+      },
+      "message": "\"BRAND. BALANCE. ISSUE NO.56 MICHELIN GUIDE\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:8",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "France",
+        "author": "Michelin",
+        "location": "reviewQueue",
+        "index": 8
+      },
+      "message": "\"France\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:9",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "high",
+      "target": {
+        "title": "NETFLIX",
+        "author": "Magazine B",
+        "location": "reviewQueue",
+        "index": 9
+      },
+      "message": "\"NETFLIX\" already in inventory (same title and author); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:newEntries:1",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "medium",
+      "target": {
+        "title": "Ganbatte!",
+        "author": "Albert Liebermann",
+        "location": "newEntries",
+        "index": 1
+      },
+      "message": "\"Ganbatte!\" already in inventory (same title, author differs — could be a sibling edition); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:newEntries:2",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "medium",
+      "target": {
+        "title": "The Japanese mind",
+        "author": "Roger J. Davies",
+        "location": "newEntries",
+        "index": 2
+      },
+      "message": "\"The Japanese mind\" already in inventory (same title, author differs — could be a sibling edition); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:newEntries:4",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "medium",
+      "target": {
+        "title": "The Wabi Sabi Way",
+        "author": "Mike Sturm",
+        "location": "newEntries",
+        "index": 4
+      },
+      "message": "\"The Wabi Sabi Way\" already in inventory (same title, author differs — could be a sibling edition); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:12",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "medium",
+      "target": {
+        "title": "Tao te Ching",
+        "author": "老子",
+        "location": "reviewQueue",
+        "index": 12
+      },
+      "message": "\"Tao te Ching\" already in inventory (same title, author differs — could be a sibling edition); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "duplicate:reviewQueue:17",
+      "checker": "parakh-sangrah-structure",
+      "check": "duplicate",
+      "kind": "flag",
+      "severity": "medium",
+      "target": {
+        "title": "The Gulistan of Sa'di",
+        "author": "Translated by W.M. Thackston",
+        "location": "reviewQueue",
+        "index": 17
+      },
+      "message": "\"The Gulistan of Sa'di\" already in inventory (same title, author differs — could be a sibling edition); Sangrah staged it as new.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:14",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "medium",
+      "target": {
+        "title": "The Great Learning",
+        "author": "Confucius/Zengzi (attributed)",
+        "location": "reviewQueue",
+        "index": 14
+      },
+      "message": "low-confidence read AND enrichment failed — genuinely suspect; verify against the spine.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:15",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "medium",
+      "target": {
+        "title": "The Doctrine of the Mean",
+        "author": "Zisi (attributed)",
+        "location": "reviewQueue",
+        "index": 15
+      },
+      "message": "low-confidence read AND enrichment failed — genuinely suspect; verify against the spine.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:6",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "medium",
+      "target": {
+        "title": "Magazine B - MAISON",
+        "author": "Magazine B (Brand Balance)",
+        "location": "reviewQueue",
+        "index": 6
+      },
+      "message": "low-confidence read AND enrichment failed — genuinely suspect; verify against the spine.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:7",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "medium",
+      "target": {
+        "title": "BRAND. BALANCE. ISSUE NO.56 MICHELIN GUIDE",
+        "author": "Magazine B",
+        "location": "reviewQueue",
+        "index": 7
+      },
+      "message": "medium-confidence read AND enrichment failed — genuinely suspect; verify against the spine.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:0",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "Invitation to Courtyard Gardens of Kyoto / 京都坪庭拝見",
+        "author": "Mizuno Katsuhiko",
+        "location": "reviewQueue",
+        "index": 0
+      },
+      "message": "confident read but no metadata match — likely a real book absent from the lookup APIs, not a defect. Verify title/author, then accept as-is.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:10",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "B Magazine Issue No.54 Maison Margiela",
+        "author": "Brand Documentary Magazine (BRAND. BALANCE.)",
+        "location": "reviewQueue",
+        "index": 10
+      },
+      "message": "confident read but no metadata match — likely a real book absent from the lookup APIs, not a defect. Verify title/author, then accept as-is.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:11",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "MCDP 1-1 STRATEGY",
+        "author": "Department of Defense",
+        "location": "reviewQueue",
+        "index": 11
+      },
+      "message": "confident read but no metadata match — likely a real book absent from the lookup APIs, not a defect. Verify title/author, then accept as-is.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:17",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "The Gulistan of Sa'di",
+        "author": "Translated by W.M. Thackston",
+        "location": "reviewQueue",
+        "index": 17
+      },
+      "message": "confident read but no metadata match — likely a real book absent from the lookup APIs, not a defect. Verify title/author, then accept as-is.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:2",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility",
+        "author": "MIZUNO Katsuhiko, Tom WRIGHT",
+        "location": "reviewQueue",
+        "index": 2
+      },
+      "message": "confident read but no metadata match — likely a real book absent from the lookup APIs, not a defect. Verify title/author, then accept as-is.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:3",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "日本の酒 / Sake: A beyond-the-basics guide to Understanding, Tasting, Selection & Enjoyment",
+        "author": "John Gauntner, Ushihara Mayumi",
+        "location": "reviewQueue",
+        "index": 3
+      },
+      "message": "confident read but no metadata match — likely a real book absent from the lookup APIs, not a defect. Verify title/author, then accept as-is.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:4",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "RIMOWA - Magazine B Issue No.32",
+        "author": "JOH & Company (Magazine B)",
+        "location": "reviewQueue",
+        "index": 4
+      },
+      "message": "confident read but no metadata match — likely a real book absent from the lookup APIs, not a defect. Verify title/author, then accept as-is.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:5",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "Magazine B - Issue No.53 MUJI",
+        "author": "Magazine B (Brand Balance)",
+        "location": "reviewQueue",
+        "index": 5
+      },
+      "message": "confident read but no metadata match — likely a real book absent from the lookup APIs, not a defect. Verify title/author, then accept as-is.",
+      "status": "pending"
+    },
+    {
+      "id": "enrichment-triage:reviewQueue:9",
+      "checker": "parakh-sangrah-structure",
+      "check": "enrichment-triage",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "NETFLIX",
+        "author": "Magazine B",
+        "location": "reviewQueue",
+        "index": 9
+      },
+      "message": "confident read but no metadata match — likely a real book absent from the lookup APIs, not a defect. Verify title/author, then accept as-is.",
+      "status": "pending"
+    },
+    {
+      "id": "missing-field:reviewQueue:0",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "Invitation to Courtyard Gardens of Kyoto / 京都坪庭拝見",
+        "author": "Mizuno Katsuhiko",
+        "location": "reviewQueue",
+        "index": 0
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:0",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "Invitation to Courtyard Gardens of Kyoto / 京都坪庭拝見",
+        "author": "Mizuno Katsuhiko",
+        "location": "reviewQueue",
+        "index": 0
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    },
+    {
+      "id": "missing-field:reviewQueue:10",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "B Magazine Issue No.54 Maison Margiela",
+        "author": "Brand Documentary Magazine (BRAND. BALANCE.)",
+        "location": "reviewQueue",
+        "index": 10
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:10",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "B Magazine Issue No.54 Maison Margiela",
+        "author": "Brand Documentary Magazine (BRAND. BALANCE.)",
+        "location": "reviewQueue",
+        "index": 10
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    },
+    {
+      "id": "missing-field:reviewQueue:11",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "MCDP 1-1 STRATEGY",
+        "author": "Department of Defense",
+        "location": "reviewQueue",
+        "index": 11
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:11",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "MCDP 1-1 STRATEGY",
+        "author": "Department of Defense",
+        "location": "reviewQueue",
+        "index": 11
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    },
+    {
+      "id": "missing-field:reviewQueue:14",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "The Great Learning",
+        "author": "Confucius/Zengzi (attributed)",
+        "location": "reviewQueue",
+        "index": 14
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:14",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "The Great Learning",
+        "author": "Confucius/Zengzi (attributed)",
+        "location": "reviewQueue",
+        "index": 14
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    },
+    {
+      "id": "missing-field:reviewQueue:15",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "The Doctrine of the Mean",
+        "author": "Zisi (attributed)",
+        "location": "reviewQueue",
+        "index": 15
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:15",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "The Doctrine of the Mean",
+        "author": "Zisi (attributed)",
+        "location": "reviewQueue",
+        "index": 15
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    },
+    {
+      "id": "missing-field:reviewQueue:17",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "The Gulistan of Sa'di",
+        "author": "Translated by W.M. Thackston",
+        "location": "reviewQueue",
+        "index": 17
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:17",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "The Gulistan of Sa'di",
+        "author": "Translated by W.M. Thackston",
+        "location": "reviewQueue",
+        "index": 17
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    },
+    {
+      "id": "missing-field:reviewQueue:2",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility",
+        "author": "MIZUNO Katsuhiko, Tom WRIGHT",
+        "location": "reviewQueue",
+        "index": 2
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:2",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "京都・禅寺の名庭 / Samadhi on Zen Gardens: Dynamism and Tranquility",
+        "author": "MIZUNO Katsuhiko, Tom WRIGHT",
+        "location": "reviewQueue",
+        "index": 2
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    },
+    {
+      "id": "missing-field:reviewQueue:3",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "日本の酒 / Sake: A beyond-the-basics guide to Understanding, Tasting, Selection & Enjoyment",
+        "author": "John Gauntner, Ushihara Mayumi",
+        "location": "reviewQueue",
+        "index": 3
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:3",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "日本の酒 / Sake: A beyond-the-basics guide to Understanding, Tasting, Selection & Enjoyment",
+        "author": "John Gauntner, Ushihara Mayumi",
+        "location": "reviewQueue",
+        "index": 3
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    },
+    {
+      "id": "missing-field:reviewQueue:4",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "RIMOWA - Magazine B Issue No.32",
+        "author": "JOH & Company (Magazine B)",
+        "location": "reviewQueue",
+        "index": 4
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:4",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "RIMOWA - Magazine B Issue No.32",
+        "author": "JOH & Company (Magazine B)",
+        "location": "reviewQueue",
+        "index": 4
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    },
+    {
+      "id": "missing-field:reviewQueue:5",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "Magazine B - Issue No.53 MUJI",
+        "author": "Magazine B (Brand Balance)",
+        "location": "reviewQueue",
+        "index": 5
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:5",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "Magazine B - Issue No.53 MUJI",
+        "author": "Magazine B (Brand Balance)",
+        "location": "reviewQueue",
+        "index": 5
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    },
+    {
+      "id": "missing-field:reviewQueue:6",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "Magazine B - MAISON",
+        "author": "Magazine B (Brand Balance)",
+        "location": "reviewQueue",
+        "index": 6
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:6",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "Magazine B - MAISON",
+        "author": "Magazine B (Brand Balance)",
+        "location": "reviewQueue",
+        "index": 6
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    },
+    {
+      "id": "missing-field:reviewQueue:7",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "BRAND. BALANCE. ISSUE NO.56 MICHELIN GUIDE",
+        "author": "Magazine B",
+        "location": "reviewQueue",
+        "index": 7
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:7",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "BRAND. BALANCE. ISSUE NO.56 MICHELIN GUIDE",
+        "author": "Magazine B",
+        "location": "reviewQueue",
+        "index": 7
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    },
+    {
+      "id": "missing-field:reviewQueue:9",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "NETFLIX",
+        "author": "Magazine B",
+        "location": "reviewQueue",
+        "index": 9
+      },
+      "message": "no publication year on record.",
+      "status": "pending",
+      "field": "year"
+    },
+    {
+      "id": "missing-field:reviewQueue:9",
+      "checker": "parakh-sangrah-structure",
+      "check": "missing-field",
+      "kind": "flag",
+      "severity": "low",
+      "target": {
+        "title": "NETFLIX",
+        "author": "Magazine B",
+        "location": "reviewQueue",
+        "index": 9
+      },
+      "message": "no ISBN of either form on record.",
+      "status": "pending",
+      "field": "isbn"
+    }
+  ]
+}

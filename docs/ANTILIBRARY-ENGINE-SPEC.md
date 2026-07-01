@@ -82,6 +82,38 @@ The arrangement of editions is itself data. Do not flatten it.
 
 ---
 
+## Parakh — the assay layer (agents checking agents)
+
+**Parakh (परख)** is the quality layer that assays the output of the engine steps. It is
+**not a sixth step** — the five step names are locked. It is cross-cutting infrastructure
+and the concrete realisation of the public demo's *"Agents Checking Agents."*
+
+*Parakh* is the assayer's word — to test whether something is genuine and sound. It is a
+**family** of sibling checkers, one or more per step, named `parakh-<step>-<lens>`
+(e.g. `parakh-sangrah-structure`). Every checker emits the same report shape and rides
+the same rail:
+
+> **detect (read-only) → human review → apply (accepted fixes only)**
+
+Detection and application are separate. A checker mutates nothing; it writes proposals
+and flags to `parakh-report.json`. A separate apply step commits only what a human
+accepts. "Auto-fix" is a later, per-check graduation (flip the approval default), not a
+rewrite. Findings are either **proposals** (deterministic `before → after`, accept/reject)
+or **flags** (need eyes, no safe auto-fix).
+
+**Sangrah has three checkers** (the three leaks in its output, in build order):
+
+| Checker | Lens | Ground truth | State |
+|---|---|---|---|
+| `parakh-sangrah-structure` | ISBN checksums, dups, missing fields, year sanity, enrichment triage | the data | ✅ built |
+| `parakh-sangrah-recall` | the ~25% ingestion miss (2nd vision pass) | the source photos | planned |
+| `parakh-sangrah-plausibility` | wrong-book enrichment; fix by re-lookup, never invented metadata | world-knowledge | planned |
+
+Full design, the report schema, the phased roadmap, the silent-drop/match-provenance
+dependency, and the mapping to the demo's five QA cards: **`docs/PARAKH-DESIGN-REFERENCE.md`.**
+
+---
+
 ## Step 1 — Collect / Sangrah
 
 ### Accepted input formats

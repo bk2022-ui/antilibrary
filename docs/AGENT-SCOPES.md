@@ -99,10 +99,31 @@ The richer the input to Claude, the more faithful the classification and decompo
 
 ---
 
+## Parakh — the assay layer (checks the steps)
+
+**Job:** Assay an engine step's output and judge whether each record is genuine and
+sound — then propose fixes for a human to accept. Not a sixth step; cross-cutting
+quality infrastructure. A **family** of sibling checkers named `parakh-<step>-<lens>`.
+
+**Is:**
+- Detection — read the step's output, find defects, write proposals + flags to `parakh-report.json`
+- A propose → review → apply rail — detection is read-only; a separate apply step commits only accepted fixes
+- Two honest finding kinds — **proposals** (deterministic before→after) and **flags** (need eyes, no safe auto-fix)
+- Per-step, multi-lens — Sangrah has three: `structure` (built), `recall`, `plausibility`
+
+**Is not:**
+- A mutator at detection time — a checker never edits data; only apply does, and only what a human accepts
+- A metadata inventor — plausibility fixes come from re-lookup, never from a model-guessed ISBN or year
+- A step in the pipeline — it wraps steps, it is not one; the five names stay locked
+
+**Output:** `parakh-report.json` (proposals + flags) → human review → `parakh-apply` merges accepted fixes into staging + a history ledger. Full design: `PARAKH-DESIGN-REFERENCE.md`.
+
+---
+
 ## What comes after
 
 | Agent | Job in one line |
 |---|---|
 | Manthan / Churn | Connect the atomic units across books; surface threads, clusters, patterns |
-| Darshan / Curate | Human editorial decision — what to show, what to hold back |
-| Pradarshan / Visualize | Render what Darshan selected, for the world |
+| Darpan / Curate | Human editorial decision — what to show, what to hold back (the mirror) |
+| Pradarshan / Visualize | Render what Darpan pulled forward, for the world |
