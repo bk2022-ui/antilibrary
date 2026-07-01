@@ -38,7 +38,8 @@ Newest session first. Update this at the end of every working session before clo
   3. **Encryption compliance** prompt on the build → answer **"None of the algorithms mentioned above."**
 - **State: CONFIRMED WORKING on Bharat's phone via TestFlight.** Build **1.0 (1)**, internal group **"Me"**, App Store Connect app id **6786375925**, name "Antilibrary". The card renders and the app runs on-device.
 - **Update loop going forward:** `npm run cards` → copy `cards.json` into `antilibrary-ios/Antilibrary/` → bump build number → Archive → Upload. New build just appears in TestFlight.
-- **Where next starts:** live with the daily nudge for ~a week; then decide the **widget** (ambient glance) vs. the **`prompt` enrichment** (quiz/recall) based on whether the habit earns its place.
+- **External distribution submitted.** To share with ~50 people, created an **external TestFlight group ("a-lib-testers")**, added build 1.0(1), no sign-in required, and **submitted for Beta App Review** (first external submission ≈ a few hrs–1 day). Once approved: enable the group's **Public Link** and send that one URL to the 50 people (they install via the TestFlight app — no sign-in, nothing to set up). Privacy policy ready at `antilibrary-ios/PRIVACY.md` if Apple asks (app collects no data). App Store is the wrong tool — no way to password-gate a public listing; TestFlight-external-by-link IS the private channel.
+- **Where next starts:** wait on Apple approval → enable public link → share. Then live with the daily nudge for ~a week; then decide the **widget** (ambient glance) vs. the **`prompt` enrichment** (quiz/recall) based on whether the habit earns its place.
 
 ---
 
