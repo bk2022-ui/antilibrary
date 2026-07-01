@@ -62,6 +62,8 @@ Each step is an agent with a defined trigger, input, and output. They run sequen
 
 **Darshan is the only agent that cannot run autonomously.** It requires human intent — what to show, to whom, in what order. It can be assisted by the engine (surfacing options, flagging candidates) but the decision is always human.
 
+**Taal (ताल) — the cadence layer.** The Trigger column above is a layer in its own right, and its name is **Taal** — *rhythm.* It governs *when* each agent fires: nightly, per-book, on a batch threshold, on-render, on-call. Taal is the timing counterpart to **Parakh** (the assay layer): Parakh governs whether output is sound, Taal governs the beat at which each agent runs. The two are the engine's cross-cutting layers — quality and cadence — beside the five steps. Taal is currently *descriptive* (the cadences are fixed per agent); a real scheduler/orchestrator would make it concrete. Named on the public engine demo alongside Parakh.
+
 ---
 
 ## Quality gate: confidence and canonicalization

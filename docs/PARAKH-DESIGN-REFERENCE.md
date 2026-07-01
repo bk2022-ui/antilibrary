@@ -12,7 +12,11 @@ spec (`ANTILIBRARY-ENGINE-SPEC.md`) carries the one-paragraph placement, and
 
 **Parakh is not a sixth step. It is a cross-cutting layer.** The five step names are
 locked (Sangrah · Parichay · Manthan · Darpan · Pradarshan). Parakh is the quality
-infrastructure that assays the *output* of those steps.
+infrastructure that assays the *output* of those steps. It has a **sibling cross-cutting
+layer, Taal (ताल) — *rhythm*** — the trigger/cadence layer (when each agent fires:
+nightly, per-book, batch, on-render, on-call). Parakh governs whether output is *sound*;
+Taal governs *when* each agent runs. Both are named on the public engine demo; Taal is
+recorded in `ANTILIBRARY-ENGINE-SPEC.md`.
 
 *Parakh* (परख) is the assayer's word — to test whether something is genuine and of
 good quality, the way you assay gold. That is exactly the job: take an engine step's

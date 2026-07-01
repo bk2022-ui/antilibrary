@@ -17,11 +17,14 @@ Newest session first. Update this at the end of every working session before clo
 ### Framework state
 - Parakh added as a documented cross-cutting layer. Five step names unchanged. New naming rule: `parakh-<step>-<lens>`.
 - Docs: **`docs/PARAKH-DESIGN-REFERENCE.md`** (new, full design) · Parakh section in `docs/ANTILIBRARY-ENGINE-SPEC.md` · Parakh scope in `docs/AGENT-SCOPES.md`.
-- Public `bk-site/public/engine-demo.html`: "Agents Checking Agents" — the single *Ingestion Recall* card broken into the three Parakh-sangrah cards (option A, with honest built/planned state), diagram diamond relabeled **Parakh · Sangrah**, dead `antilibrary.bharatkhandelwal.com` link fixed → `/antilibrary`. **Pushed** (Vercel).
+- Public `bk-site/public/engine-demo.html`: "Agents Checking Agents" — the single *Ingestion Recall* card broken into the three Parakh-sangrah cards (option A, with honest built/planned state), dead `antilibrary.bharatkhandelwal.com` link fixed → `/antilibrary`. **Pushed** (Vercel).
+- Then reworked the engine-diagram slide (Bharat's master design page): **the pipeline diagram now shows Collect's three Parakh checkers** (structure solid = built; recall + plausibility hollow = planned) with a shared "Parakh · Sangrah" label; full-width lead; cropped SVG viewBox to move it up and shorten it; **moved the Triggers + Quality row labels to the right and named the two cross-cutting layers there**. Verified present mode fits one screen (1440×900 + 1366×768) via headless-Chrome screenshots.
+- **Named the trigger/cadence layer Taal (ताल)** — *rhythm*, the beat at which each agent fires; the timing counterpart to Parakh (assay). Bharat approved. Recorded in `ANTILIBRARY-ENGINE-SPEC.md` (agent-architecture section). Currently descriptive, not a built scheduler.
 
 ### Decisions
 - Parakh = family, not one agent. Slug `parakh-<step>-<lens>`, no `qc-`. Human-review-first, auto-fix as a later per-check graduation. `match.ts` silent-drop fix is evidence-first (Phase 3), not a blind behavior change now.
 - Public demo: **show the asymmetry** (Sangrah has 3 checkers, other steps 1) — the other QC agents aren't investigated yet and may also split; the thinking will evolve in view.
+- The engine has **two named cross-cutting layers beside the five steps: Parakh** (quality/assay) and **Taal** (trigger/cadence). Trigger-system name alternatives considered (Kaal, Samay); chose Taal for the rhythm metaphor.
 
 ### Where next starts
 - Build the **synthetic staging fixture** (bad-checksum ISBN, derivable isbn13, future year, fresh dup, clean entry) to exercise proposals → then **`parakh-apply`** (Phase 2). Roadmap + current state at the bottom of `docs/PARAKH-DESIGN-REFERENCE.md`.
