@@ -4,6 +4,18 @@ Newest session first. Update this at the end of every working session before clo
 
 ---
 
+## 2026-07-01 — iPhone app v1 (daily nudge) — the first consumer of the feed
+
+- **Picked the frontend.** Split "the frontend" into two decisions: interaction model (platform-independent) + platform. Pradarshan already owns web/public; so the new surface is a **personal iPhone app** (just Bharat, not ship-ready). That framing collapses the cost — no backend, no App Store, no accounts. Chosen interaction: **daily nudge** (card-of-the-day + local notification), not just flip-through.
+- **Built it — a new sibling repo `~/coding/antilibrary-ios`** (NOT inside this repo). SwiftUI, a **thin reader over `cards.json`** (bundled snapshot, fully offline). Screens: one card (type · serif title · body · attribution · tags), **Today** (deterministic card-of-the-day) + **Shuffle**. **Daily local notification** teasing today's idea by title — on-device, no server, no paid account (rolling ~60-day window, rescheduled on launch).
+- **`prompt` carried but unused** (`null` in the feed) — the reserved hook for a future quiz/spaced-repetition mode once the Parichay enrichment lands.
+- **Project mechanics:** hand-wrote a **file-system-synchronized Xcode project** (no XcodeGen/Tuist locally, no Homebrew). **Verified end-to-end**: `xcodebuild` BUILD SUCCEEDED, then installed + launched in the iOS Simulator (Xcode 26.6 / Swift 6.3) and screenshotted the card rendering + the nudge-permission prompt firing. Committed (`ed21b10`).
+- **Not built (in the ios repo's README "Next"):** home-screen **widget** (needs a WidgetKit extension target, a few clicks in Xcode); quiz/SRS (needs `prompt`); filter-by-type/tag, favorites.
+- **Data-refresh loop:** re-run `npm run cards` → copy `cards.json` into `antilibrary-ios/Antilibrary/` → rebuild. Bundled-not-fetched is deliberate for v1.
+- **Where next starts:** run it on the physical phone (set Team + unique bundle id in Xcode), live with the daily nudge, then decide widget vs. `prompt` enrichment.
+
+---
+
 ## 2026-07-01 — The app feed (`cards.json`): atomic units shaped for a future learning app
 
 - **The ask:** for an outward-facing product, shape the Parichay atomic units so a future Apple app can *pull from one place* and make "a little learning opportunity" (daily card / spaced-repetition), without building the app yet.
